@@ -1,0 +1,12 @@
+<ng-container *ngIf="!loading()">
+  <div *ngFor="let item of species()">
+    <div>{{ item.name.sk }} ({{ item.name.latin }})</div>
+    <p-image
+      [src]="item.mainImageSrc"
+      [previewImageSrc]="item.thumbnailSrc"
+      alt="Image"
+      width="200"
+      [preview]="true"
+    />
+  </div>
+</ng-container>
