@@ -1,11 +1,12 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { SpeciesDetailComponent } from './components/species-detail/species-detail.component';
+import { NgModule } from '@angular/core';
 
-export const routes: Routes = [
+const routes: Routes = [
   {
     path: '',
-    redirectTo: 'catalog',
+    redirectTo: 'species',
     pathMatch: 'full',
   },
   {
@@ -22,15 +23,21 @@ export const routes: Routes = [
       //     component: AddEditSpeciesComponent,
       //   },
       //   {
-      //     path: 'edit/:id',
+      //     path: 'edit/:code',
       //     pathMatch: 'full',
       //     component: AddEditSpeciesComponent,
       //   },
       {
-        path: ':id',
+        path: ':code',
         pathMatch: 'full',
         component: SpeciesDetailComponent,
       },
     ],
   },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}

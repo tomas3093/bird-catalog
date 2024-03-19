@@ -1,6 +1,15 @@
-<div class="menu">
-  <a [routerLink]="['species']">Species</a>
-  <a [routerLink]="['species/houspa']">House sparrow</a>
-</div>
+<header>
+  <a [routerLink]="['']">BirdCatalog</a>
+  <div class="language" (click)="languageChange()">
+    {{ languageLabel | uppercase }}
+  </div>
+</header>
 
-<router-outlet></router-outlet>
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <div><strong>BirdCatalog</strong></div>
+  <div>{{ "layout.footer" | t }}</div>
+</footer>

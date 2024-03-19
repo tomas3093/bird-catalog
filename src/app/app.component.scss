@@ -1,7 +1,47 @@
-.menu {
-  display: flex;
+:host {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: #dedede;
 
-  a {
-    padding: 5px 10px;
+    .language {
+      font-weight: bold;
+      cursor: pointer;
+
+      // Disable text selection
+      -webkit-user-select: none; /* Safari */
+      -ms-user-select: none; /* IE 10 and IE 11 */
+      user-select: none; /* Standard syntax */
+    }
+  }
+
+  main {
+    margin: 0 auto;
+  }
+
+  footer {
+    display: flex;
+    padding: 0.5rem;
+    background-color: #dedede;
+    justify-content: space-between;
+  }
+
+  // @media (max-width: 480px) {
+  //   main {
+  //     width: 100%;
+  //   }
+  // }
+
+  @media (max-width: 768px) {
+    main {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    main {
+      max-width: 1024px;
+    }
   }
 }

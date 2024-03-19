@@ -1,7 +1,18 @@
 export interface Species {
+  code: string;
   name: SpeciesName;
-  mainImageSrc: string;
   thumbnailSrc: string;
+  group: SpeciesGroup;
+}
+
+export interface SpeciesDetail {
+  code: string;
+  name: SpeciesName;
+  images: {
+    imageSrc: string;
+    thumbnailSrc: string;
+    metadata: ImageMetadata;
+  }[];
 }
 
 export interface SpeciesName {
@@ -10,12 +21,26 @@ export interface SpeciesName {
   en: string;
 }
 
-export type Habitat = 'water' | 'forest' | 'field-steppe' | 'urban';
+export interface SpeciesGroup {
+  en: string;
+  sk: string;
+  subGroup?: {
+    en: string;
+    sk: string;
+  };
+}
+
 export type ImageMetadata =
   | 'adult'
-  | 'juvenile'
   | 'nonbreeding/immature'
+  | 'immature' // Immature includes juvenile & subadult
+  | 'juvenile' // 1st year
+  | 'subadult' // mostly for raptors
   | 'breeding male'
+  | 'adult male'
+  | 'immature male'
+  | 'adult female'
   | 'female'
-  | 'flock'
-  | 'habitat';
+  | 'female/immature male'
+  | 'immature female'
+  | 'unknown';

@@ -2,13 +2,9 @@ import { Component, OnInit, inject, signal } from '@angular/core';
 import { StorageService } from '../../core/services/storage.service';
 import { Species } from '../../core/model/species';
 import { tap } from 'rxjs';
-import { CommonModule } from '@angular/common';
-import { ImageModule } from 'primeng/image';
 
 @Component({
   selector: 'app-catalog',
-  standalone: true,
-  imports: [CommonModule, ImageModule],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.scss',
 })

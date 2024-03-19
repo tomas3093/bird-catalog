@@ -1,1 +1,29 @@
-<p>species-detail works!</p>
+<ng-container *ngIf="!loading() && speciesDetail() as detail">
+  <div>{{ detail.name.sk }} ({{ detail.name.latin }})</div>
+
+  <p-galleria
+    [value]="detail.images"
+    [responsiveOptions]="responsiveOptions"
+    [containerStyle]="{ 'max-width': '640px' }"
+    [showItemNavigators]="true"
+  >
+    <ng-template pTemplate="item" let-item>
+      <img [src]="item.imageSrc" style="width: 100%; display: block" />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+      <div class="grid grid-nogutter justify-content-center">
+        <img [src]="item.thumbnailSrc" style="display: block; width: 100px" />
+      </div>
+    </ng-template>
+    <ng-template pTemplate="caption" let-item>
+      <div>{{ detail.name.sk }}</div>
+      <div>{{ item.metadata }}</div>
+    </ng-template>
+  </p-galleria>
+</ng-container>
+
+<p-button
+  label="Catalog"
+  (onClick)="navigateToSpeciesCatalog()"
+  styleClass="p-button-text"
+></p-button>

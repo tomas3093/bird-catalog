@@ -1,0 +1,46 @@
+:host {
+  .grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .grid-item {
+      display: flex;
+      padding: 0.5rem;
+      height: 7.25rem;
+      border-bottom: 1px #1e1e1e solid;
+
+      .text {
+        padding: 0 0.5rem;
+
+        p-tag {
+          margin-right: 0.25rem;
+        }
+
+        .latin {
+          padding-top: 0.25rem;
+          font-size: 0.8125rem;
+          font-style: italic;
+        }
+
+        .main {
+          font-size: 1.125rem;
+          font-weight: bold;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: auto;
+      }
+    }
+  }
+}
