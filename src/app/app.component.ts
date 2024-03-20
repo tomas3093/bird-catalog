@@ -14,8 +14,6 @@ export class AppComponent implements OnInit {
   }
 
   languageChange() {
-    console.log('lang change');
-
     if (this.translate.currentLanguage === 'en') {
       this.translate.setLanguage('sk');
     } else {

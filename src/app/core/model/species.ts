@@ -2,7 +2,7 @@ export interface Species {
   code: string;
   name: SpeciesName;
   thumbnailSrc: string;
-  group: SpeciesGroup;
+  taxonomy: SpeciesGroup;
 }
 
 export interface SpeciesDetail {
@@ -15,19 +15,19 @@ export interface SpeciesDetail {
   }[];
 }
 
-export interface SpeciesName {
-  latin: string;
+export interface LocalizedText {
   sk: string;
   en: string;
 }
 
+export interface SpeciesName {
+  latin: string;
+  localized: LocalizedText;
+}
+
 export interface SpeciesGroup {
-  en: string;
-  sk: string;
-  subGroup?: {
-    en: string;
-    sk: string;
-  };
+  group: LocalizedText;
+  subGroup?: LocalizedText;
 }
 
 export type ImageMetadata =

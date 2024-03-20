@@ -1,36 +1,51 @@
+<p-progressSpinner
+  *ngIf="loading()"
+  class="spinner"
+  ariaLabel="loading"
+></p-progressSpinner>
 <ng-container *ngIf="!loading()">
-  <!-- <a *ngFor="let item of species()" [routerLink]="[item.code]">
-    <div>
-      <div>{{ item.name.sk }} ({{ item.name.latin }})</div>
-      <p-image
-        [src]="item.thumbnailSrc"
-        alt="Image"
-        width="130"
-        [preview]="false"
+  <div class="filters">
+    <span class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input
+        #searchFilter
+        pInputText
+        [placeholder]="'catalog.search' | t"
+        (input)="onSearchFilter($any($event.target).value)"
       />
-    </div>
-  </a> -->
-
-  <p-iconField iconPosition="left">
-    <p-inputIcon styleClass="pi pi-search" />
-    <input type="text" pInputText placeholder="Search" />
-  </p-iconField>
+    </span>
+    <p-button
+      icon="pi pi-filter-slash"
+      [pTooltip]="'catalog.clearFilters' | t"
+      (click)="clearFilters(searchFilter)"
+    ></p-button>
+  </div>
   <div class="grid">
-    <div *ngFor="let item of species()" class="grid-item">
+    <div *ngFor="let item of displayedData()" class="grid-item">
       <img width="150" [src]="item.thumbnailSrc" />
       <div class="text">
-        <p-tag>{{ item.group.sk }}</p-tag>
-        <p-tag *ngIf="item.group.subGroup">{{ item.group.subGroup.sk }}</p-tag>
+        <p-tag>{{ item.taxonomy.group | localizedName }}</p-tag>
+        <p-tag *ngIf="item.taxonomy.subGroup">{{
+          item.taxonomy.subGroup | localizedName
+        }}</p-tag>
         <div class="latin">
           {{ item.name.latin }}
         </div>
         <div class="main">
-          {{ item.name.sk }}
+          {{ item.name.localized | localizedName }}
         </div>
       </div>
       <div class="buttons">
-        <p-button icon="pi pi-plus" [label]="'catalog.compare' | t"></p-button>
-        <p-button icon="pi pi-chevron-circle-right"></p-button>
+        <p-button
+          icon="pi pi-plus"
+          [pTooltip]="'catalog.compare' | t"
+          (click)="compare(item.code)"
+        ></p-button>
+        <p-button
+          icon="pi pi-chevron-circle-right"
+          [pTooltip]="'catalog.view' | t"
+          (click)="viewDetail(item.code)"
+        ></p-button>
       </div>
     </div>
   </div>

@@ -3,6 +3,8 @@ export interface ITranslation {
     footer: string;
   };
   catalog: {
+    search: string;
+    clearFilters: string;
     compare: string;
     view: string;
   };

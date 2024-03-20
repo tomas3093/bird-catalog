@@ -8,18 +8,28 @@ import { CatalogComponent } from '../components/catalog/catalog.component';
 import { TypedTranslatePipe } from './pipes/TypedTranslatePipe';
 import { AppComponent } from '../app.component';
 import { TranslatePipe } from '@ngx-translate/core';
-import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
+import { LocalizedNamePipe } from './pipes/LocalizedNamePipe';
+import { TooltipModule } from 'primeng/tooltip';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
-  declarations: [CatalogComponent, SpeciesDetailComponent, TypedTranslatePipe],
+  declarations: [
+    CatalogComponent,
+    SpeciesDetailComponent,
+    TypedTranslatePipe,
+    LocalizedNamePipe,
+  ],
   imports: [
     ImageModule,
     TagModule,
     ButtonModule,
     GalleriaModule,
-    IconFieldModule,
     InputIconModule,
+    TooltipModule,
+    ProgressSpinnerModule,
+    InputTextModule,
   ],
   exports: [
     TypedTranslatePipe,
@@ -27,10 +37,12 @@ import { InputIconModule } from 'primeng/inputicon';
     TagModule,
     ButtonModule,
     GalleriaModule,
-    IconFieldModule,
     InputIconModule,
+    TooltipModule,
+    ProgressSpinnerModule,
+    InputTextModule,
   ],
-  providers: [TranslatePipe, TypedTranslatePipe],
+  providers: [TranslatePipe, TypedTranslatePipe, LocalizedNamePipe],
   bootstrap: [AppComponent],
 })
 export class CoreModule {}

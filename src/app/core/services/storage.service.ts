@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { data, macaulayImgAssetUrl, speciesMainImage, taxonomy } from './data';
 import { Species, SpeciesDetail } from '../model/species';
-import { Observable, of } from 'rxjs';
+import { Observable, delay, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -28,13 +28,13 @@ export class StorageService {
           species.imageAssets.map((_) => _.assetId),
           true
         ),
-        group: group,
+        taxonomy: group,
       };
 
       return item;
     });
 
-    return of(result);
+    return of(result).pipe(delay(250));
   }
 
   getSpeciesDetail(code: string): Observable<SpeciesDetail> {
@@ -53,6 +53,6 @@ export class StorageService {
       })),
     };
 
-    return of(result);
+    return of(result).pipe(delay(250));
   }
 }

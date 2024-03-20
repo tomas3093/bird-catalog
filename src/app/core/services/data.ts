@@ -35,56 +35,47 @@ export const speciesMainImage = (
 export const taxonomy: GroupItem[] = [
   {
     id: 1,
-    en: 'Birds of prey',
-    sk: 'Dravce',
+    group: { en: 'Birds of prey', sk: 'Dravce' },
     subGroup: { en: 'Eagles', sk: 'Orly' },
   },
   {
     id: 2,
-    en: 'Birds of prey',
-    sk: 'Dravce',
+    group: { en: 'Birds of prey', sk: 'Dravce' },
     subGroup: { en: 'Kites', sk: 'Haje' },
   },
   {
     id: 3,
-    en: 'Birds of prey',
-    sk: 'Dravce',
+    group: { en: 'Birds of prey', sk: 'Dravce' },
     subGroup: { en: 'Harriers', sk: 'Kane' },
   },
   {
     id: 4,
-    en: 'Birds of prey',
-    sk: 'Dravce',
+    group: { en: 'Birds of prey', sk: 'Dravce' },
     subGroup: { en: 'Buzzards', sk: 'Myšiaky' },
   },
   {
     id: 5,
-    en: 'Birds of prey',
-    sk: 'Dravce',
+    group: { en: 'Birds of prey', sk: 'Dravce' },
     subGroup: { en: 'Honey buzzard', sk: 'Včelár' },
   },
   {
     id: 6,
-    en: 'Birds of prey',
-    sk: 'Dravce',
+    group: { en: 'Birds of prey', sk: 'Dravce' },
     subGroup: { en: 'Hawks', sk: 'Jastraby' },
   },
   {
     id: 7,
-    en: 'Birds of prey',
-    sk: 'Dravce',
+    group: { en: 'Birds of prey', sk: 'Dravce' },
     subGroup: { en: 'Falcons', sk: 'Sokoly' },
   },
   {
     id: 8,
-    en: 'Birds of prey',
-    sk: 'Dravce',
+    group: { en: 'Birds of prey', sk: 'Dravce' },
     subGroup: { en: 'Osprey', sk: 'Kršiak' },
   },
   {
     id: 9,
-    en: 'Sparrows',
-    sk: 'Vrabce',
+    group: { en: 'Sparrows', sk: 'Vrabce' },
   },
 ];
 
@@ -93,8 +84,7 @@ export const data: DataItem[] = [
     code: 'whteag',
     name: {
       latin: 'Haliaeetus albicilla',
-      en: 'White-tailed Eagle',
-      sk: 'Orliak morský',
+      localized: { en: 'White-tailed Eagle', sk: 'Orliak morský' },
     },
     groupId: 1,
     imageAssets: [
@@ -109,8 +99,7 @@ export const data: DataItem[] = [
     code: 'goleag',
     name: {
       latin: 'Aquila chrysaetos',
-      en: 'Golden Eagle',
-      sk: 'Orol skalný',
+      localized: { en: 'Golden Eagle', sk: 'Orol skalný' },
     },
     groupId: 1,
     imageAssets: [
@@ -125,8 +114,7 @@ export const data: DataItem[] = [
     code: 'impeag1',
     name: {
       latin: 'Aquila heliaca',
-      en: 'Imperial Eagle',
-      sk: 'Orol kráľovský',
+      localized: { en: 'Imperial Eagle', sk: 'Orol kráľovský' },
     },
     groupId: 1,
     imageAssets: [
@@ -141,8 +129,7 @@ export const data: DataItem[] = [
     code: 'leseag1',
     name: {
       latin: 'Clanga pomarina',
-      en: 'Lesser Spotted Eagle',
-      sk: 'Orol krikľavý',
+      localized: { en: 'Lesser Spotted Eagle', sk: 'Orol krikľavý' },
     },
     groupId: 1,
     imageAssets: [
@@ -157,8 +144,7 @@ export const data: DataItem[] = [
     code: 'shteag1',
     name: {
       latin: 'Circaetus gallicus',
-      en: 'Short-toed Snake-Eagle',
-      sk: 'Hadiar krátkoprstý',
+      localized: { en: 'Short-toed Snake-Eagle', sk: 'Hadiar krátkoprstý' },
     },
     groupId: 1,
     imageAssets: [
@@ -173,8 +159,7 @@ export const data: DataItem[] = [
     code: 'redkit1',
     name: {
       latin: 'Milvus milvus',
-      en: 'Red Kite',
-      sk: 'Haja červená',
+      localized: { en: 'Red Kite', sk: 'Haja červená' },
     },
     groupId: 2,
     imageAssets: [
@@ -189,8 +174,7 @@ export const data: DataItem[] = [
     code: 'blakit1',
     name: {
       latin: 'Milvus migrans',
-      en: 'Black Kite',
-      sk: 'Haja tmavá',
+      localized: { en: 'Black Kite', sk: 'Haja tmavá' },
     },
     groupId: 2,
     imageAssets: [
@@ -205,8 +189,7 @@ export const data: DataItem[] = [
     code: 'wemhar1',
     name: {
       latin: 'Circus aeruginosus',
-      en: 'Western Marsh Harrier',
-      sk: 'Kaňa močiarna',
+      localized: { en: 'Western Marsh Harrier', sk: 'Kaňa močiarna' },
     },
     groupId: 3,
     imageAssets: [
@@ -222,14 +205,13 @@ export const data: DataItem[] = [
     code: 'norhar1',
     name: {
       latin: 'Circus cyaneus',
-      en: 'Hen Harrier',
-      sk: 'Kaňa sivá',
+      localized: { en: 'Hen Harrier', sk: 'Kaňa sivá' },
     },
     groupId: 3,
     imageAssets: [
       { assetId: '189755831', metadata: 'adult male' },
       { assetId: '57601551', metadata: 'female/immature male' },
-      { assetId: '57601871 ', metadata: 'female/immature male' },
+      { assetId: '57601871', metadata: 'female/immature male' },
       { assetId: '206041211', metadata: 'immature male' },
       { assetId: '37535161', metadata: 'female' },
       { assetId: '63555051', metadata: 'adult male' },
@@ -239,14 +221,13 @@ export const data: DataItem[] = [
     code: 'monhar1',
     name: {
       latin: 'Circus pygargus',
-      en: "Montagu's Harrier",
-      sk: 'Kaňa popolavá',
+      localized: { en: "Montagu's Harrier", sk: 'Kaňa popolavá' },
     },
     groupId: 3,
     imageAssets: [
       { assetId: '44390971', metadata: 'adult male' },
       { assetId: '45737231', metadata: 'adult female' },
-      { assetId: '38204901 ', metadata: 'juvenile' },
+      { assetId: '38204901', metadata: 'juvenile' },
       { assetId: '41083291', metadata: 'adult male' },
       { assetId: '43521811', metadata: 'adult female' },
       { assetId: '45176181', metadata: 'adult male' },
@@ -256,14 +237,13 @@ export const data: DataItem[] = [
     code: 'palhar1',
     name: {
       latin: 'Circus macrourus',
-      en: 'Pallid Harrier',
-      sk: 'Kaňa stepná',
+      localized: { en: 'Pallid Harrier', sk: 'Kaňa stepná' },
     },
     groupId: 3,
     imageAssets: [
       { assetId: '33606121', metadata: 'adult male' },
       { assetId: '38534171', metadata: 'female' },
-      { assetId: '43391411 ', metadata: 'juvenile' },
+      { assetId: '43391411', metadata: 'juvenile' },
       { assetId: '38029191', metadata: 'adult male' },
       { assetId: '26701651', metadata: 'adult male' },
       { assetId: '41275581', metadata: 'adult male' },
@@ -273,8 +253,7 @@ export const data: DataItem[] = [
     code: 'eutspa',
     name: {
       latin: 'Passer montanus',
-      en: 'Eurasian Tree Sparrow',
-      sk: 'Vrabec poľný',
+      localized: { en: 'Eurasian Tree Sparrow', sk: 'Vrabec poľný' },
     },
     groupId: 9,
     imageAssets: [
@@ -288,8 +267,7 @@ export const data: DataItem[] = [
     code: 'houspa',
     name: {
       latin: 'Passer domesticus',
-      en: 'House Sparrow',
-      sk: 'Vrabec domový',
+      localized: { en: 'House Sparrow', sk: 'Vrabec domový' },
     },
     groupId: 9,
     imageAssets: [
