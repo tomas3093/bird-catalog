@@ -2,6 +2,7 @@ export interface Species {
   code: string;
   name: SpeciesName;
   thumbnailSrc: string;
+  fullsizeImgSrc: string;
   taxonomy: SpeciesGroup;
 }
 
