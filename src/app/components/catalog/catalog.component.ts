@@ -67,10 +67,6 @@ export class CatalogComponent implements OnInit {
       .subscribe();
   }
 
-  compare(speciesCode: string) {
-    console.log('compare ', speciesCode);
-  }
-
   viewDetail(speciesCode: string) {
     this.#router.navigate([speciesCode], { relativeTo: this.#activatedRoute });
   }

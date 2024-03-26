@@ -13,6 +13,7 @@ import { LocalizedNamePipe } from './pipes/LocalizedNamePipe';
 import { TooltipModule } from 'primeng/tooltip';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { InputTextModule } from 'primeng/inputtext';
+import { ComparatorComponent } from '../components/comparator/comparator.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { InputTextModule } from 'primeng/inputtext';
     SpeciesDetailComponent,
     TypedTranslatePipe,
     LocalizedNamePipe,
+    ComparatorComponent,
   ],
   imports: [
     ImageModule,

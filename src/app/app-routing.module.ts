@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { SpeciesDetailComponent } from './components/species-detail/species-detail.component';
 import { NgModule } from '@angular/core';
+import { ComparatorComponent } from './components/comparator/comparator.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,11 @@ const routes: Routes = [
         path: '',
         pathMatch: 'full',
         component: CatalogComponent,
+      },
+      {
+        path: 'compare',
+        pathMatch: 'full',
+        component: ComparatorComponent,
       },
       //   {
       //     path: 'new',

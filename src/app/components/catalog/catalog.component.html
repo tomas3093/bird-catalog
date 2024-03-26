@@ -17,6 +17,7 @@
     <p-button
       icon="pi pi-filter-slash"
       [pTooltip]="'catalog.clearFilters' | t"
+      tooltipPosition="left"
       (click)="clearFilters(searchFilter)"
     ></p-button>
   </div>
@@ -44,13 +45,9 @@
       </div>
       <div class="buttons">
         <p-button
-          icon="pi pi-plus"
-          [pTooltip]="'catalog.compare' | t"
-          (click)="compare(item.code)"
-        ></p-button>
-        <p-button
           icon="pi pi-chevron-circle-right"
           [pTooltip]="'catalog.view' | t"
+          tooltipPosition="left"
           (click)="viewDetail(item.code)"
         ></p-button>
       </div>
