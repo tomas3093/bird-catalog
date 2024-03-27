@@ -17,14 +17,14 @@ export class StorageService {
         throw Error('Unknown species group.');
       }
 
-      const item = {
+      const item: Species = {
         code: species.code,
         name: species.name,
-        mainImageSrc: speciesMainImage(
+        thumbnailSrc: speciesMainImage(
           species.imageAssets.map((_) => _.assetId),
           false
         ),
-        thumbnailSrc: speciesMainImage(
+        fullsizeImgSrc: speciesMainImage(
           species.imageAssets.map((_) => _.assetId),
           true
         ),

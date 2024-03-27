@@ -13,6 +13,8 @@ import { LocalizedNamePipe } from './pipes/LocalizedNamePipe';
 import { TooltipModule } from 'primeng/tooltip';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { InputTextModule } from 'primeng/inputtext';
+import { ComparatorComponent } from '../components/comparator/comparator.component';
+import { ChipModule } from 'primeng/chip';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { InputTextModule } from 'primeng/inputtext';
     SpeciesDetailComponent,
     TypedTranslatePipe,
     LocalizedNamePipe,
+    ComparatorComponent,
   ],
   imports: [
     ImageModule,
@@ -30,6 +33,7 @@ import { InputTextModule } from 'primeng/inputtext';
     TooltipModule,
     ProgressSpinnerModule,
     InputTextModule,
+    ChipModule,
   ],
   exports: [
     TypedTranslatePipe,
@@ -41,6 +45,7 @@ import { InputTextModule } from 'primeng/inputtext';
     TooltipModule,
     ProgressSpinnerModule,
     InputTextModule,
+    ChipModule,
   ],
   providers: [TranslatePipe, TypedTranslatePipe, LocalizedNamePipe],
   bootstrap: [AppComponent],

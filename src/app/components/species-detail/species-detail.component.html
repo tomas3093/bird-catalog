@@ -1,31 +1,40 @@
-<ng-container *ngIf="!loading() && speciesDetail() as detail">
-  <div>
-    {{ detail.name.localized | localizedName }} ({{ detail.name.latin }})
-  </div>
+<ng-container *ngIf="!isComparatorShown()">
+  <ng-container *ngIf="!loading() && speciesDetail() as detail">
+    <div class="latin">{{ detail.name.latin }}</div>
+    <div class="title">{{ detail.name.localized | localizedName }}</div>
 
-  <p-galleria
-    [value]="detail.images"
-    [responsiveOptions]="responsiveOptions"
-    [containerStyle]="{ 'max-width': '640px' }"
-    [showItemNavigators]="true"
-  >
-    <ng-template pTemplate="item" let-item>
-      <img [src]="item.imageSrc" style="width: 100%; display: block" />
-    </ng-template>
-    <ng-template pTemplate="thumbnail" let-item>
-      <div class="grid grid-nogutter justify-content-center">
-        <img [src]="item.thumbnailSrc" style="display: block; width: 100px" />
-      </div>
-    </ng-template>
-    <ng-template pTemplate="caption" let-item>
-      <div>{{ detail.name.localized | localizedName }}</div>
-      <div>{{ item.metadata }}</div>
-    </ng-template>
-  </p-galleria>
+    <p-galleria
+      [value]="detail.images"
+      [responsiveOptions]="responsiveOptions"
+      [containerStyle]="{ 'max-width': '1024px' }"
+      [showItemNavigators]="true"
+      [circular]="true"
+      [numVisible]="6"
+    >
+      <ng-template pTemplate="item" let-item>
+        <div class="item">
+          <img [src]="item.imageSrc" />
+        </div>
+      </ng-template>
+      <ng-template pTemplate="thumbnail" let-item>
+        <div class="thumbnail">
+          <img [src]="item.thumbnailSrc" />
+        </div>
+      </ng-template>
+      <ng-template pTemplate="caption" let-item>
+        <div>{{ detail.name.localized | localizedName }}</div>
+        <div>{{ item.metadata }}</div>
+      </ng-template>
+    </p-galleria>
+  </ng-container>
+
+  <div class="buttons">
+    <p-button label="Catalog" (onClick)="navigateToSpeciesCatalog()"></p-button>
+    <p-button label="Compare" (onClick)="compareSpecies()"></p-button>
+  </div>
 </ng-container>
 
-<p-button
-  label="Catalog"
-  (onClick)="navigateToSpeciesCatalog()"
-  styleClass="p-button-text"
-></p-button>
+<ng-container *ngIf="isComparatorShown()">
+  <p-button label="Back" (onClick)="showDetail()"></p-button>
+  <app-comparator [compareWith]="speciesDetail()"></app-comparator>
+</ng-container>

@@ -8,6 +8,11 @@ export interface ITranslation {
     compare: string;
     view: string;
   };
+  comparator: {
+    title: string;
+    save: string;
+    change: string;
+  };
   primeNg: {
     startsWith: string;
     contains: string;

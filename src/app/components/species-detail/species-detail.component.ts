@@ -17,6 +17,7 @@ export class SpeciesDetailComponent implements OnInit {
 
   loading = signal(true);
   speciesDetail = signal<SpeciesDetail | null>(null);
+  isComparatorShown = signal(false);
 
   responsiveOptions: any[] = [
     {
@@ -28,7 +29,11 @@ export class SpeciesDetailComponent implements OnInit {
       numVisible: 3,
     },
     {
-      breakpoint: '560px',
+      breakpoint: '480px',
+      numVisible: 2,
+    },
+    {
+      breakpoint: '320px',
       numVisible: 1,
     },
   ];
@@ -52,5 +57,13 @@ export class SpeciesDetailComponent implements OnInit {
 
   navigateToSpeciesCatalog() {
     this.#router.navigate(['species']);
+  }
+
+  compareSpecies() {
+    this.isComparatorShown.set(true);
+  }
+
+  showDetail() {
+    this.isComparatorShown.set(false);
   }
 }

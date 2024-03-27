@@ -17,12 +17,20 @@
     <p-button
       icon="pi pi-filter-slash"
       [pTooltip]="'catalog.clearFilters' | t"
+      tooltipPosition="left"
       (click)="clearFilters(searchFilter)"
     ></p-button>
   </div>
   <div class="grid">
     <div *ngFor="let item of displayedData()" class="grid-item">
-      <img width="150" [src]="item.thumbnailSrc" />
+      <p-image
+        [src]="item.fullsizeImgSrc"
+        [previewImageSrc]="item.thumbnailSrc"
+        width="150"
+        [preview]="true"
+        loading="lazy"
+        [alt]="item.name.latin"
+      ></p-image>
       <div class="text">
         <p-tag>{{ item.taxonomy.group | localizedName }}</p-tag>
         <p-tag *ngIf="item.taxonomy.subGroup">{{
@@ -37,13 +45,9 @@
       </div>
       <div class="buttons">
         <p-button
-          icon="pi pi-plus"
-          [pTooltip]="'catalog.compare' | t"
-          (click)="compare(item.code)"
-        ></p-button>
-        <p-button
-          icon="pi pi-chevron-circle-right"
+          icon="pi pi-eye"
           [pTooltip]="'catalog.view' | t"
+          tooltipPosition="left"
           (click)="viewDetail(item.code)"
         ></p-button>
       </div>
