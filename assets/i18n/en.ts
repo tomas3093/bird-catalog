@@ -10,6 +10,11 @@ export class En implements ITranslation {
     compare: 'Compare',
     view: 'View',
   };
+  public comparator = {
+    title: 'Compare species',
+    save: 'Save',
+    change: 'Change species',
+  };
   public primeNg = {
     accept: 'Yes',
     addRule: 'Add Rule',

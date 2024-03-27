@@ -10,6 +10,11 @@ export class Sk implements ITranslation {
     compare: 'Porovnať',
     view: 'Zobraziť',
   };
+  public comparator = {
+    title: 'Porovnanie druhov',
+    save: 'Uložiť',
+    change: 'Zmeniť druhy',
+  };
   public primeNg = {
     accept: 'Áno',
     addRule: 'Pridať pravidlo',
