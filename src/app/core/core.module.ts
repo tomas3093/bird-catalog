@@ -14,6 +14,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { InputTextModule } from 'primeng/inputtext';
 import { ComparatorComponent } from '../components/comparator/comparator.component';
+import { ChipModule } from 'primeng/chip';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ComparatorComponent } from '../components/comparator/comparator.compone
     TooltipModule,
     ProgressSpinnerModule,
     InputTextModule,
+    ChipModule,
   ],
   exports: [
     TypedTranslatePipe,
@@ -43,6 +45,7 @@ import { ComparatorComponent } from '../components/comparator/comparator.compone
     TooltipModule,
     ProgressSpinnerModule,
     InputTextModule,
+    ChipModule,
   ],
   providers: [TranslatePipe, TypedTranslatePipe, LocalizedNamePipe],
   bootstrap: [AppComponent],

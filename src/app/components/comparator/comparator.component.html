@@ -1,30 +1,71 @@
 <ng-container *ngIf="isSearchShown()">
-  <p>Search</p>
-</ng-container>
-
-<ng-container *ngIf="!isSearchShown() && compareWith() as detail">
-  <p>Compare</p>
-  <div>
-    {{ detail.name.localized | localizedName }} ({{ detail.name.latin }})
+  <div class="heading">
+    <div>{{ "comparator.title" | t }}</div>
+    <p-button
+      icon="pi pi-check"
+      [pTooltip]="'comparator.save' | t"
+      tooltipPosition="left"
+      (click)="showComparator()"
+    ></p-button>
+  </div>
+  <div class="chips">
+    <p-chip
+      *ngFor="let item of compareList()"
+      [label]="item.name.localized | localizedName"
+      [removable]="true"
+      (onRemove)="removeFromComparison(item.code)"
+    ></p-chip>
   </div>
 
-  <p-galleria
-    [value]="detail.images"
-    [responsiveOptions]="responsiveOptions"
-    [containerStyle]="{ 'max-width': '640px' }"
-    [showItemNavigators]="true"
-  >
-    <ng-template pTemplate="item" let-item>
-      <img [src]="item.imageSrc" style="width: 100%; display: block" />
-    </ng-template>
-    <ng-template pTemplate="thumbnail" let-item>
-      <div class="grid grid-nogutter justify-content-center">
-        <img [src]="item.thumbnailSrc" style="display: block; width: 100px" />
-      </div>
-    </ng-template>
-    <ng-template pTemplate="caption" let-item>
-      <div>{{ detail.name.localized | localizedName }}</div>
-      <div>{{ item.metadata }}</div>
-    </ng-template>
-  </p-galleria>
+  <div class="search-result">
+    <div
+      *ngFor="let item of species"
+      class="card"
+      [ngClass]="{ selected: isSelected(item.code) }"
+      (click)="toggleComparison(item.code)"
+    >
+      <div class="latin">{{ item.name.latin }}</div>
+      <div class="title">{{ item.name.localized | localizedName }}</div>
+      <img [src]="item.thumbnailSrc" [alt]="item.name.latin" />
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!isSearchShown()">
+  <div class="heading">
+    <div>{{ "comparator.title" | t }}</div>
+    <p-button
+      icon="pi pi-plus"
+      [pTooltip]="'comparator.change' | t"
+      tooltipPosition="left"
+      (click)="showSearch()"
+    ></p-button>
+  </div>
+  <div *ngFor="let itemDetail of compareList()">
+    <div>
+      {{ itemDetail.name.localized | localizedName }} ({{
+        itemDetail.name.latin
+      }})
+    </div>
+
+    <p-galleria
+      [value]="itemDetail.images"
+      [responsiveOptions]="responsiveOptions"
+      [containerStyle]="{ 'max-width': '640px' }"
+      [showItemNavigators]="true"
+    >
+      <ng-template pTemplate="item" let-item>
+        <img [src]="item.imageSrc" style="width: 100%; display: block" />
+      </ng-template>
+      <ng-template pTemplate="thumbnail" let-item>
+        <div class="grid grid-nogutter justify-content-center">
+          <img [src]="item.thumbnailSrc" style="display: block; width: 100px" />
+        </div>
+      </ng-template>
+      <ng-template pTemplate="caption" let-item>
+        <div>{{ itemDetail.name.localized | localizedName }}</div>
+        <div>{{ item.metadata }}</div>
+      </ng-template>
+    </p-galleria>
+  </div>
 </ng-container>

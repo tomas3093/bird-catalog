@@ -17,7 +17,7 @@ export class ComparatorComponent implements OnInit {
   species: Species[] = [];
   loading = signal(true);
 
-  isSearchShown = signal(false);
+  isSearchShown = signal(true);
 
   responsiveOptions: any[] = [
     {
@@ -34,10 +34,6 @@ export class ComparatorComponent implements OnInit {
     },
   ];
 
-  showSearch() {
-    this.isSearchShown.set(true);
-  }
-
   ngOnInit() {
     this.#service
       .getAllSpecies()
@@ -48,5 +44,44 @@ export class ComparatorComponent implements OnInit {
         })
       )
       .subscribe();
+
+    const initialValue = this.compareWith();
+    if (initialValue) {
+      this.compareList.set([initialValue]);
+    }
+  }
+
+  showSearch() {
+    this.isSearchShown.set(true);
+  }
+
+  showComparator() {
+    this.isSearchShown.set(false);
+  }
+
+  toggleComparison(speciesCode: string) {
+    if (this.isSelected(speciesCode)) {
+      this.removeFromComparison(speciesCode);
+    } else {
+      this.#service
+        .getSpeciesDetail(speciesCode)
+        .pipe(
+          tap((_) => {
+            const array = this.compareList();
+            array.push(_);
+            this.compareList.set(array);
+          })
+        )
+        .subscribe();
+    }
+  }
+
+  removeFromComparison(speciesCode: string) {
+    const array = this.compareList().filter((_) => _.code !== speciesCode);
+    this.compareList.set(array);
+  }
+
+  isSelected(speciesCode: string) {
+    return this.compareList().find((_) => _.code === speciesCode) !== undefined;
   }
 }
