@@ -1,6 +1,16 @@
+<div class="title">{{ "comparator.title" | t }}</div>
+
 <ng-container *ngIf="isSearchShown()">
-  <div class="heading">
-    <div>{{ "comparator.title" | t }}</div>
+  <div class="toolbar">
+    <span class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input
+        #searchFilter
+        pInputText
+        [placeholder]="'catalog.search' | t"
+        (input)="onSearchFilter($any($event.target).value)"
+      />
+    </span>
     <p-button
       icon="pi pi-check"
       [pTooltip]="'comparator.save' | t"
@@ -19,7 +29,7 @@
 
   <div class="search-result">
     <div
-      *ngFor="let item of species"
+      *ngFor="let item of displayedData()"
       class="card"
       [ngClass]="{ selected: isSelected(item.code) }"
       (click)="toggleComparison(item.code)"
@@ -32,15 +42,12 @@
 </ng-container>
 
 <ng-container *ngIf="!isSearchShown()">
-  <div class="heading">
-    <div>{{ "comparator.title" | t }}</div>
-    <p-button
-      icon="pi pi-plus"
-      [pTooltip]="'comparator.change' | t"
-      tooltipPosition="left"
-      (click)="showSearch()"
-    ></p-button>
-  </div>
+  <p-button
+    icon="pi pi-plus"
+    [pTooltip]="'comparator.change' | t"
+    tooltipPosition="left"
+    (click)="showSearch()"
+  ></p-button>
   <div *ngFor="let itemDetail of compareList()">
     <div>
       {{ itemDetail.name.localized | localizedName }} ({{
