@@ -10,6 +10,7 @@ import {
   tap,
 } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GroupItem } from '../../core/services/storage.model';
 
 @Component({
   selector: 'app-catalog',
@@ -23,7 +24,9 @@ export class CatalogComponent implements OnInit {
 
   loading = signal(true);
   species: Species[] = [];
-  displayedData = signal<Species[]>([]);
+  groups: GroupItem[] = [];
+  searchResult = signal<Species[]>([]);
+  mode = signal<'explore' | 'search'>('explore');
 
   #searchTermSubject = new BehaviorSubject<string>('');
   #searchTerm = this.#searchTermSubject
@@ -46,9 +49,9 @@ export class CatalogComponent implements OnInit {
       }),
       tap((_) => {
         if (!_) {
-          this.displayedData.set(this.species);
+          this.searchResult.set(this.species);
         } else {
-          this.displayedData.set(_);
+          this.searchResult.set(_);
         }
       })
     )
@@ -58,9 +61,10 @@ export class CatalogComponent implements OnInit {
     this.#service
       .getAllSpecies()
       .pipe(
+        map((x) => x as Species[]),
         tap((_) => {
           this.species = _;
-          this.displayedData.set(_);
+          this.searchResult.set(_);
           this.loading.set(false);
         })
       )

@@ -33,8 +33,12 @@ export interface SpeciesGroup {
 
 export type ImageMetadata =
   | 'adult'
+  | 'adult light morph'
+  | 'adult rufous morph'
+  | 'adult dark morph'
   | 'nonbreeding/immature'
   | 'immature' // Immature includes juvenile & subadult
+  | 'immature light morph'
   | 'juvenile' // 1st year
   | 'subadult' // mostly for raptors
   | 'breeding male'

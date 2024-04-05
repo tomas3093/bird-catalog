@@ -22,7 +22,7 @@
     ></p-button>
   </div>
   <div class="grid">
-    <div *ngFor="let item of displayedData()" class="grid-item">
+    <div *ngFor="let item of searchResult()" class="grid-item">
       <p-image
         [src]="item.fullsizeImgSrc"
         [previewImageSrc]="item.thumbnailSrc"

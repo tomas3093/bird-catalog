@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { data, macaulayImgAssetUrl, speciesMainImage, taxonomy } from './data';
 import { Species, SpeciesDetail } from '../model/species';
-import { Observable, delay, of } from 'rxjs';
+import { of } from 'rxjs';
+import { GroupItem } from './storage.model';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,11 +12,27 @@ export class StorageService {
   speciesStorage = data;
   groupStorage = taxonomy;
 
-  getAllSpecies(): Observable<Species[]> {
+  private api = inject(ApiService);
+
+  getSpeciesGroups() {
+    const result = this.groupStorage;
+
+    return this.api.performCall<GroupItem[]>(() => of(result));
+  }
+
+  getAllSpecies() {
     const result = this.speciesStorage.map((species) => {
       const group = this.groupStorage.find((_) => _.id === species.groupId);
       if (!group) {
         throw Error('Unknown species group.');
+      }
+
+      const group2 = group.parentGroupId
+        ? this.groupStorage.find((_) => _.id === group.parentGroupId)
+        : undefined;
+
+      if (group.parentGroupId !== null && !group2) {
+        throw Error('Unknown species subGroup.');
       }
 
       const item: Species = {
@@ -28,16 +46,22 @@ export class StorageService {
           species.imageAssets.map((_) => _.assetId),
           true
         ),
-        taxonomy: group,
+        taxonomy:
+          group.parentGroupId === null
+            ? { group: group.name }
+            : {
+                group: group2!.name,
+                subGroup: group.name,
+              },
       };
 
       return item;
     });
 
-    return of(result).pipe(delay(250));
+    return this.api.performCall<Species[]>(() => of(result));
   }
 
-  getSpeciesDetail(code: string): Observable<SpeciesDetail> {
+  getSpeciesDetail(code: string) {
     const item = this.speciesStorage.find((_) => _.code === code);
     if (!item) {
       throw Error('Species not found');
@@ -53,6 +77,6 @@ export class StorageService {
       })),
     };
 
-    return of(result).pipe(delay(250));
+    return this.api.performCall<SpeciesDetail>(() => of(result));
   }
 }

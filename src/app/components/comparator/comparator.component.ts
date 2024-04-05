@@ -75,6 +75,7 @@ export class ComparatorComponent implements OnInit {
     this.#service
       .getAllSpecies()
       .pipe(
+        map((x) => x as Species[]),
         tap((_) => {
           this.species = _;
           this.loading.set(false);
