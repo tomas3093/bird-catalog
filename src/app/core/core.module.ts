@@ -15,15 +15,10 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { InputTextModule } from 'primeng/inputtext';
 import { ComparatorComponent } from '../components/comparator/comparator.component';
 import { ChipModule } from 'primeng/chip';
+import { AutoFocusModule } from 'primeng/autofocus';
 
 @NgModule({
-  declarations: [
-    CatalogComponent,
-    SpeciesDetailComponent,
-    TypedTranslatePipe,
-    LocalizedNamePipe,
-    ComparatorComponent,
-  ],
+  declarations: [CatalogComponent, SpeciesDetailComponent, TypedTranslatePipe, LocalizedNamePipe, ComparatorComponent],
   imports: [
     ImageModule,
     TagModule,
@@ -34,6 +29,7 @@ import { ChipModule } from 'primeng/chip';
     ProgressSpinnerModule,
     InputTextModule,
     ChipModule,
+    AutoFocusModule,
   ],
   exports: [
     TypedTranslatePipe,
@@ -46,6 +42,7 @@ import { ChipModule } from 'primeng/chip';
     ProgressSpinnerModule,
     InputTextModule,
     ChipModule,
+    AutoFocusModule,
   ],
   providers: [TranslatePipe, TypedTranslatePipe, LocalizedNamePipe],
   bootstrap: [AppComponent],

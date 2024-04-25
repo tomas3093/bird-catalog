@@ -1,16 +1,8 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { StorageService } from '../../core/services/storage.service';
-import { Species } from '../../core/model/species';
-import {
-  BehaviorSubject,
-  debounceTime,
-  distinctUntilChanged,
-  map,
-  share,
-  tap,
-} from 'rxjs';
+import { CatalogGroup, Species } from '../../core/model/species';
+import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { GroupItem } from '../../core/services/storage.model';
 
 @Component({
   selector: 'app-catalog',
@@ -24,14 +16,12 @@ export class CatalogComponent implements OnInit {
 
   loading = signal(true);
   species: Species[] = [];
-  groups: GroupItem[] = [];
+  catalog: CatalogGroup[] = [];
   searchResult = signal<Species[]>([]);
-  mode = signal<'explore' | 'search'>('explore');
+  mode = signal<'explore-groups' | 'explore-species' | 'search'>('explore-groups');
 
   #searchTermSubject = new BehaviorSubject<string>('');
-  #searchTerm = this.#searchTermSubject
-    .asObservable()
-    .pipe(debounceTime(500), distinctUntilChanged(), share());
+  #searchTerm = this.#searchTermSubject.asObservable().pipe(debounceTime(500), distinctUntilChanged(), share());
   filterSubscription = this.#searchTerm
     .pipe(
       map((searchTerm) => {
@@ -42,7 +32,7 @@ export class CatalogComponent implements OnInit {
             (_) =>
               _.name.latin.toLowerCase().includes(lowered) ||
               _.name.localized.sk.toLowerCase().includes(lowered) ||
-              _.name.localized.en.toLowerCase().includes(lowered)
+              _.name.localized.en.toLowerCase().includes(lowered),
           );
         }
         return res;
@@ -53,11 +43,21 @@ export class CatalogComponent implements OnInit {
         } else {
           this.searchResult.set(_);
         }
-      })
+      }),
     )
     .subscribe();
 
   ngOnInit() {
+    this.#service
+      .getSpeciesCatalog()
+      .pipe(
+        map((_) => _ as CatalogGroup[]),
+        tap((_) => {
+          this.catalog = _;
+        }),
+      )
+      .subscribe();
+
     this.#service
       .getAllSpecies()
       .pipe(
@@ -66,9 +66,22 @@ export class CatalogComponent implements OnInit {
           this.species = _;
           this.searchResult.set(_);
           this.loading.set(false);
-        })
+        }),
       )
       .subscribe();
+  }
+
+  showSearchView() {
+    this.#searchTermSubject.next('');
+    this.mode.set('search');
+  }
+
+  showSpeciesView() {
+    this.mode.set('explore-species');
+  }
+
+  showGroupView() {
+    this.mode.set('explore-groups');
   }
 
   viewDetail(speciesCode: string) {
@@ -82,5 +95,17 @@ export class CatalogComponent implements OnInit {
   clearFilters(searchFilter: HTMLInputElement) {
     searchFilter.value = '';
     this.#searchTermSubject.next('');
+  }
+
+  get isSearchMode() {
+    return this.mode() === 'search';
+  }
+
+  get isShowSpeciesViewButtonShown() {
+    return this.mode() === 'explore-groups';
+  }
+
+  get isShowGroupViewButtonShown() {
+    return this.mode() === 'explore-species';
   }
 }

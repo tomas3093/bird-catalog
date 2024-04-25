@@ -1,56 +1,140 @@
-<p-progressSpinner
-  *ngIf="loading()"
-  class="spinner"
-  ariaLabel="loading"
-></p-progressSpinner>
-<ng-container *ngIf="!loading()">
-  <div class="filters">
-    <span class="p-input-icon-left">
-      <i class="pi pi-search"></i>
-      <input
-        #searchFilter
-        pInputText
-        [placeholder]="'catalog.search' | t"
-        (input)="onSearchFilter($any($event.target).value)"
-      />
-    </span>
-    <p-button
-      icon="pi pi-filter-slash"
-      [pTooltip]="'catalog.clearFilters' | t"
-      tooltipPosition="left"
-      (click)="clearFilters(searchFilter)"
-    ></p-button>
-  </div>
-  <div class="grid">
-    <div *ngFor="let item of searchResult()" class="grid-item">
-      <p-image
-        [src]="item.fullsizeImgSrc"
-        [previewImageSrc]="item.thumbnailSrc"
-        width="150"
-        [preview]="true"
-        loading="lazy"
-        [alt]="item.name.latin"
-      ></p-image>
-      <div class="text">
-        <p-tag>{{ item.taxonomy.group | localizedName }}</p-tag>
-        <p-tag *ngIf="item.taxonomy.subGroup">{{
-          item.taxonomy.subGroup | localizedName
-        }}</p-tag>
-        <div class="latin">
-          {{ item.name.latin }}
-        </div>
-        <div class="main">
-          {{ item.name.localized | localizedName }}
-        </div>
-      </div>
-      <div class="buttons">
+@if (loading()) {
+  <p-progressSpinner class="flex" ariaLabel="loading" />
+} @else {
+  <div class="m-2 flex justify-content-between">
+    @if (isSearchMode) {
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input
+          #searchFilter
+          pInputText
+          [placeholder]="'catalog.search' | t"
+          (input)="onSearchFilter($any($event.target).value)"
+          pAutoFocus
+          [autofocus]="true"
+        />
+      </span>
+      <div>
         <p-button
-          icon="pi pi-eye"
-          [pTooltip]="'catalog.view' | t"
+          icon="pi pi-filter-slash"
+          [pTooltip]="'catalog.clearFilters' | t"
           tooltipPosition="left"
-          (click)="viewDetail(item.code)"
-        ></p-button>
+          (click)="clearFilters(searchFilter)"
+          class="mr-2"
+        />
+        <p-button icon="pi pi-times" [pTooltip]="'catalog.speciesView' | t" tooltipPosition="left" (click)="showSpeciesView()" />
       </div>
-    </div>
+    } @else {
+      <p-button icon="pi pi-search" [pTooltip]="'catalog.search' | t" tooltipPosition="right" (click)="showSearchView()" />
+      <p-button
+        *ngIf="isShowSpeciesViewButtonShown"
+        icon="pi pi-list"
+        [pTooltip]="'catalog.speciesView' | t"
+        tooltipPosition="right"
+        (click)="showSpeciesView()"
+      />
+      <p-button
+        *ngIf="isShowGroupViewButtonShown"
+        icon="pi pi-th-large"
+        [pTooltip]="'catalog.groupView' | t"
+        tooltipPosition="right"
+        (click)="showGroupView()"
+      />
+    }
   </div>
-</ng-container>
+  <div class="p-2">
+    @switch (mode()) {
+      @case ("explore-groups") {
+        <div
+          *ngFor="let group of catalog"
+          (click)="showSpeciesView()"
+          class="mb-2 p-1 font-semibold text-md cursor-pointer shadow-1"
+        >
+          <div class="mb-2">{{ group.name | localizedName }}</div>
+          <p-image [src]="group.thumbnailSrc" width="150" loading="lazy" [alt]="group.name | localizedName" />
+        </div>
+      }
+
+      @case ("explore-species") {
+        @for (group of catalog; track $index) {
+          <div class="text-xl" [ngClass]="{ 'font-semibold': !group.hasChildren }">{{ group.name | localizedName }}</div>
+          @if (group.hasChildren) {
+            @for (subgroup of group.subGroups; track $index) {
+              <div class="font-semibold text-lg">{{ subgroup.name | localizedName }}</div>
+              <div *ngFor="let item of subgroup.species" class="flex mb-2 p-1 shadow-1">
+                <p-image
+                  [src]="item.fullsizeImgSrc"
+                  [previewImageSrc]="item.thumbnailSrc"
+                  width="150"
+                  [preview]="true"
+                  loading="lazy"
+                  [alt]="item.name.latin"
+                  class="mr-1"
+                />
+                <div class="flex flex-column">
+                  <p-tag>{{ item.name.latin }}</p-tag>
+                  <div class="font-semibold text-md">{{ item.name.localized | localizedName }}</div>
+                </div>
+                <div class="ml-auto flex flex-column justify-content-center">
+                  <p-button
+                    icon="pi pi-eye"
+                    [pTooltip]="'catalog.view' | t"
+                    tooltipPosition="left"
+                    (click)="viewDetail(item.code)"
+                  />
+                </div>
+              </div>
+            }
+          } @else {
+            <div *ngFor="let item of group.species" class="flex mb-2 p-1 shadow-1">
+              <p-image
+                [src]="item.fullsizeImgSrc"
+                [previewImageSrc]="item.thumbnailSrc"
+                width="150"
+                [preview]="true"
+                loading="lazy"
+                [alt]="item.name.latin"
+                class="mr-1"
+              />
+              <div class="flex flex-column">
+                <p-tag>{{ item.name.latin }}</p-tag>
+                <div class="font-semibold text-md">{{ item.name.localized | localizedName }}</div>
+              </div>
+              <div class="ml-auto flex flex-column justify-content-center">
+                <p-button
+                  icon="pi pi-eye"
+                  [pTooltip]="'catalog.view' | t"
+                  tooltipPosition="left"
+                  (click)="viewDetail(item.code)"
+                />
+              </div>
+            </div>
+          }
+        }
+      }
+
+      @case ("search") {
+        <div *ngFor="let item of searchResult()" class="flex mb-2 p-1 shadow-1">
+          <p-image
+            [src]="item.fullsizeImgSrc"
+            [previewImageSrc]="item.thumbnailSrc"
+            width="150"
+            [preview]="true"
+            loading="lazy"
+            [alt]="item.name.latin"
+            class="mr-1"
+          />
+          <div class="flex flex-column">
+            <p-tag>{{ item.name.latin }}</p-tag>
+            <div class="font-semibold text-md">{{ item.name.localized | localizedName }}</div>
+          </div>
+          <div class="ml-auto flex flex-column justify-content-center">
+            <p-button icon="pi pi-eye" [pTooltip]="'catalog.view' | t" tooltipPosition="left" (click)="viewDetail(item.code)" />
+          </div>
+        </div>
+      }
+
+      @default {}
+    }
+  </div>
+}

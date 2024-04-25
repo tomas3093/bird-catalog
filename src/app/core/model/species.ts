@@ -1,8 +1,29 @@
-export interface Species {
+export type CatalogGroup =
+  | {
+      name: LocalizedText;
+      thumbnailSrc: string;
+      hasChildren: false;
+      species: CatalogItem[];
+    }
+  | {
+      name: LocalizedText;
+      thumbnailSrc: string;
+      hasChildren: true;
+      subGroups: {
+        name: LocalizedText;
+        species: CatalogItem[];
+      }[];
+    };
+
+interface CatalogItem {
   code: string;
   name: SpeciesName;
   thumbnailSrc: string;
   fullsizeImgSrc: string;
+}
+
+// TODO: Could be removed
+export interface Species extends CatalogItem {
   taxonomy: SpeciesGroup;
 }
 

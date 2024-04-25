@@ -5,7 +5,8 @@ export interface ITranslation {
   catalog: {
     search: string;
     clearFilters: string;
-    compare: string;
+    groupView: string;
+    speciesView: string;
     view: string;
   };
   comparator: {

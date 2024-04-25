@@ -7,7 +7,8 @@ export class Sk implements ITranslation {
   public catalog = {
     search: 'Vyhľadať',
     clearFilters: 'Zrušiť filtre',
-    compare: 'Porovnať',
+    groupView: 'Prehľad skupín',
+    speciesView: 'Prehľad druhov',
     view: 'Zobraziť',
   };
   public comparator = {

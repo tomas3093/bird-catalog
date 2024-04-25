@@ -1,8 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { data, macaulayImgAssetUrl, speciesMainImage, taxonomy } from './data';
-import { Species, SpeciesDetail } from '../model/species';
+import { CatalogGroup, Species, SpeciesDetail } from '../model/species';
 import { of } from 'rxjs';
-import { GroupItem } from './storage.model';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -14,10 +13,67 @@ export class StorageService {
 
   private api = inject(ApiService);
 
-  getSpeciesGroups() {
-    const result = this.groupStorage;
+  getSpeciesCatalog() {
+    let result: CatalogGroup[] = this.groupStorage
+      .filter((group) => group.parentGroupId === null)
+      .map((_) => {
+        const subGroups = this.groupStorage.filter((x) => x.parentGroupId === _.id);
 
-    return this.api.performCall<GroupItem[]>(() => of(result));
+        return subGroups.length > 0
+          ? {
+              name: _.name,
+              thumbnailSrc: '',
+              hasChildren: true,
+              subGroups: subGroups.map((y) => ({
+                name: y.name,
+                species: this.speciesStorage
+                  .filter((z) => z.groupId === y.id)
+                  .map((a) => ({
+                    code: a.code,
+                    name: a.name,
+                    thumbnailSrc: speciesMainImage(
+                      a.imageAssets.map((b) => b.assetId),
+                      false,
+                    ),
+                    fullsizeImgSrc: speciesMainImage(
+                      a.imageAssets.map((b) => b.assetId),
+                      true,
+                    ),
+                  })),
+              })),
+            }
+          : {
+              name: _.name,
+              thumbnailSrc: '',
+              hasChildren: false,
+              species: this.speciesStorage
+                .filter((y) => y.groupId === _.id)
+                .map((a) => ({
+                  code: a.code,
+                  name: a.name,
+                  thumbnailSrc: speciesMainImage(
+                    a.imageAssets.map((b) => b.assetId),
+                    false,
+                  ),
+                  fullsizeImgSrc: speciesMainImage(
+                    a.imageAssets.map((b) => b.assetId),
+                    true,
+                  ),
+                })),
+            };
+      });
+
+    result = result.map((_) => {
+      if (_.hasChildren) {
+        _.thumbnailSrc = _.subGroups[0].species[0].thumbnailSrc;
+      } else {
+        _.thumbnailSrc = _.species[0].thumbnailSrc;
+      }
+
+      return _;
+    });
+
+    return this.api.performCall<CatalogGroup[]>(() => of(result));
   }
 
   getAllSpecies() {
@@ -27,9 +83,7 @@ export class StorageService {
         throw Error('Unknown species group.');
       }
 
-      const group2 = group.parentGroupId
-        ? this.groupStorage.find((_) => _.id === group.parentGroupId)
-        : undefined;
+      const group2 = group.parentGroupId ? this.groupStorage.find((_) => _.id === group.parentGroupId) : undefined;
 
       if (group.parentGroupId !== null && !group2) {
         throw Error('Unknown species subGroup.');
@@ -40,12 +94,13 @@ export class StorageService {
         name: species.name,
         thumbnailSrc: speciesMainImage(
           species.imageAssets.map((_) => _.assetId),
-          false
+          false,
         ),
         fullsizeImgSrc: speciesMainImage(
           species.imageAssets.map((_) => _.assetId),
-          true
+          true,
         ),
+        // TODO: Could be removed
         taxonomy:
           group.parentGroupId === null
             ? { group: group.name }
