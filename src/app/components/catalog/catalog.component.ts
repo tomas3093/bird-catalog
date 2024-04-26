@@ -3,6 +3,7 @@ import { StorageService } from '../../core/services/storage.service';
 import { CatalogGroup, Species } from '../../core/model/species';
 import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { normalizeString } from '../../core/misc/util';
 
 @Component({
   selector: 'app-catalog',
@@ -27,12 +28,12 @@ export class CatalogComponent implements OnInit {
       map((searchTerm) => {
         let res = null;
         if (searchTerm.length > 2) {
-          const lowered = searchTerm.toLowerCase();
+          const normalized = normalizeString(searchTerm);
           res = this.species.filter(
             (_) =>
-              _.name.latin.toLowerCase().includes(lowered) ||
-              _.name.localized.sk.toLowerCase().includes(lowered) ||
-              _.name.localized.en.toLowerCase().includes(lowered),
+              _.name.latin.toLowerCase().includes(normalized) ||
+              normalizeString(_.name.localized.sk).includes(normalized) ||
+              _.name.localized.en.toLowerCase().includes(normalized),
           );
         }
         return res;
