@@ -1,15 +1,17 @@
 import { Injectable, inject } from '@angular/core';
-import { data, macaulayImgAssetUrl, speciesMainImage, taxonomy } from './data';
 import { CatalogGroup, Species, SpeciesDetail } from '../model/species';
 import { of } from 'rxjs';
 import { ApiService } from './api.service';
+import { species } from '../data/species';
+import { groups } from '../data/groups';
+import { macaulayImgAssetUrl, speciesMainImage } from '../misc/util';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StorageService {
-  speciesStorage = data;
-  groupStorage = taxonomy;
+  groupStorage = groups;
+  speciesStorage = species;
 
   private api = inject(ApiService);
 

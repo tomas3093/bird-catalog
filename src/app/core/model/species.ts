@@ -53,7 +53,7 @@ export interface SpeciesGroup {
 }
 
 export type ImageMetadata =
-  | 'adult'
+  | 'adult' // TODO: create translations for image metadata
   | 'adult light morph'
   | 'adult rufous morph'
   | 'adult dark morph'
@@ -62,11 +62,16 @@ export type ImageMetadata =
   | 'immature light morph'
   | 'juvenile' // 1st year
   | 'subadult' // mostly for raptors
+  | 'breeding adult'
   | 'breeding male'
+  | 'breeding female'
+  | 'nonbreeding adult'
+  | 'nonbreeding male'
   | 'adult male'
   | 'immature male'
   | 'adult female'
   | 'female'
   | 'female/immature male'
   | 'immature female'
-  | 'unknown';
+  | 'molting adult'
+  | 'unknown'; // TODO: Handle unknown value - hide metadata in case of unknown value
