@@ -15,16 +15,11 @@ export type CatalogGroup =
       }[];
     };
 
-interface CatalogItem {
+export interface CatalogItem {
   code: string;
   name: SpeciesName;
   thumbnailSrc: string;
   fullsizeImgSrc: string;
-}
-
-// TODO: Could be removed
-export interface Species extends CatalogItem {
-  taxonomy: SpeciesGroup;
 }
 
 export interface SpeciesDetail {
@@ -45,11 +40,6 @@ export interface LocalizedText {
 export interface SpeciesName {
   latin: string;
   localized: LocalizedText;
-}
-
-export interface SpeciesGroup {
-  group: LocalizedText;
-  subGroup?: LocalizedText;
 }
 
 export type ImageMetadata =

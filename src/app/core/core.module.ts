@@ -16,9 +16,19 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ComparatorComponent } from '../components/comparator/comparator.component';
 import { ChipModule } from 'primeng/chip';
 import { AutoFocusModule } from 'primeng/autofocus';
+import { CatalogItemComponent } from '../components/catalog-item/catalog-item.component';
+import { GroupWrapperComponent } from '../components/group-wrapper/group-wrapper.component';
 
 @NgModule({
-  declarations: [CatalogComponent, SpeciesDetailComponent, TypedTranslatePipe, LocalizedNamePipe, ComparatorComponent],
+  declarations: [
+    CatalogComponent,
+    CatalogItemComponent,
+    GroupWrapperComponent,
+    SpeciesDetailComponent,
+    TypedTranslatePipe,
+    LocalizedNamePipe,
+    ComparatorComponent,
+  ],
   imports: [
     ImageModule,
     TagModule,

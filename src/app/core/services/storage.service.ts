@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { CatalogGroup, Species, SpeciesDetail } from '../model/species';
+import { CatalogGroup, CatalogItem, SpeciesDetail } from '../model/species';
 import { of } from 'rxjs';
 import { ApiService } from './api.service';
 import { species } from '../data/species';
@@ -91,7 +91,7 @@ export class StorageService {
         throw Error('Unknown species subGroup.');
       }
 
-      const item: Species = {
+      const item: CatalogItem = {
         code: species.code,
         name: species.name,
         thumbnailSrc: speciesMainImage(
@@ -102,20 +102,12 @@ export class StorageService {
           species.imageAssets.map((_) => _.assetId),
           true,
         ),
-        // TODO: Could be removed
-        taxonomy:
-          group.parentGroupId === null
-            ? { group: group.name }
-            : {
-                group: group2!.name,
-                subGroup: group.name,
-              },
       };
 
       return item;
     });
 
-    return this.api.performCall<Species[]>(() => of(result));
+    return this.api.performCall<CatalogItem[]>(() => of(result));
   }
 
   getSpeciesDetail(code: string) {

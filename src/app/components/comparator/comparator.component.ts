@@ -1,14 +1,7 @@
 import { Component, OnInit, inject, input, signal } from '@angular/core';
 import { StorageService } from '../../core/services/storage.service';
-import { Species, SpeciesDetail } from '../../core/model/species';
-import {
-  BehaviorSubject,
-  debounceTime,
-  distinctUntilChanged,
-  map,
-  share,
-  tap,
-} from 'rxjs';
+import { CatalogItem, SpeciesDetail } from '../../core/model/species';
+import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
 
 @Component({
   selector: 'app-comparator',
@@ -21,16 +14,14 @@ export class ComparatorComponent implements OnInit {
   compareWith = input.required<SpeciesDetail | null>();
   compareList = signal<SpeciesDetail[]>([]);
 
-  species: Species[] = [];
-  displayedData = signal<Species[]>([]);
+  species: CatalogItem[] = [];
+  displayedData = signal<CatalogItem[]>([]);
   loading = signal(true);
 
   isSearchShown = signal(true);
 
   #searchTermSubject = new BehaviorSubject<string>('');
-  #searchTerm = this.#searchTermSubject
-    .asObservable()
-    .pipe(debounceTime(500), distinctUntilChanged(), share());
+  #searchTerm = this.#searchTermSubject.asObservable().pipe(debounceTime(500), distinctUntilChanged(), share());
   filterSubscription = this.#searchTerm
     .pipe(
       map((searchTerm) => {
@@ -41,7 +32,7 @@ export class ComparatorComponent implements OnInit {
             (_) =>
               _.name.latin.toLowerCase().includes(lowered) ||
               _.name.localized.sk.toLowerCase().includes(lowered) ||
-              _.name.localized.en.toLowerCase().includes(lowered)
+              _.name.localized.en.toLowerCase().includes(lowered),
           );
         }
         return res;
@@ -52,7 +43,7 @@ export class ComparatorComponent implements OnInit {
         } else {
           this.displayedData.set(_);
         }
-      })
+      }),
     )
     .subscribe();
 
@@ -75,11 +66,11 @@ export class ComparatorComponent implements OnInit {
     this.#service
       .getAllSpecies()
       .pipe(
-        map((x) => x as Species[]),
+        map((x) => x as CatalogItem[]),
         tap((_) => {
           this.species = _;
           this.loading.set(false);
-        })
+        }),
       )
       .subscribe();
 
@@ -113,7 +104,7 @@ export class ComparatorComponent implements OnInit {
             const array = this.compareList();
             array.push(_);
             this.compareList.set(array);
-          })
+          }),
         )
         .subscribe();
     }

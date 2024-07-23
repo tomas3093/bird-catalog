@@ -1,6 +1,6 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { StorageService } from '../../core/services/storage.service';
-import { CatalogGroup, Species } from '../../core/model/species';
+import { CatalogGroup, CatalogItem } from '../../core/model/species';
 import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { normalizeString } from '../../core/misc/util';
@@ -8,7 +8,6 @@ import { normalizeString } from '../../core/misc/util';
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
-  styleUrl: './catalog.component.scss',
 })
 export class CatalogComponent implements OnInit {
   #service = inject(StorageService);
@@ -16,9 +15,9 @@ export class CatalogComponent implements OnInit {
   #activatedRoute = inject(ActivatedRoute);
 
   loading = signal(true);
-  species: Species[] = [];
+  species: CatalogItem[] = [];
   catalog: CatalogGroup[] = [];
-  searchResult = signal<Species[]>([]);
+  searchResult = signal<CatalogItem[]>([]);
   mode = signal<'explore-groups' | 'explore-species' | 'search'>('explore-groups');
 
   #searchTermSubject = new BehaviorSubject<string>('');
@@ -62,7 +61,7 @@ export class CatalogComponent implements OnInit {
     this.#service
       .getAllSpecies()
       .pipe(
-        map((x) => x as Species[]),
+        map((x) => x as CatalogItem[]),
         tap((_) => {
           this.species = _;
           this.searchResult.set(_);

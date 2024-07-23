@@ -22,6 +22,11 @@ export const groups: GroupItem[] = [
     name: { en: 'Terns', sk: 'Rybáre' },
     parentGroupId: null,
   },
+  {
+    id: 5,
+    name: { en: 'Gulls', sk: 'Čajky' },
+    parentGroupId: null,
+  },
   // ============= SUBGROUPS =============
   {
     id: 101,

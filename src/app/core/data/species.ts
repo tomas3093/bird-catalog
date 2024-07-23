@@ -485,7 +485,7 @@ export const species: DataItem[] = [
     },
     groupId: 3,
     imageAssets: [
-      { assetId: '56565751', metadata: 'breeding male' },
+      { assetId: '37666581', metadata: 'breeding male' },
       { assetId: '189491151', metadata: 'nonbreeding adult' },
       { assetId: '265207521', metadata: 'juvenile' },
       { assetId: '98953291', metadata: 'breeding adult' },
@@ -900,6 +900,21 @@ export const species: DataItem[] = [
       { assetId: '45168521', metadata: 'breeding adult' },
       { assetId: '67922761', metadata: 'juvenile' },
       { assetId: '42047811', metadata: 'nonbreeding adult' },
+    ],
+  },
+  {
+    code: 'bkhgul',
+    name: {
+      latin: 'Chroicocephalus ridibundus',
+      localized: { en: 'Black-headed Gull', sk: 'Čajka smejivá' },
+    },
+    groupId: 5,
+    imageAssets: [
+      { assetId: '204656501', metadata: 'breeding adult' },
+      { assetId: '43163081', metadata: 'breeding adult' },
+      { assetId: '43893491', metadata: 'nonbreeding adult' },
+      { assetId: '84605841', metadata: 'immature' },
+      { assetId: '65518901', metadata: 'juvenile' },
     ],
   },
 ];
