@@ -7,7 +7,8 @@ export class En implements ITranslation {
   public catalog = {
     search: 'Search',
     clearFilters: 'Clear filters',
-    compare: 'Compare',
+    groupView: 'Group view',
+    speciesView: 'Species view',
     view: 'View',
   };
   public comparator = {

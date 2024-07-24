@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, input, signal } from '@angular/core';
 import { StorageService } from '../../core/services/storage.service';
-import { Species, SpeciesDetail } from '../../core/model/species';
-import { tap } from 'rxjs';
+import { CatalogItem, SpeciesDetail } from '../../core/model/species';
+import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
 
 @Component({
   selector: 'app-comparator',
@@ -14,10 +14,38 @@ export class ComparatorComponent implements OnInit {
   compareWith = input.required<SpeciesDetail | null>();
   compareList = signal<SpeciesDetail[]>([]);
 
-  species: Species[] = [];
+  species: CatalogItem[] = [];
+  displayedData = signal<CatalogItem[]>([]);
   loading = signal(true);
 
   isSearchShown = signal(true);
+
+  #searchTermSubject = new BehaviorSubject<string>('');
+  #searchTerm = this.#searchTermSubject.asObservable().pipe(debounceTime(500), distinctUntilChanged(), share());
+  filterSubscription = this.#searchTerm
+    .pipe(
+      map((searchTerm) => {
+        let res = null;
+        if (searchTerm.length > 2) {
+          const lowered = searchTerm.toLowerCase();
+          res = this.species.filter(
+            (_) =>
+              _.name.latin.toLowerCase().includes(lowered) ||
+              _.name.localized.sk.toLowerCase().includes(lowered) ||
+              _.name.localized.en.toLowerCase().includes(lowered),
+          );
+        }
+        return res;
+      }),
+      tap((_) => {
+        if (!_) {
+          this.displayedData.set(this.species);
+        } else {
+          this.displayedData.set(_);
+        }
+      }),
+    )
+    .subscribe();
 
   responsiveOptions: any[] = [
     {
@@ -38,10 +66,11 @@ export class ComparatorComponent implements OnInit {
     this.#service
       .getAllSpecies()
       .pipe(
+        map((x) => x as CatalogItem[]),
         tap((_) => {
           this.species = _;
           this.loading.set(false);
-        })
+        }),
       )
       .subscribe();
 
@@ -53,10 +82,15 @@ export class ComparatorComponent implements OnInit {
 
   showSearch() {
     this.isSearchShown.set(true);
+    this.displayedData.set(this.species);
   }
 
   showComparator() {
     this.isSearchShown.set(false);
+  }
+
+  onSearchFilter(value: string) {
+    this.#searchTermSubject.next(value);
   }
 
   toggleComparison(speciesCode: string) {
@@ -70,7 +104,7 @@ export class ComparatorComponent implements OnInit {
             const array = this.compareList();
             array.push(_);
             this.compareList.set(array);
-          })
+          }),
         )
         .subscribe();
     }

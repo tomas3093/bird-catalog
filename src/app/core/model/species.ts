@@ -1,9 +1,27 @@
-export interface Species {
+export type CatalogGroup =
+  | {
+      id: number;
+      name: LocalizedText;
+      thumbnailSrc: string;
+      hasChildren: false;
+      species: CatalogItem[];
+    }
+  | {
+      id: number;
+      name: LocalizedText;
+      thumbnailSrc: string;
+      hasChildren: true;
+      subGroups: {
+        name: LocalizedText;
+        species: CatalogItem[];
+      }[];
+    };
+
+export interface CatalogItem {
   code: string;
   name: SpeciesName;
   thumbnailSrc: string;
   fullsizeImgSrc: string;
-  taxonomy: SpeciesGroup;
 }
 
 export interface SpeciesDetail {
@@ -26,22 +44,26 @@ export interface SpeciesName {
   localized: LocalizedText;
 }
 
-export interface SpeciesGroup {
-  group: LocalizedText;
-  subGroup?: LocalizedText;
-}
-
 export type ImageMetadata =
-  | 'adult'
+  | 'adult' // TODO: create translations for image metadata
+  | 'adult light morph'
+  | 'adult rufous morph'
+  | 'adult dark morph'
   | 'nonbreeding/immature'
   | 'immature' // Immature includes juvenile & subadult
+  | 'immature light morph'
   | 'juvenile' // 1st year
   | 'subadult' // mostly for raptors
+  | 'breeding adult'
   | 'breeding male'
+  | 'breeding female'
+  | 'nonbreeding adult'
+  | 'nonbreeding male'
   | 'adult male'
   | 'immature male'
   | 'adult female'
   | 'female'
   | 'female/immature male'
   | 'immature female'
-  | 'unknown';
+  | 'molting adult'
+  | 'unknown'; // TODO: Handle unknown value - hide metadata in case of unknown value

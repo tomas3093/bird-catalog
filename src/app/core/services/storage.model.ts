@@ -24,6 +24,6 @@ export interface DataItem {
 
 export interface GroupItem {
   id: number;
-  group: LocalizedText;
-  subGroup?: LocalizedText;
+  name: LocalizedText;
+  parentGroupId: number | null;
 }

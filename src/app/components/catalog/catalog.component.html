@@ -1,56 +1,91 @@
-<p-progressSpinner
-  *ngIf="loading()"
-  class="spinner"
-  ariaLabel="loading"
-></p-progressSpinner>
-<ng-container *ngIf="!loading()">
-  <div class="filters">
-    <span class="p-input-icon-left">
-      <i class="pi pi-search"></i>
-      <input
-        #searchFilter
-        pInputText
-        [placeholder]="'catalog.search' | t"
-        (input)="onSearchFilter($any($event.target).value)"
-      />
-    </span>
-    <p-button
-      icon="pi pi-filter-slash"
-      [pTooltip]="'catalog.clearFilters' | t"
-      tooltipPosition="left"
-      (click)="clearFilters(searchFilter)"
-    ></p-button>
-  </div>
-  <div class="grid">
-    <div *ngFor="let item of displayedData()" class="grid-item">
-      <p-image
-        [src]="item.fullsizeImgSrc"
-        [previewImageSrc]="item.thumbnailSrc"
-        width="150"
-        [preview]="true"
-        loading="lazy"
-        [alt]="item.name.latin"
-      ></p-image>
-      <div class="text">
-        <p-tag>{{ item.taxonomy.group | localizedName }}</p-tag>
-        <p-tag *ngIf="item.taxonomy.subGroup">{{
-          item.taxonomy.subGroup | localizedName
-        }}</p-tag>
-        <div class="latin">
-          {{ item.name.latin }}
-        </div>
-        <div class="main">
-          {{ item.name.localized | localizedName }}
-        </div>
-      </div>
-      <div class="buttons">
+@if (loading()) {
+  <p-progressSpinner class="flex" ariaLabel="loading" />
+} @else {
+  <div class="m-1 md:m-2 flex justify-content-between">
+    @if (isSearchMode()) {
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input
+          #searchFilter
+          pInputText
+          [placeholder]="'catalog.search' | t"
+          (input)="onSearchFilter($any($event.target).value)"
+          pAutoFocus
+          [autofocus]="true"
+        />
+      </span>
+      <div>
         <p-button
-          icon="pi pi-eye"
-          [pTooltip]="'catalog.view' | t"
+          icon="pi pi-filter-slash"
+          [pTooltip]="'catalog.clearFilters' | t"
           tooltipPosition="left"
-          (click)="viewDetail(item.code)"
-        ></p-button>
+          (click)="clearFilters(searchFilter)"
+          class="mr-2"
+        />
+        <p-button icon="pi pi-times" [pTooltip]="'catalog.speciesView' | t" tooltipPosition="left" (click)="showSpeciesView()" />
       </div>
-    </div>
+    } @else {
+      <p-button icon="pi pi-search" [pTooltip]="'catalog.search' | t" tooltipPosition="right" (click)="showSearchView()" />
+      <p-button
+        *ngIf="isGroupMode()"
+        icon="pi pi-list"
+        [pTooltip]="'catalog.speciesView' | t"
+        tooltipPosition="right"
+        (click)="showSpeciesView()"
+      />
+      <p-button
+        *ngIf="isSpeciesMode()"
+        icon="pi pi-th-large"
+        [pTooltip]="'catalog.groupView' | t"
+        tooltipPosition="right"
+        (click)="showGroupView()"
+      />
+    }
   </div>
-</ng-container>
+
+  <!-- Explore groups -->
+  <div class="grid grid-nogutter" [ngClass]="{ hidden: !isGroupMode() }">
+    @for (group of catalog; track $index) {
+      <app-group-wrapper
+        [title]="group.name | localizedName"
+        [thumbnailSrc]="group.thumbnailSrc"
+        (groupClick)="showSpeciesView(group.id)"
+        class="col-12 md:col-6 xl:col-4 p-1 md:p-2"
+      />
+    }
+  </div>
+
+  <!-- Explore species -->
+  <div class="grid grid-nogutter" [ngClass]="{ hidden: !isSpeciesMode() }">
+    @for (group of catalog; track $index) {
+      <div class="col-12 p-1 md:p-2 text-xl" [id]="group.id" [ngClass]="{ 'font-semibold': !group.hasChildren }">
+        {{ group.name | localizedName }}
+      </div>
+      @if (group.hasChildren) {
+        @for (subgroup of group.subGroups; track $index) {
+          <div class="col-12 p-1 md:p-2 font-semibold text-lg">{{ subgroup.name | localizedName }}</div>
+          @for (item of subgroup.species; track $index) {
+            <app-catalog-item
+              [item]="item"
+              (viewDetailClick)="viewDetail(item.code)"
+              class="col-12 md:col-6 xl:col-4 p-1 md:p-2"
+            />
+          }
+        }
+      } @else {
+        @for (item of group.species; track $index) {
+          <app-catalog-item [item]="item" (viewDetailClick)="viewDetail(item.code)" class="col-12 md:col-6 lg:col-4 p-1 md:p-2" />
+        }
+      }
+    }
+  </div>
+
+  <!-- Search species -->
+  @if (isSearchMode()) {
+    <div class="grid grid-nogutter">
+      @for (item of searchResult(); track $index) {
+        <app-catalog-item [item]="item" (viewDetailClick)="viewDetail(item.code)" class="col-12 md:col-6 lg:col-4 p-1 md:p-2" />
+      }
+    </div>
+  }
+}
