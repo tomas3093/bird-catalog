@@ -23,6 +23,7 @@ export class StorageService {
 
         return subGroups.length > 0
           ? {
+              id: _.id,
               name: _.name,
               thumbnailSrc: '',
               hasChildren: true,
@@ -45,6 +46,7 @@ export class StorageService {
               })),
             }
           : {
+              id: _.id,
               name: _.name,
               thumbnailSrc: '',
               hasChildren: false,

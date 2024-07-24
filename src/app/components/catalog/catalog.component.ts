@@ -1,9 +1,10 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, computed, inject, signal } from '@angular/core';
 import { StorageService } from '../../core/services/storage.service';
 import { CatalogGroup, CatalogItem } from '../../core/model/species';
 import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { normalizeString } from '../../core/misc/util';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-catalog',
@@ -13,6 +14,7 @@ export class CatalogComponent implements OnInit {
   #service = inject(StorageService);
   #router = inject(Router);
   #activatedRoute = inject(ActivatedRoute);
+  #scroller = inject(ViewportScroller);
 
   loading = signal(true);
   species: CatalogItem[] = [];
@@ -76,8 +78,15 @@ export class CatalogComponent implements OnInit {
     this.mode.set('search');
   }
 
-  showSpeciesView() {
+  showSpeciesView(groupId?: number) {
     this.mode.set('explore-species');
+
+    // Scroll to selected group
+    if (groupId != undefined) {
+      setTimeout(() => {
+        this.#scroller.scrollToAnchor('' + groupId);
+      }, 100);
+    }
   }
 
   showGroupView() {
@@ -97,15 +106,7 @@ export class CatalogComponent implements OnInit {
     this.#searchTermSubject.next('');
   }
 
-  get isSearchMode() {
-    return this.mode() === 'search';
-  }
-
-  get isShowSpeciesViewButtonShown() {
-    return this.mode() === 'explore-groups';
-  }
-
-  get isShowGroupViewButtonShown() {
-    return this.mode() === 'explore-species';
-  }
+  isSearchMode = computed(() => this.mode() === 'search');
+  isGroupMode = computed(() => this.mode() === 'explore-groups');
+  isSpeciesMode = computed(() => this.mode() === 'explore-species');
 }

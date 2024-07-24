@@ -1,11 +1,13 @@
 export type CatalogGroup =
   | {
+      id: number;
       name: LocalizedText;
       thumbnailSrc: string;
       hasChildren: false;
       species: CatalogItem[];
     }
   | {
+      id: number;
       name: LocalizedText;
       thumbnailSrc: string;
       hasChildren: true;
