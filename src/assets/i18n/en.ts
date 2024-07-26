@@ -2,6 +2,16 @@ import { ITranslation } from '../../app/core/services/translate/ITranslation';
 
 export class En implements ITranslation {
   public layout = {
+    title: 'Birds of Slovakia',
+    menu: {
+      settings: 'Settings',
+      appLanguage: 'App language',
+      speciesLanguage: 'Species language',
+      languages: {
+        en: 'English',
+        sk: 'Slovak',
+      },
+    },
     footer: 'Created by Tomas Blazy',
   };
   public catalog = {
@@ -35,15 +45,7 @@ export class En implements ITranslation {
     dateFormat: 'mm/dd/yy',
     dateIs: 'Date is',
     dateIsNot: 'Date is not',
-    dayNames: [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-    ],
+    dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     dayNamesMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
     dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     emptyFilterMessage: 'No results found',
@@ -76,20 +78,7 @@ export class En implements ITranslation {
       'November',
       'December',
     ],
-    monthNamesShort: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-    ],
+    monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     nextDecade: 'Next Decade',
     nextHour: 'Next Hour',
     nextMinute: 'Next Minute',

@@ -18,6 +18,10 @@ import { ChipModule } from 'primeng/chip';
 import { AutoFocusModule } from 'primeng/autofocus';
 import { CatalogItemComponent } from '../components/catalog-item/catalog-item.component';
 import { GroupWrapperComponent } from '../components/group-wrapper/group-wrapper.component';
+import { SidebarComponent } from '../components/sidebar/sidebar.component';
+import { SidebarModule } from 'primeng/sidebar';
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,7 @@ import { GroupWrapperComponent } from '../components/group-wrapper/group-wrapper
     TypedTranslatePipe,
     LocalizedNamePipe,
     ComparatorComponent,
+    SidebarComponent,
   ],
   imports: [
     ImageModule,
@@ -40,6 +45,9 @@ import { GroupWrapperComponent } from '../components/group-wrapper/group-wrapper
     InputTextModule,
     ChipModule,
     AutoFocusModule,
+    SidebarModule,
+    DropdownModule,
+    FormsModule,
   ],
   exports: [
     TypedTranslatePipe,
@@ -53,6 +61,7 @@ import { GroupWrapperComponent } from '../components/group-wrapper/group-wrapper
     InputTextModule,
     ChipModule,
     AutoFocusModule,
+    SidebarComponent,
   ],
   providers: [TranslatePipe, TypedTranslatePipe, LocalizedNamePipe],
   bootstrap: [AppComponent],

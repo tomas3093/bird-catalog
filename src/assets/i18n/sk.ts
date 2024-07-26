@@ -2,6 +2,16 @@ import { ITranslation } from '../../app/core/services/translate/ITranslation';
 
 export class Sk implements ITranslation {
   public layout = {
+    title: 'Vtáky Slovenska',
+    menu: {
+      settings: 'Nastavenia',
+      appLanguage: 'Jazyk aplikácie',
+      speciesLanguage: 'Jazyk názvoslovia',
+      languages: {
+        en: 'Angličtina',
+        sk: 'Slovenčina',
+      },
+    },
     footer: 'Vytvoril Tomas Blazy',
   };
   public catalog = {
@@ -35,15 +45,7 @@ export class Sk implements ITranslation {
     dateFormat: 'dd.mm.rrrr',
     dateIs: 'Dátum je',
     dateIsNot: 'Dátum nie je',
-    dayNames: [
-      'Nedeľa',
-      'Pondelok',
-      'Utorok',
-      'Streda',
-      'Štvrtok',
-      'Piatok',
-      'Sobota',
-    ],
+    dayNames: ['Nedeľa', 'Pondelok', 'Utorok', 'Streda', 'Štvrtok', 'Piatok', 'Sobota'],
     dayNamesMin: ['Ne', 'Po', 'Ut', 'St', 'Št', 'Pi', 'So'],
     dayNamesShort: ['Ned', 'Pon', 'Uto', 'Str', 'Štv', 'Pia', 'Sob'],
     emptyFilterMessage: 'Neboli nájdené žiadne výsledky',
@@ -76,20 +78,7 @@ export class Sk implements ITranslation {
       'November',
       'December',
     ],
-    monthNamesShort: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Máj',
-      'Jún',
-      'Júl',
-      'Aug',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Dec',
-    ],
+    monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'Máj', 'Jún', 'Júl', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
     nextDecade: 'Nasledujúce desaťročie',
     nextHour: 'Nasledujúca hodina',
     nextMinute: 'Nasledujúca minúta',

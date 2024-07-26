@@ -1,5 +1,9 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { TranslateService } from './core/services/translate.service';
+import { LANGUAGE_KEYS, LanguageKey } from './core/services/translate/TypedTranslateLoader';
+
+const LOCAL_STORAGE_KEY_APP_LANG = 'app_lang';
+const LOCAL_STORAGE_KEY_SPECIES_LANG = 'species_lang';
 
 @Component({
   selector: 'app-root',
@@ -7,21 +11,43 @@ import { TranslateService } from './core/services/translate.service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  readonly translate = inject(TranslateService);
+  readonly #translate = inject(TranslateService);
+
+  isSidebarOpen = signal(false);
+  availableLangs = [...LANGUAGE_KEYS];
 
   ngOnInit(): void {
-    this.translate.init();
-  }
+    this.#translate.init();
 
-  languageChange() {
-    if (this.translate.currentLanguage === 'en') {
-      this.translate.setLanguage('sk');
-    } else {
-      this.translate.setLanguage('en');
+    const storedAppLang = localStorage.getItem(LOCAL_STORAGE_KEY_APP_LANG) as LanguageKey;
+    if (storedAppLang) {
+      this.appLangChange(storedAppLang);
+    }
+    const storedSpeciesLang = localStorage.getItem(LOCAL_STORAGE_KEY_SPECIES_LANG) as LanguageKey;
+    if (storedSpeciesLang) {
+      this.speciesLangChange(storedSpeciesLang);
     }
   }
 
-  get languageLabel() {
-    return this.translate.currentLanguage;
+  appLangChange(value: LanguageKey) {
+    this.#translate.setLanguage(value);
+    localStorage.setItem(LOCAL_STORAGE_KEY_APP_LANG, value);
+  }
+
+  speciesLangChange(value: LanguageKey) {
+    this.#translate.setSpeciesLanguage(value);
+    localStorage.setItem(LOCAL_STORAGE_KEY_SPECIES_LANG, value);
+  }
+
+  openMenu() {
+    this.isSidebarOpen.set(true);
+  }
+
+  get currentAppLang() {
+    return this.#translate.currentAppLanguage;
+  }
+
+  get currentSpeciesLang() {
+    return this.#translate.currentSpeciesLanguage;
   }
 }

@@ -3,8 +3,9 @@ import { Observable, of } from 'rxjs';
 import { En } from '../../../../assets/i18n/en';
 import { Sk } from '../../../../assets/i18n/sk';
 
-const LanguageKeys = ['en', 'sk'] as const;
-export type LanguageKey = (typeof LanguageKeys)[number];
+export const LANGUAGE_KEYS = ['en', 'sk'] as const;
+export const DEFAULT_LANG = 'en';
+export type LanguageKey = (typeof LANGUAGE_KEYS)[number];
 
 export class TypedTranslateLoader implements TranslateLoader {
   readonly #languageMap: Record<LanguageKey, object> = {

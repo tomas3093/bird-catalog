@@ -1,15 +1,28 @@
-<header>
-  <a [routerLink]="['']">BirdCatalog</a>
-  <div class="language" (click)="languageChange()">
-    {{ languageLabel | uppercase }}
-  </div>
+<header class="w-full font-bold p-1 md:p-2 align-items-center">
+  <a [routerLink]="['']" class="align-items-center">
+    <img src="assets/logo.png" height="32" />
+    <span class="px-1 text-lg font-semibold">{{ "layout.title" | t }}</span>
+  </a>
+  <p-button icon="pi pi-bars" link="true" (click)="openMenu()" />
 </header>
+
+<app-sidebar
+  [isOpen]="isSidebarOpen()"
+  [availableLangs]="availableLangs"
+  [appLang]="currentAppLang"
+  [speciesLang]="currentSpeciesLang"
+  (appLangChange)="appLangChange($event)"
+  (speciesLangChange)="speciesLangChange($event)"
+  (closeClick)="isSidebarOpen.set(false)"
+/>
 
 <main>
   <router-outlet></router-outlet>
 </main>
 
-<footer>
-  <div><strong>BirdCatalog</strong></div>
+<footer class="p-1 md:p-2">
+  <div>
+    <strong>{{ "layout.title" | t }}</strong>
+  </div>
   <div>{{ "layout.footer" | t }}</div>
 </footer>

@@ -7,6 +7,6 @@ export class LocalizedNamePipe implements PipeTransform {
   readonly #translate = inject(TranslateService);
 
   public transform(query: LocalizedText): string {
-    return query[`${this.#translate.currentLanguage}`];
+    return query[`${this.#translate.currentSpeciesLanguage}`];
   }
 }
