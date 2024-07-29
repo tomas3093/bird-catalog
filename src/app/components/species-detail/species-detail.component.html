@@ -1,4 +1,21 @@
 <ng-container *ngIf="!isComparatorShown()">
+  <div class="buttons">
+    <p-button
+      icon="pi pi-arrow-left"
+      link="true"
+      [pTooltip]="'detail.back' | t"
+      tooltipPosition="right"
+      (onClick)="navigateToSpeciesCatalog()"
+    />
+    <p-button
+      icon="pi pi-arrows-h"
+      link="true"
+      [pTooltip]="'detail.compare' | t"
+      tooltipPosition="left"
+      (onClick)="compareSpecies()"
+    />
+  </div>
+
   <ng-container *ngIf="!loading() && speciesDetail() as detail">
     <div class="latin">{{ detail.name.latin }}</div>
     <div class="title">{{ detail.name.localized | localizedName }}</div>
@@ -26,14 +43,9 @@
       </ng-template>
     </p-galleria>
   </ng-container>
-
-  <div class="buttons">
-    <p-button label="Catalog" (onClick)="navigateToSpeciesCatalog()"></p-button>
-    <p-button label="Compare" (onClick)="compareSpecies()"></p-button>
-  </div>
 </ng-container>
 
 <ng-container *ngIf="isComparatorShown()">
-  <p-button label="Back" (onClick)="showDetail()"></p-button>
+  <p-button icon="pi pi-arrow-left" link="true" [pTooltip]="'detail.back' | t" tooltipPosition="right" (onClick)="showDetail()" />
   <app-comparator [compareWith]="speciesDetail()"></app-comparator>
 </ng-container>

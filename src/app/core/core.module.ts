@@ -22,6 +22,7 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { SidebarModule } from 'primeng/sidebar';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
+import { ScrollTopModule } from 'primeng/scrolltop';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { FormsModule } from '@angular/forms';
     SidebarModule,
     DropdownModule,
     FormsModule,
+    ScrollTopModule,
   ],
   exports: [
     TypedTranslatePipe,

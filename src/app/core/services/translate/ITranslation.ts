@@ -19,6 +19,10 @@ export interface ITranslation {
     speciesView: string;
     view: string;
   };
+  detail: {
+    back: string;
+    compare: string;
+  };
   comparator: {
     title: string;
     save: string;

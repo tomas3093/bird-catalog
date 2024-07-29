@@ -21,6 +21,10 @@ export class En implements ITranslation {
     speciesView: 'Species view',
     view: 'View',
   };
+  public detail = {
+    back: 'Back',
+    compare: 'Compare',
+  };
   public comparator = {
     title: 'Compare species',
     save: 'Save',

@@ -21,6 +21,10 @@ export class Sk implements ITranslation {
     speciesView: 'Prehľad druhov',
     view: 'Zobraziť',
   };
+  public detail = {
+    back: 'Späť',
+    compare: 'Porovnať',
+  };
   public comparator = {
     title: 'Porovnanie druhov',
     save: 'Uložiť',

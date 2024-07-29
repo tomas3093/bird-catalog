@@ -4,15 +4,11 @@
   <div class="toolbar">
     <span class="p-input-icon-left">
       <i class="pi pi-search"></i>
-      <input
-        #searchFilter
-        pInputText
-        [placeholder]="'catalog.search' | t"
-        (input)="onSearchFilter($any($event.target).value)"
-      />
+      <input #searchFilter pInputText [placeholder]="'catalog.search' | t" (input)="onSearchFilter($any($event.target).value)" />
     </span>
     <p-button
       icon="pi pi-check"
+      link="true"
       [pTooltip]="'comparator.save' | t"
       tooltipPosition="left"
       (click)="showComparator()"
@@ -44,16 +40,13 @@
 <ng-container *ngIf="!isSearchShown()">
   <p-button
     icon="pi pi-plus"
+    link="true"
     [pTooltip]="'comparator.change' | t"
     tooltipPosition="left"
     (click)="showSearch()"
   ></p-button>
   <div *ngFor="let itemDetail of compareList()">
-    <div>
-      {{ itemDetail.name.localized | localizedName }} ({{
-        itemDetail.name.latin
-      }})
-    </div>
+    <div>{{ itemDetail.name.localized | localizedName }} ({{ itemDetail.name.latin }})</div>
 
     <p-galleria
       [value]="itemDetail.images"
