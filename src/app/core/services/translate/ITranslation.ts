@@ -1,5 +1,15 @@
 export interface ITranslation {
   layout: {
+    title: string;
+    menu: {
+      settings: string;
+      appLanguage: string;
+      speciesLanguage: string;
+      languages: {
+        en: string;
+        sk: string;
+      };
+    };
     footer: string;
   };
   catalog: {
@@ -8,6 +18,10 @@ export interface ITranslation {
     groupView: string;
     speciesView: string;
     view: string;
+  };
+  detail: {
+    back: string;
+    compare: string;
   };
   comparator: {
     title: string;

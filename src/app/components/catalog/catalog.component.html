@@ -17,18 +17,32 @@
       <div>
         <p-button
           icon="pi pi-filter-slash"
+          link="true"
           [pTooltip]="'catalog.clearFilters' | t"
           tooltipPosition="left"
           (click)="clearFilters(searchFilter)"
           class="mr-2"
         />
-        <p-button icon="pi pi-times" [pTooltip]="'catalog.speciesView' | t" tooltipPosition="left" (click)="showSpeciesView()" />
+        <p-button
+          icon="pi pi-times"
+          link="true"
+          [pTooltip]="'catalog.speciesView' | t"
+          tooltipPosition="left"
+          (click)="showSpeciesView()"
+        />
       </div>
     } @else {
-      <p-button icon="pi pi-search" [pTooltip]="'catalog.search' | t" tooltipPosition="right" (click)="showSearchView()" />
+      <p-button
+        icon="pi pi-search"
+        link="true"
+        [pTooltip]="'catalog.search' | t"
+        tooltipPosition="right"
+        (click)="showSearchView()"
+      />
       <p-button
         *ngIf="isGroupMode()"
         icon="pi pi-list"
+        link="true"
         [pTooltip]="'catalog.speciesView' | t"
         tooltipPosition="right"
         (click)="showSpeciesView()"
@@ -36,6 +50,7 @@
       <p-button
         *ngIf="isSpeciesMode()"
         icon="pi pi-th-large"
+        link="true"
         [pTooltip]="'catalog.groupView' | t"
         tooltipPosition="right"
         (click)="showGroupView()"
@@ -89,3 +104,5 @@
     </div>
   }
 }
+
+<p-scrollTop />

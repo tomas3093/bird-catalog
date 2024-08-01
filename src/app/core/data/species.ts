@@ -654,7 +654,7 @@ export const species: DataItem[] = [
     },
     groupId: 3,
     imageAssets: [
-      { assetId: '35637201', metadata: 'nonbreeding adult' },
+      { assetId: '262646731', metadata: 'unknown' },
       { assetId: '37585061', metadata: 'immature' },
       { assetId: '45020271', metadata: 'immature' },
       { assetId: '42641391', metadata: 'immature' },

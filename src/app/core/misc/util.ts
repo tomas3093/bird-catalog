@@ -24,6 +24,15 @@ export const speciesMainImage = (speciesImageAssets: string[], fullSize: boolean
 };
 
 /**
+ * Returns URL of search endpoint in xeno-canto database for particular species
+ * @param speciesName
+ * @returns
+ */
+export const xenoCantoSearchUrl = (speciesName: string): string => {
+  return 'https://xeno-canto.org/api/2/recordings?query=' + speciesName.toLowerCase().replaceAll(' ', '+') + '+q:A';
+};
+
+/**
  * Remove diacritics and converts string to lower case for better use in comparision
  * @param value
  * @returns

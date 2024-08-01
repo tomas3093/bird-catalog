@@ -4,7 +4,8 @@ import { of } from 'rxjs';
 import { ApiService } from './api.service';
 import { species } from '../data/species';
 import { groups } from '../data/groups';
-import { macaulayImgAssetUrl, speciesMainImage } from '../misc/util';
+import { macaulayImgAssetUrl, speciesMainImage, xenoCantoSearchUrl } from '../misc/util';
+import { RecordingSearchResult } from '../model/sound-recording';
 
 @Injectable({
   providedIn: 'root',
@@ -129,5 +130,9 @@ export class StorageService {
     };
 
     return this.api.performCall<SpeciesDetail>(() => of(result));
+  }
+
+  getSoundRecordings(speciesName: string) {
+    return this.api.getRequest<RecordingSearchResult>(xenoCantoSearchUrl(speciesName));
   }
 }

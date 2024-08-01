@@ -18,6 +18,14 @@ import { ChipModule } from 'primeng/chip';
 import { AutoFocusModule } from 'primeng/autofocus';
 import { CatalogItemComponent } from '../components/catalog-item/catalog-item.component';
 import { GroupWrapperComponent } from '../components/group-wrapper/group-wrapper.component';
+import { SidebarComponent } from '../components/sidebar/sidebar.component';
+import { SidebarModule } from 'primeng/sidebar';
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
+import { ScrollTopModule } from 'primeng/scrolltop';
+import { provideHttpClient } from '@angular/common/http';
+import { AccordionModule } from 'primeng/accordion';
+import { SkeletonModule } from 'primeng/skeleton';
 
 @NgModule({
   declarations: [
@@ -28,6 +36,7 @@ import { GroupWrapperComponent } from '../components/group-wrapper/group-wrapper
     TypedTranslatePipe,
     LocalizedNamePipe,
     ComparatorComponent,
+    SidebarComponent,
   ],
   imports: [
     ImageModule,
@@ -40,6 +49,12 @@ import { GroupWrapperComponent } from '../components/group-wrapper/group-wrapper
     InputTextModule,
     ChipModule,
     AutoFocusModule,
+    SidebarModule,
+    DropdownModule,
+    FormsModule,
+    ScrollTopModule,
+    AccordionModule,
+    SkeletonModule,
   ],
   exports: [
     TypedTranslatePipe,
@@ -53,8 +68,9 @@ import { GroupWrapperComponent } from '../components/group-wrapper/group-wrapper
     InputTextModule,
     ChipModule,
     AutoFocusModule,
+    SidebarComponent,
   ],
-  providers: [TranslatePipe, TypedTranslatePipe, LocalizedNamePipe],
+  providers: [TranslatePipe, TypedTranslatePipe, LocalizedNamePipe, provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class CoreModule {}

@@ -4,14 +4,9 @@
     justify-content: space-between;
     background-color: #dedede;
 
-    .language {
-      font-weight: bold;
-      cursor: pointer;
-
-      // Disable text selection
-      -webkit-user-select: none; /* Safari */
-      -ms-user-select: none; /* IE 10 and IE 11 */
-      user-select: none; /* Standard syntax */
+    a {
+      display: flex;
+      text-decoration: none;
     }
   }
 
