@@ -23,6 +23,9 @@ import { SidebarModule } from 'primeng/sidebar';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { ScrollTopModule } from 'primeng/scrolltop';
+import { provideHttpClient } from '@angular/common/http';
+import { AccordionModule } from 'primeng/accordion';
+import { SkeletonModule } from 'primeng/skeleton';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,8 @@ import { ScrollTopModule } from 'primeng/scrolltop';
     DropdownModule,
     FormsModule,
     ScrollTopModule,
+    AccordionModule,
+    SkeletonModule,
   ],
   exports: [
     TypedTranslatePipe,
@@ -65,7 +70,7 @@ import { ScrollTopModule } from 'primeng/scrolltop';
     AutoFocusModule,
     SidebarComponent,
   ],
-  providers: [TranslatePipe, TypedTranslatePipe, LocalizedNamePipe],
+  providers: [TranslatePipe, TypedTranslatePipe, LocalizedNamePipe, provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class CoreModule {}
