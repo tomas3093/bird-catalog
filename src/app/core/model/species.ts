@@ -59,6 +59,7 @@ export type ImageMetadata =
   | 'breeding female'
   | 'nonbreeding adult'
   | 'nonbreeding male'
+  | 'nonbreeding female'
   | 'adult male'
   | 'immature male'
   | 'adult female'
@@ -66,4 +67,9 @@ export type ImageMetadata =
   | 'female/immature male'
   | 'immature female'
   | 'molting adult'
+  | 'eclipse male' // ducks
+  | 'male and female'
+  | 'first winter' // mostly for gulls
+  | 'first summer' // mostly for gulls
+  | 'second winter' // mostly for gulls
   | 'unknown'; // TODO: Handle unknown value - hide metadata in case of unknown value

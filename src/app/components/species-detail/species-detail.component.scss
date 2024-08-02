@@ -12,34 +12,34 @@
     font-style: italic;
   }
 
-  p-galleria {
-    display: block;
+  // p-galleria {
+  //   display: block;
 
-    .thumbnail {
-      display: grid;
-      justify-content: center;
-      gap: 0;
+  //   .thumbnail {
+  //     display: grid;
+  //     justify-content: center;
+  //     gap: 0;
 
-      img {
-        display: block;
-        height: 60px;
-        width: auto;
-      }
-    }
+  //     img {
+  //       display: block;
+  //       height: 60px;
+  //       width: auto;
+  //     }
+  //   }
 
-    .item {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+  //   .item {
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: center;
 
-      img {
-        width: 100%;
-        height: auto;
-        max-height: 550px;
-        display: block;
-      }
-    }
-  }
+  //     img {
+  //       width: 100%;
+  //       height: auto;
+  //       max-height: 550px;
+  //       display: block;
+  //     }
+  //   }
+  // }
 
   p-accordion {
     display: block;
