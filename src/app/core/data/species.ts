@@ -917,4 +917,1082 @@ export const species: DataItem[] = [
       { assetId: '65518901', metadata: 'juvenile' },
     ],
   },
+  {
+    code: 'litgul',
+    name: {
+      latin: 'Hydrocoloeus minutus',
+      localized: { en: 'Little Gull', sk: 'Čajka malá' },
+    },
+    groupId: 5,
+    imageAssets: [
+      { assetId: '81497591', metadata: 'breeding adult' },
+      { assetId: '41205791', metadata: 'nonbreeding adult' },
+      { assetId: '29757531', metadata: 'first winter' },
+      { assetId: '178438401', metadata: 'juvenile' },
+      { assetId: '80060961', metadata: 'nonbreeding adult' },
+    ],
+  },
+  {
+    code: 'mewgul',
+    name: {
+      latin: 'Larus canus',
+      localized: { en: 'Common Gull', sk: 'Čajka sivá' },
+    },
+    groupId: 5,
+    imageAssets: [
+      { assetId: '195654021', metadata: 'breeding adult' },
+      { assetId: '51355861', metadata: 'nonbreeding adult' },
+      { assetId: '23930421', metadata: 'first winter' },
+      { assetId: '328765151', metadata: 'first summer' },
+      { assetId: '22392791', metadata: 'nonbreeding adult' },
+      { assetId: '107164471', metadata: 'juvenile' },
+    ],
+  },
+  {
+    code: 'medgul1',
+    name: {
+      latin: 'Ichthyaetus melanocephalus',
+      localized: { en: 'Mediterranean Gull', sk: 'Čajka čiernohlavá' },
+    },
+    groupId: 5,
+    imageAssets: [
+      { assetId: '205045531', metadata: 'breeding adult' },
+      { assetId: '111221621', metadata: 'nonbreeding adult' },
+      { assetId: '29116191', metadata: 'breeding adult' },
+      { assetId: '248461961', metadata: 'first winter' },
+      { assetId: '171056401', metadata: 'juvenile' },
+    ],
+  },
+  {
+    code: 'hergul',
+    name: {
+      latin: 'Larus argentatus',
+      localized: { en: 'Herring Gull', sk: 'Čajka striebristá' },
+    },
+    groupId: 5,
+    imageAssets: [
+      { assetId: '169295191', metadata: 'breeding adult' },
+      { assetId: '64789951', metadata: 'nonbreeding adult' },
+      { assetId: '37975941', metadata: 'nonbreeding adult' },
+      { assetId: '46145851', metadata: 'second winter' },
+      { assetId: '67352161', metadata: 'juvenile' },
+      { assetId: '65430271', metadata: 'juvenile' },
+    ],
+  },
+  {
+    code: 'yelgul1',
+    name: {
+      latin: 'Larus michahellis',
+      localized: { en: 'Yellow-legged Gull', sk: 'Čajka žltonohá' },
+    },
+    groupId: 5,
+    imageAssets: [
+      { assetId: '26870071', metadata: 'breeding adult' },
+      { assetId: '42629671', metadata: 'nonbreeding adult' },
+      { assetId: '42936411', metadata: 'breeding adult' },
+      { assetId: '40237511', metadata: 'juvenile' },
+      { assetId: '43794641', metadata: 'juvenile' },
+    ],
+  },
+  {
+    code: 'casgul2',
+    name: {
+      latin: 'Larus cachinnans',
+      localized: { en: 'Caspian Gull', sk: 'Čajka bielohlavá' },
+    },
+    groupId: 5,
+    imageAssets: [
+      { assetId: '204953931', metadata: 'adult' },
+      { assetId: '43985061', metadata: 'first winter' },
+      { assetId: '34393131', metadata: 'juvenile' },
+      { assetId: '80209851', metadata: 'unknown' },
+      { assetId: '40107131', metadata: 'first winter' },
+    ],
+  },
+  {
+    code: 'lbbgul',
+    name: {
+      latin: 'Larus fuscus',
+      localized: { en: 'Lesser Black-backed Gull', sk: 'Čajka tmavá' },
+    },
+    groupId: 5,
+    imageAssets: [
+      { assetId: '265452641', metadata: 'breeding adult' },
+      { assetId: '133683661', metadata: 'breeding adult' },
+      { assetId: '200223821', metadata: 'first winter' },
+      { assetId: '86683811', metadata: 'nonbreeding adult' },
+      { assetId: '38647251', metadata: 'juvenile' },
+    ],
+  },
+  {
+    code: 'mutswa',
+    name: {
+      latin: 'Cygnus olor',
+      localized: { en: 'Mute Swan', sk: 'Labuť veľká' },
+    },
+    groupId: 601,
+    imageAssets: [
+      { assetId: '53961801', metadata: 'adult' },
+      { assetId: '54021741', metadata: 'immature' },
+      { assetId: '34911811', metadata: 'adult' },
+      { assetId: '54079441', metadata: 'juvenile' },
+      { assetId: '57835421', metadata: 'adult' },
+    ],
+  },
+  {
+    code: 'whoswa',
+    name: {
+      latin: 'Cygnus cygnus',
+      localized: { en: 'Whooper Swan', sk: 'Labuť spevavá' },
+    },
+    groupId: 601,
+    imageAssets: [
+      { assetId: '199133081', metadata: 'adult' },
+      { assetId: '36663841', metadata: 'juvenile' },
+      { assetId: '37734541', metadata: 'adult' },
+      { assetId: '36128671', metadata: 'adult' },
+      { assetId: '42943781', metadata: 'adult' },
+    ],
+  },
+  {
+    code: 'tunswa',
+    name: {
+      latin: 'Cygnus columbianus',
+      localized: { en: 'Tundra Swan', sk: 'Labuť malá' },
+    },
+    groupId: 601,
+    imageAssets: [
+      { assetId: '41408271', metadata: 'adult' },
+      { assetId: '24779031', metadata: 'adult' },
+      { assetId: '40549011', metadata: 'adult' },
+    ],
+  },
+  {
+    code: 'gwfgoo',
+    name: {
+      latin: 'Anser albifrons',
+      localized: { en: 'Greater White-fronted Goose', sk: 'Hus bieločelá' },
+    },
+    groupId: 602,
+    imageAssets: [
+      { assetId: '36909271', metadata: 'adult' },
+      { assetId: '276177341', metadata: 'juvenile' },
+      { assetId: '44369811', metadata: 'adult' },
+      { assetId: '43709321', metadata: 'adult' },
+      { assetId: '49888661', metadata: 'adult' },
+    ],
+  },
+  {
+    code: 'taibeg1',
+    name: {
+      latin: 'Anser fabalis',
+      localized: { en: 'Taiga Bean-Goose', sk: 'Hus siatinná' },
+    },
+    groupId: 602,
+    imageAssets: [
+      { assetId: '95813661', metadata: 'unknown' },
+      { assetId: '274030511', metadata: 'unknown' },
+      { assetId: '37300361', metadata: 'unknown' },
+      { assetId: '37300371', metadata: 'unknown' },
+    ],
+  },
+  {
+    code: 'gragoo',
+    name: {
+      latin: 'Anser anser',
+      localized: { en: 'Graylag Goose', sk: 'Hus divá' },
+    },
+    groupId: 602,
+    imageAssets: [
+      { assetId: '63379971', metadata: 'adult' },
+      { assetId: '34698481', metadata: 'adult' },
+      { assetId: '44438721', metadata: 'adult' },
+      { assetId: '66045831', metadata: 'adult' },
+      { assetId: '34027531', metadata: 'adult' },
+    ],
+  },
+  {
+    code: 'cangoo',
+    name: {
+      latin: 'Branta canadensis',
+      localized: { en: 'Canada Goose', sk: 'Bernikla veľká' },
+    },
+    groupId: 602,
+    imageAssets: [
+      { assetId: '49344561', metadata: 'adult' },
+      { assetId: '51561111', metadata: 'adult' },
+      { assetId: '48663951', metadata: 'adult' },
+      { assetId: '50174411', metadata: 'adult' },
+      { assetId: '55794461', metadata: 'juvenile' },
+    ],
+  },
+  {
+    code: 'bargoo',
+    name: {
+      latin: 'Branta leucopsis',
+      localized: { en: 'Barnacle Goose', sk: 'Bernikla bielolíca' },
+    },
+    groupId: 602,
+    imageAssets: [
+      { assetId: '65135151', metadata: 'adult' },
+      { assetId: '593677801', metadata: 'adult' },
+      { assetId: '40646761', metadata: 'adult' },
+      { assetId: '26827351', metadata: 'juvenile' },
+    ],
+  },
+  {
+    code: 'brant',
+    name: {
+      latin: 'Branta bernicla',
+      localized: { en: 'Brant', sk: 'Bernikla tmavá' },
+    },
+    groupId: 602,
+    imageAssets: [
+      { assetId: '53811211', metadata: 'adult' },
+      { assetId: '26367021', metadata: 'adult' },
+      { assetId: '35996621', metadata: 'adult' },
+      { assetId: '188514901', metadata: 'juvenile' },
+    ],
+  },
+  {
+    code: 'rebgoo1',
+    name: {
+      latin: 'Branta ruficollis',
+      localized: { en: 'Red-breasted Goose', sk: 'Bernikla červenokrká' },
+    },
+    groupId: 602,
+    imageAssets: [
+      { assetId: '63726401', metadata: 'adult' },
+      { assetId: '42106461', metadata: 'adult' },
+      { assetId: '127669211', metadata: 'adult' },
+      { assetId: '127668711', metadata: 'adult' },
+      { assetId: '127669201', metadata: 'adult' },
+    ],
+  },
+  {
+    code: 'comshe',
+    name: {
+      latin: 'Tadorna tadorna',
+      localized: { en: 'Common Shelduck', sk: 'Kazarka pestrá' },
+    },
+    groupId: 602,
+    imageAssets: [
+      { assetId: '43400091', metadata: 'adult' },
+      { assetId: '44719411', metadata: 'juvenile' },
+      { assetId: '32501151', metadata: 'adult' },
+      { assetId: '34499091', metadata: 'adult' },
+      { assetId: '33594831', metadata: 'immature' },
+    ],
+  },
+  {
+    code: 'rudshe',
+    name: {
+      latin: 'Tadorna ferruginea',
+      localized: { en: 'Ruddy Shelduck', sk: 'Kazarka hrdzavá' },
+    },
+    groupId: 602,
+    imageAssets: [
+      { assetId: '135694691', metadata: 'adult male' },
+      { assetId: '41842441', metadata: 'adult female' },
+      { assetId: '34637551', metadata: 'unknown' },
+      { assetId: '33607611', metadata: 'adult' },
+      { assetId: '38580701', metadata: 'unknown' },
+    ],
+  },
+  {
+    code: 'egygoo',
+    name: {
+      latin: 'Alopochen aegyptiaca',
+      localized: { en: 'Egyptian Goose', sk: 'Húska štíhla' },
+    },
+    groupId: 602,
+    imageAssets: [
+      { assetId: '33607341', metadata: 'adult' },
+      { assetId: '32206651', metadata: 'adult' },
+      { assetId: '32327501', metadata: 'adult' },
+      { assetId: '28860361', metadata: 'juvenile' },
+      { assetId: '41840661', metadata: 'unknown' },
+    ],
+  },
+  {
+    code: 'mallar3',
+    name: {
+      latin: 'Anas platyrhynchos',
+      localized: { en: 'Mallard', sk: 'Kačica divá' },
+    },
+    groupId: 603,
+    imageAssets: [
+      { assetId: '63736171', metadata: 'breeding male' },
+      { assetId: '163427131', metadata: 'female' },
+      { assetId: '283304311', metadata: 'breeding male' },
+      { assetId: '236495351', metadata: 'immature male' },
+      { assetId: '63644201', metadata: 'nonbreeding male' },
+    ],
+  },
+  {
+    code: 'gadwal',
+    name: {
+      latin: 'Mareca strepera',
+      localized: { en: 'Gadwall', sk: 'Kačica chripľavka' },
+    },
+    groupId: 603,
+    imageAssets: [
+      { assetId: '283493481', metadata: 'adult male' },
+      { assetId: '246145981', metadata: 'female' },
+      { assetId: '51069691', metadata: 'male and female' },
+      { assetId: '243184761', metadata: 'adult male' },
+      { assetId: '256567601', metadata: 'molting adult' },
+    ],
+  },
+  {
+    code: 'norpin',
+    name: {
+      latin: 'Anas acuta',
+      localized: { en: 'Northern Pintail', sk: 'Kačica ostrochvostá' },
+    },
+    groupId: 603,
+    imageAssets: [
+      { assetId: '71206681', metadata: 'adult male' },
+      { assetId: '36239061', metadata: 'female' },
+      { assetId: '36822441', metadata: 'adult male' },
+      { assetId: '36769031', metadata: 'female/immature male' },
+      { assetId: '297748921', metadata: 'male and female' },
+    ],
+  },
+  {
+    code: 'norsho',
+    name: {
+      latin: 'Spatula clypeata',
+      localized: { en: 'Northern Shoveler', sk: 'Kačica lyžičiarka' },
+    },
+    groupId: 603,
+    imageAssets: [
+      { assetId: '215033941', metadata: 'breeding male' },
+      { assetId: '45521801', metadata: 'female/immature male' },
+      { assetId: '291848121', metadata: 'nonbreeding male' },
+      { assetId: '27749171', metadata: 'breeding male' },
+      { assetId: '139202071', metadata: 'breeding male' },
+      { assetId: '272389011', metadata: 'female/immature male' },
+      { assetId: '261773491', metadata: 'nonbreeding male' },
+    ],
+  },
+  {
+    code: 'eurwig',
+    name: {
+      latin: 'Mareca penelope',
+      localized: { en: 'Eurasian Wigeon', sk: 'Kačica hvizdárka' },
+    },
+    groupId: 603,
+    imageAssets: [
+      { assetId: '64163431', metadata: 'adult male' },
+      { assetId: '26858471', metadata: 'female' },
+      { assetId: '278103331', metadata: 'adult male' },
+      { assetId: '48235591', metadata: 'female' },
+      { assetId: '85965461', metadata: 'adult male' },
+    ],
+  },
+  {
+    code: 'gnwtea',
+    name: {
+      latin: 'Anas crecca',
+      localized: { en: 'Green-winged Teal', sk: 'Kačica chrapka' },
+    },
+    groupId: 603,
+    imageAssets: [
+      { assetId: '295743751', metadata: 'adult male' },
+      { assetId: '61065571', metadata: 'female/immature male' },
+      { assetId: '43558951', metadata: 'female/immature male' },
+      { assetId: '33539961', metadata: 'immature' },
+      { assetId: '422441021', metadata: 'adult male' },
+    ],
+  },
+  {
+    code: 'gargan',
+    name: {
+      latin: 'Spatula querquedula',
+      localized: { en: 'Garganey', sk: 'Kačica chrapačka' },
+    },
+    groupId: 603,
+    imageAssets: [
+      { assetId: '150021041', metadata: 'breeding male' },
+      { assetId: '24885681', metadata: 'female' },
+      { assetId: '27711891', metadata: 'breeding male' },
+      { assetId: '171163691', metadata: 'unknown' },
+    ],
+  },
+  {
+    code: 'compoc',
+    name: {
+      latin: 'Aythya ferina',
+      localized: { en: 'Common Pochard', sk: 'Chochlačka sivá' },
+    },
+    groupId: 604,
+    imageAssets: [
+      { assetId: '204243991', metadata: 'breeding male' },
+      { assetId: '198274191', metadata: 'adult female' },
+      { assetId: '34638011', metadata: 'breeding male' },
+      { assetId: '39588011', metadata: 'female/immature male' },
+    ],
+  },
+  {
+    code: 'recpoc',
+    name: {
+      latin: 'Netta rufina',
+      localized: { en: 'Red-crested Pochard', sk: 'Hrdzavka potápavá' },
+    },
+    groupId: 604,
+    imageAssets: [
+      { assetId: '23442101', metadata: 'adult male' },
+      { assetId: '23442081', metadata: 'female' },
+      { assetId: '66821711', metadata: 'adult male' },
+      { assetId: '40154111', metadata: 'adult male' },
+      { assetId: '73305021', metadata: 'eclipse male' },
+    ],
+  },
+  {
+    code: 'ferduc',
+    name: {
+      latin: 'Aythya nyroca',
+      localized: { en: 'Ferruginous Duck', sk: 'Chochlačka bielooká' },
+    },
+    groupId: 604,
+    imageAssets: [
+      { assetId: '136349881', metadata: 'adult male' },
+      { assetId: '194116551', metadata: 'female' },
+      { assetId: '44585921', metadata: 'adult male' },
+      { assetId: '36816551', metadata: 'adult male' },
+      { assetId: '204584571', metadata: 'unknown' },
+    ],
+  },
+  {
+    code: 'gresca',
+    name: {
+      latin: 'Aythya marila',
+      localized: { en: 'Greater Scaup', sk: 'Chochlačka morská' },
+    },
+    groupId: 604,
+    imageAssets: [
+      { assetId: '150567911', metadata: 'adult male' },
+      { assetId: '46775581', metadata: 'female' },
+      { assetId: '61815271', metadata: 'female' },
+      { assetId: '310602671', metadata: 'male and female' },
+      { assetId: '27736041', metadata: 'immature male' },
+      { assetId: '31955871', metadata: 'eclipse male' },
+    ],
+  },
+  {
+    code: 'tufduc',
+    name: {
+      latin: 'Aythya fuligula',
+      localized: { en: 'Tufted Duck', sk: 'Chochlačka vrkočatá' },
+    },
+    groupId: 604,
+    imageAssets: [
+      { assetId: '219416591', metadata: 'adult male' },
+      { assetId: '220934401', metadata: 'female/immature male' },
+      { assetId: '42765761', metadata: 'adult male' },
+      { assetId: '188074981', metadata: 'immature male' },
+      { assetId: '42955311', metadata: 'adult male' },
+    ],
+  },
+  {
+    code: 'lotduc',
+    name: {
+      latin: 'Clangula hyemalis',
+      localized: { en: 'Long-tailed Duck', sk: 'Ľadovka dlhochvostá' },
+    },
+    groupId: 604,
+    imageAssets: [
+      { assetId: '299883551', metadata: 'nonbreeding male' },
+      { assetId: '41193971', metadata: 'nonbreeding female' },
+      { assetId: '53763701', metadata: 'breeding male' },
+      { assetId: '293387061', metadata: 'nonbreeding male' },
+      { assetId: '48263861', metadata: 'nonbreeding female' },
+      { assetId: '216946861', metadata: 'immature male' },
+    ],
+  },
+  {
+    code: 'comgol',
+    name: {
+      latin: 'Bucephala clangula',
+      localized: { en: 'Common Goldeneye', sk: 'Hlaholka severská' },
+    },
+    groupId: 604,
+    imageAssets: [
+      { assetId: '301917401', metadata: 'adult male' },
+      { assetId: '139849441', metadata: 'female' },
+      { assetId: '43640151', metadata: 'female' },
+      { assetId: '48978181', metadata: 'immature male' },
+      { assetId: '291076221', metadata: 'male and female' },
+    ],
+  },
+  {
+    code: 'commer',
+    name: {
+      latin: 'Mergus merganser',
+      localized: { en: 'Common Merganser', sk: 'Potápač veľký' },
+    },
+    groupId: 604,
+    imageAssets: [
+      { assetId: '63556111', metadata: 'adult male' },
+      { assetId: '63898421', metadata: 'male and female' },
+      { assetId: '46776941', metadata: 'female' },
+      { assetId: '278279141', metadata: 'immature' },
+    ],
+  },
+  {
+    code: 'rebmer',
+    name: {
+      latin: 'Mergus serrator',
+      localized: { en: 'Red-breasted Merganser', sk: 'Potápač prostredný' },
+    },
+    groupId: 604,
+    imageAssets: [
+      { assetId: '91376081', metadata: 'adult male' },
+      { assetId: '289030541', metadata: 'female/immature male' },
+      { assetId: '35982881', metadata: 'adult male' },
+      { assetId: '48775221', metadata: 'female/immature male' },
+      { assetId: '55287461', metadata: 'adult male' },
+      { assetId: '62659461', metadata: 'unknown' },
+    ],
+  },
+  {
+    code: 'smew',
+    name: {
+      latin: 'Mergellus albellus',
+      localized: { en: 'Smew', sk: 'Potápač malý' },
+    },
+    groupId: 604,
+    imageAssets: [
+      { assetId: '197359291', metadata: 'adult male' },
+      { assetId: '268241411', metadata: 'female' },
+      { assetId: '26861931', metadata: 'adult male' },
+      { assetId: '24648981', metadata: 'male and female' },
+    ],
+  },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
+  // {
+  //   code: '',
+  //   name: {
+  //     latin: '',
+  //     localized: { en: '', sk: '' },
+  //   },
+  //   groupId: ,
+  //   imageAssets: [
+  //     { assetId: '204656501', metadata: '' },
+  //     { assetId: '43163081', metadata: '' },
+  //     { assetId: '43893491', metadata: '' },
+  //     { assetId: '84605841', metadata: '' },
+  //     { assetId: '65518901', metadata: '' },
+  //   ],
+  // },
 ];
