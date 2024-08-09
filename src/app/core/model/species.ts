@@ -1,13 +1,13 @@
 export type CatalogGroup =
   | {
-      id: number;
+      id: string;
       name: LocalizedText;
       thumbnailSrc: string;
       hasChildren: false;
       species: CatalogItem[];
     }
   | {
-      id: number;
+      id: string;
       name: LocalizedText;
       thumbnailSrc: string;
       hasChildren: true;
@@ -18,14 +18,14 @@ export type CatalogGroup =
     };
 
 export interface CatalogItem {
-  code: string;
+  id: string;
   name: SpeciesName;
   thumbnailSrc: string;
   fullsizeImgSrc: string;
 }
 
 export interface SpeciesDetail {
-  code: string;
+  id: string;
   name: SpeciesName;
   images: {
     imageSrc: string;
@@ -44,8 +44,9 @@ export interface SpeciesName {
   localized: LocalizedText;
 }
 
+// TODO: create translations for image metadata
 export type ImageMetadata =
-  | 'adult' // TODO: create translations for image metadata
+  | 'adult'
   | 'adult light morph'
   | 'adult rufous morph'
   | 'adult dark morph'

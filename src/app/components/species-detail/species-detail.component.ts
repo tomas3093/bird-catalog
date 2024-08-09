@@ -49,8 +49,8 @@ export class SpeciesDetailComponent implements OnInit {
   ngOnInit() {
     this.#activatedRoute.paramMap
       .pipe(
-        map((params) => params.get('code') ?? ''),
-        switchMap((paramCode) => (paramCode ? this.#service.getSpeciesDetail(paramCode) : of(null))),
+        map((params) => params.get('id') ?? ''),
+        switchMap((paramId) => (paramId ? this.#service.getSpeciesDetail(paramId) : of(null))),
       )
       .pipe(
         tap((detail) => {
@@ -58,7 +58,7 @@ export class SpeciesDetailComponent implements OnInit {
           this.#imageLoadCounter.set(detail?.images.length ?? 0);
           this.isDetailLoading.set(false);
         }),
-        switchMap((detail) => (detail ? this.#service.getSoundRecordings(detail.name.latin) : of(null))),
+        switchMap((detail) => (detail ? this.#service.getSoundRecordings(detail.id) : of(null))),
         tap((result) => {
           if (result) {
             const items: RecordingSearchResult = {

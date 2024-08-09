@@ -78,13 +78,13 @@ export class CatalogComponent implements OnInit {
     this.mode.set('search');
   }
 
-  showSpeciesView(groupId?: number) {
+  showSpeciesView(groupId?: string) {
     this.mode.set('explore-species');
 
     // Scroll to selected group
     if (groupId != undefined) {
       setTimeout(() => {
-        this.#scroller.scrollToAnchor('' + groupId);
+        this.#scroller.scrollToAnchor(groupId);
       }, 100);
     }
   }
@@ -93,8 +93,8 @@ export class CatalogComponent implements OnInit {
     this.mode.set('explore-groups');
   }
 
-  viewDetail(speciesCode: string) {
-    this.#router.navigate([speciesCode], { relativeTo: this.#activatedRoute });
+  viewDetail(speciesId: string) {
+    this.#router.navigate([speciesId], { relativeTo: this.#activatedRoute });
   }
 
   onSearchFilter(value: string) {
