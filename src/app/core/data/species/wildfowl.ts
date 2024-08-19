@@ -46,6 +46,22 @@ const data: GroupData = {
             { assetId: '40549011', metadata: 'adult' },
           ],
         },
+        {
+          name: {
+            latin: 'Cygnus atratus',
+            localized: {
+              en: 'Black Swan',
+              sk: 'Labuť čierna',
+            },
+          },
+          imageAssets: [
+            { assetId: '120705851', metadata: 'adult' },
+            { assetId: '166588421', metadata: 'adult' },
+            { assetId: '344517191', metadata: 'juvenile' },
+            { assetId: '621629556', metadata: 'juvenile' },
+            { assetId: '44267321', metadata: 'juvenile' },
+          ],
+        },
       ],
     },
     {
@@ -62,6 +78,22 @@ const data: GroupData = {
             { assetId: '44369811', metadata: 'adult' },
             { assetId: '43709321', metadata: 'adult' },
             { assetId: '49888661', metadata: 'adult' },
+          ],
+        },
+        {
+          name: {
+            latin: 'Anser erythropus',
+            localized: {
+              en: 'Lesser White-fronted Goose',
+              sk: 'Hus malá',
+            },
+          },
+          imageAssets: [
+            { assetId: '138319961', metadata: 'unknown' },
+            { assetId: '211856921', metadata: 'unknown' },
+            { assetId: '41700541', metadata: 'unknown' },
+            { assetId: '31414541', metadata: 'unknown' },
+            { assetId: '41700601', metadata: 'unknown' },
           ],
         },
         {
@@ -183,6 +215,38 @@ const data: GroupData = {
     {
       name: { en: 'Dabbling ducks', sk: 'Kačice (nepotápavé)' },
       species: [
+        {
+          name: {
+            latin: 'Aix sponsa',
+            localized: {
+              en: 'Wood Duck',
+              sk: 'Kačička obojková',
+            },
+          },
+          imageAssets: [
+            { assetId: '35998481', metadata: 'adult male' },
+            { assetId: '47443411', metadata: 'female' },
+            { assetId: '110911841', metadata: 'eclipse male' },
+            { assetId: '30161681', metadata: 'female' },
+            { assetId: '192681961', metadata: 'male and female' },
+          ],
+        },
+        {
+          name: {
+            latin: 'Aix galericulata',
+            localized: {
+              en: 'Mandarin Duck',
+              sk: 'Kačička mandarínska',
+            },
+          },
+          imageAssets: [
+            { assetId: '86109331', metadata: 'adult male' },
+            { assetId: '33891231', metadata: 'female' },
+            { assetId: '29380391', metadata: 'adult male' },
+            { assetId: '33909221', metadata: 'adult male' },
+            { assetId: '33909221', metadata: 'adult male' },
+          ],
+        },
         {
           name: {
             latin: 'Anas platyrhynchos',
@@ -343,6 +407,38 @@ const data: GroupData = {
             { assetId: '42765761', metadata: 'adult male' },
             { assetId: '188074981', metadata: 'immature male' },
             { assetId: '42955311', metadata: 'adult male' },
+          ],
+        },
+        {
+          name: {
+            latin: 'Melanitta nigra',
+            localized: {
+              en: 'Common Scoter',
+              sk: 'Turpan čierny',
+            },
+          },
+          imageAssets: [
+            { assetId: '135065141', metadata: 'adult male' },
+            { assetId: '127452311', metadata: 'female' },
+            { assetId: '181671421', metadata: 'immature male' },
+            { assetId: '53444051', metadata: 'adult male' },
+            { assetId: '143551841', metadata: 'unknown' },
+          ],
+        },
+        {
+          name: {
+            latin: 'Melanitta fusca',
+            localized: {
+              en: 'Velvet Scoter',
+              sk: 'Turpan tmavý',
+            },
+          },
+          imageAssets: [
+            { assetId: '276087951', metadata: 'adult male' },
+            { assetId: '129448731', metadata: 'female' },
+            { assetId: '402228621', metadata: 'adult male' },
+            { assetId: '613184775', metadata: 'immature male' },
+            { assetId: '204585531', metadata: 'immature male' },
           ],
         },
         {

@@ -50,9 +50,9 @@ describe('generate species data from ebird database', () => {
       .then((button) => {
         if (!button.is(':disabled')) {
           cy.wrap(button).click();
-          cy.wait(400); // Time delay between images
-          callback();
         }
+        cy.wait(650); // Time delay between images
+        callback();
       });
   }
 
@@ -102,7 +102,7 @@ describe('generate species data from ebird database', () => {
 
     // Choose required species
     const searchResult = cy.get('[id^=Suggest-suggestion-]');
-    searchResult.filter(`:contains("${scientificName}")`).should('have.length', 1).click();
+    searchResult.filter(`:contains("${scientificName}")`).first().should('have.length', 1).click();
 
     // Open first image in gallery
     cy.get('figure.Media.Media--overlay').should('exist').first().click();

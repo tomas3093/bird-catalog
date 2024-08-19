@@ -1,10 +1,11 @@
 {
   "data": [
-    { "sci": "Cygnus atratus", "sk": "Labuť čierna" },
-    { "sci": "Anser erythropus", "sk": "Hus malá" },
-    { "sci": "Aix sponsa", "sk": "Kačička obojková" },
-    { "sci": "Aix galericulata", "sk": "Kačička mandarínska" },
-    { "sci": "Melanitta nigra", "sk": "Turpan čierny" },
-    { "sci": "Melanitta fusca", "sk": "Turpan tmavý" }
+    { "sci": "Emberiza schoeniclus", "sk": "Strnádka trstinová" },
+    { "sci": "Plectrophenax nivalis", "sk": "Snehuľka severská" },
+    { "sci": "Emberiza hortulana", "sk": "Strnádka záhradná" },
+    { "sci": "Emberiza citrinella", "sk": "Strnádka obyčajná" },
+    { "sci": "Emberiza cirlus", "sk": "Strnádka svrčivá" },
+    { "sci": "Emberiza calandra", "sk": "Strnádka lúčna" },
+    { "sci": "Emberiza cia", "sk": "Strnádka cia" }
   ]
 }

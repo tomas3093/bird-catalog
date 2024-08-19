@@ -1,0 +1,33 @@
+[
+  {
+    "name": {
+      "latin": "Plectrophenax nivalis",
+      "localized": {
+        "en": "Snow Bunting",
+        "sk": "Snehuľka severská"
+      }
+    },
+    "imageAssets": [
+      {
+        "assetId": "63891021",
+        "metadata": "breeding male"
+      },
+      {
+        "assetId": "63891151",
+        "metadata": "breeding female"
+      },
+      {
+        "assetId": "189870541",
+        "metadata": "nonbreeding male"
+      },
+      {
+        "assetId": "20802261",
+        "metadata": "nonbreeding female"
+      },
+      {
+        "assetId": "65061761",
+        "metadata": "juvenile"
+      }
+    ]
+  }
+]
