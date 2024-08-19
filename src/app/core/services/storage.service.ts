@@ -1,18 +1,17 @@
 import { Injectable, inject } from '@angular/core';
 import { CatalogGroup, CatalogItem, SpeciesDetail } from '../model/species';
-import { of } from 'rxjs';
+import { of, switchMap } from 'rxjs';
 import { ApiService } from './api.service';
-import { species } from '../data/species';
-import { groups } from '../data/groups';
 import { macaulayImgAssetUrl, speciesMainImage, xenoCantoSearchUrl } from '../misc/util';
 import { RecordingSearchResult } from '../model/sound-recording';
+import { groups, species } from '../data/storage';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StorageService {
-  groupStorage = groups;
-  speciesStorage = species;
+  private groupStorage = groups;
+  private speciesStorage = species;
 
   private api = inject(ApiService);
 
@@ -33,7 +32,7 @@ export class StorageService {
                 species: this.speciesStorage
                   .filter((z) => z.groupId === y.id)
                   .map((a) => ({
-                    code: a.code,
+                    id: a.id,
                     name: a.name,
                     thumbnailSrc: speciesMainImage(
                       a.imageAssets.map((b) => b.assetId),
@@ -54,7 +53,7 @@ export class StorageService {
               species: this.speciesStorage
                 .filter((y) => y.groupId === _.id)
                 .map((a) => ({
-                  code: a.code,
+                  id: a.id,
                   name: a.name,
                   thumbnailSrc: speciesMainImage(
                     a.imageAssets.map((b) => b.assetId),
@@ -95,7 +94,7 @@ export class StorageService {
       }
 
       const item: CatalogItem = {
-        code: species.code,
+        id: species.id,
         name: species.name,
         thumbnailSrc: speciesMainImage(
           species.imageAssets.map((_) => _.assetId),
@@ -113,14 +112,14 @@ export class StorageService {
     return this.api.performCall<CatalogItem[]>(() => of(result));
   }
 
-  getSpeciesDetail(code: string) {
-    const item = this.speciesStorage.find((_) => _.code === code);
+  getSpeciesDetail(id: string) {
+    const item = this.speciesStorage.find((_) => _.id === id);
     if (!item) {
       throw Error('Species not found');
     }
 
     const result: SpeciesDetail = {
-      code: item.code,
+      id: item.id,
       name: item.name,
       images: item.imageAssets.map((_) => ({
         imageSrc: macaulayImgAssetUrl(_.assetId, true),
@@ -132,7 +131,9 @@ export class StorageService {
     return this.api.performCall<SpeciesDetail>(() => of(result));
   }
 
-  getSoundRecordings(speciesName: string) {
-    return this.api.getRequest<RecordingSearchResult>(xenoCantoSearchUrl(speciesName));
+  getSoundRecordings(id: string) {
+    return this.getSpeciesDetail(id).pipe(
+      switchMap((speciesDetail) => this.api.getRequest<RecordingSearchResult>(xenoCantoSearchUrl(speciesDetail.name.latin))),
+    );
   }
 }

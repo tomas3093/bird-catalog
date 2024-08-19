@@ -29,12 +29,12 @@ const routes: Routes = [
       //     component: AddEditSpeciesComponent,
       //   },
       //   {
-      //     path: 'edit/:code',
+      //     path: 'edit/:id',
       //     pathMatch: 'full',
       //     component: AddEditSpeciesComponent,
       //   },
       {
-        path: ':code',
+        path: ':id',
         pathMatch: 'full',
         component: SpeciesDetailComponent,
       },

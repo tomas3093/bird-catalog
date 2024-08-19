@@ -93,12 +93,12 @@ export class ComparatorComponent implements OnInit {
     this.#searchTermSubject.next(value);
   }
 
-  toggleComparison(speciesCode: string) {
-    if (this.isSelected(speciesCode)) {
-      this.removeFromComparison(speciesCode);
+  toggleComparison(speciesId: string) {
+    if (this.isSelected(speciesId)) {
+      this.removeFromComparison(speciesId);
     } else {
       this.#service
-        .getSpeciesDetail(speciesCode)
+        .getSpeciesDetail(speciesId)
         .pipe(
           tap((_) => {
             const array = this.compareList();
@@ -110,12 +110,12 @@ export class ComparatorComponent implements OnInit {
     }
   }
 
-  removeFromComparison(speciesCode: string) {
-    const array = this.compareList().filter((_) => _.code !== speciesCode);
+  removeFromComparison(speciesId: string) {
+    const array = this.compareList().filter((_) => _.id !== speciesId);
     this.compareList.set(array);
   }
 
-  isSelected(speciesCode: string) {
-    return this.compareList().find((_) => _.code === speciesCode) !== undefined;
+  isSelected(speciesId: string) {
+    return this.compareList().find((_) => _.id === speciesId) !== undefined;
   }
 }

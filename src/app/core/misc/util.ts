@@ -1,3 +1,5 @@
+import { GroupData, hasSubgroups, SpeciesGroupModel, SpeciesModel } from '../data/model';
+
 /**
  * Returns image URL according to specified asset ID from Macaulay library
  * @param assetId
@@ -42,4 +44,62 @@ export const normalizeString = (value: string): string => {
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase();
+};
+
+/**
+ * Generates array of groups and subgroups (if available) for specific GroupData hierarchy tree (file)
+ * @param data
+ * @param groupId
+ * @returns
+ */
+export const generateGroups = (data: GroupData, groupId: string): SpeciesGroupModel[] => {
+  const res: SpeciesGroupModel[] = [];
+  res.push({ id: groupId, name: data.name, parentGroupId: null });
+  if (hasSubgroups(data)) {
+    res.push(
+      ...data.subGroups.map(
+        (subGroup, index) => ({ id: `${groupId}-${index}`, name: subGroup.name, parentGroupId: groupId }) as SpeciesGroupModel,
+      ),
+    );
+  }
+  return res;
+};
+
+/**
+ * Generates array of all species (from groups and subgroups) for specific GroupData hierarchy tree (file)
+ * @param data
+ * @param groupId
+ * @returns
+ */
+export const generateSpecies = (data: GroupData, groupId: string): SpeciesModel[] => {
+  const res: SpeciesModel[] = [];
+  if (!hasSubgroups(data)) {
+    res.push(
+      ...data.species.map(
+        (species, index) =>
+          ({
+            id: `${groupId}-${index}`,
+            name: species.name,
+            groupId: groupId,
+            imageAssets: species.imageAssets,
+          }) as SpeciesModel,
+      ),
+    );
+  } else {
+    data.subGroups.forEach((subGroup, subGroupIndex) => {
+      const subGroupId = `${groupId}-${subGroupIndex}`;
+      res.push(
+        ...subGroup.species.map(
+          (species, speciesIndex) =>
+            ({
+              id: `${subGroupId}-${speciesIndex}`,
+              name: species.name,
+              groupId: subGroupId,
+              imageAssets: species.imageAssets,
+            }) as SpeciesModel,
+        ),
+      );
+    });
+  }
+  return res;
 };
