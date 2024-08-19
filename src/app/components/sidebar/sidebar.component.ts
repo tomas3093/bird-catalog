@@ -1,10 +1,11 @@
-import { Component, computed, inject, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input, output } from '@angular/core';
 import { LanguageKey } from '../../core/services/translate/TypedTranslateLoader';
 import { TranslateService } from '../../core/services/translate.service';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarComponent {
   isOpen = input.required<boolean>();

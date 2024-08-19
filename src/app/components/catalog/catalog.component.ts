@@ -1,4 +1,4 @@
-import { Component, OnInit, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
 import { StorageService } from '../../core/services/storage.service';
 import { CatalogGroup, CatalogItem } from '../../core/model/species';
 import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
@@ -9,6 +9,7 @@ import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CatalogComponent implements OnInit {
   #service = inject(StorageService);

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, input, signal } from '@angular/core';
 import { StorageService } from '../../core/services/storage.service';
 import { CatalogItem, SpeciesDetail } from '../../core/model/species';
 import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
@@ -7,6 +7,7 @@ import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } 
   selector: 'app-comparator',
   templateUrl: './comparator.component.html',
   styleUrl: './comparator.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ComparatorComponent implements OnInit {
   #service = inject(StorageService);

@@ -1,4 +1,4 @@
-import { Component, OnInit, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
 import { SpeciesDetail } from '../../core/model/species';
 import { StorageService } from '../../core/services/storage.service';
 import { map, of, switchMap, tap } from 'rxjs';
@@ -10,6 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'app-species-detail',
   templateUrl: './species-detail.component.html',
   styleUrl: './species-detail.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SpeciesDetailComponent implements OnInit {
   readonly #router = inject(Router);
