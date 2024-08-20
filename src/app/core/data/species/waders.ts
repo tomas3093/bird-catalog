@@ -129,6 +129,38 @@ const data: GroupData = {
     },
     {
       name: {
+        latin: 'Calidris canutus',
+        localized: {
+          en: 'Red Knot',
+          sk: 'Pobrežník hrdzavý',
+        },
+      },
+      imageAssets: [
+        { assetId: '27328091', metadata: 'breeding adult' },
+        { assetId: '27364911', metadata: 'breeding adult' },
+        { assetId: '81792681', metadata: 'nonbreeding/immature' },
+        { assetId: '142336261', metadata: 'nonbreeding adult' },
+        { assetId: '32756561', metadata: 'juvenile' },
+      ],
+    },
+    {
+      name: {
+        latin: 'Calidris alba',
+        localized: {
+          en: 'Sanderling',
+          sk: 'Pobrežník belavý',
+        },
+      },
+      imageAssets: [
+        { assetId: '51358281', metadata: 'breeding adult' },
+        { assetId: '37149291', metadata: 'nonbreeding adult' },
+        { assetId: '34071821', metadata: 'juvenile' },
+        { assetId: '56571291', metadata: 'nonbreeding adult' },
+        { assetId: '43552541', metadata: 'breeding adult' },
+      ],
+    },
+    {
+      name: {
         latin: 'Arenaria interpres',
         localized: { en: 'Ruddy Turnstone', sk: 'Kamenár strakatý' },
       },

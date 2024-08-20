@@ -15,7 +15,8 @@ interface InputData {
   data: { sci: string; sk: string }[];
 }
 
-describe('generate species data from ebird database', () => {
+// TODO: Sometimes following bug occurs - in case of full memory or slow network some assets are duplicated
+describe('Generate species data from ebird database', () => {
   let data: InputData | null = null;
 
   // Load input data from fixtures/data.json
@@ -26,7 +27,7 @@ describe('generate species data from ebird database', () => {
     });
   });
 
-  it('Generate species assets from ebird database', () => {
+  it('Generate data', () => {
     const result: Species[] = [];
 
     const targetSpecies = data?.data;
@@ -36,7 +37,7 @@ describe('generate species data from ebird database', () => {
           result.push(fetchedSpecies);
 
           if (result.length === data?.data.length) {
-            cy.writeFile('results/result.json', result);
+            cy.writeFile('cypress/results/result.json', result);
             cy.log('Result has been written to the file results/result.json');
           }
         }),

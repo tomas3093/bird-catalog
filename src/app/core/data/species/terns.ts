@@ -25,6 +25,38 @@ const data: GroupData = {
         },
         {
           name: {
+            latin: 'Thalasseus sandvicensis',
+            localized: {
+              en: 'Sandwich Tern',
+              sk: 'Rybár sivý',
+            },
+          },
+          imageAssets: [
+            { assetId: '64794711', metadata: 'breeding adult' },
+            { assetId: '253449731', metadata: 'nonbreeding adult' },
+            { assetId: '21109081', metadata: 'immature' },
+            { assetId: '204658121', metadata: 'juvenile' },
+            { assetId: '32464101', metadata: 'unknown' },
+          ],
+        },
+        {
+          name: {
+            latin: 'Gelochelidon nilotica',
+            localized: {
+              en: 'Gull-billed Tern',
+              sk: 'Rybárka krátkozobá',
+            },
+          },
+          imageAssets: [
+            { assetId: '57046791', metadata: 'breeding adult' },
+            { assetId: '34468111', metadata: 'nonbreeding adult' },
+            { assetId: '463429461', metadata: 'breeding adult' },
+            { assetId: '244737001', metadata: 'breeding adult' },
+            { assetId: '257325241', metadata: 'juvenile' },
+          ],
+        },
+        {
+          name: {
             latin: 'Sterna hirundo',
             localized: { en: 'Common Tern', sk: 'Rybár riečny' },
           },
@@ -35,6 +67,22 @@ const data: GroupData = {
             { assetId: '69995361', metadata: 'immature' },
             { assetId: '109125641', metadata: 'juvenile' },
             { assetId: '110663521', metadata: 'immature' },
+          ],
+        },
+        {
+          name: {
+            latin: 'Sterna paradisaea',
+            localized: {
+              en: 'Arctic Tern',
+              sk: 'Rybár dlhochvostý',
+            },
+          },
+          imageAssets: [
+            { assetId: '249987771', metadata: 'breeding adult' },
+            { assetId: '53770491', metadata: 'breeding adult' },
+            { assetId: '114017081', metadata: 'breeding adult' },
+            { assetId: '33057781', metadata: 'nonbreeding adult' },
+            { assetId: '62268111', metadata: 'breeding adult' },
           ],
         },
         {

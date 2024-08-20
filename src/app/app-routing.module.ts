@@ -3,6 +3,7 @@ import { CatalogComponent } from './components/catalog/catalog.component';
 import { SpeciesDetailComponent } from './components/species-detail/species-detail.component';
 import { NgModule } from '@angular/core';
 import { ComparatorComponent } from './components/comparator/comparator.component';
+import { QuizComponent } from './components/quiz/quiz.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,11 @@ const routes: Routes = [
         component: SpeciesDetailComponent,
       },
     ],
+  },
+  {
+    path: 'quiz',
+    pathMatch: 'full',
+    component: QuizComponent,
   },
 ];
 

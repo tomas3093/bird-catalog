@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
 import { TranslateService } from './core/services/translate.service';
 import { LANGUAGE_KEYS, LanguageKey } from './core/services/translate/TypedTranslateLoader';
 
@@ -9,6 +9,7 @@ const LOCAL_STORAGE_KEY_SPECIES_LANG = 'species_lang';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
   readonly #translate = inject(TranslateService);

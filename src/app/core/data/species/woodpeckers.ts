@@ -15,7 +15,7 @@ const data: GroupData = {
         },
       },
       imageAssets: [
-        { assetId: '35099651', metadata: 'adult male' },
+        { assetId: '206040631', metadata: 'adult male' },
         { assetId: '24651601', metadata: 'adult male' },
         { assetId: '30454481', metadata: 'female' },
         { assetId: '29708811', metadata: 'adult male' },

@@ -15,7 +15,7 @@ const data: GroupData = {
         },
       },
       imageAssets: [
-        { assetId: '152576581', metadata: 'breeding adult' },
+        { assetId: '307770421', metadata: 'breeding adult' },
         { assetId: '39278421', metadata: 'nonbreeding/immature' },
         { assetId: '171399331', metadata: 'juvenile' },
         { assetId: '254931801', metadata: 'juvenile' },
