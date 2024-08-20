@@ -179,7 +179,7 @@ const data: GroupData = {
           },
           imageAssets: [
             {
-              assetId: '44636461',
+              assetId: '46363871',
               metadata: 'adult male',
             },
             {
@@ -191,8 +191,8 @@ const data: GroupData = {
               metadata: 'adult male',
             },
             {
-              assetId: '215152411',
-              metadata: 'adult male',
+              assetId: '209200911',
+              metadata: 'female',
             },
             {
               assetId: '61213491',

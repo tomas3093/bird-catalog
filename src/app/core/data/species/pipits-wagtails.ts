@@ -31,7 +31,7 @@ const data: GroupData = {
         },
       },
       imageAssets: [
-        { assetId: '22863931', metadata: 'unknown' },
+        { assetId: '614092351', metadata: 'unknown' },
         { assetId: '36107831', metadata: 'unknown' },
         { assetId: '49017631', metadata: 'unknown' },
         { assetId: '36146841', metadata: 'unknown' },

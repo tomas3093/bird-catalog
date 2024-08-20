@@ -34,7 +34,7 @@ const data: GroupData = {
             },
           },
           imageAssets: [
-            { assetId: '167892551', metadata: 'breeding male' },
+            { assetId: '601188641', metadata: 'breeding male' },
             { assetId: '73818361', metadata: 'female/immature male' },
             { assetId: '64161101', metadata: 'nonbreeding male' },
             { assetId: '204756121', metadata: 'juvenile' },
