@@ -26,6 +26,7 @@ import { ScrollTopModule } from 'primeng/scrolltop';
 import { provideHttpClient } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
 import { SkeletonModule } from 'primeng/skeleton';
+import { QuizComponent } from '../components/quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SkeletonModule } from 'primeng/skeleton';
     LocalizedNamePipe,
     ComparatorComponent,
     SidebarComponent,
+    QuizComponent,
   ],
   imports: [
     ImageModule,

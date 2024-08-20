@@ -1,6 +1,6 @@
 # BirdCatalog
 
-TOOD: Project description
+TODO: Project description
 
 ## GitHub pages deployment
 
