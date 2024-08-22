@@ -30,6 +30,16 @@ export class En implements ITranslation {
     save: 'Save',
     change: 'Change species',
   };
+  public quiz = {
+    title: 'Quiz',
+    chooseMode: 'Please choose the mode you want to play',
+    latinNames: 'Latin names',
+    enNames: 'English names',
+    skNames: 'Slovak names',
+    latinNameQuestion: 'What is the latin name of <strong>{{name}}</strong>?',
+    enNameQuestion: 'What is the english name of <strong>{{name}}</strong>?',
+    skNameQuestion: 'What is the slovak name of <strong>{{name}}</strong>?',
+  };
   public primeNg = {
     accept: 'Yes',
     addRule: 'Add Rule',

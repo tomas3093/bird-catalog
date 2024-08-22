@@ -28,6 +28,16 @@ export interface ITranslation {
     save: string;
     change: string;
   };
+  quiz: {
+    title: string;
+    chooseMode: string;
+    latinNames: string;
+    enNames: string;
+    skNames: string;
+    latinNameQuestion: string;
+    enNameQuestion: string;
+    skNameQuestion: string;
+  };
   primeNg: {
     startsWith: string;
     contains: string;

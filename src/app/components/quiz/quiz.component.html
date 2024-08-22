@@ -1,43 +1,57 @@
-@if (loading()) {
+@if (state.isLoading()) {
   <p-progressSpinner class="flex" ariaLabel="loading" />
 } @else {
   <div class="m-1 md:m-2">
-    <div>Quiz</div>
+    <div>{{ "quiz.title" | t }}</div>
 
-    @if (quizState() === "init") {
-      <p-button icon="pi pi-play" label="Start quiz" (click)="startQuiz()" />
+    <!-- Waiting for quiz start - showing options -->
+    @if (state.isReadyToStart()) {
+      <div>{{ "quiz.chooseMode" | t }}</div>
+      <div>
+        <div class="flex align-items-center">
+          <p-radioButton name="modeSelector" [value]="guessLatinName" [(ngModel)]="mode" inputId="mode0" />
+          <label for="mode0" class="ml-2">{{ "quiz.latinNames" | t }}</label>
+        </div>
+        <div class="flex align-items-center">
+          <p-radioButton name="modeSelector" [value]="guessEnName" [(ngModel)]="mode" inputId="mode1" />
+          <label for="mode1" class="ml-2">{{ "quiz.enNames" | t }}</label>
+        </div>
+        <div class="flex align-items-center">
+          <p-radioButton name="modeSelector" [value]="guessSkName" [(ngModel)]="mode" inputId="mode2" />
+          <label for="mode2" class="ml-2">{{ "quiz.skNames" | t }}</label>
+        </div>
+      </div>
+
+      <p-button icon="pi pi-play" label="Start quiz" (click)="startNewQuiz()" />
     }
 
-    @if (["waitingForAnswer", "answerValidatedCorrect", "answerValidatedWrong"].includes(quizState())) {
-      <!-- Quiz in progress -->
-      <div>Question {{ currentQuestionIndex() + 1 }}/{{ currentRoundSet().length }}</div>
-      <div>
-        What is the latin name of <strong>{{ currentQuestion().name.localized.sk }}</strong>
-      </div>
+    <!-- Quiz in progress -->
+    @if (state.isRunning()) {
+      <div>Question {{ state.currentQuestion() }}/{{ state.roundQuestionSet().length }}</div>
+      <div [innerHTML]="state.currentQuestionText()"></div>
 
       <input
         type="text"
         pInputText
         #answerInput
         (keydown.enter)="onEnterPressed(answerInput)"
-        [ngClass]="{ 'ng-invalid ng-dirty': quizState() === 'answerValidatedWrong' }"
+        [ngClass]="{ 'ng-invalid ng-dirty': state.isInvalid() }"
       />
-      <div [hidden]="quizState() !== 'answerValidatedWrong'">Correct answer: {{ currentQuestion().name.latin }}</div>
-      <div [hidden]="quizState() !== 'answerValidatedCorrect'" class="text-green-500">Correct!</div>
+      <div [hidden]="!state.isInvalid()">Correct answer: {{ state.currentCorrectAnswer() }}</div>
+      <div [hidden]="!state.isValid()" class="text-green-500">Correct!</div>
 
       <div>
-        <p-button
-          label="Check answer"
-          (click)="submitAnswer(answerInput.value)"
-          [hidden]="['answerValidatedCorrect', 'answerValidatedWrong'].includes(quizState())"
-        />
-        <p-button label="Next" (click)="nextQuestion(answerInput)" [hidden]="quizState() === 'waitingForAnswer'" />
+        <p-button label="Check answer" (click)="validateAnswer(answerInput.value)" [hidden]="state.isValidated()" class="mr-2" />
+        <p-button label="Next" (click)="nextQuestion(answerInput)" [hidden]="state.isWaitingForAnswer()" />
       </div>
     }
 
-    @if (quizState() === "finished") {
-      <div>Score: {{ currentScore() }}/{{ maxScore }}</div>
-      <p-button icon="pi pi-play" label="Start new quiz" (click)="startQuiz()" />
+    @if (state.isFinished()) {
+      <div>Score: {{ state.score() }}/{{ maxScore }}</div>
+      <div>
+        <p-button icon="pi pi-pen-to-square" label="Change mode" (click)="changeMode()" class="mr-2" />
+        <p-button icon="pi pi-play" label="Play again" (click)="startNewQuiz()" />
+      </div>
     }
   </div>
 }

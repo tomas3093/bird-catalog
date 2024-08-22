@@ -51,10 +51,14 @@ TODO: fix routing
   - birds of prey
 - new "db table" for similar species
 - add custom gallery component
+- switch to standalone components
 - quizzes
   - learn scientific/english names
   - photo
   - sound
+  - quiz type
+    - write answer
+    - choose from options
 
 ### Phase 4
 

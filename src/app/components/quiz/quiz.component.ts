@@ -1,9 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
-import { StorageService } from '../../core/services/storage.service';
-import { CatalogItem } from '../../core/model/species';
-import { map, tap } from 'rxjs';
-
-const QUESTIONS_COUNT = 10;
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
+import { MAX_SCORE, QuizMode, QuizStore } from './quiz.store';
 
 @Component({
   selector: 'app-quiz',
@@ -11,87 +7,50 @@ const QUESTIONS_COUNT = 10;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizComponent implements OnInit {
-  #service = inject(StorageService);
-
-  species: CatalogItem[] = [];
-  loading = signal(true);
-
-  quizState = signal<'init' | 'waitingForAnswer' | 'answerValidatedCorrect' | 'answerValidatedWrong' | 'finished'>('init');
-  currentRoundSet = signal<CatalogItem[]>([]);
-  currentQuestionIndex = signal(0);
-  currentScore = signal(0);
-
-  currentQuestion = computed(() => this.currentRoundSet()[this.currentQuestionIndex()]);
+  state = inject(QuizStore);
+  mode: QuizMode = QuizMode.GUESS_LATIN_NAME;
 
   ngOnInit() {
-    this.#service
-      .getAllSpecies()
-      .pipe(
-        map((x) => x as CatalogItem[]),
-        tap((_) => {
-          this.species = _;
-          this.loading.set(false);
-        }),
-      )
-      .subscribe();
+    this.state.loadAllSpecies();
   }
 
-  startQuiz() {
-    this.currentScore.set(0);
-    this.currentRoundSet.set(getRandomItems(this.species, QUESTIONS_COUNT));
-    this.quizState.set('waitingForAnswer');
+  startNewQuiz() {
+    this.state.startNewQuiz(this.mode);
   }
 
-  submitAnswer(value: string) {
-    if (value.toLocaleLowerCase().trim() === this.currentQuestion().name.latin.toLocaleLowerCase()) {
-      this.currentScore.update((current) => current + 1);
-      this.quizState.set('answerValidatedCorrect');
-    } else {
-      this.quizState.set('answerValidatedWrong');
-    }
+  changeMode() {
+    this.state.showQuizMenu();
+  }
+
+  validateAnswer(value: string) {
+    this.state.validateAnswer(value);
   }
 
   nextQuestion(inputElement: HTMLInputElement) {
-    if (this.currentQuestionIndex() + 1 < QUESTIONS_COUNT) {
-      this.currentQuestionIndex.update((value) => value + 1);
-      this.quizState.set('waitingForAnswer');
-      inputElement.focus();
-    } else {
-      this.quizState.set('finished');
-    }
-
+    this.state.nextQuestion();
     inputElement.value = '';
+    inputElement.focus();
   }
 
   onEnterPressed(inputElement: HTMLInputElement) {
-    if (this.quizState() === 'waitingForAnswer') {
-      this.submitAnswer(inputElement.value);
-    } else if (['answerValidatedCorrect', 'answerValidatedWrong'].includes(this.quizState())) {
+    if (this.state.isWaitingForAnswer()) {
+      this.state.validateAnswer(inputElement.value);
+    } else if (this.state.isValidated()) {
       this.nextQuestion(inputElement);
     }
   }
 
   get maxScore(): number {
-    return QUESTIONS_COUNT;
-  }
-}
-
-/**
- * Get N random items from an array
- * @param arr
- * @param numItems
- * @returns
- */
-function getRandomItems<T>(arr: T[], numItems: number): T[] {
-  // Create a copy of the array to avoid mutating the original array
-  const shuffled = arr.slice();
-
-  // Shuffle the array using Fisher-Yates algorithm
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    return MAX_SCORE;
   }
 
-  // Return the first 'numItems' elements from the shuffled array
-  return shuffled.slice(0, numItems);
+  get guessLatinName(): QuizMode {
+    return QuizMode.GUESS_LATIN_NAME;
+  }
+  get guessEnName(): QuizMode {
+    return QuizMode.GUESS_EN_NAME;
+  }
+  get guessSkName(): QuizMode {
+    return QuizMode.GUESS_SK_NAME;
+  }
 }

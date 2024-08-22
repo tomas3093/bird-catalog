@@ -27,6 +27,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
 import { SkeletonModule } from 'primeng/skeleton';
 import { QuizComponent } from '../components/quiz/quiz.component';
+import { QuizStore } from '../components/quiz/quiz.store';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,7 @@ import { QuizComponent } from '../components/quiz/quiz.component';
     ScrollTopModule,
     AccordionModule,
     SkeletonModule,
+    RadioButtonModule,
   ],
   exports: [
     TypedTranslatePipe,
@@ -72,7 +75,7 @@ import { QuizComponent } from '../components/quiz/quiz.component';
     AutoFocusModule,
     SidebarComponent,
   ],
-  providers: [TranslatePipe, TypedTranslatePipe, LocalizedNamePipe, provideHttpClient()],
+  providers: [TranslatePipe, TypedTranslatePipe, LocalizedNamePipe, provideHttpClient(), QuizStore],
   bootstrap: [AppComponent],
 })
 export class CoreModule {}
