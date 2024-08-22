@@ -30,6 +30,16 @@ export class Sk implements ITranslation {
     save: 'Uložiť',
     change: 'Zmeniť druhy',
   };
+  public quiz = {
+    title: 'Kvíz',
+    chooseMode: 'Prosím zvoľte variant kvízu',
+    latinNames: 'Latinské názvy',
+    enNames: 'Anglické názvy',
+    skNames: 'Slovenské názvy',
+    latinNameQuestion: 'Aký je latinský názov pre <strong>{{name}}</strong>?',
+    enNameQuestion: 'Aký je anglický názov pre <strong>{{name}}</strong>?',
+    skNameQuestion: 'Aký je slovenský názov pre <strong>{{name}}</strong>?',
+  };
   public primeNg = {
     accept: 'Áno',
     addRule: 'Pridať pravidlo',
