@@ -32,13 +32,22 @@ export class Sk implements ITranslation {
   };
   public quiz = {
     title: 'Kvíz',
-    chooseMode: 'Prosím zvoľte variant kvízu',
-    latinNames: 'Latinské názvy',
-    enNames: 'Anglické názvy',
-    skNames: 'Slovenské názvy',
+    mode: {
+      prompt: 'Prosím zvoľte variant kvízu',
+      guessLatinNames: 'Latinské názvy (otvorené)',
+      guessEnNames: 'Anglické názvy (otvorené)',
+      guessSkNames: 'Slovenské názvy (otvorené)',
+      chooseLatinNames: 'Latinské názvy (výber z možností)',
+      chooseEnNames: 'Anglické názvy (výber z možností)',
+      chooseSkNames: 'Slovenské názvy (výber z možností)',
+      guessFromImage: 'Obrázok (otvorené)',
+      chooseFromImage: 'Obrázok (výber z možností)',
+    },
     latinNameQuestion: 'Aký je latinský názov pre <strong>{{name}}</strong>?',
     enNameQuestion: 'Aký je anglický názov pre <strong>{{name}}</strong>?',
     skNameQuestion: 'Aký je slovenský názov pre <strong>{{name}}</strong>?',
+    guessImageQuestion: 'Aký druh je na obrázku? (latinský názov)',
+    chooseImageQuestion: 'Aký druh je na obrázku?',
   };
   public primeNg = {
     accept: 'Áno',
