@@ -30,13 +30,22 @@ export interface ITranslation {
   };
   quiz: {
     title: string;
-    chooseMode: string;
-    latinNames: string;
-    enNames: string;
-    skNames: string;
+    mode: {
+      prompt: string;
+      guessLatinNames: string;
+      guessEnNames: string;
+      guessSkNames: string;
+      chooseLatinNames: string;
+      chooseEnNames: string;
+      chooseSkNames: string;
+      guessFromImage: string;
+      chooseFromImage: string;
+    };
     latinNameQuestion: string;
     enNameQuestion: string;
     skNameQuestion: string;
+    guessImageQuestion: string;
+    chooseImageQuestion: string;
   };
   primeNg: {
     startsWith: string;

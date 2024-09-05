@@ -44,6 +44,14 @@ TODO: fix routing
 ### Phase 3
 
 - add all remaining species (find some automated way to do that) ✓
+- quizzes
+  - learn scientific/english names
+  - photo
+  - sound
+  - quiz type
+    - write answer
+    - choose from options
+  - various difficulty (beginer/advanced/expert?)
 - switch in settings - "Include rare species"
 - size comparison - silhouetes drawed on canvas
   - waders
@@ -52,13 +60,6 @@ TODO: fix routing
 - new "db table" for similar species
 - add custom gallery component
 - switch to standalone components
-- quizzes
-  - learn scientific/english names
-  - photo
-  - sound
-  - quiz type
-    - write answer
-    - choose from options
 
 ### Phase 4
 

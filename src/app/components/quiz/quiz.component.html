@@ -6,19 +6,39 @@
 
     <!-- Waiting for quiz start - showing options -->
     @if (state.isReadyToStart()) {
-      <div>{{ "quiz.chooseMode" | t }}</div>
+      <div>{{ "quiz.mode.prompt" | t }}</div>
       <div>
         <div class="flex align-items-center">
           <p-radioButton name="modeSelector" [value]="guessLatinName" [(ngModel)]="mode" inputId="mode0" />
-          <label for="mode0" class="ml-2">{{ "quiz.latinNames" | t }}</label>
+          <label for="mode0" class="ml-2">{{ "quiz.mode.guessLatinNames" | t }}</label>
         </div>
         <div class="flex align-items-center">
           <p-radioButton name="modeSelector" [value]="guessEnName" [(ngModel)]="mode" inputId="mode1" />
-          <label for="mode1" class="ml-2">{{ "quiz.enNames" | t }}</label>
+          <label for="mode1" class="ml-2">{{ "quiz.mode.guessEnNames" | t }}</label>
         </div>
         <div class="flex align-items-center">
           <p-radioButton name="modeSelector" [value]="guessSkName" [(ngModel)]="mode" inputId="mode2" />
-          <label for="mode2" class="ml-2">{{ "quiz.skNames" | t }}</label>
+          <label for="mode2" class="ml-2">{{ "quiz.mode.guessSkNames" | t }}</label>
+        </div>
+        <div class="flex align-items-center">
+          <p-radioButton name="modeSelector" [value]="chooseLatinName" [(ngModel)]="mode" inputId="mode3" />
+          <label for="mode3" class="ml-2">{{ "quiz.mode.chooseLatinNames" | t }}</label>
+        </div>
+        <div class="flex align-items-center">
+          <p-radioButton name="modeSelector" [value]="chooseEnName" [(ngModel)]="mode" inputId="mode4" />
+          <label for="mode4" class="ml-2">{{ "quiz.mode.chooseEnNames" | t }}</label>
+        </div>
+        <div class="flex align-items-center">
+          <p-radioButton name="modeSelector" [value]="chooseSkName" [(ngModel)]="mode" inputId="mode5" />
+          <label for="mode5" class="ml-2">{{ "quiz.mode.chooseSkNames" | t }}</label>
+        </div>
+        <div class="flex align-items-center">
+          <p-radioButton name="modeSelector" [value]="guessFromImage" [(ngModel)]="mode" inputId="mode6" />
+          <label for="mode6" class="ml-2">{{ "quiz.mode.guessFromImage" | t }}</label>
+        </div>
+        <div class="flex align-items-center">
+          <p-radioButton name="modeSelector" [value]="chooseFromImage" [(ngModel)]="mode" inputId="mode7" />
+          <label for="mode7" class="ml-2">{{ "quiz.mode.chooseFromImage" | t }}</label>
         </div>
       </div>
 
@@ -30,19 +50,49 @@
       <div>Question {{ state.currentQuestion() }}/{{ state.roundQuestionSet().length }}</div>
       <div [innerHTML]="state.currentQuestionText()"></div>
 
-      <input
-        type="text"
-        pInputText
-        #answerInput
-        (keydown.enter)="onEnterPressed(answerInput)"
-        [ngClass]="{ 'ng-invalid ng-dirty': state.isInvalid() }"
-      />
-      <div [hidden]="!state.isInvalid()">Correct answer: {{ state.currentCorrectAnswer() }}</div>
-      <div [hidden]="!state.isValid()" class="text-green-500">Correct!</div>
+      @if (isImageQuestion()) {
+        <img [src]="state.currentQuestionObject().fullsizeImgSrc" height="250" />
+      }
+
+      <!-- Question with open text answer -->
+      @if (state.isOpenQuestion()) {
+        <input
+          type="text"
+          pInputText
+          #textAnswerInput
+          (keydown.enter)="onEnterPressed()"
+          [ngClass]="{ 'ng-invalid ng-dirty': state.isInvalid() }"
+        />
+        <div [hidden]="!state.isInvalid()">Correct answer: {{ currentCorrectAnswer() }}</div>
+        <div [hidden]="!state.isValid()" class="text-green-500">Correct!</div>
+      } @else {
+        <!-- Question with answer options -->
+        <div *ngFor="let option of state.currentQuestionOptions(); let index = index">
+          @let inputId = "option" + index;
+          <p-radioButton
+            [inputId]="inputId"
+            name="optionSelector"
+            [value]="option.id"
+            [(ngModel)]="selectedOptionId"
+            [disabled]="state.isValidated()"
+            [ngClass]="{ 'ng-invalid ng-dirty': isOptionMarkedAsIncorrect(option.id) }"
+          />
+          <label
+            [for]="inputId"
+            class="ml-2"
+            [ngClass]="{
+              'text-red-500': isOptionMarkedAsIncorrect(option.id),
+              'text-teal-500': isOptionMarkedAsCorrect(option.id),
+            }"
+          >
+            {{ optionLabel(option) }}
+          </label>
+        </div>
+      }
 
       <div>
-        <p-button label="Check answer" (click)="validateAnswer(answerInput.value)" [hidden]="state.isValidated()" class="mr-2" />
-        <p-button label="Next" (click)="nextQuestion(answerInput)" [hidden]="state.isWaitingForAnswer()" />
+        <p-button label="Check answer" (click)="validateAnswer()" [hidden]="state.isValidated()" class="mr-2" />
+        <p-button label="Next" (click)="nextQuestion()" [hidden]="state.isWaitingForAnswer()" />
       </div>
     }
 

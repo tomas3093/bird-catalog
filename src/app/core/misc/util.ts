@@ -1,4 +1,5 @@
 import { GroupData, hasSubgroups, SpeciesGroupModel, SpeciesModel } from '../data/model';
+import { CatalogItem } from '../model/species';
 
 /**
  * Returns image URL according to specified asset ID from Macaulay library
@@ -102,4 +103,36 @@ export const generateSpecies = (data: GroupData, groupId: string): SpeciesModel[
     });
   }
   return res;
+};
+
+/**
+ * Get N random items from an array
+ * @param arr
+ * @param numItems
+ * @returns
+ */
+export const getRandomItems = <T>(arr: T[], numItems: number): T[] => {
+  // Create a copy of the array to avoid mutating the original array
+  const shuffled = arr.slice();
+
+  // Shuffle the array using Fisher-Yates algorithm
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  // Return the first 'numItems' elements from the shuffled array
+  return shuffled.slice(0, numItems);
+};
+
+/**
+ * Returns 3 items which are either random or similar to correctAnswer (to achieve higher difficulty)
+ * @param allSpecies
+ * @param correctAnswer
+ * @param random
+ */
+export const getSimilarSpecies = (allSpecies: CatalogItem[], correctAnswer: CatalogItem, random = false): CatalogItem[] => {
+  // TODO add non random algorithm
+  const array = allSpecies.filter((_) => _.id !== correctAnswer.id);
+  return getRandomItems(array, 3);
 };

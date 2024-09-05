@@ -32,13 +32,22 @@ export class En implements ITranslation {
   };
   public quiz = {
     title: 'Quiz',
-    chooseMode: 'Please choose the mode you want to play',
-    latinNames: 'Latin names',
-    enNames: 'English names',
-    skNames: 'Slovak names',
+    mode: {
+      prompt: 'Please choose the mode you want to play',
+      guessLatinNames: 'Latin names (open)',
+      guessEnNames: 'English names (open)',
+      guessSkNames: 'Slovak names (open)',
+      chooseLatinNames: 'Latin names (choose from options)',
+      chooseEnNames: 'English names (choose from options)',
+      chooseSkNames: 'Slovak names (choose from options)',
+      guessFromImage: 'Image (open)',
+      chooseFromImage: 'Image (choose from options)',
+    },
     latinNameQuestion: 'What is the latin name of <strong>{{name}}</strong>?',
     enNameQuestion: 'What is the english name of <strong>{{name}}</strong>?',
     skNameQuestion: 'What is the slovak name of <strong>{{name}}</strong>?',
+    guessImageQuestion: 'What species is in the picture? (latin name)',
+    chooseImageQuestion: 'What species is in the picture?',
   };
   public primeNg = {
     accept: 'Yes',

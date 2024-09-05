@@ -4,6 +4,7 @@ import { computed, inject } from '@angular/core';
 import { StorageService } from '../../core/services/storage.service';
 import { map, tap } from 'rxjs';
 import { TranslateService } from '../../core/services/translate.service';
+import { getSimilarSpecies, getRandomItems } from '../../core/misc/util';
 
 const QUESTIONS_IN_SINGLE_ROUND = 10;
 export const MAX_SCORE = QUESTIONS_IN_SINGLE_ROUND;
@@ -25,26 +26,8 @@ export enum QuizMode {
   CHOOSE_SK_NAME = 5, // from options
   GUESS_FROM_IMAGE = 6, // free text guess from showed image
   CHOOSE_FROM_IMAGE = 7, // from options
-}
-
-/**
- * Get N random items from an array
- * @param arr
- * @param numItems
- * @returns
- */
-function getRandomItems<T>(arr: T[], numItems: number): T[] {
-  // Create a copy of the array to avoid mutating the original array
-  const shuffled = arr.slice();
-
-  // Shuffle the array using Fisher-Yates algorithm
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-
-  // Return the first 'numItems' elements from the shuffled array
-  return shuffled.slice(0, numItems);
+  GUESS_FROM_SOUND = 8, // free text guess from sound
+  CHOOSE_FROM_SOUND = 9, // from options
 }
 
 type QuizState = {
@@ -76,43 +59,51 @@ export const QuizStore = signalStore(
 
       switch (store.mode()) {
         case QuizMode.GUESS_LATIN_NAME:
+        case QuizMode.CHOOSE_LATIN_NAME:
           return translate.instant('quiz.latinNameQuestion', {
             name: currentSpeciesToGuess.name.localized[translate.currentSpeciesLanguage],
           });
 
         case QuizMode.GUESS_EN_NAME:
+        case QuizMode.CHOOSE_EN_NAME:
           return translate.instant('quiz.enNameQuestion', {
             name: currentSpeciesToGuess.name.latin,
           });
 
         case QuizMode.GUESS_SK_NAME:
+        case QuizMode.CHOOSE_SK_NAME:
           return translate.instant('quiz.skNameQuestion', {
             name: currentSpeciesToGuess.name.latin,
           });
+
+        case QuizMode.GUESS_FROM_IMAGE:
+          return translate.instant('quiz.guessImageQuestion');
+        case QuizMode.CHOOSE_FROM_IMAGE:
+          return translate.instant('quiz.chooseImageQuestion');
 
         default:
           throw Error('Unsupported quiz mode');
       }
     }),
-    currentCorrectAnswer: computed((): string => {
-      const currentSpeciesToGuess = store.roundQuestionSet()[store.currentQuestion() - 1];
-
-      switch (store.mode()) {
-        case QuizMode.GUESS_LATIN_NAME:
-        case QuizMode.CHOOSE_LATIN_NAME:
-          return currentSpeciesToGuess.name.latin.toLowerCase();
-
-        case QuizMode.GUESS_EN_NAME:
-        case QuizMode.CHOOSE_EN_NAME:
-          return currentSpeciesToGuess.name.localized.en.toLowerCase();
-
-        case QuizMode.GUESS_SK_NAME:
-        case QuizMode.CHOOSE_SK_NAME:
-          return currentSpeciesToGuess.name.localized.sk.toLowerCase();
-
-        default:
-          throw Error('Unsupported quiz mode');
+    currentQuestionOptions: computed((): CatalogItem[] => {
+      const mode = store.mode();
+      if (
+        ![
+          QuizMode.CHOOSE_EN_NAME,
+          QuizMode.CHOOSE_SK_NAME,
+          QuizMode.CHOOSE_LATIN_NAME,
+          QuizMode.CHOOSE_FROM_IMAGE,
+          QuizMode.CHOOSE_FROM_SOUND,
+        ].includes(mode)
+      ) {
+        return [];
       }
+
+      const currentSpeciesToGuess = store.roundQuestionSet()[store.currentQuestion() - 1];
+      const similar = getSimilarSpecies(store.species(), currentSpeciesToGuess);
+
+      const allOptions = [currentSpeciesToGuess, ...similar];
+      return getRandomItems(allOptions, allOptions.length); // Shuffle
     }),
     isValidated: computed(() => [QuizStep.ANSWER_VALID, QuizStep.ANSWER_INVALID].includes(store.step())),
     isValid: computed(() => [QuizStep.ANSWER_VALID].includes(store.step())),
@@ -123,6 +114,15 @@ export const QuizStore = signalStore(
       [QuizStep.WAITING_FOR_ANSWER, QuizStep.ANSWER_VALID, QuizStep.ANSWER_INVALID].includes(store.step()),
     ),
     isFinished: computed(() => [QuizStep.FINISHED].includes(store.step())),
+    isOpenQuestion: computed(() =>
+      [
+        QuizMode.GUESS_EN_NAME,
+        QuizMode.GUESS_SK_NAME,
+        QuizMode.GUESS_LATIN_NAME,
+        QuizMode.GUESS_FROM_IMAGE,
+        QuizMode.GUESS_FROM_SOUND,
+      ].includes(store.mode()),
+    ),
   })),
   withMethods((store, storageService = inject(StorageService)) => ({
     // 👇 Method to load all species
@@ -148,10 +148,8 @@ export const QuizStore = signalStore(
         currentQuestion: 1,
       });
     },
-    validateAnswer(answerValue: string): void {
-      const enteredValue = answerValue.toLowerCase().trim();
-
-      if (enteredValue === store.currentCorrectAnswer()) {
+    validateAnswer(isAnswerValid: boolean): void {
+      if (isAnswerValid) {
         patchState(store, { step: QuizStep.ANSWER_VALID, score: store.score() + 1 });
       } else {
         patchState(store, { step: QuizStep.ANSWER_INVALID });
