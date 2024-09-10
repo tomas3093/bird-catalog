@@ -33,7 +33,6 @@ export class En implements ITranslation {
   public quiz = {
     title: 'Quiz',
     mode: {
-      prompt: 'Please choose the mode you want to play',
       guessLatinNames: 'Latin names (open)',
       guessEnNames: 'English names (open)',
       guessSkNames: 'Slovak names (open)',

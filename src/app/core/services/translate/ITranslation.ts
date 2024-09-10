@@ -31,7 +31,6 @@ export interface ITranslation {
   quiz: {
     title: string;
     mode: {
-      prompt: string;
       guessLatinNames: string;
       guessEnNames: string;
       guessSkNames: string;

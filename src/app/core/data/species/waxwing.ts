@@ -11,7 +11,7 @@ const data: GroupData = {
         latin: 'Bombycilla garrulus',
         localized: {
           en: 'Bohemian Waxwing',
-          sk: 'Chochláč',
+          sk: 'Chochláč severský',
         },
       },
       imageAssets: [

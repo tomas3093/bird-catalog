@@ -1,7 +1,9 @@
 import { ChangeDetectionStrategy, Component, ElementRef, OnInit, computed, inject, viewChild } from '@angular/core';
-import { MAX_SCORE, QuizMode, QuizStore } from './quiz.store';
+import { MAX_SCORE, QuizDifficulty, QuizMode, QuizStore } from './quiz.store';
 import { CatalogItem } from '../../core/model/species';
 import { TranslateService } from '../../core/services/translate.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SelectItemGroup } from 'primeng/api';
 
 @Component({
   selector: 'app-quiz',
@@ -11,7 +13,14 @@ import { TranslateService } from '../../core/services/translate.service';
 export class QuizComponent implements OnInit {
   #translate = inject(TranslateService);
   state = inject(QuizStore);
-  mode: QuizMode = QuizMode.GUESS_LATIN_NAME;
+
+  formGroup = new FormGroup({
+    mode: new FormControl<QuizMode>(this.state.mode(), { nonNullable: true, validators: [Validators.required] }),
+    difficulty: new FormControl<QuizDifficulty>(this.state.difficulty(), {
+      nonNullable: true,
+      validators: [Validators.required],
+    }),
+  });
 
   textAnswerInput = viewChild<ElementRef<HTMLInputElement>>('textAnswerInput');
   selectedOptionId: string | null = null;
@@ -34,13 +43,56 @@ export class QuizComponent implements OnInit {
   });
 
   isImageQuestion = computed(() => [QuizMode.GUESS_FROM_IMAGE, QuizMode.CHOOSE_FROM_IMAGE].includes(this.state.mode()));
+  // TODO: SelectedOptionId must be signal (?)
+  // isValidateButtonDisabled = computed(
+  //   () =>
+  //     this.state.isWaitingForAnswer() &&
+  //     ((this.state.isOpenQuestion() && !this.textAnswerInput()?.nativeElement.value) ||
+  //       (!this.state.isOpenQuestion() && this.selectedOptionId === null)),
+  // );
+
+  difficultyOptions: { label: string; value: QuizDifficulty }[] = [
+    { label: 'Beginner', value: QuizDifficulty.BEGINNER },
+    { label: 'Advanced', value: QuizDifficulty.ADVANCED },
+    { label: 'Expert', value: QuizDifficulty.EXPERT },
+  ];
+
+  modeOptions: SelectItemGroup[] = [
+    {
+      label: 'Open questions',
+      value: 'open',
+      items: [
+        { label: 'GUESS_LATIN_NAME', value: QuizMode.GUESS_LATIN_NAME },
+        { label: 'GUESS_EN_NAME', value: QuizMode.GUESS_EN_NAME },
+        { label: 'GUESS_SK_NAME', value: QuizMode.GUESS_SK_NAME },
+      ],
+    },
+    {
+      label: 'With options',
+      value: 'options',
+      items: [
+        { label: 'CHOOSE_LATIN_NAME', value: QuizMode.CHOOSE_LATIN_NAME },
+        { label: 'CHOOSE_EN_NAME', value: QuizMode.CHOOSE_EN_NAME },
+        { label: 'CHOOSE_SK_NAME', value: QuizMode.CHOOSE_SK_NAME },
+      ],
+    },
+    {
+      label: 'Image',
+      value: 'image',
+      items: [
+        { label: 'GUESS_FROM_IMAGE', value: QuizMode.GUESS_FROM_IMAGE },
+        { label: 'CHOOSE_FROM_IMAGE', value: QuizMode.CHOOSE_FROM_IMAGE },
+      ],
+    },
+  ];
 
   ngOnInit() {
     this.state.loadAllSpecies();
   }
 
   startNewQuiz() {
-    this.state.startNewQuiz(this.mode);
+    const c = this.formGroup.controls;
+    this.state.startNewQuiz(c.mode.value, c.difficulty.value);
   }
 
   changeMode() {
@@ -58,6 +110,7 @@ export class QuizComponent implements OnInit {
       this.state.validateAnswer(isAnswerValid);
     } else {
       const isAnswerValid = this.selectedOptionId === this.state.currentQuestionObject().id;
+      // this.selectedOptionId = null; TODO: disable validation button if nothing selected
       this.state.validateAnswer(isAnswerValid);
     }
   }

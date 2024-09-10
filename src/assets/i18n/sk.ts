@@ -33,7 +33,6 @@ export class Sk implements ITranslation {
   public quiz = {
     title: 'Kvíz',
     mode: {
-      prompt: 'Prosím zvoľte variant kvízu',
       guessLatinNames: 'Latinské názvy (otvorené)',
       guessEnNames: 'Anglické názvy (otvorené)',
       guessSkNames: 'Slovenské názvy (otvorené)',

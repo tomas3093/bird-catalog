@@ -4,10 +4,32 @@
   <div class="m-1 md:m-2">
     <div>{{ "quiz.title" | t }}</div>
 
-    <!-- Waiting for quiz start - showing options -->
+    <!-- Waiting for quiz start - showing quiz settings -->
     @if (state.isReadyToStart()) {
-      <div>{{ "quiz.mode.prompt" | t }}</div>
-      <div>
+      <div class="card flex justify-content-center">
+        <form [formGroup]="formGroup">
+          <p-selectButton [options]="difficultyOptions" formControlName="difficulty" optionLabel="label" optionValue="value" />
+
+          <p-listbox
+            [options]="modeOptions"
+            [group]="true"
+            formControlName="mode"
+            [listStyle]="{ 'max-height': '250px' }"
+            [style]="{ width: '15rem' }"
+          >
+            <ng-template let-group pTemplate="group">
+              <div class="flex align-items-center">
+                <span>{{ group.label }}</span>
+                <!-- <span>{{ group.value }}</span> -->
+              </div>
+            </ng-template>
+          </p-listbox>
+
+          <p-button icon="pi pi-play" label="Start quiz" (click)="startNewQuiz()" />
+        </form>
+      </div>
+
+      <!-- <div>
         <div class="flex align-items-center">
           <p-radioButton name="modeSelector" [value]="guessLatinName" [(ngModel)]="mode" inputId="mode0" />
           <label for="mode0" class="ml-2">{{ "quiz.mode.guessLatinNames" | t }}</label>
@@ -40,9 +62,7 @@
           <p-radioButton name="modeSelector" [value]="chooseFromImage" [(ngModel)]="mode" inputId="mode7" />
           <label for="mode7" class="ml-2">{{ "quiz.mode.chooseFromImage" | t }}</label>
         </div>
-      </div>
-
-      <p-button icon="pi pi-play" label="Start quiz" (click)="startNewQuiz()" />
+      </div> -->
     }
 
     <!-- Quiz in progress -->

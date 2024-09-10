@@ -8,6 +8,7 @@ import { getSimilarSpecies, getRandomItems } from '../../core/misc/util';
 
 const QUESTIONS_IN_SINGLE_ROUND = 10;
 export const MAX_SCORE = QUESTIONS_IN_SINGLE_ROUND;
+const TOTAL_OPTIONS_COUNT = 4;
 
 enum QuizStep {
   READY = 0,
@@ -30,10 +31,17 @@ export enum QuizMode {
   CHOOSE_FROM_SOUND = 9, // from options
 }
 
+export enum QuizDifficulty {
+  BEGINNER = 0,
+  ADVANCED = 1,
+  EXPERT = 2,
+}
+
 type QuizState = {
   species: CatalogItem[];
   isLoading: boolean;
   mode: QuizMode;
+  difficulty: QuizDifficulty;
   step: QuizStep;
   roundQuestionSet: CatalogItem[];
   currentQuestion: number; // start from 1
@@ -44,6 +52,7 @@ const initialState: QuizState = {
   species: [],
   isLoading: false,
   mode: QuizMode.GUESS_LATIN_NAME,
+  difficulty: QuizDifficulty.BEGINNER,
   step: QuizStep.READY,
   roundQuestionSet: [],
   currentQuestion: 1,
@@ -100,7 +109,7 @@ export const QuizStore = signalStore(
       }
 
       const currentSpeciesToGuess = store.roundQuestionSet()[store.currentQuestion() - 1];
-      const similar = getSimilarSpecies(store.species(), currentSpeciesToGuess);
+      const similar = getSimilarSpecies(store.species(), currentSpeciesToGuess, store.difficulty(), TOTAL_OPTIONS_COUNT - 1);
 
       const allOptions = [currentSpeciesToGuess, ...similar];
       return getRandomItems(allOptions, allOptions.length); // Shuffle
@@ -139,10 +148,11 @@ export const QuizStore = signalStore(
         )
         .subscribe();
     },
-    startNewQuiz(mode: QuizMode): void {
+    startNewQuiz(mode: QuizMode, difficulty: QuizDifficulty): void {
       patchState(store, {
         score: 0,
-        mode: mode,
+        mode,
+        difficulty,
         roundQuestionSet: getRandomItems(store.species(), QUESTIONS_IN_SINGLE_ROUND),
         step: QuizStep.WAITING_FOR_ANSWER,
         currentQuestion: 1,

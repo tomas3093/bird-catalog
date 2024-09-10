@@ -21,7 +21,7 @@ import { GroupWrapperComponent } from '../components/group-wrapper/group-wrapper
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { SidebarModule } from 'primeng/sidebar';
 import { DropdownModule } from 'primeng/dropdown';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { provideHttpClient } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
@@ -29,6 +29,8 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { QuizComponent } from '../components/quiz/quiz.component';
 import { QuizStore } from '../components/quiz/quiz.store';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { ListboxModule } from 'primeng/listbox';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,9 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     AccordionModule,
     SkeletonModule,
     RadioButtonModule,
+    SelectButtonModule,
+    ReactiveFormsModule,
+    ListboxModule,
   ],
   exports: [
     TypedTranslatePipe,

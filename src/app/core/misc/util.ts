@@ -1,3 +1,4 @@
+import { QuizDifficulty } from '../../components/quiz/quiz.store';
 import { GroupData, hasSubgroups, SpeciesGroupModel, SpeciesModel } from '../data/model';
 import { CatalogItem } from '../model/species';
 
@@ -126,13 +127,96 @@ export const getRandomItems = <T>(arr: T[], numItems: number): T[] => {
 };
 
 /**
- * Returns 3 items which are either random or similar to correctAnswer (to achieve higher difficulty)
+ * Return items which are either random or similar to correctAnswer according to difficulty
  * @param allSpecies
  * @param correctAnswer
- * @param random
+ * @param difficulty
+ * @param count number of items to return
  */
-export const getSimilarSpecies = (allSpecies: CatalogItem[], correctAnswer: CatalogItem, random = false): CatalogItem[] => {
-  // TODO add non random algorithm
+export const getSimilarSpecies = (
+  allSpecies: CatalogItem[],
+  correctAnswer: CatalogItem,
+  difficulty: QuizDifficulty,
+  count: number,
+): CatalogItem[] => {
   const array = allSpecies.filter((_) => _.id !== correctAnswer.id);
-  return getRandomItems(array, 3);
+  const res: CatalogItem[] = [];
+  let tmp: CatalogItem[] = [];
+
+  // Auto generated unique ID, format: <groupId>-<(optional) subGroupId>-<speciesId>
+  const groupName = correctAnswer.id.split('-')[0];
+  const subGroupId = correctAnswer.id.split('-').length === 3 ? correctAnswer.id.split('-')[1] : null;
+
+  switch (difficulty) {
+    case QuizDifficulty.BEGINNER:
+      return getRandomItems(array, count); // all random
+
+    case QuizDifficulty.ADVANCED:
+      if (subGroupId !== null) {
+        // push items from subgroup
+        res.push(
+          ...array.filter((_) => {
+            const s = _.id.split('-');
+            _.id.startsWith(groupName) && s.length === 3 && subGroupId === s[1];
+          }),
+        );
+
+        if (res.length >= count) {
+          return getRandomItems(res, count); // take count and shuffle
+        }
+      }
+
+      // push items from group
+      if (res.length > 0) {
+        tmp = array.filter((_) => _.id.startsWith(groupName) && !res.map((item) => item.id).includes(_.id));
+        res.push(...tmp.slice(0, count - res.length));
+      } else {
+        res.push(...array.filter((_) => _.id.startsWith(groupName)));
+      }
+      if (res.length >= count) {
+        return getRandomItems(res, count);
+      }
+
+      // push random items
+      tmp = array.filter((_) => !res.map((item) => item.id).includes(_.id));
+      res.push(...tmp.slice(0, count - res.length));
+      return getRandomItems(res, count); // shuffle
+
+    case QuizDifficulty.EXPERT:
+      const latinNameSplit = correctAnswer.name.latin.split(' ');
+      // push items with the same latin name (Turdus sp., Curruca sp. ...)
+      res.push(...array.filter((_) => _.name.latin.includes(latinNameSplit[0])));
+      if (res.length >= count) {
+        return getRandomItems(res, count);
+      }
+
+      if (subGroupId !== null) {
+        // push items from subgroup
+        tmp = array.filter((_) => {
+          const s = _.id.split('-');
+          _.id.startsWith(groupName) && s.length === 3 && subGroupId === s[1];
+        });
+        res.push(...tmp.slice(0, count - res.length));
+
+        if (res.length >= count) {
+          return getRandomItems(res, count);
+        }
+      }
+
+      // push items from group
+      if (res.length > 0) {
+        tmp = array.filter((_) => _.id.startsWith(groupName) && !res.map((item) => item.id).includes(_.id));
+        res.push(...tmp.slice(0, count - res.length));
+      } else {
+        res.push(...array.filter((_) => _.id.startsWith(groupName)));
+      }
+      if (res.length >= count) {
+        return getRandomItems(res, count);
+      }
+
+      // push random items
+      tmp = array.filter((_) => !res.map((item) => item.id).includes(_.id));
+      res.push(...tmp.slice(0, count - res.length));
+      return getRandomItems(res, count); // shuffle
+  }
 };
