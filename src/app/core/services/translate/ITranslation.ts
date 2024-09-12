@@ -30,16 +30,31 @@ export interface ITranslation {
   };
   quiz: {
     title: string;
-    mode: {
-      guessLatinNames: string;
-      guessEnNames: string;
-      guessSkNames: string;
-      chooseLatinNames: string;
-      chooseEnNames: string;
-      chooseSkNames: string;
-      guessFromImage: string;
-      chooseFromImage: string;
+    difficulty: {
+      beginner: string;
+      advanced: string;
+      expert: string;
     };
+    mode: {
+      group: {
+        open: string;
+        options: string;
+      };
+      latinNames: string;
+      enNames: string;
+      skNames: string;
+      images: string;
+    };
+    start: string;
+    stop: string;
+    question: string;
+    correctAnswerLabel: string;
+    correct: string;
+    check: string;
+    next: string;
+    score: string;
+    changeMode: string;
+    playAgain: string;
     latinNameQuestion: string;
     enNameQuestion: string;
     skNameQuestion: string;

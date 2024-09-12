@@ -123,7 +123,7 @@ export const QuizStore = signalStore(
       [QuizStep.WAITING_FOR_ANSWER, QuizStep.ANSWER_VALID, QuizStep.ANSWER_INVALID].includes(store.step()),
     ),
     isFinished: computed(() => [QuizStep.FINISHED].includes(store.step())),
-    isOpenQuestion: computed(() =>
+    isOpenAnswer: computed(() =>
       [
         QuizMode.GUESS_EN_NAME,
         QuizMode.GUESS_SK_NAME,
@@ -157,6 +157,9 @@ export const QuizStore = signalStore(
         step: QuizStep.WAITING_FOR_ANSWER,
         currentQuestion: 1,
       });
+    },
+    stopQuiz(): void {
+      patchState(store, { step: QuizStep.FINISHED });
     },
     validateAnswer(isAnswerValid: boolean): void {
       if (isAnswerValid) {

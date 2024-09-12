@@ -43,45 +43,30 @@ export class QuizComponent implements OnInit {
   });
 
   isImageQuestion = computed(() => [QuizMode.GUESS_FROM_IMAGE, QuizMode.CHOOSE_FROM_IMAGE].includes(this.state.mode()));
-  // TODO: SelectedOptionId must be signal (?)
-  // isValidateButtonDisabled = computed(
-  //   () =>
-  //     this.state.isWaitingForAnswer() &&
-  //     ((this.state.isOpenQuestion() && !this.textAnswerInput()?.nativeElement.value) ||
-  //       (!this.state.isOpenQuestion() && this.selectedOptionId === null)),
-  // );
 
   difficultyOptions: { label: string; value: QuizDifficulty }[] = [
-    { label: 'Beginner', value: QuizDifficulty.BEGINNER },
-    { label: 'Advanced', value: QuizDifficulty.ADVANCED },
-    { label: 'Expert', value: QuizDifficulty.EXPERT },
+    { label: 'quiz.difficulty.beginner', value: QuizDifficulty.BEGINNER },
+    { label: 'quiz.difficulty.advanced', value: QuizDifficulty.ADVANCED },
+    { label: 'quiz.difficulty.expert', value: QuizDifficulty.EXPERT },
   ];
 
   modeOptions: SelectItemGroup[] = [
     {
-      label: 'Open questions',
-      value: 'open',
+      label: 'quiz.mode.group.open',
       items: [
-        { label: 'GUESS_LATIN_NAME', value: QuizMode.GUESS_LATIN_NAME },
-        { label: 'GUESS_EN_NAME', value: QuizMode.GUESS_EN_NAME },
-        { label: 'GUESS_SK_NAME', value: QuizMode.GUESS_SK_NAME },
+        { label: 'quiz.mode.latinNames', value: QuizMode.GUESS_LATIN_NAME },
+        { label: 'quiz.mode.enNames', value: QuizMode.GUESS_EN_NAME },
+        { label: 'quiz.mode.skNames', value: QuizMode.GUESS_SK_NAME },
+        { label: 'quiz.mode.images', value: QuizMode.GUESS_FROM_IMAGE },
       ],
     },
     {
-      label: 'With options',
-      value: 'options',
+      label: 'quiz.mode.group.options',
       items: [
-        { label: 'CHOOSE_LATIN_NAME', value: QuizMode.CHOOSE_LATIN_NAME },
-        { label: 'CHOOSE_EN_NAME', value: QuizMode.CHOOSE_EN_NAME },
-        { label: 'CHOOSE_SK_NAME', value: QuizMode.CHOOSE_SK_NAME },
-      ],
-    },
-    {
-      label: 'Image',
-      value: 'image',
-      items: [
-        { label: 'GUESS_FROM_IMAGE', value: QuizMode.GUESS_FROM_IMAGE },
-        { label: 'CHOOSE_FROM_IMAGE', value: QuizMode.CHOOSE_FROM_IMAGE },
+        { label: 'quiz.mode.latinNames', value: QuizMode.CHOOSE_LATIN_NAME },
+        { label: 'quiz.mode.enNames', value: QuizMode.CHOOSE_EN_NAME },
+        { label: 'quiz.mode.skNames', value: QuizMode.CHOOSE_SK_NAME },
+        { label: 'quiz.mode.images', value: QuizMode.CHOOSE_FROM_IMAGE },
       ],
     },
   ];
@@ -93,6 +78,16 @@ export class QuizComponent implements OnInit {
   startNewQuiz() {
     const c = this.formGroup.controls;
     this.state.startNewQuiz(c.mode.value, c.difficulty.value);
+
+    if (this.state.isOpenAnswer()) {
+      setTimeout(() => {
+        this.textAnswerInput()?.nativeElement.focus();
+      }, 200);
+    }
+  }
+
+  stopQuiz() {
+    this.state.stopQuiz();
   }
 
   changeMode() {
@@ -100,7 +95,7 @@ export class QuizComponent implements OnInit {
   }
 
   validateAnswer() {
-    if (this.state.isOpenQuestion()) {
+    if (this.state.isOpenAnswer()) {
       const openAnswerValue = this.textAnswerInput()?.nativeElement.value;
       if (!openAnswerValue) {
         return;

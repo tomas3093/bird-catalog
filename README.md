@@ -51,7 +51,7 @@ TODO: fix routing
   - quiz type
     - write answer
     - choose from options
-  - various difficulty (beginer/advanced/expert?)
+  - various difficulty (beginer/advanced/expert?) ✓
 - switch in settings - "Include rare species"
 - size comparison - silhouetes drawed on canvas
   - waders
