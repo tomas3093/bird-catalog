@@ -87,7 +87,7 @@
       <div class="mt-5">
         <p-button [label]="'quiz.stop' | t" severity="secondary" (click)="stopQuiz()" class="mr-2" />
         <p-button [label]="'quiz.check' | t" (click)="validateAnswer()" [hidden]="state.isValidated()" />
-        <p-button [label]="'quiz.next' | t" (click)="nextQuestion()" [hidden]="state.isWaitingForAnswer()" />
+        <p-button [label]="'quiz.next' | t" (click)="nextQuestion()" [hidden]="state.isWaitingForAnswer() || isLastQuestion()" />
       </div>
     }
 

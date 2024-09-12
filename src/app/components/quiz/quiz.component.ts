@@ -43,6 +43,7 @@ export class QuizComponent implements OnInit {
   });
 
   isImageQuestion = computed(() => [QuizMode.GUESS_FROM_IMAGE, QuizMode.CHOOSE_FROM_IMAGE].includes(this.state.mode()));
+  isLastQuestion = computed(() => this.state.currentQuestion() === this.maxScore);
 
   difficultyOptions: { label: string; value: QuizDifficulty }[] = [
     { label: 'quiz.difficulty.beginner', value: QuizDifficulty.BEGINNER },
@@ -105,13 +106,16 @@ export class QuizComponent implements OnInit {
       this.state.validateAnswer(isAnswerValid);
     } else {
       const isAnswerValid = this.selectedOptionId === this.state.currentQuestionObject().id;
-      // this.selectedOptionId = null; TODO: disable validation button if nothing selected
       this.state.validateAnswer(isAnswerValid);
     }
   }
 
   nextQuestion() {
     this.state.nextQuestion();
+
+    if (this.selectedOptionId !== null) {
+      this.selectedOptionId = null;
+    }
 
     const el = this.textAnswerInput()?.nativeElement;
     if (el) {

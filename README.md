@@ -45,12 +45,13 @@ TODO: fix routing
 
 - add all remaining species (find some automated way to do that) ✓
 - quizzes
-  - learn scientific/english names
-  - photo
-  - sound
+  - learn scientific/english names ✓
+  - photo ✓
+  - juveniles, females, males
+  - species group selection (birds of prey quizzes, waders quizzes, etc.)
   - quiz type
-    - write answer
-    - choose from options
+    - write answer ✓
+    - choose from options (also image options)
   - various difficulty (beginer/advanced/expert?) ✓
 - switch in settings - "Include rare species"
 - size comparison - silhouetes drawed on canvas
@@ -59,11 +60,13 @@ TODO: fix routing
   - birds of prey
 - new "db table" for similar species
 - add custom gallery component
-- switch to standalone components
 
 ### Phase 4
 
+- dashboard (home page)
 - nice UI, polished styling
+- switch to standalone components
+- fix routing (also in deployed env)
 
 ### Nice to have
 
@@ -72,3 +75,4 @@ TODO: fix routing
 - filtering by habitat, order, family, genus
 - translations or legend for image metadata (adult, breeding male...)
 - sound recordings - for each species display calls, song... (if available)
+- quizzes for sound recordings
