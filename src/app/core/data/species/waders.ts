@@ -18,6 +18,9 @@ const data: GroupData = {
         { assetId: '30325011', metadata: 'juvenile' },
         { assetId: '42761111', metadata: 'nonbreeding/immature' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -31,6 +34,9 @@ const data: GroupData = {
         { assetId: '41568871', metadata: 'adult' },
         { assetId: '41687171', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -45,6 +51,85 @@ const data: GroupData = {
         { assetId: '40135231', metadata: 'juvenile' },
         { assetId: '177213741', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Burhinus oedicnemus',
+        localized: {
+          en: 'Stone-curlew',
+          sk: 'Ležiak úhorový',
+        },
+      },
+      imageAssets: [
+        { assetId: '65155461', metadata: 'unknown' },
+        { assetId: '50540361', metadata: 'unknown' },
+        { assetId: '51174761', metadata: 'unknown' },
+        { assetId: '87926081', metadata: 'unknown' },
+        { assetId: '88007281', metadata: 'unknown' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Cursorius cursor',
+        localized: {
+          en: 'Cream-coloured Courser',
+          sk: 'Behavec plavý',
+        },
+      },
+      imageAssets: [
+        { assetId: '214985071', metadata: 'adult' },
+        { assetId: '22143041', metadata: 'juvenile' },
+        { assetId: '22143051', metadata: 'adult' },
+        { assetId: '52143041', metadata: 'adult' },
+        { assetId: '82362671', metadata: 'adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Glareola pratincola',
+        localized: {
+          en: 'Collared Pratincole',
+          sk: 'Prieložník stepný',
+        },
+      },
+      imageAssets: [
+        { assetId: '33645371', metadata: 'breeding adult' },
+        { assetId: '46989711', metadata: 'nonbreeding adult' },
+        { assetId: '35712351', metadata: 'juvenile' },
+        { assetId: '53802771', metadata: 'breeding adult' },
+        { assetId: '46858851', metadata: 'breeding adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Glareola nordmanni',
+        localized: {
+          en: 'Black-winged Pratincole',
+          sk: 'Prieložník čiernokrídly',
+        },
+      },
+      imageAssets: [
+        { assetId: '89046001', metadata: 'breeding adult' },
+        { assetId: '20464711', metadata: 'nonbreeding/immature' },
+        { assetId: '203200061', metadata: 'juvenile' },
+        { assetId: '63002731', metadata: 'nonbreeding/immature' },
+        { assetId: '135400201', metadata: 'unknown' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -58,6 +143,9 @@ const data: GroupData = {
         { assetId: '39572321', metadata: 'nonbreeding adult' },
         { assetId: '41694351', metadata: 'nonbreeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -72,6 +160,28 @@ const data: GroupData = {
         { assetId: '43162771', metadata: 'breeding adult' },
         { assetId: '39953081', metadata: 'nonbreeding/immature' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Anarhynchus alexandrinus',
+        localized: {
+          en: 'Kentish Plover',
+          sk: 'Kulík morský',
+        },
+      },
+      imageAssets: [
+        { assetId: '44590901', metadata: 'breeding male' },
+        { assetId: '25110521', metadata: 'breeding female' },
+        { assetId: '35711761', metadata: 'nonbreeding adult' },
+        { assetId: '244106531', metadata: 'nonbreeding adult' },
+        { assetId: '31608831', metadata: 'juvenile' },
+      ],
+      skAbundance: 'rare',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -85,6 +195,9 @@ const data: GroupData = {
         { assetId: '98953291', metadata: 'breeding adult' },
         { assetId: '53298481', metadata: 'nonbreeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -99,6 +212,47 @@ const data: GroupData = {
         { assetId: '44390891', metadata: 'nonbreeding/immature' },
         { assetId: '26469891', metadata: 'nonbreeding/immature' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Pluvialis fulva',
+        localized: {
+          en: 'Pacific Golden Plover',
+          sk: 'Kulík krátkochvostý',
+        },
+      },
+      imageAssets: [
+        { assetId: '150962421', metadata: 'breeding male' },
+        { assetId: '31719081', metadata: 'breeding female' },
+        { assetId: '282032791', metadata: 'nonbreeding adult' },
+        { assetId: '118622311', metadata: 'immature' },
+        { assetId: '275170131', metadata: 'nonbreeding/immature' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Eudromias morinellus',
+        localized: {
+          en: 'Eurasian Dotterel',
+          sk: 'Kulík vrchovský',
+        },
+      },
+      imageAssets: [
+        { assetId: '43164261', metadata: 'breeding female' },
+        { assetId: '36601431', metadata: 'juvenile' },
+        { assetId: '199416181', metadata: 'nonbreeding adult' },
+        { assetId: '35943721', metadata: 'juvenile' },
+        { assetId: '46760671', metadata: 'unknown' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -112,6 +266,28 @@ const data: GroupData = {
         { assetId: '30164731', metadata: 'adult' },
         { assetId: '204637421', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Vanellus gregarius',
+        localized: {
+          en: 'Sociable Lapwing',
+          sk: 'Cíbik stepný',
+        },
+      },
+      imageAssets: [
+        { assetId: '88962471', metadata: 'breeding adult' },
+        { assetId: '132155291', metadata: 'nonbreeding adult' },
+        { assetId: '81350221', metadata: 'juvenile' },
+        { assetId: '88962561', metadata: 'breeding adult' },
+        { assetId: '90249171', metadata: 'breeding adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -126,6 +302,9 @@ const data: GroupData = {
         { assetId: '204236241', metadata: 'nonbreeding male' },
         { assetId: '42570831', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -142,6 +321,9 @@ const data: GroupData = {
         { assetId: '142336261', metadata: 'nonbreeding adult' },
         { assetId: '32756561', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -158,6 +340,9 @@ const data: GroupData = {
         { assetId: '56571291', metadata: 'nonbreeding adult' },
         { assetId: '43552541', metadata: 'breeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -171,6 +356,9 @@ const data: GroupData = {
         { assetId: '46349771', metadata: 'nonbreeding adult' },
         { assetId: '34424771', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -184,6 +372,9 @@ const data: GroupData = {
         { assetId: '175017461', metadata: 'juvenile' },
         { assetId: '284967101', metadata: 'nonbreeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -198,6 +389,9 @@ const data: GroupData = {
         { assetId: '148978691', metadata: 'molting adult' },
         { assetId: '35476851', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -211,6 +405,9 @@ const data: GroupData = {
         { assetId: '40156571', metadata: 'juvenile' },
         { assetId: '215571651', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -224,6 +421,66 @@ const data: GroupData = {
         { assetId: '35191961', metadata: 'juvenile' },
         { assetId: '24641051', metadata: 'nonbreeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Calidris falcinellus',
+        localized: {
+          en: 'Broad-billed Sandpiper',
+          sk: 'Brehárik ploskozobý',
+        },
+      },
+      imageAssets: [
+        { assetId: '149980501', metadata: 'breeding adult' },
+        { assetId: '77615711', metadata: 'nonbreeding/immature' },
+        { assetId: '391580171', metadata: 'nonbreeding/immature' },
+        { assetId: '329337861', metadata: 'breeding adult' },
+        { assetId: '156708131', metadata: 'breeding adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Calidris maritima',
+        localized: {
+          en: 'Purple Sandpiper',
+          sk: 'Pobrežník morský',
+        },
+      },
+      imageAssets: [
+        { assetId: '285293751', metadata: 'nonbreeding adult' },
+        { assetId: '299883821', metadata: 'nonbreeding adult' },
+        { assetId: '301487381', metadata: 'breeding adult' },
+        { assetId: '224694391', metadata: 'breeding adult' },
+        { assetId: '292360931', metadata: 'nonbreeding adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Calidris melanotos',
+        localized: {
+          en: 'Pectoral Sandpiper',
+          sk: 'Pobrežník škvrnitý',
+        },
+      },
+      imageAssets: [
+        { assetId: '31723701', metadata: 'breeding adult' },
+        { assetId: '274773901', metadata: 'juvenile' },
+        { assetId: '221944781', metadata: 'nonbreeding adult' },
+        { assetId: '182524681', metadata: 'juvenile' },
+        { assetId: '266845371', metadata: 'juvenile' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -238,6 +495,9 @@ const data: GroupData = {
         { assetId: '42944021', metadata: 'breeding adult' },
         { assetId: '37295351', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -251,6 +511,9 @@ const data: GroupData = {
         { assetId: '38804691', metadata: 'unknown' },
         { assetId: '37238441', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -264,6 +527,28 @@ const data: GroupData = {
         { assetId: '42641391', metadata: 'immature' },
         { assetId: '44721591', metadata: 'breeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Xenus cinereus',
+        localized: {
+          en: 'Terek Sandpiper',
+          sk: 'Brodník sivý',
+        },
+      },
+      imageAssets: [
+        { assetId: '62995211', metadata: 'breeding adult' },
+        { assetId: '36571061', metadata: 'nonbreeding/immature' },
+        { assetId: '30313551', metadata: 'breeding adult' },
+        { assetId: '30313571', metadata: 'breeding adult' },
+        { assetId: '46808371', metadata: 'nonbreeding/immature' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -277,6 +562,9 @@ const data: GroupData = {
         { assetId: '42271731', metadata: 'breeding adult' },
         { assetId: '43813161', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -291,6 +579,9 @@ const data: GroupData = {
         { assetId: '25330701', metadata: 'nonbreeding adult' },
         { assetId: '205953581', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -304,6 +595,28 @@ const data: GroupData = {
         { assetId: '38617621', metadata: 'breeding adult' },
         { assetId: '42546191', metadata: 'breeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Tringa stagnatilis',
+        localized: {
+          en: 'Marsh Sandpiper',
+          sk: 'Kalužiak štíhly',
+        },
+      },
+      imageAssets: [
+        { assetId: '93850071', metadata: 'breeding adult' },
+        { assetId: '40044151', metadata: 'nonbreeding adult' },
+        { assetId: '33291321', metadata: 'juvenile' },
+        { assetId: '41915671', metadata: 'breeding adult' },
+        { assetId: '85790181', metadata: 'nonbreeding adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -316,6 +629,28 @@ const data: GroupData = {
         { assetId: '33604941', metadata: 'nonbreeding adult' },
         { assetId: '113800971', metadata: 'nonbreeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Limosa lapponica',
+        localized: {
+          en: 'Bar-tailed Godwit',
+          sk: 'Brehár hrdzavý',
+        },
+      },
+      imageAssets: [
+        { assetId: '42941121', metadata: 'breeding male' },
+        { assetId: '42944611', metadata: 'breeding female' },
+        { assetId: '27357011', metadata: 'juvenile' },
+        { assetId: '43586461', metadata: 'nonbreeding adult' },
+        { assetId: '42941191', metadata: 'breeding male' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -329,6 +664,9 @@ const data: GroupData = {
         { assetId: '36169681', metadata: 'unknown' },
         { assetId: '73029851', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -342,6 +680,28 @@ const data: GroupData = {
         { assetId: '53143911', metadata: 'adult' },
         { assetId: '189991281', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Numenius tenuirostris',
+        localized: {
+          en: 'Slender-billed Curlew',
+          sk: 'Hvizdák tenkozobý',
+        },
+      },
+      imageAssets: [
+        { assetId: '174452671', metadata: 'unknown' },
+        { assetId: '174452671', metadata: 'unknown' },
+        { assetId: '305070281', metadata: 'unknown' },
+        { assetId: '28425931', metadata: 'unknown' },
+        { assetId: '28425931', metadata: 'unknown' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -355,6 +715,9 @@ const data: GroupData = {
         { assetId: '150318091', metadata: 'adult' },
         { assetId: '214820831', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -368,6 +731,9 @@ const data: GroupData = {
         { assetId: '66516261', metadata: 'unknown' },
         { assetId: '204749711', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -381,6 +747,9 @@ const data: GroupData = {
         { assetId: '41631161', metadata: 'unknown' },
         { assetId: '149191461', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -394,6 +763,47 @@ const data: GroupData = {
         { assetId: '20162451', metadata: 'unknown' },
         { assetId: '423010331', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Phalaropus fulicarius',
+        localized: {
+          en: 'Grey Phalarope',
+          sk: 'Lyskonoh ploskozobý',
+        },
+      },
+      imageAssets: [
+        { assetId: '107267571', metadata: 'breeding female' },
+        { assetId: '524118091', metadata: 'nonbreeding adult' },
+        { assetId: '24374151', metadata: 'immature' },
+        { assetId: '175779461', metadata: 'juvenile' },
+        { assetId: '107192451', metadata: 'breeding male' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Phalaropus lobatus',
+        localized: {
+          en: 'Red-necked Phalarope',
+          sk: 'Lyskonoh úzkozobý',
+        },
+      },
+      imageAssets: [
+        { assetId: '240378151', metadata: 'breeding female' },
+        { assetId: '31722931', metadata: 'breeding male' },
+        { assetId: '267992411', metadata: 'nonbreeding/immature' },
+        { assetId: '176535931', metadata: 'nonbreeding/immature' },
+        { assetId: '176645701', metadata: 'juvenile' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

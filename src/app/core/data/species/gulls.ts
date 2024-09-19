@@ -18,6 +18,28 @@ const data: GroupData = {
         { assetId: '84605841', metadata: 'immature' },
         { assetId: '65518901', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Chroicocephalus genei',
+        localized: {
+          en: 'Slender-billed Gull',
+          sk: 'Čajka tenkozobá',
+        },
+      },
+      imageAssets: [
+        { assetId: '88090541', metadata: 'adult' },
+        { assetId: '74565861', metadata: 'immature' },
+        { assetId: '42048601', metadata: 'immature' },
+        { assetId: '44178571', metadata: 'adult' },
+        { assetId: '88090631', metadata: 'adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -31,6 +53,9 @@ const data: GroupData = {
         { assetId: '178438401', metadata: 'juvenile' },
         { assetId: '80060961', metadata: 'nonbreeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -45,6 +70,9 @@ const data: GroupData = {
         { assetId: '22392791', metadata: 'nonbreeding adult' },
         { assetId: '107164471', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -58,6 +86,9 @@ const data: GroupData = {
         { assetId: '248461961', metadata: 'first winter' },
         { assetId: '171056401', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -72,6 +103,9 @@ const data: GroupData = {
         { assetId: '67352161', metadata: 'juvenile' },
         { assetId: '65430271', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -85,6 +119,9 @@ const data: GroupData = {
         { assetId: '40237511', metadata: 'juvenile' },
         { assetId: '43794641', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -98,6 +135,9 @@ const data: GroupData = {
         { assetId: '80209851', metadata: 'unknown' },
         { assetId: '40107131', metadata: 'first winter' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -111,6 +151,123 @@ const data: GroupData = {
         { assetId: '86683811', metadata: 'nonbreeding adult' },
         { assetId: '38647251', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Ichthyaetus ichthyaetus',
+        localized: {
+          en: "Pallas's Gull",
+          sk: 'Čajka orlia',
+        },
+      },
+      imageAssets: [
+        { assetId: '85358341', metadata: 'breeding adult' },
+        { assetId: '132698401', metadata: 'nonbreeding adult' },
+        { assetId: '81349821', metadata: 'first year' },
+        { assetId: '66607041', metadata: 'juvenile' },
+        { assetId: '81480741', metadata: 'nonbreeding adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Larus delawarensis',
+        localized: {
+          en: 'Ring-billed Gull',
+          sk: 'Čajka obrúčkozobá',
+        },
+      },
+      imageAssets: [
+        { assetId: '56460521', metadata: 'breeding adult' },
+        { assetId: '410575291', metadata: 'nonbreeding adult' },
+        { assetId: '66236411', metadata: 'second winter' },
+        { assetId: '25183861', metadata: 'first winter' },
+        { assetId: '47271961', metadata: 'juvenile' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Larus hyperboreus',
+        localized: {
+          en: 'Glaucous Gull',
+          sk: 'Čajka bledá',
+        },
+      },
+      imageAssets: [
+        { assetId: '198090131', metadata: 'adult' },
+        { assetId: '26859221', metadata: 'nonbreeding adult' },
+        { assetId: '295141561', metadata: 'first winter' },
+        { assetId: '50780421', metadata: 'first winter' },
+        { assetId: '294064671', metadata: 'first winter' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Larus marinus',
+        localized: {
+          en: 'Great Black-backed Gull',
+          sk: 'Čajka morská',
+        },
+      },
+      imageAssets: [
+        { assetId: '105244651', metadata: 'breeding adult' },
+        { assetId: '52886541', metadata: 'breeding adult' },
+        { assetId: '139313651', metadata: 'first winter' },
+        { assetId: '291461991', metadata: 'first winter' },
+        { assetId: '54975411', metadata: 'second summer' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Rissa tridactyla',
+        localized: {
+          en: 'Black-legged Kittiwake',
+          sk: 'Čajka trojprstá',
+        },
+      },
+      imageAssets: [
+        { assetId: '64889231', metadata: 'breeding adult' },
+        { assetId: '45310491', metadata: 'nonbreeding adult' },
+        { assetId: '172151191', metadata: 'immature' },
+        { assetId: '136257511', metadata: 'immature' },
+        { assetId: '20945991', metadata: 'nonbreeding adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Xema sabini',
+        localized: {
+          en: "Sabine's Gull",
+          sk: 'Čajka vidlochvostá',
+        },
+      },
+      imageAssets: [
+        { assetId: '237435121', metadata: 'breeding adult' },
+        { assetId: '186223321', metadata: 'juvenile' },
+        { assetId: '249068921', metadata: 'nonbreeding adult' },
+        { assetId: '105585501', metadata: 'breeding adult' },
+        { assetId: '70085081', metadata: 'juvenile' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

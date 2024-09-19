@@ -21,6 +21,9 @@ const data: GroupData = {
         { assetId: '175078971', metadata: 'breeding adult' },
         { assetId: '217130571', metadata: 'nonbreeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -37,6 +40,9 @@ const data: GroupData = {
         { assetId: '123723631', metadata: 'immature' },
         { assetId: '304205241', metadata: 'breeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -53,6 +59,9 @@ const data: GroupData = {
         { assetId: '139394771', metadata: 'immature' },
         { assetId: '229445621', metadata: 'breeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -69,6 +78,9 @@ const data: GroupData = {
         { assetId: '31994011', metadata: 'molting adult' },
         { assetId: '27439971', metadata: 'nonbreeding/immature' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

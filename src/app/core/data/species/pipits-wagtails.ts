@@ -21,6 +21,9 @@ const data: GroupData = {
         { assetId: '34550131', metadata: 'adult' },
         { assetId: '52366351', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -37,6 +40,9 @@ const data: GroupData = {
         { assetId: '36146841', metadata: 'unknown' },
         { assetId: '51134331', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -53,6 +59,9 @@ const data: GroupData = {
         { assetId: '204046171', metadata: 'nonbreeding/immature' },
         { assetId: '29350581', metadata: 'breeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -69,6 +78,9 @@ const data: GroupData = {
         { assetId: '35081981', metadata: 'unknown' },
         { assetId: '36424311', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -85,6 +97,9 @@ const data: GroupData = {
         { assetId: '20407181', metadata: 'unknown' },
         { assetId: '20407181', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -101,12 +116,15 @@ const data: GroupData = {
         { assetId: '21505141', metadata: 'juvenile' },
         { assetId: '42943201', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
         latin: 'Motacilla alba',
         localized: {
-          en: 'Pied Wagtail/White Wagtail',
+          en: 'White Wagtail',
           sk: 'Trasochvost biely',
         },
       },
@@ -115,6 +133,9 @@ const data: GroupData = {
         { assetId: '32318171', metadata: 'juvenile' },
         { assetId: '42407251', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -132,6 +153,9 @@ const data: GroupData = {
         { assetId: '43376451', metadata: 'breeding adult' },
         { assetId: '41968381', metadata: 'immature' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -149,6 +173,9 @@ const data: GroupData = {
         { assetId: '35870071', metadata: 'immature' },
         { assetId: '48760391', metadata: 'immature' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -165,6 +192,9 @@ const data: GroupData = {
         { assetId: '34293701', metadata: 'female/immature male' },
         { assetId: '35637281', metadata: 'female/immature male' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

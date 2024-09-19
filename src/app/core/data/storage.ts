@@ -3,12 +3,13 @@ import { accentorsGroups, accentorsSpecies } from './species/accentors';
 import { beeEatersEtAlGroups, beeEatersEtAlSpecies } from './species/bee-eaters-et-al';
 import { birdsOfPreyGroups, birdsOfPreySpecies } from './species/birds-of-prey';
 import { buntingsGroups, buntingsSpecies } from './species/buntings';
-import { bustardGroups, bustardSpecies } from './species/bustard';
-import { cormorantsGroups, cormorantsSpecies } from './species/cormorants';
-import { craneGroups, craneSpecies } from './species/crane';
+import { bustardsGroups, bustardsSpecies } from './species/bustards';
+import { cormorantsPelicansGroups, cormorantsPelicansSpecies } from './species/cormorants-pelicans';
+import { cranesGroups, cranesSpecies } from './species/cranes';
 import { crowsGroups, crowsSpecies } from './species/crows';
-import { cuckooGroups, cuckooSpecies } from './species/cuckoo';
-import { finchesCrossbillGroups, finchesCrossbillSpecies } from './species/finches-crossbill';
+import { cuckoosGroups, cuckoosSpecies } from './species/cuckoos';
+import { exoticGroups, exoticSpecies } from './species/exotic';
+import { finchesCrossbillsGroups, finchesCrossbillsSpecies } from './species/finches-crossbills';
 import { flycatchersGroups, flycatchersSpecies } from './species/flycatchers';
 import { gamefowlGroups, gamefowlSpecies } from './species/gamefowl';
 import { grebesGroups, grebesSpecies } from './species/grebes';
@@ -23,7 +24,9 @@ import { owlsGroups, owlsSpecies } from './species/owls';
 import { pigeonsDovesGroups, pigeonsDovesSpecies } from './species/pigeons-doves';
 import { pipitsWagtailsGroups, pipitsWagtailsSpecies } from './species/pipits-wagtails';
 import { railsCrakesGroups, railsCrakesSpecies } from './species/rails-crakes';
+import { sandgrouseGroups, sandgrouseSpecies } from './species/sandgrouse';
 import { shrikesGroups, shrikesSpecies } from './species/shrikes';
+import { skuasGroups, skuasSpecies } from './species/skuas';
 import { sparrowsGroups, sparrowsSpecies } from './species/sparrows';
 import { starlingsOrioleGroups, starlingsOrioleSpecies } from './species/starlings-oriole';
 import { swallowsMartinsGroups, swallowsMartinsSpecies } from './species/swallows-martins';
@@ -42,24 +45,27 @@ export const groups: SpeciesGroupModel[] = [
   ...birdsOfPreyGroups(),
   ...sparrowsGroups(),
   ...wadersGroups(),
+  ...skuasGroups(),
   ...ternsGroups(),
+  ...sandgrouseGroups(),
   ...gullsGroups(),
   ...wildfowlGroups(),
   ...gamefowlGroups(),
   ...loonsGroups(),
   ...grebesGroups(),
-  ...cormorantsGroups(),
+  ...cormorantsPelicansGroups(),
   ...heronsStorksEtAlGroups(),
   ...railsCrakesGroups(),
-  ...craneGroups(),
-  ...bustardGroups(),
+  ...cranesGroups(),
+  ...bustardsGroups(),
   ...pigeonsDovesGroups(),
-  ...cuckooGroups(),
+  ...cuckoosGroups(),
   ...owlsGroups(),
   ...nightjarGroups(),
   ...swiftsGroups(),
   ...kingfisherGroups(),
   ...beeEatersEtAlGroups(),
+  ...exoticGroups(),
   ...woodpeckersGroups(),
   ...larksGroups(),
   ...swallowsMartinsGroups(),
@@ -75,7 +81,7 @@ export const groups: SpeciesGroupModel[] = [
   ...shrikesGroups(),
   ...crowsGroups(),
   ...starlingsOrioleGroups(),
-  ...finchesCrossbillGroups(),
+  ...finchesCrossbillsGroups(),
   ...buntingsGroups(),
 ];
 
@@ -83,24 +89,27 @@ export const species: SpeciesModel[] = [
   ...birdsOfPreySpecies(),
   ...sparrowsSpecies(),
   ...wadersSpecies(),
+  ...skuasSpecies(),
   ...ternsSpecies(),
+  ...sandgrouseSpecies(),
   ...gullsSpecies(),
   ...wildfowlSpecies(),
   ...gamefowlSpecies(),
   ...loonsSpecies(),
   ...grebesSpecies(),
-  ...cormorantsSpecies(),
+  ...cormorantsPelicansSpecies(),
   ...heronsStorksEtAlSpecies(),
   ...railsCrakesSpecies(),
-  ...craneSpecies(),
-  ...bustardSpecies(),
+  ...cranesSpecies(),
+  ...bustardsSpecies(),
   ...pigeonsDovesSpecies(),
-  ...cuckooSpecies(),
+  ...cuckoosSpecies(),
   ...owlsSpecies(),
   ...nightjarSpecies(),
   ...swiftsSpecies(),
   ...kingfisherSpecies(),
   ...beeEatersEtAlSpecies(),
+  ...exoticSpecies(),
   ...woodpeckersSpecies(),
   ...larksSpecies(),
   ...swallowsMartinsSpecies(),
@@ -116,6 +125,6 @@ export const species: SpeciesModel[] = [
   ...shrikesSpecies(),
   ...crowsSpecies(),
   ...starlingsOrioleSpecies(),
-  ...finchesCrossbillSpecies(),
+  ...finchesCrossbillsSpecies(),
   ...buntingsSpecies(),
 ];

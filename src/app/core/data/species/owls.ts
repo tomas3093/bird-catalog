@@ -21,6 +21,9 @@ const data: GroupData = {
         { assetId: '172743421', metadata: 'juvenile' },
         { assetId: '42105721', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -37,6 +40,9 @@ const data: GroupData = {
         { assetId: '198095061', metadata: 'adult' },
         { assetId: '204399531', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -50,6 +56,9 @@ const data: GroupData = {
         { assetId: '63333271', metadata: 'adult' },
         { assetId: '63898831', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -66,6 +75,9 @@ const data: GroupData = {
         { assetId: '204219721', metadata: 'adult' },
         { assetId: '215168381', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -80,6 +92,9 @@ const data: GroupData = {
         { assetId: '276143521', metadata: 'adult' },
         { assetId: '75311201', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -95,6 +110,9 @@ const data: GroupData = {
         { assetId: '200383181', metadata: 'immature' },
         { assetId: '204615791', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -111,6 +129,9 @@ const data: GroupData = {
         { assetId: '239180481', metadata: 'adult' },
         { assetId: '204183021', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -127,6 +148,9 @@ const data: GroupData = {
         { assetId: '33249041', metadata: 'adult' },
         { assetId: '57982571', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -142,6 +166,9 @@ const data: GroupData = {
         { assetId: '250510051', metadata: 'unknown' },
         { assetId: '247375091', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -158,6 +185,62 @@ const data: GroupData = {
         { assetId: '249379041', metadata: 'juvenile' },
         { assetId: '28176551', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Bubo scandiacus',
+        localized: {
+          en: 'Snowy Owl',
+          sk: 'Belaňa tundrová',
+        },
+      },
+      imageAssets: [
+        {
+          assetId: '106358811',
+          metadata: 'adult male',
+        },
+        {
+          assetId: '75929641',
+          metadata: 'female/immature male',
+        },
+        {
+          assetId: '37851091',
+          metadata: 'immature female',
+        },
+        {
+          assetId: '41544741',
+          metadata: 'female/immature male',
+        },
+        {
+          assetId: '137775571',
+          metadata: 'immature female',
+        },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Surnia ulula',
+        localized: {
+          en: 'Northern Hawk Owl',
+          sk: 'Krahuľa hôrna',
+        },
+      },
+      imageAssets: [
+        { assetId: '195003601', metadata: 'adult' },
+        { assetId: '193337251', metadata: 'adult' },
+        { assetId: '43163421', metadata: 'juvenile' },
+        { assetId: '42470461', metadata: 'adult' },
+        { assetId: '72379511', metadata: 'juvenile' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

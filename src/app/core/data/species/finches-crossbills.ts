@@ -1,10 +1,10 @@
 import { generateGroups, generateSpecies } from '../../misc/util';
 import { GroupData, SpeciesGroupModel, SpeciesModel } from '../model';
 
-const groupId = 'finches-crossbill';
+const groupId = 'finches-crossbills';
 
 const data: GroupData = {
-  name: { en: 'Finches & crossbill', sk: 'Stehlíky a krivonos' },
+  name: { en: 'Finches & crossbills', sk: 'Stehlíky a krivonosy' },
   subGroups: [
     {
       name: { en: 'Finches', sk: 'Stehlíky' },
@@ -24,6 +24,9 @@ const data: GroupData = {
             { assetId: '391640581', metadata: 'female' },
             { assetId: '204246301', metadata: 'breeding male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -40,6 +43,10 @@ const data: GroupData = {
             { assetId: '204756121', metadata: 'juvenile' },
             { assetId: '140118421', metadata: 'female/immature male' },
           ],
+
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -56,6 +63,9 @@ const data: GroupData = {
             { assetId: '204396761', metadata: 'juvenile' },
             { assetId: '38623701', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -72,6 +82,9 @@ const data: GroupData = {
             { assetId: '42177341', metadata: 'unknown' },
             { assetId: '46249831', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -89,7 +102,82 @@ const data: GroupData = {
             { assetId: '64787461', metadata: 'adult male' },
             { assetId: '33428111', metadata: 'juvenile' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
+        // {
+        //   name: {
+        //     latin: 'Acanthis cabaret',
+        //     localized: {
+        //       en: 'Lesser Redpoll',
+        //       sk: 'Stehlík hnedkavý',
+        //     },
+        //   },
+        //   imageAssets: [
+        //     {
+        //       assetId: '32067841',
+        //       metadata: 'female/immature male',
+        //     },
+        //     {
+        //       assetId: '35107571',
+        //       metadata: 'adult male',
+        //     },
+        //     {
+        //       assetId: '20449061',
+        //       metadata: 'female/immature male',
+        //     },
+        //     {
+        //       assetId: '40911641',
+        //       metadata: 'female/immature male',
+        //     },
+        //     {
+        //       assetId: '40911641',
+        //       metadata: 'female/immature male',
+        //     },
+        //   ],
+        //   skAbundance: '',
+        //   status: '',
+        //   movementPattern: '',
+        //   invasive: false,
+        //   similarSpecies: [],
+        // },
+        // {
+        //   name: {
+        //     latin: 'Acanthis hornemanni',
+        //     localized: {
+        //       en: 'Arctic Redpoll',
+        //       sk: 'Stehlík polárny',
+        //     },
+        //   },
+        //   imageAssets: [
+        //     {
+        //       assetId: '302310521',
+        //       metadata: 'adult male',
+        //     },
+        //     {
+        //       assetId: '64885711',
+        //       metadata: 'female/immature male',
+        //     },
+        //     {
+        //       assetId: '287403361',
+        //       metadata: 'female/immature male',
+        //     },
+        //     {
+        //       assetId: '32246251',
+        //       metadata: 'juvenile',
+        //     },
+        //     {
+        //       assetId: '36751731',
+        //       metadata: 'female/immature male',
+        //     },
+        //   ],
+        //   skAbundance: '',
+        //   status: '',
+        //   movementPattern: '',
+        //   invasive: false,
+        //   similarSpecies: [],
+        // },
         {
           name: {
             latin: 'Carduelis carduelis',
@@ -104,6 +192,9 @@ const data: GroupData = {
             { assetId: '123755251', metadata: 'juvenile' },
             { assetId: '50764891', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -120,6 +211,9 @@ const data: GroupData = {
             { assetId: '461341481', metadata: 'female' },
             { assetId: '492009681', metadata: 'juvenile' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -136,6 +230,9 @@ const data: GroupData = {
             { assetId: '42548521', metadata: 'adult male' },
             { assetId: '43088651', metadata: 'female/immature male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -152,6 +249,9 @@ const data: GroupData = {
             { assetId: '204828961', metadata: 'female/immature male' },
             { assetId: '26089081', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -168,6 +268,28 @@ const data: GroupData = {
             { assetId: '205458451', metadata: 'immature' },
             { assetId: '38587441', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Pinicola enucleator',
+            localized: {
+              en: 'Pine Grosbeak',
+              sk: 'Smrečiar krivonosí',
+            },
+          },
+          imageAssets: [
+            { assetId: '64887111', metadata: 'adult male' },
+            { assetId: '83937401', metadata: 'female' },
+            { assetId: '64887451', metadata: 'immature male' },
+            { assetId: '120277181', metadata: 'adult male' },
+            { assetId: '64884611', metadata: 'female' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -184,6 +306,9 @@ const data: GroupData = {
             { assetId: '204590481', metadata: 'adult' },
             { assetId: '44660081', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -200,11 +325,14 @@ const data: GroupData = {
             { assetId: '30028971', metadata: 'adult male' },
             { assetId: '38140911', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
     {
-      name: { en: 'Crossbill', sk: 'Krivonos' },
+      name: { en: 'Crossbills', sk: 'Krivonosy' },
       species: [
         {
           name: {
@@ -221,16 +349,38 @@ const data: GroupData = {
             { assetId: '175918801', metadata: 'juvenile' },
             { assetId: '93233821', metadata: 'immature male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Loxia leucoptera',
+            localized: {
+              en: 'Two-barred Crossbill',
+              sk: 'Krivonos bielokrídly',
+            },
+          },
+          imageAssets: [
+            { assetId: '138938871', metadata: 'adult male' },
+            { assetId: '27751531', metadata: 'female' },
+            { assetId: '304838941', metadata: 'immature male' },
+            { assetId: '42507561', metadata: 'juvenile' },
+            { assetId: '217479941', metadata: 'male and female' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
   ],
 };
 
-export const finchesCrossbillGroups = function (): SpeciesGroupModel[] {
+export const finchesCrossbillsGroups = function (): SpeciesGroupModel[] {
   return generateGroups(data, groupId);
 };
 
-export const finchesCrossbillSpecies = function (): SpeciesModel[] {
+export const finchesCrossbillsSpecies = function (): SpeciesModel[] {
   return generateSpecies(data, groupId);
 };

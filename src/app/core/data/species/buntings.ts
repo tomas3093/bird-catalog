@@ -21,6 +21,9 @@ const data: GroupData = {
         { assetId: '78556981', metadata: 'female/immature male' },
         { assetId: '40826251', metadata: 'breeding male' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -37,6 +40,28 @@ const data: GroupData = {
         { assetId: '20802261', metadata: 'nonbreeding female' },
         { assetId: '65061761', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Calcarius lapponicus',
+        localized: {
+          en: 'Lapland Bunting',
+          sk: 'Ostrohárka severská',
+        },
+      },
+      imageAssets: [
+        { assetId: '31721801', metadata: 'breeding male' },
+        { assetId: '136154341', metadata: 'nonbreeding/immature' },
+        { assetId: '40198221', metadata: 'nonbreeding/immature' },
+        { assetId: '150412631', metadata: 'nonbreeding/immature' },
+        { assetId: '42943511', metadata: 'breeding male' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -53,6 +78,9 @@ const data: GroupData = {
         { assetId: '43493631', metadata: 'adult male' },
         { assetId: '35854161', metadata: 'immature' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -69,6 +97,9 @@ const data: GroupData = {
         { assetId: '78557041', metadata: 'breeding male' },
         { assetId: '31281541', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -85,6 +116,9 @@ const data: GroupData = {
         { assetId: '28515791', metadata: 'adult male' },
         { assetId: '28515791', metadata: 'adult male' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -101,6 +135,9 @@ const data: GroupData = {
         { assetId: '29288911', metadata: 'unknown' },
         { assetId: '29288911', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -117,6 +154,66 @@ const data: GroupData = {
         { assetId: '45363561', metadata: 'female/immature male' },
         { assetId: '30633061', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Emberiza melanocephala',
+        localized: {
+          en: 'Black-headed Bunting',
+          sk: 'Strnádka čiernohlavá',
+        },
+      },
+      imageAssets: [
+        { assetId: '56782751', metadata: 'adult male' },
+        { assetId: '74198511', metadata: 'female' },
+        { assetId: '132785351', metadata: 'immature male' },
+        { assetId: '105699651', metadata: 'adult male' },
+        { assetId: '56279791', metadata: 'adult male' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Emberiza pusilla',
+        localized: {
+          en: 'Little Bunting',
+          sk: 'Strnádka malá',
+        },
+      },
+      imageAssets: [
+        { assetId: '43162991', metadata: 'unknown' },
+        { assetId: '55819421', metadata: 'unknown' },
+        { assetId: '43163001', metadata: 'unknown' },
+        { assetId: '32549271', metadata: 'unknown' },
+        { assetId: '42266301', metadata: 'unknown' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Emberiza rustica',
+        localized: {
+          en: 'Rustic Bunting',
+          sk: 'Strnádka roľná',
+        },
+      },
+      imageAssets: [
+        { assetId: '390887881', metadata: 'breeding male' },
+        { assetId: '584790321', metadata: 'female' },
+        { assetId: '385227721', metadata: 'female/immature male' },
+        { assetId: '489983721', metadata: 'female/immature male' },
+        { assetId: '319502301', metadata: 'female/immature male' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

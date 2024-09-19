@@ -18,27 +18,15 @@ const data: GroupData = {
             },
           },
           imageAssets: [
-            {
-              assetId: '228651041',
-              metadata: 'adult male',
-            },
-            {
-              assetId: '612695735',
-              metadata: 'female',
-            },
-            {
-              assetId: '571200061',
-              metadata: 'adult male',
-            },
-            {
-              assetId: '205368841',
-              metadata: 'adult male',
-            },
-            {
-              assetId: '144005581',
-              metadata: 'female',
-            },
+            { assetId: '228651041', metadata: 'adult male' },
+            { assetId: '612695735', metadata: 'female' },
+            { assetId: '571200061', metadata: 'adult male' },
+            { assetId: '205368841', metadata: 'adult male' },
+            { assetId: '144005581', metadata: 'female' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -49,27 +37,15 @@ const data: GroupData = {
             },
           },
           imageAssets: [
-            {
-              assetId: '54593301',
-              metadata: 'adult male',
-            },
-            {
-              assetId: '204964421',
-              metadata: 'female',
-            },
-            {
-              assetId: '116273501',
-              metadata: 'adult male',
-            },
-            {
-              assetId: '189763131',
-              metadata: 'female',
-            },
-            {
-              assetId: '62519991',
-              metadata: 'female',
-            },
+            { assetId: '54593301', metadata: 'adult male' },
+            { assetId: '204964421', metadata: 'female' },
+            { assetId: '116273501', metadata: 'adult male' },
+            { assetId: '189763131', metadata: 'female' },
+            { assetId: '62519991', metadata: 'female' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -80,27 +56,15 @@ const data: GroupData = {
             },
           },
           imageAssets: [
-            {
-              assetId: '30316531',
-              metadata: 'adult male',
-            },
-            {
-              assetId: '104090901',
-              metadata: 'female',
-            },
-            {
-              assetId: '213144591',
-              metadata: 'adult male',
-            },
-            {
-              assetId: '206035251',
-              metadata: 'immature',
-            },
-            {
-              assetId: '205330961',
-              metadata: 'female',
-            },
+            { assetId: '30316531', metadata: 'adult male' },
+            { assetId: '104090901', metadata: 'female' },
+            { assetId: '213144591', metadata: 'adult male' },
+            { assetId: '206035251', metadata: 'immature' },
+            { assetId: '205330961', metadata: 'female' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -116,27 +80,15 @@ const data: GroupData = {
             },
           },
           imageAssets: [
-            {
-              assetId: '204300471',
-              metadata: 'adult',
-            },
-            {
-              assetId: '166939901',
-              metadata: 'adult',
-            },
-            {
-              assetId: '174863511',
-              metadata: 'juvenile',
-            },
-            {
-              assetId: '93771111',
-              metadata: 'adult',
-            },
-            {
-              assetId: '64643661',
-              metadata: 'adult',
-            },
+            { assetId: '204300471', metadata: 'adult' },
+            { assetId: '166939901', metadata: 'adult' },
+            { assetId: '174863511', metadata: 'juvenile' },
+            { assetId: '93771111', metadata: 'adult' },
+            { assetId: '64643661', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -147,27 +99,15 @@ const data: GroupData = {
             },
           },
           imageAssets: [
-            {
-              assetId: '181537191',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '63309371',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '26569891',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '134297931',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '134297931',
-              metadata: 'unknown',
-            },
+            { assetId: '181537191', metadata: 'unknown' },
+            { assetId: '63309371', metadata: 'unknown' },
+            { assetId: '26569891', metadata: 'unknown' },
+            { assetId: '134297931', metadata: 'unknown' },
+            { assetId: '134297931', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -178,27 +118,15 @@ const data: GroupData = {
             },
           },
           imageAssets: [
-            {
-              assetId: '46363871',
-              metadata: 'adult male',
-            },
-            {
-              assetId: '125602631',
-              metadata: 'female',
-            },
-            {
-              assetId: '215152411',
-              metadata: 'adult male',
-            },
-            {
-              assetId: '209200911',
-              metadata: 'female',
-            },
-            {
-              assetId: '61213491',
-              metadata: 'adult male',
-            },
+            { assetId: '46363871', metadata: 'adult male' },
+            { assetId: '125602631', metadata: 'female' },
+            { assetId: '215152411', metadata: 'adult male' },
+            { assetId: '209200911', metadata: 'female' },
+            { assetId: '61213491', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },

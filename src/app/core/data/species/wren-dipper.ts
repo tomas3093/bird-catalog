@@ -21,6 +21,9 @@ const data: GroupData = {
         { assetId: '113383231', metadata: 'adult' },
         { assetId: '172475901', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -37,6 +40,9 @@ const data: GroupData = {
         { assetId: '416083911', metadata: 'unknown' },
         { assetId: '564313901', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

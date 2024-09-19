@@ -21,6 +21,9 @@ const data: GroupData = {
             { assetId: '54079441', metadata: 'juvenile' },
             { assetId: '57835421', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -34,6 +37,9 @@ const data: GroupData = {
             { assetId: '36128671', metadata: 'adult' },
             { assetId: '42943781', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -45,22 +51,9 @@ const data: GroupData = {
             { assetId: '24779031', metadata: 'adult' },
             { assetId: '40549011', metadata: 'adult' },
           ],
-        },
-        {
-          name: {
-            latin: 'Cygnus atratus',
-            localized: {
-              en: 'Black Swan',
-              sk: 'Labuť čierna',
-            },
-          },
-          imageAssets: [
-            { assetId: '120705851', metadata: 'adult' },
-            { assetId: '166588421', metadata: 'adult' },
-            { assetId: '344517191', metadata: 'juvenile' },
-            { assetId: '621629556', metadata: 'juvenile' },
-            { assetId: '44267321', metadata: 'juvenile' },
-          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -79,6 +72,9 @@ const data: GroupData = {
             { assetId: '43709321', metadata: 'adult' },
             { assetId: '49888661', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -95,18 +91,9 @@ const data: GroupData = {
             { assetId: '31414541', metadata: 'unknown' },
             { assetId: '41700601', metadata: 'unknown' },
           ],
-        },
-        {
-          name: {
-            latin: 'Anser fabalis',
-            localized: { en: 'Taiga Bean-Goose', sk: 'Hus siatinná' },
-          },
-          imageAssets: [
-            { assetId: '95813661', metadata: 'unknown' },
-            { assetId: '274030511', metadata: 'unknown' },
-            { assetId: '37300361', metadata: 'unknown' },
-            { assetId: '37300371', metadata: 'unknown' },
-          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -120,6 +107,77 @@ const data: GroupData = {
             { assetId: '66045831', metadata: 'adult' },
             { assetId: '34027531', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Anser brachyrhynchus',
+            localized: {
+              en: 'Pink-footed Goose',
+              sk: 'Hus krátkozobá',
+            },
+          },
+          imageAssets: [
+            {
+              assetId: '40740951',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '154787491',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '49262651',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '39349871',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '31534581',
+              metadata: 'unknown',
+            },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Anser serrirostris',
+            localized: {
+              en: 'Tundra Bean Goose',
+              sk: 'Hus tundrová',
+            },
+          },
+          imageAssets: [
+            {
+              assetId: '41964711',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '45176841',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '60995381',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '20857581',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '87944921',
+              metadata: 'unknown',
+            },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -133,6 +191,9 @@ const data: GroupData = {
             { assetId: '50174411', metadata: 'adult' },
             { assetId: '55794461', metadata: 'juvenile' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -145,6 +206,9 @@ const data: GroupData = {
             { assetId: '40646761', metadata: 'adult' },
             { assetId: '26827351', metadata: 'juvenile' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -157,6 +221,9 @@ const data: GroupData = {
             { assetId: '35996621', metadata: 'adult' },
             { assetId: '188514901', metadata: 'juvenile' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -170,6 +237,9 @@ const data: GroupData = {
             { assetId: '127668711', metadata: 'adult' },
             { assetId: '127669201', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -183,6 +253,9 @@ const data: GroupData = {
             { assetId: '34499091', metadata: 'adult' },
             { assetId: '33594831', metadata: 'immature' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -196,6 +269,9 @@ const data: GroupData = {
             { assetId: '33607611', metadata: 'adult' },
             { assetId: '38580701', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -209,28 +285,15 @@ const data: GroupData = {
             { assetId: '28860361', metadata: 'juvenile' },
             { assetId: '41840661', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
     {
       name: { en: 'Dabbling ducks', sk: 'Kačice (nepotápavé)' },
       species: [
-        {
-          name: {
-            latin: 'Aix sponsa',
-            localized: {
-              en: 'Wood Duck',
-              sk: 'Kačička obojková',
-            },
-          },
-          imageAssets: [
-            { assetId: '35998481', metadata: 'adult male' },
-            { assetId: '47443411', metadata: 'female' },
-            { assetId: '110911841', metadata: 'eclipse male' },
-            { assetId: '30161681', metadata: 'female' },
-            { assetId: '192681961', metadata: 'male and female' },
-          ],
-        },
         {
           name: {
             latin: 'Aix galericulata',
@@ -246,6 +309,9 @@ const data: GroupData = {
             { assetId: '33909221', metadata: 'adult male' },
             { assetId: '33909221', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -259,6 +325,9 @@ const data: GroupData = {
             { assetId: '236495351', metadata: 'immature male' },
             { assetId: '63644201', metadata: 'nonbreeding male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -272,6 +341,9 @@ const data: GroupData = {
             { assetId: '243184761', metadata: 'adult male' },
             { assetId: '256567601', metadata: 'molting adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -285,6 +357,9 @@ const data: GroupData = {
             { assetId: '36769031', metadata: 'female/immature male' },
             { assetId: '297748921', metadata: 'male and female' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -300,6 +375,9 @@ const data: GroupData = {
             { assetId: '272389011', metadata: 'female/immature male' },
             { assetId: '261773491', metadata: 'nonbreeding male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -313,6 +391,9 @@ const data: GroupData = {
             { assetId: '48235591', metadata: 'female' },
             { assetId: '85965461', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -326,6 +407,9 @@ const data: GroupData = {
             { assetId: '33539961', metadata: 'immature' },
             { assetId: '422441021', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -338,6 +422,9 @@ const data: GroupData = {
             { assetId: '27711891', metadata: 'breeding male' },
             { assetId: '171163691', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -355,6 +442,9 @@ const data: GroupData = {
             { assetId: '34638011', metadata: 'breeding male' },
             { assetId: '39588011', metadata: 'female/immature male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -368,6 +458,9 @@ const data: GroupData = {
             { assetId: '40154111', metadata: 'adult male' },
             { assetId: '73305021', metadata: 'eclipse male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -381,6 +474,9 @@ const data: GroupData = {
             { assetId: '36816551', metadata: 'adult male' },
             { assetId: '204584571', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -395,6 +491,9 @@ const data: GroupData = {
             { assetId: '27736041', metadata: 'immature male' },
             { assetId: '31955871', metadata: 'eclipse male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -408,6 +507,61 @@ const data: GroupData = {
             { assetId: '188074981', metadata: 'immature male' },
             { assetId: '42955311', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Aythya collaris',
+            localized: {
+              en: 'Ring-necked Duck',
+              sk: 'Chochlačka obojková',
+            },
+          },
+          imageAssets: [
+            {
+              assetId: '215033981',
+              metadata: 'breeding male',
+            },
+            {
+              assetId: '142334221',
+              metadata: 'female',
+            },
+            {
+              assetId: '52442461',
+              metadata: 'male and female',
+            },
+            {
+              assetId: '82395861',
+              metadata: 'male and female',
+            },
+            {
+              assetId: '34018031',
+              metadata: 'nonbreeding male',
+            },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Somateria mollissima',
+            localized: {
+              en: 'Common Eider',
+              sk: 'Kajka morská',
+            },
+          },
+          imageAssets: [
+            { assetId: '299883211', metadata: 'adult male' },
+            { assetId: '40371581', metadata: 'female' },
+            { assetId: '299389351', metadata: 'immature' },
+            { assetId: '61485271', metadata: 'eclipse male' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -424,6 +578,9 @@ const data: GroupData = {
             { assetId: '53444051', metadata: 'adult male' },
             { assetId: '143551841', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -440,6 +597,9 @@ const data: GroupData = {
             { assetId: '613184775', metadata: 'immature male' },
             { assetId: '204585531', metadata: 'immature male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -454,6 +614,28 @@ const data: GroupData = {
             { assetId: '48263861', metadata: 'nonbreeding female' },
             { assetId: '216946861', metadata: 'immature male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Histrionicus histrionicus',
+            localized: {
+              en: 'Harlequin Duck',
+              sk: 'Kamenárka strakatá',
+            },
+          },
+          imageAssets: [
+            { assetId: '26860111', metadata: 'breeding male' },
+            { assetId: '53760941', metadata: 'female' },
+            { assetId: '33107491', metadata: 'nonbreeding male' },
+            { assetId: '51436371', metadata: 'male and female' },
+            { assetId: '211261471', metadata: 'male and female' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -467,6 +649,47 @@ const data: GroupData = {
             { assetId: '48978181', metadata: 'immature male' },
             { assetId: '291076221', metadata: 'male and female' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Oxyura jamaicensis',
+            localized: {
+              en: 'Ruddy Duck',
+              sk: 'Potápnica bielolíca',
+            },
+          },
+          imageAssets: [
+            { assetId: '166130231', metadata: 'breeding male' },
+            { assetId: '71209051', metadata: 'female/immature male' },
+            { assetId: '50394951', metadata: 'nonbreeding male' },
+            { assetId: '119406601', metadata: 'female/immature male' },
+            { assetId: '223693651', metadata: 'breeding male' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Oxyura leucocephala',
+            localized: {
+              en: 'White-headed Duck',
+              sk: 'Potápnica bielohlavá',
+            },
+          },
+          imageAssets: [
+            { assetId: '94227671', metadata: 'breeding male' },
+            { assetId: '72093321', metadata: 'nonbreeding male' },
+            { assetId: '73119231', metadata: 'female/immature male' },
+            { assetId: '49899041', metadata: 'female/immature male' },
+            { assetId: '39951561', metadata: 'unknown' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -479,6 +702,9 @@ const data: GroupData = {
             { assetId: '46776941', metadata: 'female' },
             { assetId: '278279141', metadata: 'immature' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -493,6 +719,9 @@ const data: GroupData = {
             { assetId: '55287461', metadata: 'adult male' },
             { assetId: '62659461', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -505,6 +734,9 @@ const data: GroupData = {
             { assetId: '26861931', metadata: 'adult male' },
             { assetId: '24648981', metadata: 'male and female' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },

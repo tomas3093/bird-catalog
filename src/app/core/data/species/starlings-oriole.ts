@@ -21,6 +21,9 @@ const data: GroupData = {
         { assetId: '254931801', metadata: 'juvenile' },
         { assetId: '205138871', metadata: 'breeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -37,6 +40,9 @@ const data: GroupData = {
         { assetId: '45751191', metadata: 'breeding adult' },
         { assetId: '112878401', metadata: 'breeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -53,6 +59,9 @@ const data: GroupData = {
         { assetId: '97333101', metadata: 'adult male' },
         { assetId: '28723121', metadata: 'adult male' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

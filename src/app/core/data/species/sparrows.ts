@@ -17,6 +17,9 @@ const data: GroupData = {
         { assetId: '189571141', metadata: 'adult' },
         { assetId: '249362541', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -30,6 +33,28 @@ const data: GroupData = {
         { assetId: '93464491', metadata: 'breeding male' },
         { assetId: '161700291', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Montifringilla nivalis',
+        localized: {
+          en: 'White-winged Snowfinch',
+          sk: 'Snehárka vrchovská',
+        },
+      },
+      imageAssets: [
+        { assetId: '106252441', metadata: 'breeding adult' },
+        { assetId: '173212751', metadata: 'nonbreeding/immature' },
+        { assetId: '175820581', metadata: 'juvenile' },
+        { assetId: '194859521', metadata: 'breeding adult' },
+        { assetId: '28817241', metadata: 'breeding adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

@@ -9,6 +9,9 @@ interface Species {
     localized: { en: string; sk: string };
   };
   imageAssets: ImageAsset[];
+  skAbundance: string;
+  movementPattern: string;
+  similarSpecies?: string[];
 }
 
 interface InputData {
@@ -132,6 +135,9 @@ describe('Generate species data from ebird database', () => {
                           localized: { en: nameEn ?? '', sk: skName },
                         },
                         imageAssets: imageAssets,
+                        skAbundance: 'common',
+                        movementPattern: 'resident',
+                        similarSpecies: [],
                       };
 
                       callback(species);

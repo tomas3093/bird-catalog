@@ -7,6 +7,87 @@ const data: GroupData = {
   name: { en: 'Birds of prey', sk: 'Dravce' },
   subGroups: [
     {
+      name: { en: 'Vultures', sk: 'Supy' },
+      species: [
+        {
+          name: {
+            latin: 'Gypaetus barbatus',
+            localized: {
+              en: 'Bearded Vulture',
+              sk: 'Bradáň žltohlavý',
+            },
+          },
+          imageAssets: [
+            { assetId: '31365871', metadata: 'adult' },
+            { assetId: '40190371', metadata: 'immature' },
+            { assetId: '33607691', metadata: 'adult' },
+            { assetId: '30833231', metadata: 'immature' },
+            { assetId: '38758881', metadata: 'immature' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Gyps fulvus',
+            localized: {
+              en: 'Griffon Vulture',
+              sk: 'Sup bielohlavý',
+            },
+          },
+          imageAssets: [
+            { assetId: '250273201', metadata: 'adult' },
+            { assetId: '37809551', metadata: 'adult' },
+            { assetId: '179322581', metadata: 'immature' },
+            { assetId: '37455291', metadata: 'adult' },
+            { assetId: '29255581', metadata: 'adult' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Aegypius monachus',
+            localized: {
+              en: 'Black Vulture',
+              sk: 'Sup tmavohnedý',
+            },
+          },
+          imageAssets: [
+            { assetId: '232254641', metadata: 'adult' },
+            { assetId: '124926961', metadata: 'adult' },
+            { assetId: '85134611', metadata: 'immature' },
+            { assetId: '29256491', metadata: 'adult' },
+            { assetId: '26611931', metadata: 'immature' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Neophron percnopterus',
+            localized: {
+              en: 'Egyptian Vulture',
+              sk: 'Zdochlinár biely',
+            },
+          },
+          imageAssets: [
+            { assetId: '66268551', metadata: 'adult' },
+            { assetId: '20436221', metadata: 'immature' },
+            { assetId: '120781491', metadata: 'adult' },
+            { assetId: '45198961', metadata: 'immature' },
+            { assetId: '40867711', metadata: 'juvenile' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+      ],
+    },
+    {
       name: { en: 'Eagles', sk: 'Orly' },
       species: [
         {
@@ -21,6 +102,9 @@ const data: GroupData = {
             { assetId: '20060811', metadata: 'adult' },
             { assetId: '44985401', metadata: 'immature' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -34,6 +118,9 @@ const data: GroupData = {
             { assetId: '26325211', metadata: 'adult' },
             { assetId: '275690361', metadata: 'immature' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -47,6 +134,9 @@ const data: GroupData = {
             { assetId: '220623401', metadata: 'adult' },
             { assetId: '39586521', metadata: 'subadult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -60,6 +150,28 @@ const data: GroupData = {
             { assetId: '43488351', metadata: 'adult' },
             { assetId: '196828171', metadata: 'juvenile' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Clanga clanga',
+            localized: {
+              en: 'Greater Spotted Eagle',
+              sk: 'Orol hrubozobý',
+            },
+          },
+          imageAssets: [
+            { assetId: '43621161', metadata: 'adult' },
+            { assetId: '47136651', metadata: 'immature' },
+            { assetId: '66351181', metadata: 'immature' },
+            { assetId: '52049071', metadata: 'immature' },
+            { assetId: '36732851', metadata: 'immature' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -73,6 +185,47 @@ const data: GroupData = {
             { assetId: '39220891', metadata: 'unknown' },
             { assetId: '46583481', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Aquila nipalensis',
+            localized: {
+              en: 'Steppe Eagle',
+              sk: 'Orol stepný',
+            },
+          },
+          imageAssets: [
+            { assetId: '66340331', metadata: 'adult' },
+            { assetId: '66340451', metadata: 'immature' },
+            { assetId: '81109621', metadata: 'adult' },
+            { assetId: '132062271', metadata: 'immature' },
+            { assetId: '66338831', metadata: 'immature' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Hieraaetus pennatus',
+            localized: {
+              en: 'Booted Eagle',
+              sk: 'Orol malý',
+            },
+          },
+          imageAssets: [
+            { assetId: '36017381', metadata: 'light morph' },
+            { assetId: '179446021', metadata: 'light morph' },
+            { assetId: '36732921', metadata: 'dark morph' },
+            { assetId: '205477641', metadata: 'dark morph' },
+            { assetId: '47740691', metadata: 'light morph' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -91,6 +244,9 @@ const data: GroupData = {
             { assetId: '34889771', metadata: 'juvenile' },
             { assetId: '43787251', metadata: 'immature' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -104,6 +260,28 @@ const data: GroupData = {
             { assetId: '194547221', metadata: 'juvenile' },
             { assetId: '33505041', metadata: 'juvenile' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Elanus caeruleus',
+            localized: {
+              en: 'Black-winged Kite',
+              sk: 'Luniak sivý',
+            },
+          },
+          imageAssets: [
+            { assetId: '117792521', metadata: 'adult' },
+            { assetId: '101625781', metadata: 'juvenile' },
+            { assetId: '24976971', metadata: 'adult' },
+            { assetId: '46403131', metadata: 'adult' },
+            { assetId: '50587611', metadata: 'adult' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -123,6 +301,9 @@ const data: GroupData = {
             { assetId: '346923891', metadata: 'adult male' },
             { assetId: '34475781', metadata: 'immature female' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -137,6 +318,9 @@ const data: GroupData = {
             { assetId: '37535161', metadata: 'female' },
             { assetId: '63555051', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -151,6 +335,9 @@ const data: GroupData = {
             { assetId: '43521811', metadata: 'adult female' },
             { assetId: '45176181', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -165,6 +352,9 @@ const data: GroupData = {
             { assetId: '26701651', metadata: 'adult male' },
             { assetId: '41275581', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -183,6 +373,9 @@ const data: GroupData = {
             { assetId: '38028921', metadata: 'immature light morph' },
             { assetId: '46595271', metadata: 'immature light morph' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -197,6 +390,9 @@ const data: GroupData = {
             { assetId: '39479281', metadata: 'adult' },
             { assetId: '43263301', metadata: 'adult dark morph' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -209,6 +405,9 @@ const data: GroupData = {
             { assetId: '46855241', metadata: 'juvenile' },
             { assetId: '26775691', metadata: 'adult light morph' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -227,6 +426,9 @@ const data: GroupData = {
             { assetId: '181548921', metadata: 'adult light morph' },
             { assetId: '205935771', metadata: 'adult light morph' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -246,6 +448,9 @@ const data: GroupData = {
             { assetId: '43010081', metadata: 'immature' },
             { assetId: '41087551', metadata: 'juvenile' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -260,6 +465,28 @@ const data: GroupData = {
             { assetId: '305163221', metadata: 'adult' },
             { assetId: '492727441', metadata: 'juvenile' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Accipiter brevipes',
+            localized: {
+              en: 'Levant Sparrowhawk',
+              sk: 'Jastrab krátkoprstý',
+            },
+          },
+          imageAssets: [
+            { assetId: '97332551', metadata: 'unknown' },
+            { assetId: '123357621', metadata: 'immature' },
+            { assetId: '97332271', metadata: 'immature' },
+            { assetId: '124829101', metadata: 'adult' },
+            { assetId: '21940471', metadata: 'immature' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -279,6 +506,9 @@ const data: GroupData = {
             { assetId: '42654331', metadata: 'female' },
             { assetId: '42077001', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -294,6 +524,9 @@ const data: GroupData = {
             { assetId: '174613471', metadata: 'juvenile' },
             { assetId: '126408781', metadata: 'juvenile' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -308,6 +541,9 @@ const data: GroupData = {
             { assetId: '199256531', metadata: 'adult' },
             { assetId: '69285851', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -322,6 +558,9 @@ const data: GroupData = {
             { assetId: '54334451', metadata: 'immature' },
             { assetId: '56019481', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -333,6 +572,9 @@ const data: GroupData = {
             { assetId: '51619781', metadata: 'female/immature male' },
             { assetId: '46239361', metadata: 'female/immature male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -347,6 +589,28 @@ const data: GroupData = {
             { assetId: '29236461', metadata: 'immature' },
             { assetId: '33939641', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Falco naumanni',
+            localized: {
+              en: 'Lesser Kestrel',
+              sk: 'Sokol bielopazúravý',
+            },
+          },
+          imageAssets: [
+            { assetId: '37731891', metadata: 'adult male' },
+            { assetId: '53564931', metadata: 'female/immature male' },
+            { assetId: '28494161', metadata: 'adult male' },
+            { assetId: '204879491', metadata: 'female/immature male' },
+            { assetId: '50531301', metadata: 'adult male' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -365,6 +629,9 @@ const data: GroupData = {
             { assetId: '66023921', metadata: 'juvenile' },
             { assetId: '48440631', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },

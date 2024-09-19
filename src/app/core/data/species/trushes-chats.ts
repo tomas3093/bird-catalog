@@ -24,6 +24,9 @@ const data: GroupData = {
             { assetId: '40474321', metadata: 'juvenile' },
             { assetId: '41806271', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -40,6 +43,9 @@ const data: GroupData = {
             { assetId: '22080141', metadata: 'unknown' },
             { assetId: '22080141', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -56,6 +62,9 @@ const data: GroupData = {
             { assetId: '44290071', metadata: 'unknown' },
             { assetId: '51631791', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -73,6 +82,9 @@ const data: GroupData = {
             { assetId: '243477041', metadata: 'juvenile' },
             { assetId: '175420111', metadata: 'female' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -89,6 +101,9 @@ const data: GroupData = {
             { assetId: '34050681', metadata: 'female' },
             { assetId: '191677351', metadata: 'immature male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -104,6 +119,9 @@ const data: GroupData = {
             { assetId: '29255111', metadata: 'adult male' },
             { assetId: '29255091', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -120,6 +138,9 @@ const data: GroupData = {
             { assetId: '42948051', metadata: 'immature male' },
             { assetId: '42173341', metadata: 'female/immature male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -136,6 +157,9 @@ const data: GroupData = {
             { assetId: '26049221', metadata: 'female/immature male' },
             { assetId: '26234101', metadata: 'female/immature male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -152,6 +176,9 @@ const data: GroupData = {
             { assetId: '30348021', metadata: 'unknown' },
             { assetId: '43622421', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -165,6 +192,9 @@ const data: GroupData = {
             { assetId: '20588621', metadata: 'adult' },
             { assetId: '45376181', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -181,6 +211,9 @@ const data: GroupData = {
             { assetId: '43191761', metadata: 'juvenile' },
             { assetId: '25673551', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -197,6 +230,9 @@ const data: GroupData = {
             { assetId: '204844951', metadata: 'juvenile' },
             { assetId: '204798931', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -213,6 +249,9 @@ const data: GroupData = {
             { assetId: '360353701', metadata: 'juvenile' },
             { assetId: '41853641', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -228,6 +267,63 @@ const data: GroupData = {
             { assetId: '66129291', metadata: 'juvenile' },
             { assetId: '43327081', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Monticola saxatilis',
+            localized: {
+              en: 'Common Rock Thrush',
+              sk: 'Skaliar pestrý',
+            },
+          },
+          imageAssets: [
+            { assetId: '183109641', metadata: 'breeding male' },
+            { assetId: '43375361', metadata: 'breeding male' },
+            { assetId: '40331781', metadata: 'nonbreeding adult' },
+            { assetId: '21018951', metadata: 'nonbreeding adult' },
+            { assetId: '45865211', metadata: 'breeding male' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Monticola solitarius',
+            localized: {
+              en: 'Blue Rock Thrush',
+              sk: 'Skaliar modrý',
+            },
+          },
+          imageAssets: [
+            { assetId: '97497371', metadata: 'adult male' },
+            { assetId: '30633081', metadata: 'female/immature male' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Tarsiger cyanurus',
+            localized: {
+              en: 'Red-flanked Bluetail',
+              sk: 'Modravec červenoboký',
+            },
+          },
+          imageAssets: [
+            { assetId: '104005221', metadata: 'adult male' },
+            { assetId: '74607591', metadata: 'female/immature male' },
+            { assetId: '21352381', metadata: 'adult male' },
+            { assetId: '45949291', metadata: 'female/immature male' },
+            { assetId: '44090651', metadata: 'female/immature male' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -250,6 +346,9 @@ const data: GroupData = {
             { assetId: '206193561', metadata: 'breeding male' },
             { assetId: '613680874', metadata: 'nonbreeding male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -266,6 +365,47 @@ const data: GroupData = {
             { assetId: '81833561', metadata: 'unknown' },
             { assetId: '97044071', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Oenanthe deserti',
+            localized: {
+              en: 'Desert Wheatear',
+              sk: 'Skaliarik púšťový',
+            },
+          },
+          imageAssets: [
+            { assetId: '84558621', metadata: 'adult male' },
+            { assetId: '79752371', metadata: 'female' },
+            { assetId: '90114291', metadata: 'adult male' },
+            { assetId: '130666401', metadata: 'adult male' },
+            { assetId: '66339501', metadata: 'adult male' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Oenanthe pleschanka',
+            localized: {
+              en: 'Pied Wheatear',
+              sk: 'Skaliarik plešanka',
+            },
+          },
+          imageAssets: [
+            { assetId: '93676401', metadata: 'breeding male' },
+            { assetId: '20043771', metadata: 'nonbreeding male' },
+            { assetId: '53748061', metadata: 'female' },
+            { assetId: '104669181', metadata: 'juvenile' },
+            { assetId: '122811261', metadata: 'nonbreeding male' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -287,6 +427,9 @@ const data: GroupData = {
             { assetId: '40232981', metadata: 'unknown' },
             { assetId: '47738541', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },

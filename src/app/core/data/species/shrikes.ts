@@ -21,6 +21,9 @@ const data: GroupData = {
         { assetId: '62667591', metadata: 'adult' },
         { assetId: '47652151', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -37,6 +40,9 @@ const data: GroupData = {
         { assetId: '37479361', metadata: 'adult' },
         { assetId: '34154001', metadata: 'immature' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -53,6 +59,9 @@ const data: GroupData = {
         { assetId: '33665471', metadata: 'female' },
         { assetId: '35545181', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -69,6 +78,9 @@ const data: GroupData = {
         { assetId: '46955491', metadata: 'adult' },
         { assetId: '46583441', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

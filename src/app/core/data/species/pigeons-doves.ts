@@ -21,6 +21,9 @@ const data: GroupData = {
         { assetId: '274051751', metadata: 'unknown' },
         { assetId: '260771451', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -37,6 +40,9 @@ const data: GroupData = {
         { assetId: '21245391', metadata: 'adult' },
         { assetId: '41904731', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -52,6 +58,9 @@ const data: GroupData = {
         { assetId: '40965501', metadata: 'juvenile' },
         { assetId: '165035211', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -68,6 +77,9 @@ const data: GroupData = {
         { assetId: '262458741', metadata: 'immature' },
         { assetId: '204075451', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -84,6 +96,28 @@ const data: GroupData = {
         { assetId: '44297131', metadata: 'adult' },
         { assetId: '101205371', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Streptopelia orientalis',
+        localized: {
+          en: 'Rufous Turtle Dove',
+          sk: 'Hrdlička stepná',
+        },
+      },
+      imageAssets: [
+        { assetId: '51836521', metadata: 'adult' },
+        { assetId: '22294191', metadata: 'juvenile' },
+        { assetId: '139932501', metadata: 'adult' },
+        { assetId: '65592821', metadata: 'adult' },
+        { assetId: '40327361', metadata: 'adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

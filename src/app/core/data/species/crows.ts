@@ -21,6 +21,9 @@ const data: GroupData = {
         { assetId: '26142411', metadata: 'adult' },
         { assetId: '282458441', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -36,6 +39,28 @@ const data: GroupData = {
         { assetId: '164629001', metadata: 'adult' },
         { assetId: '43005471', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Perisoreus infaustus',
+        localized: {
+          en: 'Siberian Jay',
+          sk: 'Škriekavec zlovestný',
+        },
+      },
+      imageAssets: [
+        { assetId: '31497771', metadata: 'unknown' },
+        { assetId: '125357891', metadata: 'unknown' },
+        { assetId: '42465661', metadata: 'unknown' },
+        { assetId: '144294561', metadata: 'unknown' },
+        { assetId: '64885311', metadata: 'unknown' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -51,6 +76,9 @@ const data: GroupData = {
         { assetId: '205043411', metadata: 'adult' },
         { assetId: '204878861', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -67,6 +95,9 @@ const data: GroupData = {
         { assetId: '35496891', metadata: 'unknown' },
         { assetId: '26274811', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -83,6 +114,9 @@ const data: GroupData = {
         { assetId: '196289061', metadata: 'unknown' },
         { assetId: '43942601', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -99,6 +133,9 @@ const data: GroupData = {
         { assetId: '40089901', metadata: 'unknown' },
         { assetId: '35462051', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -115,6 +152,9 @@ const data: GroupData = {
         { assetId: '238078251', metadata: 'juvenile' },
         { assetId: '43507591', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -131,6 +171,28 @@ const data: GroupData = {
         { assetId: '198824141', metadata: 'unknown' },
         { assetId: '246461071', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Pyrrhocorax graculus',
+        localized: {
+          en: 'Alpine Chough',
+          sk: 'Čavka žltozobá',
+        },
+      },
+      imageAssets: [
+        { assetId: '193203211', metadata: 'adult' },
+        { assetId: '40190821', metadata: 'adult' },
+        { assetId: '64845771', metadata: 'juvenile' },
+        { assetId: '36598241', metadata: 'adult' },
+        { assetId: '22044211', metadata: 'adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

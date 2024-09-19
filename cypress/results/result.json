@@ -1,64 +1,70 @@
 [
   {
     "name": {
-      "latin": "Emberiza calandra",
+      "latin": "Syrmaticus reevesii",
       "localized": {
-        "en": "Corn Bunting",
-        "sk": "Strnádka lúčna"
+        "en": "Reeves's Pheasant",
+        "sk": "Bažant kráľovský"
       }
     },
     "imageAssets": [
       {
-        "assetId": "37498431",
-        "metadata": "unknown"
+        "assetId": "140007811",
+        "metadata": "male"
       },
       {
-        "assetId": "29264701",
-        "metadata": "unknown"
+        "assetId": "109479451",
+        "metadata": "female"
       },
       {
-        "assetId": "26072051",
-        "metadata": "unknown"
+        "assetId": "110354301",
+        "metadata": "male"
       },
       {
-        "assetId": "29288911",
-        "metadata": "unknown"
+        "assetId": "109479411",
+        "metadata": "male"
       },
       {
-        "assetId": "29288911",
-        "metadata": "unknown"
+        "assetId": "57263911",
+        "metadata": "male"
       }
-    ]
+    ],
+    "skAbundance": "common",
+    "movementPattern": "resident",
+    "similarSpecies": []
   },
   {
     "name": {
-      "latin": "Emberiza cia",
+      "latin": "Lophodytes cucullatus",
       "localized": {
-        "en": "Rock Bunting",
-        "sk": "Strnádka cia"
+        "en": "Hooded Merganser",
+        "sk": "Potápač prilbatý"
       }
     },
     "imageAssets": [
       {
-        "assetId": "112309651",
+        "assetId": "269638401",
         "metadata": "adult male"
       },
       {
-        "assetId": "70814251",
-        "metadata": "female/immature"
+        "assetId": "185795991",
+        "metadata": "female"
       },
       {
-        "assetId": "23443671",
-        "metadata": "adult male"
+        "assetId": "52861341",
+        "metadata": "nonbreeding male"
       },
       {
-        "assetId": "45363561",
-        "metadata": "female/immature"
+        "assetId": "208095791",
+        "metadata": "adult male and female"
       },
       {
-        "assetId": "30633061",
-        "metadata": "unknown"
+        "assetId": "57269891",
+        "metadata": "female"
       }
-    ]
+    ],
+    "skAbundance": "common",
+    "movementPattern": "resident",
+    "similarSpecies": []
   }
 ]

@@ -24,6 +24,9 @@ const data: GroupData = {
             { assetId: '37577161', metadata: 'immature' },
             { assetId: '46118631', metadata: 'juvenile' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -40,6 +43,9 @@ const data: GroupData = {
             { assetId: '231728231', metadata: 'unknown' },
             { assetId: '175624681', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -56,6 +62,9 @@ const data: GroupData = {
             { assetId: '25575161', metadata: 'female' },
             { assetId: '22195031', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -72,6 +81,9 @@ const data: GroupData = {
             { assetId: '231728231', metadata: 'unknown' },
             { assetId: '175624681', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -88,6 +100,9 @@ const data: GroupData = {
             { assetId: '62064071', metadata: 'juvenile' },
             { assetId: '127820141', metadata: 'female/immature male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -104,6 +119,9 @@ const data: GroupData = {
             { assetId: '234516201', metadata: 'juvenile' },
             { assetId: '204659441', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -120,6 +138,28 @@ const data: GroupData = {
             { assetId: '212026191', metadata: 'female' },
             { assetId: '52421931', metadata: 'adult male' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Curruca melanocephala',
+            localized: {
+              en: 'Sardinian Warbler',
+              sk: 'Penica sivá',
+            },
+          },
+          imageAssets: [
+            { assetId: '196728121', metadata: 'adult male' },
+            { assetId: '135438661', metadata: 'female' },
+            { assetId: '30340051', metadata: 'immature' },
+            { assetId: '50533761', metadata: 'adult male' },
+            { assetId: '52392701', metadata: 'female' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -141,6 +181,9 @@ const data: GroupData = {
             { assetId: '34693771', metadata: 'unknown' },
             { assetId: '43163671', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -157,6 +200,9 @@ const data: GroupData = {
             { assetId: '33288461', metadata: 'unknown' },
             { assetId: '20991571', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -173,6 +219,9 @@ const data: GroupData = {
             { assetId: '40963211', metadata: 'unknown' },
             { assetId: '42536561', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -189,6 +238,9 @@ const data: GroupData = {
             { assetId: '31292861', metadata: 'unknown' },
             { assetId: '37933731', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -205,6 +257,9 @@ const data: GroupData = {
             { assetId: '36815331', metadata: 'unknown' },
             { assetId: '36815331', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -221,6 +276,77 @@ const data: GroupData = {
             { assetId: '156800421', metadata: 'unknown' },
             { assetId: '156800421', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Acrocephalus agricola',
+            localized: {
+              en: 'Paddyfield Warbler',
+              sk: 'Trsteniarik roľný',
+            },
+          },
+          imageAssets: [
+            {
+              assetId: '52827831',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '49485561',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '93139361',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '93932661',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '84578001',
+              metadata: 'unknown',
+            },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Acrocephalus dumetorum',
+            localized: {
+              en: "Blyth's Reed Warbler",
+              sk: 'Trsteniarik krovinový',
+            },
+          },
+          imageAssets: [
+            {
+              assetId: '81345741',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '42384161',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '204701891',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '60994661',
+              metadata: 'unknown',
+            },
+            {
+              assetId: '50678451',
+              metadata: 'unknown',
+            },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -242,6 +368,9 @@ const data: GroupData = {
             { assetId: '24158511', metadata: 'unknown' },
             { assetId: '205215551', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -258,6 +387,9 @@ const data: GroupData = {
             { assetId: '67535821', metadata: 'unknown' },
             { assetId: '29059521', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -274,6 +406,9 @@ const data: GroupData = {
             { assetId: '37370521', metadata: 'unknown' },
             { assetId: '158019561', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -295,6 +430,9 @@ const data: GroupData = {
             { assetId: '42407201', metadata: 'unknown' },
             { assetId: '30314901', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -316,6 +454,9 @@ const data: GroupData = {
             { assetId: '390322921', metadata: 'unknown' },
             { assetId: '42470371', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -332,6 +473,9 @@ const data: GroupData = {
             { assetId: '27045531', metadata: 'unknown' },
             { assetId: '37293601', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -346,6 +490,123 @@ const data: GroupData = {
             { assetId: '44180901', metadata: 'unknown' },
             { assetId: '20293701', metadata: 'unknown' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Phylloscopus bonelli',
+            localized: {
+              en: "Western Bonelli's Warbler",
+              sk: 'Kolibiarik horský',
+            },
+          },
+          imageAssets: [
+            { assetId: '32360851', metadata: 'unknown' },
+            { assetId: '23443661', metadata: 'unknown' },
+            { assetId: '42281131', metadata: 'unknown' },
+            { assetId: '20523591', metadata: 'unknown' },
+            { assetId: '20523591', metadata: 'unknown' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Phylloscopus ibericus',
+            localized: {
+              en: 'Iberian Chiffchaff',
+              sk: 'Kolibiarik iberský',
+            },
+          },
+          imageAssets: [
+            { assetId: '216687131', metadata: 'unknown' },
+            { assetId: '51746421', metadata: 'unknown' },
+            { assetId: '68313601', metadata: 'unknown' },
+            { assetId: '163381801', metadata: 'unknown' },
+            { assetId: '25455801', metadata: 'unknown' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Phylloscopus inornatus',
+            localized: {
+              en: 'Yellow-browed Warbler',
+              sk: 'Kolibiarik žltkastotemenný',
+            },
+          },
+          imageAssets: [
+            { assetId: '63573451', metadata: 'unknown' },
+            { assetId: '97249821', metadata: 'unknown' },
+            { assetId: '49020441', metadata: 'unknown' },
+            { assetId: '36424381', metadata: 'unknown' },
+            { assetId: '44070941', metadata: 'unknown' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Phylloscopus proregulus',
+            localized: {
+              en: "Pallas's Warbler",
+              sk: 'Kolibiarik králikovitý',
+            },
+          },
+          imageAssets: [
+            { assetId: '63573791', metadata: 'unknown' },
+            { assetId: '35458921', metadata: 'unknown' },
+            { assetId: '35628251', metadata: 'unknown' },
+            { assetId: '47804361', metadata: 'unknown' },
+            { assetId: '48763151', metadata: 'unknown' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Phylloscopus schwarzi',
+            localized: {
+              en: "Radde's Warbler",
+              sk: 'Kolibiarik dlhochvostý',
+            },
+          },
+          imageAssets: [
+            { assetId: '116457991', metadata: 'unknown' },
+            { assetId: '125388341', metadata: 'unknown' },
+            { assetId: '109748521', metadata: 'unknown' },
+            { assetId: '40967181', metadata: 'unknown' },
+            { assetId: '72910301', metadata: 'unknown' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
+        },
+        {
+          name: {
+            latin: 'Phylloscopus trochiloides',
+            localized: {
+              en: 'Greenish Warbler',
+              sk: 'Kolibiarik zelený',
+            },
+          },
+          imageAssets: [
+            { assetId: '44704121', metadata: 'unknown' },
+            { assetId: '30333561', metadata: 'unknown' },
+            { assetId: '48457641', metadata: 'unknown' },
+            { assetId: '41838711', metadata: 'unknown' },
+            { assetId: '41838711', metadata: 'unknown' },
+          ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },
@@ -366,6 +627,9 @@ const data: GroupData = {
             { assetId: '25086161', metadata: 'adult' },
             { assetId: '38758611', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
         {
           name: {
@@ -382,6 +646,9 @@ const data: GroupData = {
             { assetId: '44479401', metadata: 'adult' },
             { assetId: '40431981', metadata: 'adult' },
           ],
+          skAbundance: 'common',
+          movementPattern: 'resident',
+          similarSpecies: [],
         },
       ],
     },

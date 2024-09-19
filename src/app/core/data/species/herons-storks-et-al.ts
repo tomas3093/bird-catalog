@@ -21,6 +21,9 @@ const data: GroupData = {
         { assetId: '42896611', metadata: 'unknown' },
         { assetId: '204629911', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -35,6 +38,9 @@ const data: GroupData = {
         { assetId: '31303291', metadata: 'juvenile' },
         { assetId: '27660721', metadata: 'adult male' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -51,6 +57,9 @@ const data: GroupData = {
         { assetId: '51528841', metadata: 'immature' },
         { assetId: '84756091', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -67,6 +76,9 @@ const data: GroupData = {
         { assetId: '30759391', metadata: 'juvenile' },
         { assetId: '261796781', metadata: 'breeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -83,6 +95,9 @@ const data: GroupData = {
         { assetId: '171056141', metadata: 'nonbreeding/immature' },
         { assetId: '25771061', metadata: 'nonbreeding/immature' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -99,6 +114,9 @@ const data: GroupData = {
         { assetId: '42582941', metadata: 'unknown' },
         { assetId: '31134851', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -113,6 +131,9 @@ const data: GroupData = {
         { assetId: '258295331', metadata: 'adult' },
         { assetId: '284049821', metadata: 'breeding adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -129,6 +150,9 @@ const data: GroupData = {
         { assetId: '27708101', metadata: 'adult' },
         { assetId: '36169461', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -145,6 +169,9 @@ const data: GroupData = {
         { assetId: '45170571', metadata: 'juvenile' },
         { assetId: '39234171', metadata: 'immature' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -173,6 +200,9 @@ const data: GroupData = {
           metadata: 'adult',
         },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -189,6 +219,9 @@ const data: GroupData = {
         { assetId: '35386091', metadata: 'juvenile' },
         { assetId: '44154951', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -205,6 +238,9 @@ const data: GroupData = {
         { assetId: '36910451', metadata: 'breeding adult' },
         { assetId: '112050371', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -221,6 +257,28 @@ const data: GroupData = {
         { assetId: '191767841', metadata: 'nonbreeding adult' },
         { assetId: '44821981', metadata: 'immature' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Phoenicopterus roseus',
+        localized: {
+          en: 'Greater Flamingo',
+          sk: 'Plameniak ružový',
+        },
+      },
+      imageAssets: [
+        { assetId: '53250391', metadata: 'adult' },
+        { assetId: '37154761', metadata: 'juvenile' },
+        { assetId: '33925671', metadata: 'adult' },
+        { assetId: '42526521', metadata: 'adult' },
+        { assetId: '53086131', metadata: 'adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

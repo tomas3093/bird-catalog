@@ -19,6 +19,9 @@ const data: GroupData = {
         { assetId: '44289741', metadata: 'adult' },
         { assetId: '31001221', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -33,6 +36,9 @@ const data: GroupData = {
         { assetId: '80677661', metadata: 'juvenile' },
         { assetId: '65123601', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -49,6 +55,9 @@ const data: GroupData = {
         { assetId: '35462131', metadata: 'adult' },
         { assetId: '46187571', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -65,6 +74,9 @@ const data: GroupData = {
         { assetId: '42105501', metadata: 'unknown' },
         { assetId: '23292231', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -81,6 +93,9 @@ const data: GroupData = {
         { assetId: '27628091', metadata: 'unknown' },
         { assetId: '36573521', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -97,6 +112,26 @@ const data: GroupData = {
         { assetId: '29847431', metadata: 'unknown' },
         { assetId: '40090681', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Cyanistes cyanus',
+        localized: {
+          en: 'Azure Tit',
+          sk: 'Sýkorka lazúrová',
+        },
+      },
+      imageAssets: [
+        { assetId: '291524281', metadata: 'adult' },
+        { assetId: '118986611', metadata: 'adult' },
+        { assetId: '118986641', metadata: 'adult' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -113,6 +148,9 @@ const data: GroupData = {
         { assetId: '529903321', metadata: 'adult' },
         { assetId: '443676731', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -129,6 +167,9 @@ const data: GroupData = {
         { assetId: '205135801', metadata: 'immature female' },
         { assetId: '204359721', metadata: 'adult male' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -145,6 +186,9 @@ const data: GroupData = {
         { assetId: '22539391', metadata: 'juvenile' },
         { assetId: '44521191', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };

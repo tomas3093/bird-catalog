@@ -21,6 +21,9 @@ const data: GroupData = {
         { assetId: '240980911', metadata: 'unknown' },
         { assetId: '250105161', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -37,6 +40,9 @@ const data: GroupData = {
         { assetId: '223328061', metadata: 'unknown' },
         { assetId: '43938281', metadata: 'unknown' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -52,6 +58,28 @@ const data: GroupData = {
         { assetId: '95665751', metadata: 'adult' },
         { assetId: '54489491', metadata: 'juvenile' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
+    },
+    {
+      name: {
+        latin: 'Cecropis daurica',
+        localized: {
+          en: 'Red-rumped Swallow',
+          sk: 'Lastovička červenochrbtá',
+        },
+      },
+      imageAssets: [
+        { assetId: '104167601', metadata: 'adult' },
+        { assetId: '46957981', metadata: 'adult' },
+        { assetId: '47138001', metadata: 'adult' },
+        { assetId: '37945721', metadata: 'juvenile' },
+        { assetId: '51745811', metadata: 'unknown' },
+      ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
     {
       name: {
@@ -68,6 +96,9 @@ const data: GroupData = {
         { assetId: '366433191', metadata: 'immature' },
         { assetId: '205004071', metadata: 'adult' },
       ],
+      skAbundance: 'common',
+      movementPattern: 'resident',
+      similarSpecies: [],
     },
   ],
 };
