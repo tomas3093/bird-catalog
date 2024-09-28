@@ -21,9 +21,11 @@ const data: GroupData = {
         { assetId: '31442381', metadata: 'adult' },
         { assetId: '39576561', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Perdix perdix', 'Rallus aquaticus'],
+      },
     },
     {
       name: {
@@ -42,7 +44,14 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult male', species: 'Zapornia parva' },
+          { metadata: 'adult', species: 'Zapornia pusilla' },
+          { metadata: 'adult', species: 'Porzana porzana' },
+          { metadata: 'juvenile', species: 'Gallinula chloropus' },
+        ],
+      },
     },
     {
       name: {
@@ -59,9 +68,15 @@ const data: GroupData = {
         { assetId: '25693751', metadata: 'unknown' },
         { assetId: '25693751', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult', species: 'Rallus aquaticus' },
+          { metadata: 'adult', species: 'Crex crex' },
+          { metadata: 'juvenile', species: 'Gallinula chloropus' },
+        ],
+      },
     },
     {
       name: {
@@ -78,9 +93,11 @@ const data: GroupData = {
         { assetId: '204530011', metadata: 'juvenile' },
         { assetId: '132978731', metadata: 'adult male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Zapornia pusilla', 'Rallus aquaticus', 'Porzana porzana'],
+      },
     },
     {
       name: {
@@ -95,9 +112,14 @@ const data: GroupData = {
         { assetId: '217461241', metadata: 'adult' },
         { assetId: '21678291', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult male', species: 'Zapornia parva' },
+          { metadata: 'adult', species: 'Rallus aquaticus' },
+        ],
+      },
     },
     {
       name: {
@@ -116,7 +138,13 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Fulica atra'],
+        juvenile: [
+          { metadata: 'juvenile', species: 'Fulica atra' },
+          { metadata: 'adult', species: 'Rallus aquaticus' },
+        ],
+      },
     },
     {
       name: {
@@ -135,7 +163,10 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Gallinula chloropus'],
+        juvenile: ['Gallinula chloropus'],
+      },
     },
   ],
 };

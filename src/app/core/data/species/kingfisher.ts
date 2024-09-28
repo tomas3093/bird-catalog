@@ -23,7 +23,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Sitta europaea'],
+      },
     },
   ],
 };

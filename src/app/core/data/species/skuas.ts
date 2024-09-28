@@ -21,9 +21,7 @@ const data: GroupData = {
         { assetId: '171518841', metadata: 'subadult' },
         { assetId: '67970231', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
     },
     {
       name: {
@@ -40,9 +38,11 @@ const data: GroupData = {
         { assetId: '35389701', metadata: 'immature' },
         { assetId: '64787191', metadata: 'subadult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Stercorarius pomarinus', 'Stercorarius longicaudus'],
+      },
     },
     {
       name: {
@@ -59,9 +59,10 @@ const data: GroupData = {
         { assetId: '75112941', metadata: 'juvenile' },
         { assetId: '107100071', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: ['Stercorarius parasiticus', 'Stercorarius longicaudus'],
+      },
     },
   ],
 };

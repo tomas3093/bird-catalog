@@ -22,8 +22,11 @@ const data: GroupData = {
         { assetId: '38117681', metadata: 'adult male' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: ['Accipiter nisus'],
+        juvenile: [{ metadata: 'adult female', species: 'Accipiter nisus' }],
+      },
     },
     {
       name: {
@@ -40,9 +43,10 @@ const data: GroupData = {
         { assetId: '42853171', metadata: 'adult' },
         { assetId: '60186021', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: ['Cuculus canorus'],
+      },
     },
   ],
 };

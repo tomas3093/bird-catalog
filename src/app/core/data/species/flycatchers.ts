@@ -22,8 +22,14 @@ const data: GroupData = {
         { assetId: '223781691', metadata: 'adult' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: [{ metadata: 'female', species: 'Ficedula hypoleuca' }],
+        juvenile: [
+          { metadata: 'juvenile', species: 'Erithacus rubecula' },
+          { metadata: 'adult female', species: 'Ficedula hypoleuca' },
+        ],
+      },
     },
     {
       name: {
@@ -40,9 +46,11 @@ const data: GroupData = {
         { assetId: '48318141', metadata: 'female/immature male' },
         { assetId: '42410361', metadata: 'adult male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: [{ metadata: 'adult', species: 'Erithacus rubecula' }],
+      },
     },
     {
       name: {
@@ -59,9 +67,12 @@ const data: GroupData = {
         { assetId: '40767031', metadata: 'breeding male' },
         { assetId: '174477151', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: ['Ficedula albicollis'],
+        adultFemale: ['Ficedula albicollis'],
+      },
     },
     {
       name: {
@@ -78,9 +89,12 @@ const data: GroupData = {
         { assetId: '28870481', metadata: 'nonbreeding adult' },
         { assetId: '28870481', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: ['Ficedula hypoleuca'],
+        adultFemale: ['Ficedula hypoleuca'],
+      },
     },
   ],
 };

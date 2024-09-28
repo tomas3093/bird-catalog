@@ -22,8 +22,10 @@ const data: GroupData = {
         { assetId: '205138871', metadata: 'breeding adult' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        juvenile: ['Pastor roseus'],
+      },
     },
     {
       name: {
@@ -40,9 +42,12 @@ const data: GroupData = {
         { assetId: '45751191', metadata: 'breeding adult' },
         { assetId: '112878401', metadata: 'breeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Corvus cornix'],
+        juvenile: ['Sturnus vulgaris'],
+      },
     },
     {
       name: {
@@ -60,8 +65,11 @@ const data: GroupData = {
         { assetId: '28723121', metadata: 'adult male' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Emberiza melanocephala'],
+        juvenile: [{ metadata: 'adult male', species: 'Picus viridis' }],
+      },
     },
   ],
 };

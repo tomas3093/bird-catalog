@@ -22,8 +22,10 @@ const data: GroupData = {
         { assetId: '250105161', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Ptyonoprogne rupestris'],
+      },
     },
     {
       name: {
@@ -40,9 +42,8 @@ const data: GroupData = {
         { assetId: '223328061', metadata: 'unknown' },
         { assetId: '43938281', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
     },
     {
       name: {
@@ -59,8 +60,14 @@ const data: GroupData = {
         { assetId: '54489491', metadata: 'juvenile' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: [
+          { metadata: 'adult', species: 'Delichon urbicum' },
+          { metadata: 'adult', species: 'Riparia riparia' },
+          { metadata: 'adult', species: 'Apus apus' },
+        ],
+      },
     },
     {
       name: {
@@ -77,9 +84,10 @@ const data: GroupData = {
         { assetId: '37945721', metadata: 'juvenile' },
         { assetId: '51745811', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: ['Delichon urbicum', 'Hirundo rustica'],
+      },
     },
     {
       name: {
@@ -97,8 +105,10 @@ const data: GroupData = {
         { assetId: '205004071', metadata: 'adult' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Cecropis daurica', 'Hirundo rustica', 'Riparia riparia', 'Apus apus'],
+      },
     },
   ],
 };

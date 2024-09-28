@@ -20,7 +20,20 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultSummer: ['Ichthyaetus melanocephalus', 'Hydrocoloeus minutus', 'Chroicocephalus genei'],
+        adultWinter: [
+          { metadata: 'second winter', species: 'Ichthyaetus melanocephalus' },
+          { metadata: 'nonbreeding adult', species: 'Hydrocoloeus minutus' },
+          { metadata: 'breeding adult', species: 'Chroicocephalus genei' },
+        ],
+        juvenile: [
+          { metadata: 'juvenile', species: 'Chroicocephalus genei' },
+          { metadata: 'juvenile', species: 'Hydrocoloeus minutus' },
+          { metadata: 'first winter', species: 'Ichthyaetus melanocephalus' },
+          { metadata: 'juvenile', species: 'Larus canus' },
+        ],
+      },
     },
     {
       name: {
@@ -37,9 +50,17 @@ const data: GroupData = {
         { assetId: '44178571', metadata: 'adult' },
         { assetId: '88090631', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      similarSpecies: {
+        adult: [
+          { metadata: 'nonbreeding adult', species: 'Chroicocephalus ridibundus' },
+          { metadata: 'second winter', species: 'Ichthyaetus melanocephalus' },
+        ],
+        juvenile: [
+          { metadata: 'juvenile', species: 'Chroicocephalus ridibundus' },
+          { metadata: 'first winter', species: 'Ichthyaetus melanocephalus' },
+        ],
+      },
     },
     {
       name: {
@@ -53,9 +74,17 @@ const data: GroupData = {
         { assetId: '178438401', metadata: 'juvenile' },
         { assetId: '80060961', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Ichthyaetus melanocephalus', 'Chroicocephalus ridibundus'],
+        adultWinter: [
+          { metadata: 'nonbreeding adult', species: 'Chroicocephalus ridibundus' },
+          { metadata: 'second winter', species: 'Ichthyaetus melanocephalus' },
+        ],
+        firstWinter: [{ metadata: 'juvenile', species: 'Rissa tridactyla' }],
+        juvenile: ['Rissa tridactyla', 'Xema sabini'],
+      },
     },
     {
       name: {
@@ -71,8 +100,21 @@ const data: GroupData = {
         { assetId: '107164471', metadata: 'juvenile' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [
+          { metadata: 'nonbreeding adult', species: 'Larus argentatus' },
+          { metadata: 'breeding adult', species: 'Larus delawarensis' },
+        ],
+        firstWinter: [
+          { metadata: 'second winter', species: 'Larus argentatus' },
+          { metadata: 'first winter', species: 'Larus delawarensis' },
+        ],
+        juvenile: [
+          { metadata: 'first winter', species: 'Ichthyaetus melanocephalus' },
+          { metadata: 'first winter', species: 'Larus argentatus' },
+        ],
+      },
     },
     {
       name: {
@@ -86,9 +128,22 @@ const data: GroupData = {
         { assetId: '248461961', metadata: 'first winter' },
         { assetId: '171056401', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Chroicocephalus ridibundus', 'Hydrocoloeus minutus', 'Ichthyaetus ichthyaetus'],
+        secondWinter: [
+          { metadata: 'nonbreeding adult', species: 'Chroicocephalus ridibundus' },
+          { metadata: 'nonbreeding adult', species: 'Hydrocoloeus minutus' },
+          { metadata: 'first winter', species: 'Ichthyaetus ichthyaetus' },
+        ],
+        firstWinter: [
+          { metadata: 'first winter', species: 'Larus canus' },
+          { metadata: 'first winter', species: 'Hydrocoloeus minutus' },
+          { metadata: 'juvenile', species: 'Chroicocephalus ridibundus' },
+          { metadata: 'first winter', species: 'Ichthyaetus ichthyaetus' },
+        ],
+      },
     },
     {
       name: {
@@ -103,9 +158,31 @@ const data: GroupData = {
         { assetId: '67352161', metadata: 'juvenile' },
         { assetId: '65430271', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultWinter: [
+          { metadata: 'breeding adult', species: 'Larus michahellis' },
+          { metadata: 'breeding adult', species: 'Larus fuscus' },
+          { metadata: 'breeding adult', species: 'Larus canus' },
+        ],
+        secondWinter: [
+          { metadata: 'first winter', species: 'Larus michahellis' },
+          { metadata: 'second winter', species: 'Larus fuscus' },
+          { metadata: 'first winter', species: 'Larus canus' },
+        ],
+        firstWinter: [
+          { metadata: 'first winter', species: 'Larus michahellis' },
+          { metadata: 'juvenile', species: 'Larus fuscus' },
+          { metadata: 'juvenile', species: 'Larus canus' },
+          { metadata: 'juvenile', species: 'Larus marinus' },
+        ],
+        juvenile: [
+          { metadata: 'first winter', species: 'Larus michahellis' },
+          { metadata: 'juvenile', species: 'Larus fuscus' },
+          { metadata: 'juvenile', species: 'Larus marinus' },
+        ],
+      },
     },
     {
       name: {
@@ -121,7 +198,18 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultSummer: [
+          { metadata: 'breeding adult', species: 'Larus fuscus' },
+          { metadata: 'nonbreeding adult', species: 'Larus argentatus' },
+          { metadata: 'breeding adult', species: 'Larus cachinnans' },
+        ],
+        firstWinter: [
+          { metadata: 'juvenile', species: 'Larus fuscus' },
+          { metadata: 'first winter', species: 'Larus argentatus' },
+          { metadata: 'first winter', species: 'Larus cachinnans' },
+        ],
+      },
     },
     {
       name: {
@@ -137,7 +225,16 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultSummer: [
+          { metadata: 'nonbreeding adult', species: 'Larus argentatus' },
+          { metadata: 'breeding adult', species: 'Larus michahellis' },
+        ],
+        firstWinter: [
+          { metadata: 'juvenile', species: 'Larus argentatus' },
+          { metadata: 'first winter', species: 'Larus michahellis' },
+        ],
+      },
     },
     {
       name: {
@@ -151,9 +248,23 @@ const data: GroupData = {
         { assetId: '86683811', metadata: 'nonbreeding adult' },
         { assetId: '38647251', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [
+          { metadata: 'breeding adult', species: 'Larus marinus' },
+          { metadata: 'breeding adult', species: 'Larus michahellis' },
+          { metadata: 'nonbreeding adult', species: 'Larus argentatus' },
+        ],
+        secondWinter: [
+          { metadata: 'second winter', species: 'Larus argentatus' },
+          { metadata: 'first winter', species: 'Larus michahellis' },
+        ],
+        juvenile: [
+          { metadata: 'juvenile', species: 'Larus argentatus' },
+          { metadata: 'first winter', species: 'Larus michahellis' },
+        ],
+      },
     },
     {
       name: {
@@ -170,9 +281,16 @@ const data: GroupData = {
         { assetId: '66607041', metadata: 'juvenile' },
         { assetId: '81480741', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'vagrant',
+      similarSpecies: {
+        adultSummer: ['Ichthyaetus melanocephalus', 'Chroicocephalus ridibundus'],
+        firstWinter: [
+          { metadata: 'second winter', species: 'Larus argentatus' },
+          { metadata: 'first winter', species: 'Larus cachinnans' },
+          { metadata: 'first winter', species: 'Ichthyaetus melanocephalus' },
+        ],
+      },
     },
     {
       name: {
@@ -189,9 +307,17 @@ const data: GroupData = {
         { assetId: '25183861', metadata: 'first winter' },
         { assetId: '47271961', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adultSummer: [
+          { metadata: 'breeding adult', species: 'Larus canus' },
+          { metadata: 'nonbreeding adult', species: 'Larus argentatus' },
+        ],
+        firstWinter: [
+          { metadata: 'first winter', species: 'Larus canus' },
+          { metadata: 'second winter', species: 'Larus argentatus' },
+        ],
+      },
     },
     {
       name: {
@@ -208,9 +334,11 @@ const data: GroupData = {
         { assetId: '50780421', metadata: 'first winter' },
         { assetId: '294064671', metadata: 'first winter' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adultWinter: ['Larus argentatus'],
+        juvenile: ['Larus marinus'],
+      },
     },
     {
       name: {
@@ -227,9 +355,16 @@ const data: GroupData = {
         { assetId: '291461991', metadata: 'first winter' },
         { assetId: '54975411', metadata: 'second summer' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'vagrant',
+      similarSpecies: {
+        adultSummer: ['Larus fuscus'],
+        juvenile: [
+          { metadata: 'juvenile', species: 'Larus argentatus' },
+          { metadata: 'first winter', species: 'Larus michahellis' },
+          { metadata: 'juvenile', species: 'Larus fuscus' },
+        ],
+      },
     },
     {
       name: {
@@ -246,9 +381,12 @@ const data: GroupData = {
         { assetId: '136257511', metadata: 'immature' },
         { assetId: '20945991', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Larus canus', 'Xema sabini'],
+        juvenile: ['Xema sabini', 'Hydrocoloeus minutus', 'Chroicocephalus ridibundus'],
+      },
     },
     {
       name: {
@@ -265,9 +403,14 @@ const data: GroupData = {
         { assetId: '105585501', metadata: 'breeding adult' },
         { assetId: '70085081', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        juvenile: [
+          { metadata: 'juvenile', species: 'Rissa tridactyla' },
+          { metadata: 'first winter', species: 'Hydrocoloeus minutus' },
+        ],
+      },
     },
   ],
 };

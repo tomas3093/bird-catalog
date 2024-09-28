@@ -22,8 +22,11 @@ const data: GroupData = {
         { assetId: '42353741', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Ardea cinerea'],
+        juvenile: ['Ardea cinerea'],
+      },
     },
     {
       name: {
@@ -34,30 +37,13 @@ const data: GroupData = {
         },
       },
       imageAssets: [
-        {
-          assetId: '135206521',
-          metadata: 'unknown',
-        },
-        {
-          assetId: '59740801',
-          metadata: 'unknown',
-        },
-        {
-          assetId: '104750861',
-          metadata: 'unknown',
-        },
-        {
-          assetId: '110084431',
-          metadata: 'unknown',
-        },
-        {
-          assetId: '59740761',
-          metadata: 'unknown',
-        },
+        { assetId: '135206521', metadata: 'unknown' },
+        { assetId: '59740801', metadata: 'unknown' },
+        { assetId: '104750861', metadata: 'unknown' },
+        { assetId: '110084431', metadata: 'unknown' },
+        { assetId: '59740761', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
     },
   ],
 };

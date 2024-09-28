@@ -22,9 +22,12 @@ const data: GroupData = {
             { assetId: '78728271', metadata: 'immature' },
             { assetId: '122819371', metadata: 'nonbreeding adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultSummer: ['Thalasseus sandvicensis'],
+            juvenile: ['Thalasseus sandvicensis'],
+          },
         },
         {
           name: {
@@ -41,9 +44,16 @@ const data: GroupData = {
             { assetId: '204658121', metadata: 'juvenile' },
             { assetId: '32464101', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultSummer: ['Gelochelidon nilotica'],
+            juvenile: [
+              { metadata: 'juvenile', species: 'Sternula albifrons' },
+              { metadata: 'juvenile', species: 'Sterna hirundo' },
+              { metadata: 'first winter', species: 'Gelochelidon nilotica' },
+            ],
+          },
         },
         {
           name: {
@@ -60,9 +70,12 @@ const data: GroupData = {
             { assetId: '244737001', metadata: 'breeding adult' },
             { assetId: '257325241', metadata: 'juvenile' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultSummer: ['Thalasseus sandvicensis'],
+            firstWinter: [{ metadata: 'juvenile', species: 'Thalasseus sandvicensis' }],
+          },
         },
         {
           name: {
@@ -78,8 +91,11 @@ const data: GroupData = {
             { assetId: '110663521', metadata: 'immature' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultSummer: ['Sterna paradisaea', 'Chlidonias hybrida'],
+            juvenile: ['Sterna paradisaea'],
+          },
         },
         {
           name: {
@@ -96,9 +112,12 @@ const data: GroupData = {
             { assetId: '33057781', metadata: 'nonbreeding adult' },
             { assetId: '62268111', metadata: 'breeding adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultSummer: ['Sterna hirundo', 'Chlidonias hybrida'],
+            juvenile: ['Sterna hirundo'],
+          },
         },
         {
           name: {
@@ -112,9 +131,8 @@ const data: GroupData = {
             { assetId: '263223581', metadata: 'juvenile' },
             { assetId: '66193821', metadata: 'nonbreeding adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
         },
       ],
     },
@@ -133,9 +151,13 @@ const data: GroupData = {
             { assetId: '64282521', metadata: 'molting adult' },
             { assetId: '174336261', metadata: 'juvenile' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultSummer: [{ metadata: 'juvenile', species: 'Chlidonias leucopterus' }],
+            adultWinter: ['Chlidonias leucopterus', 'Chlidonias hybrida'],
+            juvenile: ['Chlidonias leucopterus', 'Chlidonias hybrida'],
+          },
         },
         {
           name: {
@@ -148,9 +170,13 @@ const data: GroupData = {
             { assetId: '33605791', metadata: 'immature' },
             { assetId: '45876991', metadata: 'nonbreeding/immature' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultSummer: ['Chlidonias niger'],
+            adultWinter: ['Chlidonias hybrida', 'Chlidonias niger'],
+            juvenile: ['Chlidonias niger', 'Chlidonias hybrida'],
+          },
         },
         {
           name: {
@@ -164,9 +190,13 @@ const data: GroupData = {
             { assetId: '67922761', metadata: 'juvenile' },
             { assetId: '42047811', metadata: 'nonbreeding adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultSummer: ['Sterna hirundo', 'Sterna paradisaea'],
+            adultWinter: ['Chlidonias leucopterus'],
+            juvenile: ['Chlidonias leucopterus', 'Chlidonias niger'],
+          },
         },
       ],
     },

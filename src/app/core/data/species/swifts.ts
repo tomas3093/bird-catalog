@@ -22,8 +22,10 @@ const data: GroupData = {
         { assetId: '35421901', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Tachymarptis melba'],
+      },
     },
     {
       name: {
@@ -40,9 +42,11 @@ const data: GroupData = {
         { assetId: '204607451', metadata: 'unknown' },
         { assetId: '204607451', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Apus apus'],
+      },
     },
   ],
 };

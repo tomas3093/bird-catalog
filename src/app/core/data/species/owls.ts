@@ -21,9 +21,11 @@ const data: GroupData = {
         { assetId: '172743421', metadata: 'juvenile' },
         { assetId: '42105721', metadata: 'adult' },
       ],
-      skAbundance: 'common',
+      skAbundance: 'uncommon',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Asio otus'],
+      },
     },
     {
       name: {
@@ -42,7 +44,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Strix aluco'],
+      },
     },
     {
       name: {
@@ -56,9 +60,11 @@ const data: GroupData = {
         { assetId: '63333271', metadata: 'adult' },
         { assetId: '63898831', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
+      skAbundance: 'uncommon',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Glaucidium passerinum', 'Athene noctua', 'Surnia ulula'],
+      },
     },
     {
       name: {
@@ -75,9 +81,11 @@ const data: GroupData = {
         { assetId: '204219721', metadata: 'adult' },
         { assetId: '215168381', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
+      skAbundance: 'uncommon',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Athene noctua', 'Aegolius funereus'],
+      },
     },
     {
       name: {
@@ -94,7 +102,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Asio flammeus', 'Bubo bubo', 'Strix aluco'],
+      },
     },
     {
       name: {
@@ -110,9 +120,11 @@ const data: GroupData = {
         { assetId: '200383181', metadata: 'immature' },
         { assetId: '204615791', metadata: 'adult' },
       ],
-      skAbundance: 'common',
+      skAbundance: 'uncommon',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Asio otus', 'Strix aluco'],
+      },
     },
     {
       name: {
@@ -131,7 +143,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Asio otus', 'Asio flammeus', 'Aegolius funereus', 'Strix uralensis'],
+      },
     },
     {
       name: {
@@ -148,9 +162,11 @@ const data: GroupData = {
         { assetId: '33249041', metadata: 'adult' },
         { assetId: '57982571', metadata: 'adult' },
       ],
-      skAbundance: 'common',
+      skAbundance: 'uncommon',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Bubo scandiacus', 'Asio flammeus', 'Strix aluco'],
+      },
     },
     {
       name: {
@@ -168,7 +184,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Glaucidium passerinum', 'Otus scops'],
+      },
     },
     {
       name: {
@@ -185,9 +203,11 @@ const data: GroupData = {
         { assetId: '249379041', metadata: 'juvenile' },
         { assetId: '28176551', metadata: 'adult' },
       ],
-      skAbundance: 'common',
+      skAbundance: 'uncommon',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Athene noctua'],
+      },
     },
     {
       name: {
@@ -198,30 +218,16 @@ const data: GroupData = {
         },
       },
       imageAssets: [
-        {
-          assetId: '106358811',
-          metadata: 'adult male',
-        },
-        {
-          assetId: '75929641',
-          metadata: 'female/immature male',
-        },
-        {
-          assetId: '37851091',
-          metadata: 'immature female',
-        },
-        {
-          assetId: '41544741',
-          metadata: 'female/immature male',
-        },
-        {
-          assetId: '137775571',
-          metadata: 'immature female',
-        },
+        { assetId: '106358811', metadata: 'adult male' },
+        { assetId: '75929641', metadata: 'female/immature male' },
+        { assetId: '37851091', metadata: 'immature female' },
+        { assetId: '41544741', metadata: 'female/immature male' },
+        { assetId: '137775571', metadata: 'immature female' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: ['Tyto alba', 'Strix uralensis'],
+      },
     },
     {
       name: {
@@ -238,9 +244,13 @@ const data: GroupData = {
         { assetId: '42470461', metadata: 'adult' },
         { assetId: '72379511', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: [
+          { metadata: 'female', species: 'Accipiter nisus' },
+          { metadata: 'adult', species: 'Aegolius funereus' },
+        ],
+      },
     },
   ],
 };

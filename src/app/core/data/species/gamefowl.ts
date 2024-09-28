@@ -24,9 +24,12 @@ const data: GroupData = {
             { assetId: '205368841', metadata: 'adult male' },
             { assetId: '144005581', metadata: 'female' },
           ],
-          skAbundance: 'common',
+          skAbundance: 'uncommon',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Lyrurus tetrix'],
+            adultFemale: ['Lyrurus tetrix', 'Phasianus colchicus'],
+          },
         },
         {
           name: {
@@ -43,9 +46,12 @@ const data: GroupData = {
             { assetId: '189763131', metadata: 'female' },
             { assetId: '62519991', metadata: 'female' },
           ],
-          skAbundance: 'common',
+          skAbundance: 'uncommon',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Tetrao urogallus'],
+            adultFemale: ['Tetrao urogallus', 'Phasianus colchicus'],
+          },
         },
         {
           name: {
@@ -62,9 +68,15 @@ const data: GroupData = {
             { assetId: '206035251', metadata: 'immature' },
             { assetId: '205330961', metadata: 'female' },
           ],
-          skAbundance: 'common',
+          skAbundance: 'uncommon',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'adult male', species: 'Coturnix coturnix' },
+              { metadata: 'female', species: 'Lyrurus tetrix' },
+              { metadata: 'adult male', species: 'Perdix perdix' },
+            ],
+          },
         },
       ],
     },
@@ -86,9 +98,15 @@ const data: GroupData = {
             { assetId: '93771111', metadata: 'adult' },
             { assetId: '64643661', metadata: 'adult' },
           ],
-          skAbundance: 'common',
+          skAbundance: 'uncommon',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'female', species: 'Phasianus colchicus' },
+              { metadata: 'adult male', species: 'Coturnix coturnix' },
+              { metadata: 'adult', species: 'Crex crex' },
+            ],
+          },
         },
         {
           name: {
@@ -106,8 +124,13 @@ const data: GroupData = {
             { assetId: '134297931', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: [
+              { metadata: 'adult male', species: 'Perdix perdix' },
+              { metadata: 'female', species: 'Phasianus colchicus' },
+            ],
+          },
         },
         {
           name: {
@@ -126,7 +149,9 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultFemale: [{ metadata: 'adult male', species: 'Perdix perdix' }],
+          },
         },
       ],
     },

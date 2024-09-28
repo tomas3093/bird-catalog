@@ -24,9 +24,8 @@ const data: GroupData = {
             { assetId: '30833231', metadata: 'immature' },
             { assetId: '38758881', metadata: 'immature' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          similarSpecies: { adult: ['Neophron percnopterus'] },
         },
         {
           name: {
@@ -43,9 +42,8 @@ const data: GroupData = {
             { assetId: '37455291', metadata: 'adult' },
             { assetId: '29255581', metadata: 'adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          similarSpecies: { adult: ['Aegypius monachus'] },
         },
         {
           name: {
@@ -62,9 +60,13 @@ const data: GroupData = {
             { assetId: '29256491', metadata: 'adult' },
             { assetId: '26611931', metadata: 'immature' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            adult: [
+              { metadata: 'adult', species: 'Gyps fulvus' },
+              { metadata: 'juvenile', species: 'Neophron percnopterus' },
+            ],
+          },
         },
         {
           name: {
@@ -81,9 +83,8 @@ const data: GroupData = {
             { assetId: '45198961', metadata: 'immature' },
             { assetId: '40867711', metadata: 'juvenile' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: { adult: ['Ciconia ciconia'] },
         },
       ],
     },
@@ -104,7 +105,12 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adult: [
+              { metadata: 'juvenile', species: 'Clanga clanga' },
+              { metadata: 'adult', species: 'Aquila chrysaetos' },
+            ],
+          },
         },
         {
           name: {
@@ -118,9 +124,15 @@ const data: GroupData = {
             { assetId: '26325211', metadata: 'adult' },
             { assetId: '275690361', metadata: 'immature' },
           ],
-          skAbundance: 'common',
+          skAbundance: 'uncommon',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adult: ['Aquila heliaca', 'Buteo buteo'],
+            firstWinter: [
+              { metadata: 'adult', species: 'Buteo buteo' },
+              { metadata: 'first winter', species: 'Haliaeetus albicilla' },
+            ],
+          },
         },
         {
           name: {
@@ -136,7 +148,10 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adult: [{ metadata: 'first winter', species: 'Aquila chrysaetos' }],
+            juvenile: ['Aquila chrysaetos'],
+          },
         },
         {
           name: {
@@ -151,8 +166,8 @@ const data: GroupData = {
             { assetId: '196828171', metadata: 'juvenile' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: { juvenile: ['Clanga clanga', 'Aquila nipalensis'] },
         },
         {
           name: {
@@ -169,9 +184,8 @@ const data: GroupData = {
             { assetId: '52049071', metadata: 'immature' },
             { assetId: '36732851', metadata: 'immature' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          similarSpecies: { juvenile: ['Clanga pomarina', 'Aquila nipalensis', 'Aquila heliaca'] },
         },
         {
           name: {
@@ -185,9 +199,9 @@ const data: GroupData = {
             { assetId: '39220891', metadata: 'unknown' },
             { assetId: '46583481', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: { adult: ['Buteo buteo'] },
         },
         {
           name: {
@@ -204,9 +218,8 @@ const data: GroupData = {
             { assetId: '132062271', metadata: 'immature' },
             { assetId: '66338831', metadata: 'immature' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: { juvenile: ['Clanga clanga', 'Clanga pomarina'] },
         },
         {
           name: {
@@ -223,9 +236,9 @@ const data: GroupData = {
             { assetId: '205477641', metadata: 'dark morph' },
             { assetId: '47740691', metadata: 'light morph' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: { adult: ['Buteo buteo', 'Buteo rufinus'] },
         },
       ],
     },
@@ -246,7 +259,7 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: { adult: ['Milvus migrans'] },
         },
         {
           name: {
@@ -260,9 +273,9 @@ const data: GroupData = {
             { assetId: '194547221', metadata: 'juvenile' },
             { assetId: '33505041', metadata: 'juvenile' },
           ],
-          skAbundance: 'common',
+          skAbundance: 'uncommon',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: { adult: ['Milvus milvus'] },
         },
         {
           name: {
@@ -279,9 +292,13 @@ const data: GroupData = {
             { assetId: '46403131', metadata: 'adult' },
             { assetId: '50587611', metadata: 'adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          similarSpecies: {
+            adult: [
+              { metadata: 'adult male', species: 'Circus macrourus' },
+              { metadata: 'adult male', species: 'Accipiter nisus' },
+            ],
+          },
         },
       ],
     },
@@ -302,8 +319,19 @@ const data: GroupData = {
             { assetId: '34475781', metadata: 'immature female' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'adult female', species: 'Circus pygargus' },
+              { metadata: 'adult female', species: 'Circus cyaneus' },
+            ],
+            adultFemale: [
+              { metadata: 'adult female', species: 'Circus pygargus' },
+              { metadata: 'adult female', species: 'Circus cyaneus' },
+              { metadata: 'adult female', species: 'Circus macrourus' },
+              { metadata: 'adult', species: 'Buteo buteo' },
+            ],
+          },
         },
         {
           name: {
@@ -319,8 +347,11 @@ const data: GroupData = {
             { assetId: '63555051', metadata: 'adult male' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Circus pygargus', 'Circus macrourus', 'Accipiter gentilis'],
+            adultFemale: ['Circus pygargus', 'Circus macrourus', 'Accipiter nisus', 'Circus aeruginosus'],
+          },
         },
         {
           name: {
@@ -335,9 +366,12 @@ const data: GroupData = {
             { assetId: '43521811', metadata: 'adult female' },
             { assetId: '45176181', metadata: 'adult male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Circus cyaneus', 'Circus macrourus'],
+            adultFemale: ['Circus cyaneus', 'Circus macrourus', 'Circus aeruginosus'],
+          },
         },
         {
           name: {
@@ -352,9 +386,20 @@ const data: GroupData = {
             { assetId: '26701651', metadata: 'adult male' },
             { assetId: '41275581', metadata: 'adult male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'adult male', species: 'Circus cyaneus' },
+              { metadata: 'adult male', species: 'Circus pygargus' },
+              { metadata: 'adult', species: 'Elanus caeruleus' },
+            ],
+            adultFemale: ['Circus pygargus', 'Circus cyaneus'],
+            juvenile: [
+              { metadata: 'adult female', species: 'Circus pygargus' },
+              { metadata: 'adult female', species: 'Circus cyaneus' },
+            ],
+          },
         },
       ],
     },
@@ -373,9 +418,11 @@ const data: GroupData = {
             { assetId: '38028921', metadata: 'immature light morph' },
             { assetId: '46595271', metadata: 'immature light morph' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Buteo buteo'],
+          },
         },
         {
           name: {
@@ -392,7 +439,12 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adult: [
+              { metadata: 'adult female', species: 'Buteo lagopus' },
+              { metadata: 'adult', species: 'Buteo rufinus' },
+            ],
+          },
         },
         {
           name: {
@@ -405,9 +457,11 @@ const data: GroupData = {
             { assetId: '46855241', metadata: 'juvenile' },
             { assetId: '26775691', metadata: 'adult light morph' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultFemale: [{ metadata: 'adult', species: 'Buteo buteo' }],
+          },
         },
       ],
     },
@@ -426,9 +480,15 @@ const data: GroupData = {
             { assetId: '181548921', metadata: 'adult light morph' },
             { assetId: '205935771', metadata: 'adult light morph' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'adult', species: 'Buteo buteo' },
+              { metadata: 'adult', species: 'Buteo rufinus' },
+              { metadata: 'adult female', species: 'Buteo lagopus' },
+            ],
+          },
         },
       ],
     },
@@ -450,7 +510,13 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Accipiter brevipes', 'Accipiter gentilis'],
+            adultFemale: [
+              { metadata: 'adult male', species: 'Accipiter gentilis' },
+              { metadata: 'adult female', species: 'Accipiter brevipes' },
+            ],
+          },
         },
         {
           name: {
@@ -467,7 +533,12 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'adult female', species: 'Accipiter nisus' },
+              { metadata: 'adult', species: 'Buteo buteo' },
+            ],
+          },
         },
         {
           name: {
@@ -484,9 +555,8 @@ const data: GroupData = {
             { assetId: '124829101', metadata: 'adult' },
             { assetId: '21940471', metadata: 'immature' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: { adult: ['Accipiter nisus'] },
         },
       ],
     },
@@ -496,7 +566,7 @@ const data: GroupData = {
         {
           name: {
             latin: 'Falco tinnunculus',
-            localized: { en: 'Eurasian Kestrel', sk: 'Sokol myšiar' },
+            localized: { en: 'Eurasian Kestrel', sk: 'Sokol myšiar (pustovka)' },
           },
           imageAssets: [
             { assetId: '234114551', metadata: 'adult male' },
@@ -508,7 +578,13 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'adult male', species: 'Falco naumanni' },
+              { metadata: 'adult female', species: 'Falco vespertinus' },
+            ],
+            adultFemale: ['Falco naumanni', 'Falco columbarius', 'Accipiter nisus'],
+          },
         },
         {
           name: {
@@ -524,9 +600,15 @@ const data: GroupData = {
             { assetId: '174613471', metadata: 'juvenile' },
             { assetId: '126408781', metadata: 'juvenile' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultFemale: [
+              { metadata: 'adult', species: 'Falco subbuteo' },
+              { metadata: 'adult male', species: 'Falco columbarius' },
+            ],
+            juvenile: ['Falco subbuteo'],
+          },
         },
         {
           name: {
@@ -541,9 +623,12 @@ const data: GroupData = {
             { assetId: '199256531', metadata: 'adult' },
             { assetId: '69285851', metadata: 'adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Falco peregrinus'],
+            juvenile: ['Falco vespertinus'],
+          },
         },
         {
           name: {
@@ -558,9 +643,11 @@ const data: GroupData = {
             { assetId: '54334451', metadata: 'immature' },
             { assetId: '56019481', metadata: 'adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Falco subbuteo'],
+          },
         },
         {
           name: {
@@ -572,9 +659,11 @@ const data: GroupData = {
             { assetId: '51619781', metadata: 'female/immature male' },
             { assetId: '46239361', metadata: 'female/immature male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [{ metadata: 'adult', species: 'Falco peregrinus' }],
+          },
         },
         {
           name: {
@@ -591,7 +680,9 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adult: ['Falco peregrinus'],
+          },
         },
         {
           name: {
@@ -608,9 +699,11 @@ const data: GroupData = {
             { assetId: '204879491', metadata: 'female/immature male' },
             { assetId: '50531301', metadata: 'adult male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            adultMale: ['Falco tinnunculus'],
+            adultFemale: ['Falco columbarius'],
+          },
         },
       ],
     },
@@ -629,9 +722,11 @@ const data: GroupData = {
             { assetId: '66023921', metadata: 'juvenile' },
             { assetId: '48440631', metadata: 'adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Buteo buteo'],
+          },
         },
       ],
     },

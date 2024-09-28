@@ -19,7 +19,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [{ metadata: 'adult male', species: 'Passer domesticus' }],
+      },
     },
     {
       name: {
@@ -35,7 +37,6 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
     },
     {
       name: {
@@ -52,9 +53,10 @@ const data: GroupData = {
         { assetId: '194859521', metadata: 'breeding adult' },
         { assetId: '28817241', metadata: 'breeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adultMale: ['Plectrophenax nivalis'],
+      },
     },
   ],
 };

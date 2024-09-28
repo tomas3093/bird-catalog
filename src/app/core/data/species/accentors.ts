@@ -23,7 +23,13 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [
+          { metadata: 'female', species: 'Passer domesticus' },
+          { metadata: 'juvenile', species: 'Erithacus rubecula' },
+          { metadata: 'immature', species: 'Phoenicurus ochruros' },
+        ],
+      },
     },
     {
       name: {
@@ -40,9 +46,9 @@ const data: GroupData = {
         { assetId: '21163911', metadata: 'unknown' },
         { assetId: '36598171', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
+      skAbundance: 'occasional',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: { adult: ['Prunella modularis'] },
     },
     {
       name: {
@@ -59,9 +65,8 @@ const data: GroupData = {
         { assetId: '89067721', metadata: 'unknown' },
         { assetId: '89067721', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: { adult: ['Prunella montanella', 'Prunella modularis'] },
     },
     {
       name: {
@@ -78,9 +83,8 @@ const data: GroupData = {
         { assetId: '44824741', metadata: 'unknown' },
         { assetId: '44824741', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: { adult: ['Prunella atrogularis'] },
     },
   ],
 };

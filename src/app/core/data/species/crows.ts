@@ -23,7 +23,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Lanius excubitor'],
+      },
     },
     {
       name: {
@@ -41,7 +43,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Perisoreus infaustus'],
+      },
     },
     {
       name: {
@@ -58,9 +62,10 @@ const data: GroupData = {
         { assetId: '144294561', metadata: 'unknown' },
         { assetId: '64885311', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: ['Garrulus glandarius'],
+      },
     },
     {
       name: {
@@ -78,7 +83,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Sturnus vulgaris', 'Corvus frugilegus'],
+      },
     },
     {
       name: {
@@ -97,7 +104,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Corvus corone', 'Pyrrhocorax pyrrhocorax', 'Pyrrhocorax graculus'],
+      },
     },
     {
       name: {
@@ -116,7 +125,13 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Corvus corone'],
+        juvenile: [
+          { metadata: 'adult', species: 'Corvus corone' },
+          { metadata: 'adult', species: 'Corvus corax' },
+        ],
+      },
     },
     {
       name: {
@@ -135,7 +150,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Corvus corone'],
+      },
     },
     {
       name: {
@@ -154,7 +171,12 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [
+          { metadata: 'juvenile', species: 'Corvus frugilegus' },
+          { metadata: 'adult', species: 'Corvus corax' },
+        ],
+      },
     },
     {
       name: {
@@ -173,7 +195,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Corvus corone'],
+      },
     },
     {
       name: {
@@ -190,9 +214,10 @@ const data: GroupData = {
         { assetId: '36598241', metadata: 'adult' },
         { assetId: '22044211', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      similarSpecies: {
+        adult: ['Pyrrhocorax pyrrhocorax', 'Corvus monedula'],
+      },
     },
   ],
 };

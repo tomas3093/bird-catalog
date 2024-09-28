@@ -21,9 +21,14 @@ const data: GroupData = {
         { assetId: '34550131', metadata: 'adult' },
         { assetId: '52366351', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        firstWinter: [
+          { metadata: 'adult', species: 'Anthus richardi' },
+          { metadata: 'female', species: 'Motacilla flava' },
+        ],
+      },
     },
     {
       name: {
@@ -40,9 +45,14 @@ const data: GroupData = {
         { assetId: '36146841', metadata: 'unknown' },
         { assetId: '51134331', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        firstWinter: [
+          { metadata: 'adult', species: 'Anthus campestris' },
+          { metadata: 'adult', species: 'Anthus trivialis' },
+        ],
+      },
     },
     {
       name: {
@@ -61,7 +71,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Anthus pratensis'],
+      },
     },
     {
       name: {
@@ -80,7 +92,13 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult', species: 'Anthus trivialis' },
+          { metadata: 'adult', species: 'Anthus spinoletta' },
+          { metadata: 'first winter', species: 'Anthus cervinus' },
+        ],
+      },
     },
     {
       name: {
@@ -98,8 +116,10 @@ const data: GroupData = {
         { assetId: '20407181', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Anthus pratensis'],
+      },
     },
     {
       name: {
@@ -116,9 +136,11 @@ const data: GroupData = {
         { assetId: '21505141', metadata: 'juvenile' },
         { assetId: '42943201', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Anthus pratensis'],
+      },
     },
     {
       name: {
@@ -134,8 +156,15 @@ const data: GroupData = {
         { assetId: '42407251', metadata: 'adult' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: [
+          { metadata: 'first winter', species: 'Motacilla citreola' },
+          { metadata: 'female', species: 'Motacilla flava' },
+          { metadata: 'first winter', species: 'Motacilla cinerea' },
+        ],
+        juvenile: [{ metadata: 'first winter', species: 'Motacilla cinerea' }],
+      },
     },
     {
       name: {
@@ -154,8 +183,17 @@ const data: GroupData = {
         { assetId: '41968381', metadata: 'immature' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        breedingMale: [
+          { metadata: 'breeding male', species: 'Motacilla cinerea' },
+          { metadata: 'breeding male', species: 'Motacilla citreola' },
+        ],
+        adultFemale: [
+          { metadata: 'first winter', species: 'Motacilla citreola' },
+          { metadata: 'first winter', species: 'Motacilla cinerea' },
+        ],
+      },
     },
     {
       name: {
@@ -173,9 +211,18 @@ const data: GroupData = {
         { assetId: '35870071', metadata: 'immature' },
         { assetId: '48760391', metadata: 'immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        breedingMale: [
+          { metadata: 'breeding male', species: 'Motacilla flava' },
+          { metadata: 'breeding male', species: 'Motacilla cinerea' },
+        ],
+        firstWinter: [
+          { metadata: 'breeding male', species: 'Motacilla alba' },
+          { metadata: 'female', species: 'Motacilla flava' },
+        ],
+      },
     },
     {
       name: {
@@ -194,7 +241,13 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        breedingMale: ['Motacilla flava'],
+        firstWinter: [
+          { metadata: 'breeding male', species: 'Motacilla flava' },
+          { metadata: 'breeding male', species: 'Motacilla alba' },
+        ],
+      },
     },
   ],
 };

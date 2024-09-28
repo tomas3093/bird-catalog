@@ -21,9 +21,12 @@ const data: GroupData = {
         { assetId: '197100761', metadata: 'immature' },
         { assetId: '51347611', metadata: 'molting adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Podiceps nigricollis', 'Podiceps grisegena', 'Tachybaptus ruficollis'],
+        adultWinter: ['Podiceps nigricollis', 'Podiceps grisegena', 'Podiceps cristatus'],
+      },
     },
     {
       name: {
@@ -40,9 +43,12 @@ const data: GroupData = {
         { assetId: '94529191', metadata: 'molting adult' },
         { assetId: '58158991', metadata: 'breeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Podiceps auritus', 'Tachybaptus ruficollis'],
+        adultWinter: ['Tachybaptus ruficollis', 'Podiceps auritus'],
+      },
     },
     {
       name: {
@@ -61,7 +67,10 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultSummer: ['Podiceps auritus', 'Podiceps nigricollis'],
+        adultWinter: ['Podiceps nigricollis', 'Podiceps auritus'],
+      },
     },
     {
       name: {
@@ -80,7 +89,10 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultSummer: ['Podiceps auritus', 'Podiceps grisegena'],
+        adultWinter: ['Podiceps grisegena', 'Podiceps auritus', 'Gavia stellata'],
+      },
     },
     {
       name: {
@@ -97,9 +109,12 @@ const data: GroupData = {
         { assetId: '31581811', metadata: 'juvenile' },
         { assetId: '27365721', metadata: 'breeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Podiceps auritus', 'Podiceps cristatus'],
+        adultWinter: ['Podiceps cristatus', 'Podiceps auritus', 'Podiceps nigricollis'],
+      },
     },
   ],
 };

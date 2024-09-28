@@ -18,9 +18,18 @@ const data: GroupData = {
         { assetId: '30325011', metadata: 'juvenile' },
         { assetId: '42761111', metadata: 'nonbreeding/immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [
+          { metadata: 'adult male', species: 'Recurvirostra avosetta' },
+          { metadata: 'adult female', species: 'Himantopus himantopus' },
+        ],
+        juvenile: [
+          { metadata: 'adult male', species: 'Recurvirostra avosetta' },
+          { metadata: 'adult female', species: 'Himantopus himantopus' },
+        ],
+      },
     },
     {
       name: {
@@ -34,9 +43,14 @@ const data: GroupData = {
         { assetId: '41568871', metadata: 'adult' },
         { assetId: '41687171', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: [
+          { metadata: 'breeding adult', species: 'Haematopus ostralegus' },
+          { metadata: 'adult female', species: 'Himantopus himantopus' },
+        ],
+      },
     },
     {
       name: {
@@ -51,9 +65,14 @@ const data: GroupData = {
         { assetId: '40135231', metadata: 'juvenile' },
         { assetId: '177213741', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultFemale: [
+          { metadata: 'adult male', species: 'Recurvirostra avosetta' },
+          { metadata: 'breeding adult', species: 'Haematopus ostralegus' },
+        ],
+      },
     },
     {
       name: {
@@ -70,9 +89,7 @@ const data: GroupData = {
         { assetId: '87926081', metadata: 'unknown' },
         { assetId: '88007281', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
     },
     {
       name: {
@@ -89,9 +106,10 @@ const data: GroupData = {
         { assetId: '52143041', metadata: 'adult' },
         { assetId: '82362671', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: [{ metadata: 'juvenile', species: 'Eudromias morinellus' }],
+      },
     },
     {
       name: {
@@ -108,9 +126,11 @@ const data: GroupData = {
         { assetId: '53802771', metadata: 'breeding adult' },
         { assetId: '46858851', metadata: 'breeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Glareola nordmanni'],
+      },
     },
     {
       name: {
@@ -127,9 +147,11 @@ const data: GroupData = {
         { assetId: '63002731', metadata: 'nonbreeding/immature' },
         { assetId: '135400201', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Glareola pratincola'],
+      },
     },
     {
       name: {
@@ -143,9 +165,15 @@ const data: GroupData = {
         { assetId: '39572321', metadata: 'nonbreeding adult' },
         { assetId: '41694351', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Charadrius hiaticula'],
+        adultWinter: [
+          { metadata: 'nonbreeding adult', species: 'Charadrius hiaticula' },
+          { metadata: 'juvenile', species: 'Anarhynchus alexandrinus' },
+        ],
+      },
     },
     {
       name: {
@@ -160,9 +188,15 @@ const data: GroupData = {
         { assetId: '43162771', metadata: 'breeding adult' },
         { assetId: '39953081', metadata: 'nonbreeding/immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Charadrius dubius'],
+        adultWinter: [
+          { metadata: 'nonbreeding adult', species: 'Charadrius dubius' },
+          { metadata: 'juvenile', species: 'Anarhynchus alexandrinus' },
+        ],
+      },
     },
     {
       name: {
@@ -180,8 +214,14 @@ const data: GroupData = {
         { assetId: '31608831', metadata: 'juvenile' },
       ],
       skAbundance: 'rare',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [{ metadata: 'nonbreeding adult', species: 'Charadrius hiaticula' }],
+        juvenile: [
+          { metadata: 'nonbreeding adult', species: 'Charadrius hiaticula' },
+          { metadata: 'nonbreeding adult', species: 'Charadrius dubius' },
+        ],
+      },
     },
     {
       name: {
@@ -195,9 +235,15 @@ const data: GroupData = {
         { assetId: '98953291', metadata: 'breeding adult' },
         { assetId: '53298481', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        breedingMale: ['Pluvialis apricaria', 'Pluvialis fulva'],
+        adultWinter: [
+          { metadata: 'nonbreeding adult', species: 'Pluvialis apricaria' },
+          { metadata: 'juvenile', species: 'Pluvialis fulva' },
+        ],
+      },
     },
     {
       name: {
@@ -212,9 +258,15 @@ const data: GroupData = {
         { assetId: '44390891', metadata: 'nonbreeding/immature' },
         { assetId: '26469891', metadata: 'nonbreeding/immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        breedingMale: ['Pluvialis squatarola', 'Pluvialis fulva'],
+        adultWinter: [
+          { metadata: 'nonbreeding adult', species: 'Pluvialis squatarola' },
+          { metadata: 'juvenile', species: 'Pluvialis fulva' },
+        ],
+      },
     },
     {
       name: {
@@ -231,9 +283,15 @@ const data: GroupData = {
         { assetId: '118622311', metadata: 'immature' },
         { assetId: '275170131', metadata: 'nonbreeding/immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        breedingMale: ['Pluvialis apricaria', 'Pluvialis squatarola'],
+        juvenile: [
+          { metadata: 'nonbreeding adult', species: 'Pluvialis apricaria' },
+          { metadata: 'nonbreeding adult', species: 'Pluvialis squatarola' },
+        ],
+      },
     },
     {
       name: {
@@ -250,9 +308,14 @@ const data: GroupData = {
         { assetId: '35943721', metadata: 'juvenile' },
         { assetId: '46760671', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        juvenile: [
+          { metadata: 'nonbreeding adult', species: 'Pluvialis apricaria' },
+          { metadata: 'adult', species: 'Cursorius cursor' },
+        ],
+      },
     },
     {
       name: {
@@ -268,7 +331,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultSummer: ['Haematopus ostralegus'],
+      },
     },
     {
       name: {
@@ -285,9 +350,11 @@ const data: GroupData = {
         { assetId: '88962561', metadata: 'breeding adult' },
         { assetId: '90249171', metadata: 'breeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [{ metadata: 'juvenile', species: 'Eudromias morinellus' }],
+      },
     },
     {
       name: {
@@ -303,8 +370,26 @@ const data: GroupData = {
         { assetId: '42570831', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        breedingMale: [
+          { metadata: 'breeding adult', species: 'Tringa totanus' },
+          { metadata: 'breeding adult', species: 'Tringa erythropus' },
+        ],
+        adultWinter: [
+          { metadata: 'breeding adult', species: 'Tringa totanus' },
+          { metadata: 'juvenile', species: 'Calidris melanotos' },
+        ],
+        adultFemale: [
+          { metadata: 'breeding adult', species: 'Tringa totanus' },
+          { metadata: 'juvenile', species: 'Calidris melanotos' },
+        ],
+        juvenile: [
+          { metadata: 'breeding adult', species: 'Tringa totanus' },
+          { metadata: 'juvenile', species: 'Tringa glareola' },
+          { metadata: 'juvenile', species: 'Calidris melanotos' },
+        ],
+      },
     },
     {
       name: {
@@ -321,9 +406,15 @@ const data: GroupData = {
         { assetId: '142336261', metadata: 'nonbreeding adult' },
         { assetId: '32756561', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [
+          { metadata: 'breeding male', species: 'Calidris ferruginea' },
+          { metadata: 'breeding adult', species: 'Calidris alba' },
+        ],
+        adultWinter: ['Calidris alpina', 'Calidris ferruginea', 'Arenaria interpres'],
+      },
     },
     {
       name: {
@@ -340,9 +431,16 @@ const data: GroupData = {
         { assetId: '56571291', metadata: 'nonbreeding adult' },
         { assetId: '43552541', metadata: 'breeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [
+          { metadata: 'breeding adult', species: 'Calidris canutus' },
+          { metadata: 'breeding male', species: 'Calidris ferruginea' },
+          { metadata: 'breeding adult', species: 'Calidris minuta' },
+        ],
+        adultWinter: ['Calidris alpina'],
+      },
     },
     {
       name: {
@@ -356,9 +454,12 @@ const data: GroupData = {
         { assetId: '46349771', metadata: 'nonbreeding adult' },
         { assetId: '34424771', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Calidris alpina'],
+        adultWinter: ['Calidris maritima'],
+      },
     },
     {
       name: {
@@ -372,9 +473,16 @@ const data: GroupData = {
         { assetId: '175017461', metadata: 'juvenile' },
         { assetId: '284967101', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        breedingMale: [
+          { metadata: 'breeding adult', species: 'Calidris minuta' },
+          { metadata: 'juvenile', species: 'Calidris falcinellus' },
+        ],
+        adultWinter: ['Calidris canutus', 'Calidris minuta', 'Calidris alba'],
+        juvenile: ['Calidris melanotos'],
+      },
     },
     {
       name: {
@@ -389,9 +497,16 @@ const data: GroupData = {
         { assetId: '148978691', metadata: 'molting adult' },
         { assetId: '35476851', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        breedingMale: [
+          { metadata: 'breeding adult', species: 'Calidris canutus' },
+          { metadata: 'breeding adult', species: 'Calidris alba' },
+        ],
+        adultWinter: ['Calidris alpina'],
+        juvenile: [{ metadata: 'nonbreeding adult', species: 'Calidris alpina' }],
+      },
     },
     {
       name: {
@@ -405,9 +520,21 @@ const data: GroupData = {
         { assetId: '40156571', metadata: 'juvenile' },
         { assetId: '215571651', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [
+          { metadata: 'adult', species: 'Actitis hypoleucos' },
+          { metadata: 'nonbreeding adult', species: 'Calidris canutus' },
+          { metadata: 'nonbreeding adult', species: 'Calidris alpina' },
+        ],
+        juvenile: [
+          { metadata: 'nonbreeding adult', species: 'Calidris minuta' },
+          { metadata: 'adult', species: 'Actitis hypoleucos' },
+          { metadata: 'nonbreeding adult', species: 'Calidris canutus' },
+          { metadata: 'nonbreeding adult', species: 'Calidris alpina' },
+        ],
+      },
     },
     {
       name: {
@@ -421,9 +548,13 @@ const data: GroupData = {
         { assetId: '35191961', metadata: 'juvenile' },
         { assetId: '24641051', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultWinter: ['Calidris alpina'],
+        adultSummer: ['Calidris alba', 'Calidris temminckii'],
+        juvenile: ['Calidris alpina', 'Calidris falcinellus'],
+      },
     },
     {
       name: {
@@ -440,9 +571,13 @@ const data: GroupData = {
         { assetId: '329337861', metadata: 'breeding adult' },
         { assetId: '156708131', metadata: 'breeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [{ metadata: 'juvenile', species: 'Calidris alpina' }],
+        adultWinter: ['Calidris alpina'],
+        juvenile: ['Calidris alpina', 'Calidris minuta'],
+      },
     },
     {
       name: {
@@ -459,9 +594,11 @@ const data: GroupData = {
         { assetId: '224694391', metadata: 'breeding adult' },
         { assetId: '292360931', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adultSummer: [{ metadata: 'nonbreeding adult', species: 'Arenaria interpres' }],
+        adultWinter: ['Arenaria interpres'],
+      },
     },
     {
       name: {
@@ -478,9 +615,16 @@ const data: GroupData = {
         { assetId: '182524681', metadata: 'juvenile' },
         { assetId: '266845371', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [{ metadata: 'breeding female', species: 'Calidris pugnax' }],
+        juvenile: [
+          { metadata: 'breeding female', species: 'Calidris pugnax' },
+          { metadata: 'juvenile', species: 'Tringa glareola' },
+          { metadata: 'juvenile', species: 'Calidris alpina' },
+        ],
+      },
     },
     {
       name: {
@@ -496,8 +640,15 @@ const data: GroupData = {
         { assetId: '37295351', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        juvenile: [
+          { metadata: 'juvenile', species: 'Tringa ochropus' },
+          { metadata: 'breeding adult', species: 'Tringa nebularia' },
+          { metadata: 'nonbreeding adult', species: 'Tringa stagnatilis' },
+          { metadata: 'breeding adult', species: 'Tringa totanus' },
+        ],
+      },
     },
     {
       name: {
@@ -512,8 +663,13 @@ const data: GroupData = {
         { assetId: '37238441', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        juvenile: [
+          { metadata: 'juvenile', species: 'Tringa glareola' },
+          { metadata: 'breeding adult', species: 'Tringa nebularia' },
+        ],
+      },
     },
     {
       name: {
@@ -529,7 +685,12 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultSummer: [
+          { metadata: 'juvenile', species: 'Tringa ochropus' },
+          { metadata: 'juvenile', species: 'Tringa glareola' },
+        ],
+      },
     },
     {
       name: {
@@ -546,9 +707,11 @@ const data: GroupData = {
         { assetId: '30313571', metadata: 'breeding adult' },
         { assetId: '46808371', metadata: 'nonbreeding/immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Actitis hypoleucos'],
+      },
     },
     {
       name: {
@@ -562,9 +725,15 @@ const data: GroupData = {
         { assetId: '42271731', metadata: 'breeding adult' },
         { assetId: '43813161', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultWinter: [
+          { metadata: 'nonbreeding adult', species: 'Tringa erythropus' },
+          { metadata: 'breeding adult', species: 'Tringa nebularia' },
+          { metadata: 'juvenile', species: 'Tringa glareola' },
+        ],
+      },
     },
     {
       name: {
@@ -579,9 +748,15 @@ const data: GroupData = {
         { assetId: '25330701', metadata: 'nonbreeding adult' },
         { assetId: '205953581', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Tringa totanus', 'Calidris pugnax'],
+        adultWinter: [
+          { metadata: 'breeding adult', species: 'Tringa nebularia' },
+          { metadata: 'breeding adult', species: 'Tringa totanus' },
+        ],
+      },
     },
     {
       name: {
@@ -596,8 +771,15 @@ const data: GroupData = {
         { assetId: '42546191', metadata: 'breeding adult' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultWinter: [
+          { metadata: 'juvenile', species: 'Tringa glareola' },
+          { metadata: 'juvenile', species: 'Tringa ochropus' },
+          { metadata: 'breeding adult', species: 'Tringa totanus' },
+          { metadata: 'nonbreeding adult', species: 'Tringa erythropus' },
+        ],
+      },
     },
     {
       name: {
@@ -614,9 +796,11 @@ const data: GroupData = {
         { assetId: '41915671', metadata: 'breeding adult' },
         { assetId: '85790181', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultWinter: [{ metadata: 'breeding adult', species: 'Tringa nebularia' }],
+      },
     },
     {
       name: {
@@ -629,9 +813,15 @@ const data: GroupData = {
         { assetId: '33604941', metadata: 'nonbreeding adult' },
         { assetId: '113800971', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Limosa lapponica'],
+        adultWinter: [
+          { metadata: 'juvenile', species: 'Limosa lapponica' },
+          { metadata: 'nonbreeding adult', species: 'Tringa erythropus' },
+        ],
+      },
     },
     {
       name: {
@@ -648,9 +838,16 @@ const data: GroupData = {
         { assetId: '43586461', metadata: 'nonbreeding adult' },
         { assetId: '42941191', metadata: 'breeding male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Limosa limosa', 'Calidris canutus'],
+        juvenile: [
+          { metadata: 'nonbreeding adult', species: 'Limosa limosa' },
+          { metadata: 'nonbreeding adult', species: 'Calidris canutus' },
+          { metadata: 'breeding adult', species: 'Numenius phaeopus' },
+        ],
+      },
     },
     {
       name: {
@@ -664,9 +861,14 @@ const data: GroupData = {
         { assetId: '36169681', metadata: 'unknown' },
         { assetId: '73029851', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult', species: 'Numenius phaeopus' },
+          { metadata: 'nonbreeding adult', species: 'Limosa limosa' },
+        ],
+      },
     },
     {
       name: {
@@ -680,9 +882,14 @@ const data: GroupData = {
         { assetId: '53143911', metadata: 'adult' },
         { assetId: '189991281', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult', species: 'Numenius arquata' },
+          { metadata: 'nonbreeding adult', species: 'Limosa limosa' },
+        ],
+      },
     },
     {
       name: {
@@ -699,9 +906,7 @@ const data: GroupData = {
         { assetId: '28425931', metadata: 'unknown' },
         { assetId: '28425931', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
     },
     {
       name: {
@@ -715,9 +920,11 @@ const data: GroupData = {
         { assetId: '150318091', metadata: 'adult' },
         { assetId: '214820831', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Gallinago gallinago', 'Gallinago media'],
+      },
     },
     {
       name: {
@@ -731,9 +938,11 @@ const data: GroupData = {
         { assetId: '66516261', metadata: 'unknown' },
         { assetId: '204749711', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Gallinago gallinago'],
+      },
     },
     {
       name: {
@@ -747,9 +956,11 @@ const data: GroupData = {
         { assetId: '41631161', metadata: 'unknown' },
         { assetId: '149191461', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Lymnocryptes minimus', 'Gallinago media', 'Scolopax rusticola'],
+      },
     },
     {
       name: {
@@ -763,9 +974,11 @@ const data: GroupData = {
         { assetId: '20162451', metadata: 'unknown' },
         { assetId: '423010331', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Gallinago gallinago'],
+      },
     },
     {
       name: {
@@ -782,9 +995,11 @@ const data: GroupData = {
         { assetId: '175779461', metadata: 'juvenile' },
         { assetId: '107192451', metadata: 'breeding male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adultFemale: ['Phalaropus lobatus'],
+        juvenile: [{ metadata: 'nonbreeding adult', species: 'Phalaropus lobatus' }],
+      },
     },
     {
       name: {
@@ -801,9 +1016,18 @@ const data: GroupData = {
         { assetId: '176535931', metadata: 'nonbreeding/immature' },
         { assetId: '176645701', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultFemale: [
+          { metadata: 'breeding female', species: 'Phalaropus fulicarius' },
+          { metadata: 'breeding adult', species: 'Calidris canutus' },
+        ],
+        adultWinter: [
+          { metadata: 'juvenile', species: 'Phalaropus fulicarius' },
+          { metadata: 'nonbreeding adult', species: 'Calidris alba' },
+        ],
+      },
     },
   ],
 };

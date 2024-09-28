@@ -23,7 +23,10 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adult: ['Cygnus cygnus', 'Cygnus columbianus'],
+            juvenile: ['Cygnus cygnus', 'Cygnus columbianus'],
+          },
         },
         {
           name: {
@@ -37,9 +40,12 @@ const data: GroupData = {
             { assetId: '36128671', metadata: 'adult' },
             { assetId: '42943781', metadata: 'adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Cygnus columbianus', 'Cygnus olor'],
+            juvenile: ['Cygnus columbianus', 'Cygnus olor'],
+          },
         },
         {
           name: {
@@ -51,9 +57,12 @@ const data: GroupData = {
             { assetId: '24779031', metadata: 'adult' },
             { assetId: '40549011', metadata: 'adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Cygnus cygnus', 'Cygnus olor'],
+            juvenile: ['Cygnus cygnus', 'Cygnus olor'],
+          },
         },
       ],
     },
@@ -73,8 +82,10 @@ const data: GroupData = {
             { assetId: '49888661', metadata: 'adult' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Anser erythropus', 'Anser brachyrhynchus', 'Anser anser'],
+          },
         },
         {
           name: {
@@ -91,9 +102,11 @@ const data: GroupData = {
             { assetId: '31414541', metadata: 'unknown' },
             { assetId: '41700601', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Anser albifrons', 'Anser anser'],
+          },
         },
         {
           name: {
@@ -109,7 +122,9 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adult: ['Anser brachyrhynchus', 'Anser caerulescens', 'Anser albifrons'],
+          },
         },
         {
           name: {
@@ -120,30 +135,17 @@ const data: GroupData = {
             },
           },
           imageAssets: [
-            {
-              assetId: '40740951',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '154787491',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '49262651',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '39349871',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '31534581',
-              metadata: 'unknown',
-            },
+            { assetId: '40740951', metadata: 'unknown' },
+            { assetId: '154787491', metadata: 'unknown' },
+            { assetId: '49262651', metadata: 'unknown' },
+            { assetId: '39349871', metadata: 'unknown' },
+            { assetId: '31534581', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Anser albifrons', 'Anser anser'],
+          },
         },
         {
           name: {
@@ -154,30 +156,17 @@ const data: GroupData = {
             },
           },
           imageAssets: [
-            {
-              assetId: '41964711',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '45176841',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '60995381',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '20857581',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '87944921',
-              metadata: 'unknown',
-            },
+            { assetId: '41964711', metadata: 'unknown' },
+            { assetId: '45176841', metadata: 'unknown' },
+            { assetId: '60995381', metadata: 'unknown' },
+            { assetId: '20857581', metadata: 'unknown' },
+            { assetId: '87944921', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Anser brachyrhynchus', 'Anser anser', 'Anser albifrons'],
+          },
         },
         {
           name: {
@@ -191,9 +180,11 @@ const data: GroupData = {
             { assetId: '50174411', metadata: 'adult' },
             { assetId: '55794461', metadata: 'juvenile' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Branta leucopsis'],
+          },
         },
         {
           name: {
@@ -206,9 +197,11 @@ const data: GroupData = {
             { assetId: '40646761', metadata: 'adult' },
             { assetId: '26827351', metadata: 'juvenile' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Branta bernicla', 'Branta canadensis'],
+          },
         },
         {
           name: {
@@ -221,9 +214,11 @@ const data: GroupData = {
             { assetId: '35996621', metadata: 'adult' },
             { assetId: '188514901', metadata: 'juvenile' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Branta leucopsis', 'Branta canadensis'],
+          },
         },
         {
           name: {
@@ -237,9 +232,11 @@ const data: GroupData = {
             { assetId: '127668711', metadata: 'adult' },
             { assetId: '127669201', metadata: 'adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Tadorna tadorna', 'Tadorna ferruginea'],
+          },
         },
         {
           name: {
@@ -253,9 +250,11 @@ const data: GroupData = {
             { assetId: '34499091', metadata: 'adult' },
             { assetId: '33594831', metadata: 'immature' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Spatula clypeata', 'Anser indicus'],
+          },
         },
         {
           name: {
@@ -269,9 +268,11 @@ const data: GroupData = {
             { assetId: '33607611', metadata: 'adult' },
             { assetId: '38580701', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Tadorna tadorna'],
+          },
         },
         {
           name: {
@@ -285,9 +286,11 @@ const data: GroupData = {
             { assetId: '28860361', metadata: 'juvenile' },
             { assetId: '41840661', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
+          skAbundance: 'occasional',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adult: ['Tadorna ferruginea', 'Tadorna tadorna', 'Anser indicus'],
+          },
         },
       ],
     },
@@ -309,9 +312,8 @@ const data: GroupData = {
             { assetId: '33909221', metadata: 'adult male' },
             { assetId: '33909221', metadata: 'adult male' },
           ],
-          skAbundance: 'common',
+          skAbundance: 'occasional',
           movementPattern: 'resident',
-          similarSpecies: [],
         },
         {
           name: {
@@ -327,7 +329,10 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Spatula clypeata'],
+            adultFemale: ['Mareca strepera', 'Spatula querquedula', 'Spatula clypeata'],
+          },
         },
         {
           name: {
@@ -343,7 +348,13 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'female', species: 'Anas platyrhynchos' },
+              { metadata: 'adult male', species: 'Anas acuta' },
+            ],
+            adultFemale: ['Anas platyrhynchos', 'Anas acuta', 'Anas crecca'],
+          },
         },
         {
           name: {
@@ -357,9 +368,12 @@ const data: GroupData = {
             { assetId: '36769031', metadata: 'female/immature male' },
             { assetId: '297748921', metadata: 'male and female' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [{ metadata: 'nonbreeding male', species: 'Clangula hyemalis' }],
+            adultFemale: ['Anas crecca', 'Anas platyrhynchos'],
+          },
         },
         {
           name: {
@@ -376,8 +390,11 @@ const data: GroupData = {
             { assetId: '261773491', metadata: 'nonbreeding male' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Tadorna tadorna'],
+            adultFemale: ['Anas platyrhynchos'],
+          },
         },
         {
           name: {
@@ -392,8 +409,11 @@ const data: GroupData = {
             { assetId: '85965461', metadata: 'adult male' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Aythya ferina'],
+            adultFemale: ['Mareca strepera', 'Anas acuta'],
+          },
         },
         {
           name: {
@@ -408,8 +428,11 @@ const data: GroupData = {
             { assetId: '422441021', metadata: 'adult male' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Spatula querquedula'],
+            adultFemale: ['Spatula querquedula', 'Mareca strepera', 'Anas platyrhynchos'],
+          },
         },
         {
           name: {
@@ -423,8 +446,11 @@ const data: GroupData = {
             { assetId: '171163691', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [{ metadata: 'adult female', species: 'Anas crecca' }],
+            adultFemale: ['Anas crecca', 'Anas platyrhynchos'],
+          },
         },
       ],
     },
@@ -444,7 +470,10 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Mareca penelope', 'Aythya nyroca'],
+            adultFemale: ['Aythya fuligula', 'Aythya nyroca', 'Netta rufina'],
+          },
         },
         {
           name: {
@@ -460,7 +489,14 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Aythya ferina'],
+            adultFemale: [
+              { metadata: 'juvenile', species: 'Melanitta nigra' },
+              { metadata: 'female', species: 'Oxyura leucocephala' },
+              { metadata: 'adult female', species: 'Oxyura jamaicensis' },
+            ],
+          },
         },
         {
           name: {
@@ -474,9 +510,15 @@ const data: GroupData = {
             { assetId: '36816551', metadata: 'adult male' },
             { assetId: '204584571', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'adult male', species: 'Aythya ferina' },
+              { metadata: 'adult female', species: 'Aythya fuligula' },
+            ],
+            adultFemale: ['Aythya fuligula', 'Aythya ferina'],
+          },
         },
         {
           name: {
@@ -491,9 +533,12 @@ const data: GroupData = {
             { assetId: '27736041', metadata: 'immature male' },
             { assetId: '31955871', metadata: 'eclipse male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Aythya fuligula'],
+            adultFemale: ['Aythya fuligula'],
+          },
         },
         {
           name: {
@@ -508,8 +553,11 @@ const data: GroupData = {
             { assetId: '42955311', metadata: 'adult male' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Aythya marila', 'Aythya collaris'],
+            adultFemale: ['Aythya marila', 'Aythya ferina', 'Aythya nyroca'],
+          },
         },
         {
           name: {
@@ -520,30 +568,18 @@ const data: GroupData = {
             },
           },
           imageAssets: [
-            {
-              assetId: '215033981',
-              metadata: 'breeding male',
-            },
-            {
-              assetId: '142334221',
-              metadata: 'female',
-            },
-            {
-              assetId: '52442461',
-              metadata: 'male and female',
-            },
-            {
-              assetId: '82395861',
-              metadata: 'male and female',
-            },
-            {
-              assetId: '34018031',
-              metadata: 'nonbreeding male',
-            },
+            { assetId: '215033981', metadata: 'breeding male' },
+            { assetId: '142334221', metadata: 'female' },
+            { assetId: '52442461', metadata: 'male and female' },
+            { assetId: '82395861', metadata: 'male and female' },
+            { assetId: '34018031', metadata: 'nonbreeding male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Aythya fuligula'],
+            adultFemale: ['Aythya ferina', 'Aythya fuligula'],
+          },
         },
         {
           name: {
@@ -559,9 +595,10 @@ const data: GroupData = {
             { assetId: '299389351', metadata: 'immature' },
             { assetId: '61485271', metadata: 'eclipse male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          similarSpecies: {
+            adultFemale: ['Anas platyrhynchos'],
+          },
         },
         {
           name: {
@@ -578,9 +615,15 @@ const data: GroupData = {
             { assetId: '53444051', metadata: 'adult male' },
             { assetId: '143551841', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Melanitta fusca'],
+            juvenile: [
+              { metadata: 'adult female', species: 'Melanitta fusca' },
+              { metadata: 'adult female', species: 'Netta rufina' },
+            ],
+          },
         },
         {
           name: {
@@ -597,9 +640,12 @@ const data: GroupData = {
             { assetId: '613184775', metadata: 'immature male' },
             { assetId: '204585531', metadata: 'immature male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Melanitta nigra'],
+            adultFemale: [{ metadata: 'juvenile', species: 'Melanitta nigra' }],
+          },
         },
         {
           name: {
@@ -614,9 +660,15 @@ const data: GroupData = {
             { assetId: '48263861', metadata: 'nonbreeding female' },
             { assetId: '216946861', metadata: 'immature male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Anas acuta'],
+            adultFemale: [
+              { metadata: 'adult male', species: 'Anas acuta' },
+              { metadata: 'juvenile', species: 'Melanitta nigra' },
+            ],
+          },
         },
         {
           name: {
@@ -633,9 +685,14 @@ const data: GroupData = {
             { assetId: '51436371', metadata: 'male and female' },
             { assetId: '211261471', metadata: 'male and female' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'juvenile', species: 'Melanitta nigra' },
+              { metadata: 'adult male', species: 'Aix sponsa' },
+            ],
+            adultFemale: ['Melanitta fusca'],
+          },
         },
         {
           name: {
@@ -649,9 +706,12 @@ const data: GroupData = {
             { assetId: '48978181', metadata: 'immature male' },
             { assetId: '291076221', metadata: 'male and female' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Aythya fuligula'],
+            adultFemale: ['Aythya fuligula'],
+          },
         },
         {
           name: {
@@ -668,9 +728,14 @@ const data: GroupData = {
             { assetId: '119406601', metadata: 'female/immature male' },
             { assetId: '223693651', metadata: 'breeding male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            adultMale: ['Oxyura leucocephala'],
+            adultFemale: [
+              { metadata: 'female', species: 'Oxyura leucocephala' },
+              { metadata: 'juvenile', species: 'Melanitta nigra' },
+            ],
+          },
         },
         {
           name: {
@@ -687,9 +752,14 @@ const data: GroupData = {
             { assetId: '49899041', metadata: 'female/immature male' },
             { assetId: '39951561', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            breedingMale: ['Oxyura jamaicensis'],
+            adultFemale: [
+              { metadata: 'adult female', species: 'Oxyura jamaicensis' },
+              { metadata: 'juvenile', species: 'Melanitta nigra' },
+            ],
+          },
         },
         {
           name: {
@@ -704,7 +774,10 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Mergus serrator', 'Somateria mollissima'],
+            adultFemale: ['Mergus serrator'],
+          },
         },
         {
           name: {
@@ -719,9 +792,12 @@ const data: GroupData = {
             { assetId: '55287461', metadata: 'adult male' },
             { assetId: '62659461', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Mergus merganser'],
+            adultFemale: ['Mergus merganser'],
+          },
         },
         {
           name: {
@@ -734,9 +810,15 @@ const data: GroupData = {
             { assetId: '26861931', metadata: 'adult male' },
             { assetId: '24648981', metadata: 'male and female' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Bucephala clangula'],
+            adultFemale: [
+              { metadata: 'juvenile', species: 'Melanitta nigra' },
+              { metadata: 'adult female', species: 'Netta rufina' },
+            ],
+          },
         },
       ],
     },

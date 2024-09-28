@@ -22,8 +22,10 @@ const data: GroupData = {
         { assetId: '43163571', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Lullula arborea', 'Anthus pratensis'],
+      },
     },
     {
       name: {
@@ -42,7 +44,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Alauda arvensis'],
+      },
     },
     {
       name: {
@@ -60,8 +64,10 @@ const data: GroupData = {
         { assetId: '206003421', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Alauda arvensis'],
+      },
     },
     {
       name: {
@@ -78,9 +84,11 @@ const data: GroupData = {
         { assetId: '48653811', metadata: 'unknown' },
         { assetId: '36956251', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Calandrella brachydactyla'],
+      },
     },
     {
       name: {
@@ -97,9 +105,10 @@ const data: GroupData = {
         { assetId: '164290801', metadata: 'adult' },
         { assetId: '152579931', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: ['Alauda arvensis', 'Melanocorypha calandra'],
+      },
     },
     {
       name: {
@@ -116,9 +125,10 @@ const data: GroupData = {
         { assetId: '171923321', metadata: 'juvenile' },
         { assetId: '108016601', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        juvenile: [{ metadata: 'adult', species: 'Alauda arvensis' }],
+      },
     },
   ],
 };

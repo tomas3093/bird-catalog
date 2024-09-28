@@ -21,9 +21,8 @@ const data: GroupData = {
         { assetId: '42896611', metadata: 'unknown' },
         { assetId: '204629911', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
     },
     {
       name: {
@@ -38,9 +37,11 @@ const data: GroupData = {
         { assetId: '31303291', metadata: 'juvenile' },
         { assetId: '27660721', metadata: 'adult male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: [{ metadata: 'adult', species: 'Nycticorax nycticorax' }],
+      },
     },
     {
       name: {
@@ -58,8 +59,13 @@ const data: GroupData = {
         { assetId: '84756091', metadata: 'adult' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult', species: 'Ardea cinerea' },
+          { metadata: 'adult male', species: 'Ixobrychus minutus' },
+        ],
+      },
     },
     {
       name: {
@@ -76,9 +82,11 @@ const data: GroupData = {
         { assetId: '30759391', metadata: 'juvenile' },
         { assetId: '261796781', metadata: 'breeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Egretta garzetta', 'Ardea alba'],
+      },
     },
     {
       name: {
@@ -95,9 +103,14 @@ const data: GroupData = {
         { assetId: '171056141', metadata: 'nonbreeding/immature' },
         { assetId: '25771061', metadata: 'nonbreeding/immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [
+          { metadata: 'adult', species: 'Nycticorax nycticorax' },
+          { metadata: 'adult male', species: 'Ixobrychus minutus' },
+        ],
+      },
     },
     {
       name: {
@@ -115,8 +128,10 @@ const data: GroupData = {
         { assetId: '31134851', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Bubulcus ibis', 'Ardea alba'],
+      },
     },
     {
       name: {
@@ -133,7 +148,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultSummer: ['Egretta garzetta', 'Platalea leucorodia'],
+      },
     },
     {
       name: {
@@ -152,7 +169,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Ardea purpurea', 'Nycticorax nycticorax'],
+      },
     },
     {
       name: {
@@ -169,9 +188,11 @@ const data: GroupData = {
         { assetId: '45170571', metadata: 'juvenile' },
         { assetId: '39234171', metadata: 'immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Ardea cinerea'],
+      },
     },
     {
       name: {
@@ -182,27 +203,22 @@ const data: GroupData = {
         },
       },
       imageAssets: [
-        {
-          assetId: '109122381',
-          metadata: 'adult',
-        },
-        {
-          assetId: '41115011',
-          metadata: 'adult',
-        },
+        { assetId: '109122381', metadata: 'adult' },
+        { assetId: '41115011', metadata: 'adult' },
         { assetId: '34395401', metadata: 'unknown' },
-        {
-          assetId: '228173991',
-          metadata: 'juvenile',
-        },
-        {
-          assetId: '23441861',
-          metadata: 'adult',
-        },
+        { assetId: '228173991', metadata: 'juvenile' },
+        { assetId: '23441861', metadata: 'adult' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult', species: 'Ciconia nigra' },
+          { metadata: 'breeding adult', species: 'Platalea leucorodia' },
+          { metadata: 'breeding adult', species: 'Ardea alba' },
+          { metadata: 'juvenile', species: 'Phoenicopterus roseus' },
+        ],
+      },
     },
     {
       name: {
@@ -220,8 +236,10 @@ const data: GroupData = {
         { assetId: '44154951', metadata: 'adult' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Ciconia ciconia', 'Ardea cinerea'],
+      },
     },
     {
       name: {
@@ -238,9 +256,11 @@ const data: GroupData = {
         { assetId: '36910451', metadata: 'breeding adult' },
         { assetId: '112050371', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [{ metadata: 'adult male', species: 'Numenius phaeopus' }],
+      },
     },
     {
       name: {
@@ -257,9 +277,14 @@ const data: GroupData = {
         { assetId: '191767841', metadata: 'nonbreeding adult' },
         { assetId: '44821981', metadata: 'immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: [
+          { metadata: 'breeding adult', species: 'Ardea alba' },
+          { metadata: 'adult', species: 'Ciconia ciconia' },
+        ],
+      },
     },
     {
       name: {
@@ -276,9 +301,12 @@ const data: GroupData = {
         { assetId: '42526521', metadata: 'adult' },
         { assetId: '53086131', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Ardea alba', 'Ardea cinerea', 'Platalea leucorodia', 'Ciconia ciconia'],
+        juvenile: ['Ardea alba', 'Platalea leucorodia', 'Ciconia ciconia'],
+      },
     },
   ],
 };

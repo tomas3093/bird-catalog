@@ -23,7 +23,13 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultFemale: [
+          { metadata: 'adult female', species: 'Emberiza citrinella' },
+          { metadata: 'female', species: 'Passer domesticus' },
+          { metadata: 'adult', species: 'Emberiza calandra' },
+        ],
+      },
     },
     {
       name: {
@@ -40,9 +46,11 @@ const data: GroupData = {
         { assetId: '20802261', metadata: 'nonbreeding female' },
         { assetId: '65061761', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Calcarius lapponicus'],
+      },
     },
     {
       name: {
@@ -59,9 +67,11 @@ const data: GroupData = {
         { assetId: '150412631', metadata: 'nonbreeding/immature' },
         { assetId: '42943511', metadata: 'breeding male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: ['Emberiza rustica', 'Emberiza schoeniclus', 'Emberiza pusilla'],
+      },
     },
     {
       name: {
@@ -78,9 +88,10 @@ const data: GroupData = {
         { assetId: '43493631', metadata: 'adult male' },
         { assetId: '35854161', metadata: 'immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: ['Emberiza citrinella'],
+      },
     },
     {
       name: {
@@ -99,7 +110,10 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultMale: ['Emberiza cirlus', 'Spinus spinus', 'Serinus serinus'],
+        adultFemale: ['Emberiza cirlus'],
+      },
     },
     {
       name: {
@@ -116,9 +130,11 @@ const data: GroupData = {
         { assetId: '28515791', metadata: 'adult male' },
         { assetId: '28515791', metadata: 'adult male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      similarSpecies: {
+        adultMale: ['Emberiza citrinella', 'Emberiza cia'],
+        adultFemale: ['Emberiza citrinella', 'Emberiza schoeniclus'],
+      },
     },
     {
       name: {
@@ -137,7 +153,13 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult female', species: 'Emberiza citrinella' },
+          { metadata: 'female', species: 'Emberiza schoeniclus' },
+          { metadata: 'female', species: 'Passer domesticus' },
+        ],
+      },
     },
     {
       name: {
@@ -154,9 +176,11 @@ const data: GroupData = {
         { assetId: '45363561', metadata: 'female/immature male' },
         { assetId: '30633061', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: ['Emberiza cirlus'],
+      },
     },
     {
       name: {
@@ -173,9 +197,10 @@ const data: GroupData = {
         { assetId: '105699651', metadata: 'adult male' },
         { assetId: '56279791', metadata: 'adult male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      similarSpecies: {
+        adultMale: ['Motacilla flava'],
+      },
     },
     {
       name: {
@@ -192,9 +217,14 @@ const data: GroupData = {
         { assetId: '32549271', metadata: 'unknown' },
         { assetId: '42266301', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: [
+          { metadata: 'female', species: 'Emberiza schoeniclus' },
+          { metadata: 'female', species: 'Emberiza rustica' },
+        ],
+      },
     },
     {
       name: {
@@ -211,9 +241,12 @@ const data: GroupData = {
         { assetId: '489983721', metadata: 'female/immature male' },
         { assetId: '319502301', metadata: 'female/immature male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: ['Calcarius lapponicus'],
+        adultFemale: ['Emberiza schoeniclus'],
+      },
     },
   ],
 };

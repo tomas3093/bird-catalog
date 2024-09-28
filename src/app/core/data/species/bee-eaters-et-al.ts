@@ -22,8 +22,8 @@ const data: GroupData = {
         { assetId: '38430241', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: { adult: ['Garrulus glandarius'] },
     },
     {
       name: {
@@ -41,8 +41,7 @@ const data: GroupData = {
         { assetId: '41561101', metadata: 'immature' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
     },
     {
       name: {
@@ -59,9 +58,9 @@ const data: GroupData = {
         { assetId: '251033331', metadata: 'unknown' },
         { assetId: '44933261', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'uncommon',
+      movementPattern: 'migratory',
+      similarSpecies: { adult: ['Merops apiaster'] },
     },
   ],
 };

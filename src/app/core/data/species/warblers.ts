@@ -24,9 +24,12 @@ const data: GroupData = {
             { assetId: '37577161', metadata: 'immature' },
             { assetId: '46118631', metadata: 'juvenile' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [{ metadata: 'adult', species: 'Sylvia borin' }],
+            immature: [{ metadata: 'adult', species: 'Sylvia borin' }],
+          },
         },
         {
           name: {
@@ -44,8 +47,14 @@ const data: GroupData = {
             { assetId: '175624681', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: [
+              { metadata: 'immature', species: 'Curruca nisoria' },
+              { metadata: 'female', species: 'Curruca communis' },
+              { metadata: 'adult', species: 'Phylloscopus collybita' },
+            ],
+          },
         },
         {
           name: {
@@ -63,27 +72,18 @@ const data: GroupData = {
             { assetId: '22195031', metadata: 'adult male' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
-        },
-        {
-          name: {
-            latin: 'Sylvia borin',
-            localized: {
-              en: 'Garden Warbler',
-              sk: 'Penica slávikovitá',
-            },
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'adult', species: 'Poecile palustris' },
+              { metadata: 'adult', species: 'Poecile montanus' },
+              { metadata: 'adult male', species: 'Curruca melanocephala' },
+            ],
+            adultFemale: [
+              { metadata: 'adult', species: 'Sylvia borin' },
+              { metadata: 'female', species: 'Curruca communis' },
+            ],
           },
-          imageAssets: [
-            { assetId: '66341291', metadata: 'unknown' },
-            { assetId: '35950721', metadata: 'unknown' },
-            { assetId: '205953511', metadata: 'unknown' },
-            { assetId: '231728231', metadata: 'unknown' },
-            { assetId: '175624681', metadata: 'unknown' },
-          ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
         },
         {
           name: {
@@ -101,8 +101,17 @@ const data: GroupData = {
             { assetId: '127820141', metadata: 'female/immature male' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'adult', species: 'Curruca curruca' },
+              { metadata: 'female', species: 'Curruca melanocephala' },
+            ],
+            adultFemale: [
+              { metadata: 'adult', species: 'Curruca curruca' },
+              { metadata: 'female', species: 'Curruca melanocephala' },
+            ],
+          },
         },
         {
           name: {
@@ -120,8 +129,13 @@ const data: GroupData = {
             { assetId: '204659441', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: [
+              { metadata: 'female', species: 'Curruca communis' },
+              { metadata: 'female', species: 'Curruca melanocephala' },
+            ],
+          },
         },
         {
           name: {
@@ -138,9 +152,10 @@ const data: GroupData = {
             { assetId: '212026191', metadata: 'female' },
             { assetId: '52421931', metadata: 'adult male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          similarSpecies: {
+            adultFemale: ['Curruca communis'],
+          },
         },
         {
           name: {
@@ -159,7 +174,9 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultFemale: ['Curruca cantillans'],
+          },
         },
       ],
     },
@@ -182,8 +199,14 @@ const data: GroupData = {
             { assetId: '43163671', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            immature: [
+              { metadata: 'breeding adult', species: 'Acrocephalus melanopogon' },
+              { metadata: 'immature', species: 'Acrocephalus paludicola' },
+              { metadata: 'breeding adult', species: 'Acrocephalus agricola' },
+            ],
+          },
         },
         {
           name: {
@@ -200,9 +223,14 @@ const data: GroupData = {
             { assetId: '33288461', metadata: 'unknown' },
             { assetId: '20991571', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            immature: [
+              { metadata: 'immature', species: 'Acrocephalus schoenobaenus' },
+              { metadata: 'breeding adult', species: 'Acrocephalus melanopogon' },
+            ],
+          },
         },
         {
           name: {
@@ -219,9 +247,15 @@ const data: GroupData = {
             { assetId: '40963211', metadata: 'unknown' },
             { assetId: '42536561', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultSummer: [
+              { metadata: 'immature', species: 'Acrocephalus schoenobaenus' },
+              { metadata: 'immature', species: 'Acrocephalus paludicola' },
+              { metadata: 'breeding adult', species: 'Acrocephalus agricola' },
+            ],
+          },
         },
         {
           name: {
@@ -239,8 +273,10 @@ const data: GroupData = {
             { assetId: '37933731', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            immature: ['Acrocephalus palustris', 'Acrocephalus dumetorum'],
+          },
         },
         {
           name: {
@@ -258,8 +294,10 @@ const data: GroupData = {
             { assetId: '36815331', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            immature: ['Acrocephalus scirpaceus', 'Acrocephalus dumetorum'],
+          },
         },
         {
           name: {
@@ -277,8 +315,7 @@ const data: GroupData = {
             { assetId: '156800421', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
         },
         {
           name: {
@@ -289,30 +326,21 @@ const data: GroupData = {
             },
           },
           imageAssets: [
-            {
-              assetId: '52827831',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '49485561',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '93139361',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '93932661',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '84578001',
-              metadata: 'unknown',
-            },
+            { assetId: '52827831', metadata: 'unknown' },
+            { assetId: '49485561', metadata: 'unknown' },
+            { assetId: '93139361', metadata: 'unknown' },
+            { assetId: '93932661', metadata: 'unknown' },
+            { assetId: '84578001', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            adultSummer: [
+              { metadata: 'immature', species: 'Acrocephalus dumetorum' },
+              { metadata: 'immature', species: 'Acrocephalus schoenobaenus' },
+              { metadata: 'immature', species: 'Acrocephalus scirpaceus' },
+              { metadata: 'breeding adult', species: 'Acrocephalus melanopogon' },
+            ],
+          },
         },
         {
           name: {
@@ -323,30 +351,20 @@ const data: GroupData = {
             },
           },
           imageAssets: [
-            {
-              assetId: '81345741',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '42384161',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '204701891',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '60994661',
-              metadata: 'unknown',
-            },
-            {
-              assetId: '50678451',
-              metadata: 'unknown',
-            },
+            { assetId: '81345741', metadata: 'unknown' },
+            { assetId: '42384161', metadata: 'unknown' },
+            { assetId: '204701891', metadata: 'unknown' },
+            { assetId: '60994661', metadata: 'unknown' },
+            { assetId: '50678451', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            immature: [
+              { metadata: 'immature', species: 'Acrocephalus scirpaceus' },
+              { metadata: 'immature', species: 'Acrocephalus palustris' },
+              { metadata: 'breeding adult', species: 'Acrocephalus agricola' },
+            ],
+          },
         },
       ],
     },
@@ -368,9 +386,11 @@ const data: GroupData = {
             { assetId: '24158511', metadata: 'unknown' },
             { assetId: '205215551', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            immature: ['Acrocephalus schoenobaenus'],
+          },
         },
         {
           name: {
@@ -387,9 +407,14 @@ const data: GroupData = {
             { assetId: '67535821', metadata: 'unknown' },
             { assetId: '29059521', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: [
+              { metadata: 'adult', species: 'Locustella luscinioides' },
+              { metadata: 'immature', species: 'Acrocephalus palustris' },
+            ],
+          },
         },
         {
           name: {
@@ -407,8 +432,13 @@ const data: GroupData = {
             { assetId: '158019561', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: [
+              { metadata: 'adult', species: 'Locustella fluviatilis' },
+              { metadata: 'immature', species: 'Acrocephalus scirpaceus' },
+            ],
+          },
         },
       ],
     },
@@ -431,8 +461,10 @@ const data: GroupData = {
             { assetId: '30314901', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Phylloscopus trochilus'],
+          },
         },
       ],
     },
@@ -455,8 +487,10 @@ const data: GroupData = {
             { assetId: '42470371', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Phylloscopus collybita', 'Phylloscopus ibericus', 'Phylloscopus sibilatrix'],
+          },
         },
         {
           name: {
@@ -474,8 +508,10 @@ const data: GroupData = {
             { assetId: '37293601', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Phylloscopus trochilus', 'Phylloscopus collybita', 'Phylloscopus bonelli'],
+          },
         },
         {
           name: {
@@ -491,8 +527,10 @@ const data: GroupData = {
             { assetId: '20293701', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Phylloscopus trochilus', 'Phylloscopus ibericus'],
+          },
         },
         {
           name: {
@@ -509,9 +547,10 @@ const data: GroupData = {
             { assetId: '20523591', metadata: 'unknown' },
             { assetId: '20523591', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            adult: ['Phylloscopus collybita'],
+          },
         },
         {
           name: {
@@ -528,9 +567,11 @@ const data: GroupData = {
             { assetId: '163381801', metadata: 'unknown' },
             { assetId: '25455801', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Phylloscopus collybita', 'Phylloscopus trochilus'],
+          },
         },
         {
           name: {
@@ -547,9 +588,11 @@ const data: GroupData = {
             { assetId: '36424381', metadata: 'unknown' },
             { assetId: '44070941', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Phylloscopus proregulus', 'Phylloscopus trochiloides', 'Regulus regulus'],
+          },
         },
         {
           name: {
@@ -566,9 +609,10 @@ const data: GroupData = {
             { assetId: '47804361', metadata: 'unknown' },
             { assetId: '48763151', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            adult: ['Phylloscopus inornatus', 'Regulus regulus'],
+          },
         },
         {
           name: {
@@ -585,9 +629,11 @@ const data: GroupData = {
             { assetId: '40967181', metadata: 'unknown' },
             { assetId: '72910301', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Phylloscopus collybita', 'Troglodytes troglodytes'],
+          },
         },
         {
           name: {
@@ -604,9 +650,11 @@ const data: GroupData = {
             { assetId: '41838711', metadata: 'unknown' },
             { assetId: '41838711', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Phylloscopus inornatus'],
+          },
         },
       ],
     },
@@ -629,7 +677,13 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adult: ['Regulus ignicapilla', 'Phylloscopus inornatus', 'Phylloscopus proregulus'],
+            juvenile: [
+              { metadata: 'adult', species: 'Phylloscopus collybita' },
+              { metadata: 'adult', species: 'Phylloscopus inornatus' },
+            ],
+          },
         },
         {
           name: {
@@ -647,8 +701,10 @@ const data: GroupData = {
             { assetId: '40431981', metadata: 'adult' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: ['Regulus regulus'],
+          },
         },
       ],
     },

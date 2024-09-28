@@ -23,7 +23,12 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultMale: [
+          { metadata: 'adult', species: 'Corvus corone' },
+          { metadata: 'adult male', species: 'Picus viridis' },
+        ],
+      },
     },
     {
       name: {
@@ -42,7 +47,12 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultMale: [
+          { metadata: 'adult male', species: 'Picus canus' },
+          { metadata: 'juvenile', species: 'Oriolus oriolus' },
+        ],
+      },
     },
     {
       name: {
@@ -61,7 +71,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultMale: ['Picus viridis'],
+      },
     },
     {
       name: {
@@ -80,7 +92,13 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultMale: ['Dendrocopos syriacus', 'Dendrocopos leucotos'],
+        juvenile: [
+          { metadata: 'juvenile', species: 'Dendrocopos syriacus' },
+          { metadata: 'adult male', species: 'Dendrocoptes medius' },
+        ],
+      },
     },
     {
       name: {
@@ -99,7 +117,14 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultMale: ['Dendrocopos major', 'Dendrocopos leucotos'],
+        juvenile: [
+          { metadata: 'juvenile', species: 'Dendrocopos major' },
+          { metadata: 'adult male', species: 'Dendrocopos leucotos' },
+          { metadata: 'adult male', species: 'Dendrocoptes medius' },
+        ],
+      },
     },
     {
       name: {
@@ -118,7 +143,13 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultMale: [
+          { metadata: 'juvenile', species: 'Dendrocopos major' },
+          { metadata: 'juvenile', species: 'Dendrocopos syriacus' },
+          { metadata: 'adult male', species: 'Dendrocopos leucotos' },
+        ],
+      },
     },
     {
       name: {
@@ -135,9 +166,11 @@ const data: GroupData = {
         { assetId: '26349401', metadata: 'female' },
         { assetId: '40529111', metadata: 'female' },
       ],
-      skAbundance: 'common',
+      skAbundance: 'uncommon',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultMale: ['Dendrocopos major'],
+      },
     },
     {
       name: {
@@ -154,9 +187,11 @@ const data: GroupData = {
         { assetId: '44662801', metadata: 'adult male' },
         { assetId: '33821311', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
+      skAbundance: 'uncommon',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultMale: [{ metadata: 'female', species: 'Dryobates minor' }],
+      },
     },
     {
       name: {
@@ -175,7 +210,16 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultMale: [
+          { metadata: 'juvenile', species: 'Dendrocopos major' },
+          { metadata: 'adult male', species: 'Dendrocoptes medius' },
+        ],
+        adultFemale: [
+          { metadata: 'adult male', species: 'Dendrocopos major' },
+          { metadata: 'adult male', species: 'Picoides tridactylus' },
+        ],
+      },
     },
     {
       name: {
@@ -193,8 +237,10 @@ const data: GroupData = {
         { assetId: '45438521', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: [{ metadata: 'adult male', species: 'Caprimulgus europaeus' }],
+      },
     },
   ],
 };

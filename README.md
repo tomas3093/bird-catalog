@@ -60,6 +60,7 @@ TODO: fix routing
   - birds of prey
 - new "db table" for similar species
 - add custom gallery component
+- IUCN SK codes - http://www.tichodroma.sk/pdfs/25/Demko_Tichodroma_25_2.pdf from 2014
 
 ### Phase 4
 

@@ -26,7 +26,16 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adult: [
+              { metadata: 'adult male', species: 'Phoenicurus phoenicurus' },
+              { metadata: 'adult male', species: 'Ficedula parva' },
+            ],
+            juvenile: [
+              { metadata: 'juvenile', species: 'Saxicola rubicola' },
+              { metadata: 'adult', species: 'Prunella modularis' },
+            ],
+          },
         },
         {
           name: {
@@ -44,8 +53,13 @@ const data: GroupData = {
             { assetId: '22080141', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            firstWinter: [
+              { metadata: 'first winter', species: 'Luscinia luscinia' },
+              { metadata: 'female', species: 'Phoenicurus phoenicurus' },
+            ],
+          },
         },
         {
           name: {
@@ -62,9 +76,15 @@ const data: GroupData = {
             { assetId: '44290071', metadata: 'unknown' },
             { assetId: '51631791', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            firstWinter: [
+              { metadata: 'first winter', species: 'Luscinia megarhynchos' },
+              { metadata: 'female', species: 'Phoenicurus phoenicurus' },
+              { metadata: 'immature', species: 'Phoenicurus ochruros' },
+            ],
+          },
         },
         {
           name: {
@@ -82,9 +102,19 @@ const data: GroupData = {
             { assetId: '243477041', metadata: 'juvenile' },
             { assetId: '175420111', metadata: 'female' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'immature', species: 'Phoenicurus ochruros' },
+              { metadata: 'female', species: 'Phoenicurus phoenicurus' },
+            ],
+            adultFemale: [
+              { metadata: 'immature', species: 'Phoenicurus ochruros' },
+              { metadata: 'female', species: 'Phoenicurus phoenicurus' },
+              { metadata: 'first winter', species: 'Saxicola rubetra' },
+            ],
+          },
         },
         {
           name: {
@@ -102,8 +132,14 @@ const data: GroupData = {
             { assetId: '191677351', metadata: 'immature male' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'adult male', species: 'Saxicola rubicola' },
+              { metadata: 'adult', species: 'Erithacus rubecula' },
+            ],
+            adultFemale: [{ metadata: 'immature', species: 'Phoenicurus ochruros' }],
+          },
         },
         {
           name: {
@@ -120,8 +156,11 @@ const data: GroupData = {
             { assetId: '29255091', metadata: 'adult male' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [{ metadata: 'female', species: 'Phoenicurus phoenicurus' }],
+            immature: [{ metadata: 'female', species: 'Phoenicurus phoenicurus' }],
+          },
         },
         {
           name: {
@@ -139,8 +178,18 @@ const data: GroupData = {
             { assetId: '42173341', metadata: 'female/immature male' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'immature', species: 'Acrocephalus schoenobaenus' },
+              { metadata: 'female', species: 'Luscinia svecica' },
+            ],
+            firstWinter: [
+              { metadata: 'immature', species: 'Acrocephalus schoenobaenus' },
+              { metadata: 'female', species: 'Saxicola rubicola' },
+              { metadata: 'female', species: 'Luscinia svecica' },
+            ],
+          },
         },
         {
           name: {
@@ -158,8 +207,18 @@ const data: GroupData = {
             { assetId: '26234101', metadata: 'female/immature male' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'adult male', species: 'Phoenicurus phoenicurus' },
+              { metadata: 'adult', species: 'Erithacus rubecula' },
+            ],
+            adultFemale: ['Saxicola rubetra', 'Oenanthe oenanthe'],
+            juvenile: [
+              { metadata: 'juvenile', species: 'Erithacus rubecula' },
+              { metadata: 'female', species: 'Saxicola rubetra' },
+            ],
+          },
         },
         {
           name: {
@@ -177,8 +236,14 @@ const data: GroupData = {
             { assetId: '43622421', metadata: 'unknown' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: [
+              { metadata: 'adult', species: 'Turdus viscivorus' },
+              { metadata: 'juvenile', species: 'Turdus merula' },
+              { metadata: 'first winter', species: 'Turdus iliacus' },
+            ],
+          },
         },
         {
           name: {
@@ -192,9 +257,11 @@ const data: GroupData = {
             { assetId: '20588621', metadata: 'adult' },
             { assetId: '45376181', metadata: 'adult' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            firstWinter: [{ metadata: 'adult', species: 'Turdus philomelos' }],
+          },
         },
         {
           name: {
@@ -213,7 +280,9 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adult: ['Turdus philomelos', 'Turdus pilaris'],
+          },
         },
         {
           name: {
@@ -232,7 +301,9 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adult: ['Turdus viscivorus'],
+          },
         },
         {
           name: {
@@ -251,7 +322,17 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Turdus torquatus'],
+            adultFemale: [
+              { metadata: 'female', species: 'Turdus torquatus' },
+              { metadata: 'adult', species: 'Turdus philomelos' },
+            ],
+            juvenile: [
+              { metadata: 'adult', species: 'Turdus philomelos' },
+              { metadata: 'adult', species: 'Turdus viscivorus' },
+            ],
+          },
         },
         {
           name: {
@@ -267,9 +348,13 @@ const data: GroupData = {
             { assetId: '66129291', metadata: 'juvenile' },
             { assetId: '43327081', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Turdus merula'],
+            adultFemale: ['Turdus merula'],
+            firstWinter: [{ metadata: 'female', species: 'Turdus merula' }],
+          },
         },
         {
           name: {
@@ -286,9 +371,14 @@ const data: GroupData = {
             { assetId: '21018951', metadata: 'nonbreeding adult' },
             { assetId: '45865211', metadata: 'breeding male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            adultMale: ['Phoenicurus phoenicurus'],
+            adultFemale: [
+              { metadata: 'female', species: 'Monticola solitarius' },
+              { metadata: 'juvenile', species: 'Erithacus rubecula' },
+            ],
+          },
         },
         {
           name: {
@@ -302,9 +392,11 @@ const data: GroupData = {
             { assetId: '97497371', metadata: 'adult male' },
             { assetId: '30633081', metadata: 'female/immature male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            adultMale: ['Monticola saxatilis'],
+            adultFemale: ['Monticola saxatilis'],
+          },
         },
         {
           name: {
@@ -321,9 +413,12 @@ const data: GroupData = {
             { assetId: '45949291', metadata: 'female/immature male' },
             { assetId: '44090651', metadata: 'female/immature male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Monticola solitarius'],
+            firstWinter: [{ metadata: 'immature', species: 'Phoenicurus ochruros' }],
+          },
         },
       ],
     },
@@ -346,9 +441,11 @@ const data: GroupData = {
             { assetId: '206193561', metadata: 'breeding male' },
             { assetId: '613680874', metadata: 'nonbreeding male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            firstWinter: ['Oenanthe isabellina', 'Oenanthe deserti', 'Saxicola rubetra'],
+          },
         },
         {
           name: {
@@ -365,9 +462,11 @@ const data: GroupData = {
             { assetId: '81833561', metadata: 'unknown' },
             { assetId: '97044071', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            firstWinter: ['Oenanthe oenanthe', 'Oenanthe deserti'],
+          },
         },
         {
           name: {
@@ -384,9 +483,10 @@ const data: GroupData = {
             { assetId: '130666401', metadata: 'adult male' },
             { assetId: '66339501', metadata: 'adult male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            adultFemale: ['Oenanthe isabellina', 'Oenanthe oenanthe'],
+          },
         },
         {
           name: {
@@ -403,9 +503,7 @@ const data: GroupData = {
             { assetId: '104669181', metadata: 'juvenile' },
             { assetId: '122811261', metadata: 'nonbreeding male' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
         },
       ],
     },
@@ -427,9 +525,7 @@ const data: GroupData = {
             { assetId: '40232981', metadata: 'unknown' },
             { assetId: '47738541', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
         },
       ],
     },

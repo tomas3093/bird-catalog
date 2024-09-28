@@ -21,9 +21,12 @@ const data: GroupData = {
         { assetId: '175078971', metadata: 'breeding adult' },
         { assetId: '217130571', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Gavia arctica'],
+        adultWinter: ['Gavia arctica', 'Podiceps cristatus'],
+      },
     },
     {
       name: {
@@ -40,9 +43,16 @@ const data: GroupData = {
         { assetId: '123723631', metadata: 'immature' },
         { assetId: '304205241', metadata: 'breeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Gavia stellata'],
+        adultWinter: [
+          { metadata: 'nonbreeding adult', species: 'Gavia stellata' },
+          { metadata: 'nonbreeding adult', species: 'Gavia immer' },
+          { metadata: 'juvenile', species: 'Phalacrocorax carbo' },
+        ],
+      },
     },
     {
       name: {
@@ -59,9 +69,12 @@ const data: GroupData = {
         { assetId: '139394771', metadata: 'immature' },
         { assetId: '229445621', metadata: 'breeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultSummer: ['Gavia adamsii'],
+        adultWinter: ['Gavia adamsii', 'Gavia arctica', 'Gavia stellata'],
+      },
     },
     {
       name: {
@@ -78,9 +91,11 @@ const data: GroupData = {
         { assetId: '31994011', metadata: 'molting adult' },
         { assetId: '27439971', metadata: 'nonbreeding/immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adultSummer: ['Gavia immer'],
+        adultWinter: ['Gavia immer', 'Gavia arctica'],
+      },
     },
   ],
 };

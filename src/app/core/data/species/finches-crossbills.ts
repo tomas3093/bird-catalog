@@ -26,7 +26,10 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            breedingMale: [{ metadata: 'nonbreeding adult', species: 'Fringilla montifringilla' }],
+            adultFemale: ['Passer domesticus'],
+          },
         },
         {
           name: {
@@ -43,10 +46,12 @@ const data: GroupData = {
             { assetId: '204756121', metadata: 'juvenile' },
             { assetId: '140118421', metadata: 'female/immature male' },
           ],
-
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            breedingMale: ['Fringilla coelebs', 'Emberiza melanocephala'],
+            adultWinter: [{ metadata: 'breeding adult', species: 'Fringilla coelebs' }],
+          },
         },
         {
           name: {
@@ -65,7 +70,10 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Acanthis flammea', 'Linaria flavirostris'],
+            adultFemale: ['Acanthis flammea', 'Linaria flavirostris'],
+          },
         },
         {
           name: {
@@ -82,9 +90,14 @@ const data: GroupData = {
             { assetId: '42177341', metadata: 'unknown' },
             { assetId: '46249831', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'rare',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adult: [
+              { metadata: 'female', species: 'Linaria cannabina' },
+              { metadata: 'first winter', species: 'Acanthis flammea' },
+            ],
+          },
         },
         {
           name: {
@@ -102,9 +115,15 @@ const data: GroupData = {
             { assetId: '64787461', metadata: 'adult male' },
             { assetId: '33428111', metadata: 'juvenile' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'occasional',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            breedingMale: ['Linaria cannabina'],
+            firstWinter: [
+              { metadata: 'female', species: 'Linaria cannabina' },
+              { metadata: 'adult', species: 'Linaria flavirostris' },
+            ],
+          },
         },
         // {
         //   name: {
@@ -115,26 +134,11 @@ const data: GroupData = {
         //     },
         //   },
         //   imageAssets: [
-        //     {
-        //       assetId: '32067841',
-        //       metadata: 'female/immature male',
-        //     },
-        //     {
-        //       assetId: '35107571',
-        //       metadata: 'adult male',
-        //     },
-        //     {
-        //       assetId: '20449061',
-        //       metadata: 'female/immature male',
-        //     },
-        //     {
-        //       assetId: '40911641',
-        //       metadata: 'female/immature male',
-        //     },
-        //     {
-        //       assetId: '40911641',
-        //       metadata: 'female/immature male',
-        //     },
+        //     { assetId: '32067841', metadata: 'female/immature male' },
+        //     { assetId: '35107571', metadata: 'adult male' },
+        //     { assetId: '20449061', metadata: 'female/immature male' },
+        //     { assetId: '40911641', metadata: 'female/immature male' },
+        //     { assetId: '40911641', metadata: 'female/immature male' },
         //   ],
         //   skAbundance: '',
         //   status: '',
@@ -151,26 +155,11 @@ const data: GroupData = {
         //     },
         //   },
         //   imageAssets: [
-        //     {
-        //       assetId: '302310521',
-        //       metadata: 'adult male',
-        //     },
-        //     {
-        //       assetId: '64885711',
-        //       metadata: 'female/immature male',
-        //     },
-        //     {
-        //       assetId: '287403361',
-        //       metadata: 'female/immature male',
-        //     },
-        //     {
-        //       assetId: '32246251',
-        //       metadata: 'juvenile',
-        //     },
-        //     {
-        //       assetId: '36751731',
-        //       metadata: 'female/immature male',
-        //     },
+        //     { assetId: '302310521', metadata: 'adult male' },
+        //     { assetId: '64885711', metadata: 'female/immature male' },
+        //     { assetId: '287403361', metadata: 'female/immature male' },
+        //     { assetId: '32246251', metadata: 'juvenile' },
+        //     { assetId: '36751731', metadata: 'female/immature male' },
         //   ],
         //   skAbundance: '',
         //   status: '',
@@ -194,7 +183,9 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            juvenile: ['Spinus spinus', 'Chloris chloris'],
+          },
         },
         {
           name: {
@@ -213,7 +204,13 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            breedingMale: [{ metadata: 'adult male', species: 'Spinus spinus' }],
+            juvenile: [
+              { metadata: 'juvenile', species: 'Spinus spinus' },
+              { metadata: 'adult male', species: 'Serinus serinus' },
+            ],
+          },
         },
         {
           name: {
@@ -232,7 +229,10 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Serinus serinus'],
+            juvenile: [{ metadata: 'adult male', species: 'Serinus serinus' }],
+          },
         },
         {
           name: {
@@ -250,8 +250,13 @@ const data: GroupData = {
             { assetId: '26089081', metadata: 'adult male' },
           ],
           skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: [
+              { metadata: 'juvenile', species: 'Spinus spinus' },
+              { metadata: 'adult male', species: 'Spinus spinus' },
+            ],
+          },
         },
         {
           name: {
@@ -270,7 +275,11 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Carpodacus erythrinus'],
+            adultFemale: [{ metadata: 'juvenile', species: 'Carpodacus erythrinus' }],
+            juvenile: ['Carpodacus erythrinus'],
+          },
         },
         {
           name: {
@@ -289,7 +298,13 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Carpodacus erythrinus', 'Loxia curvirostra'],
+            adultFemale: [
+              { metadata: 'juvenile', species: 'Carpodacus erythrinus' },
+              { metadata: 'adult female', species: 'Loxia curvirostra' },
+            ],
+          },
         },
         {
           name: {
@@ -308,7 +323,9 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            breedingMale: [{ metadata: 'juvenile', species: 'Pyrrhula pyrrhula' }],
+          },
         },
         {
           name: {
@@ -325,9 +342,15 @@ const data: GroupData = {
             { assetId: '30028971', metadata: 'adult male' },
             { assetId: '38140911', metadata: 'unknown' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'uncommon',
+          movementPattern: 'migratory',
+          similarSpecies: {
+            adultMale: ['Pinicola enucleator'],
+            juvenile: [
+              { metadata: 'juvenile', species: 'Chloris chloris' },
+              { metadata: 'female', species: 'Pinicola enucleator' },
+            ],
+          },
         },
       ],
     },
@@ -351,7 +374,14 @@ const data: GroupData = {
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
-          similarSpecies: [],
+          similarSpecies: {
+            adultMale: ['Loxia leucoptera', 'Pinicola enucleator'],
+            adultFemale: [
+              { metadata: 'adult female', species: 'Loxia leucoptera' },
+              { metadata: 'breeding male', species: 'Chloris chloris' },
+            ],
+            juvenile: ['Loxia leucoptera', 'Chloris chloris'],
+          },
         },
         {
           name: {
@@ -368,9 +398,12 @@ const data: GroupData = {
             { assetId: '42507561', metadata: 'juvenile' },
             { assetId: '217479941', metadata: 'male and female' },
           ],
-          skAbundance: 'common',
-          movementPattern: 'resident',
-          similarSpecies: [],
+          skAbundance: 'historical',
+          similarSpecies: {
+            adultMale: ['Loxia curvirostra', 'Fringilla coelebs'],
+            adultFemale: ['Loxia curvirostra'],
+            juvenile: ['Loxia curvirostra', 'Chloris chloris'],
+          },
         },
       ],
     },

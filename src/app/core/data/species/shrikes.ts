@@ -22,8 +22,13 @@ const data: GroupData = {
         { assetId: '47652151', metadata: 'unknown' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: [
+          { metadata: 'adult', species: 'Lanius minor' },
+          { metadata: 'adult male', species: 'Lanius collurio' },
+        ],
+      },
     },
     {
       name: {
@@ -40,9 +45,14 @@ const data: GroupData = {
         { assetId: '37479361', metadata: 'adult' },
         { assetId: '34154001', metadata: 'immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult male', species: 'Lanius excubitor' },
+          { metadata: 'adult male', species: 'Lanius collurio' },
+        ],
+      },
     },
     {
       name: {
@@ -60,8 +70,14 @@ const data: GroupData = {
         { assetId: '35545181', metadata: 'juvenile' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: [
+          { metadata: 'adult', species: 'Lanius minor' },
+          { metadata: 'breeding male', species: 'Lanius senator' },
+          { metadata: 'adult male', species: 'Remiz pendulinus' },
+        ],
+      },
     },
     {
       name: {
@@ -78,9 +94,13 @@ const data: GroupData = {
         { assetId: '46955491', metadata: 'adult' },
         { assetId: '46583441', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        breedingMale: [
+          { metadata: 'adult male', species: 'Lanius collurio' },
+          { metadata: 'adult', species: 'Lanius minor' },
+        ],
+      },
     },
   ],
 };

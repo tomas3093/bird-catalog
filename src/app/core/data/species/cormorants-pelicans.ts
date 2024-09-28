@@ -22,7 +22,10 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Gulosus aristotelis', 'Microcarbo pygmaeus'],
+        juvenile: ['Gulosus aristotelis'],
+      },
     },
     {
       name: {
@@ -41,7 +44,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Phalacrocorax carbo', 'Gulosus aristotelis'],
+      },
     },
     {
       name: {
@@ -58,9 +63,11 @@ const data: GroupData = {
         { assetId: '30447851', metadata: 'nonbreeding adult' },
         { assetId: '246507621', metadata: 'immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: ['Phalacrocorax carbo'],
+        juvenile: ['Phalacrocorax carbo'],
+      },
     },
     {
       name: {
@@ -77,9 +84,10 @@ const data: GroupData = {
         { assetId: '106473001', metadata: 'nonbreeding/immature' },
         { assetId: '44827341', metadata: 'nonbreeding/immature' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: ['Pelecanus onocrotalus'],
+      },
     },
     {
       name: {
@@ -96,9 +104,11 @@ const data: GroupData = {
         { assetId: '65629941', metadata: 'juvenile' },
         { assetId: '65629061', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Pelecanus crispus'],
+      },
     },
   ],
 };

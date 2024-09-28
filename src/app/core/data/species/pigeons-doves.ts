@@ -23,7 +23,12 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult', species: 'Columba oenas' },
+          { metadata: 'juvenile', species: 'Columba palumbus' },
+        ],
+      },
     },
     {
       name: {
@@ -42,7 +47,12 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult', species: 'Columba livia' },
+          { metadata: 'juvenile', species: 'Columba palumbus' },
+        ],
+      },
     },
     {
       name: {
@@ -59,8 +69,14 @@ const data: GroupData = {
         { assetId: '165035211', metadata: 'adult' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Columba oenas', 'Columba livia'],
+        juvenile: [
+          { metadata: 'adult', species: 'Columba oenas' },
+          { metadata: 'adult', species: 'Columba livia' },
+        ],
+      },
     },
     {
       name: {
@@ -79,7 +95,12 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult', species: 'Streptopelia turtur' },
+          { metadata: 'juvenile', species: 'Columba palumbus' },
+        ],
+      },
     },
     {
       name: {
@@ -97,8 +118,10 @@ const data: GroupData = {
         { assetId: '101205371', metadata: 'adult' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Streptopelia decaocto', 'Streptopelia orientalis'],
+      },
     },
     {
       name: {
@@ -115,9 +138,10 @@ const data: GroupData = {
         { assetId: '65592821', metadata: 'adult' },
         { assetId: '40327361', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: ['Streptopelia turtur', 'Streptopelia decaocto'],
+      },
     },
   ],
 };

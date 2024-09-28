@@ -1,5 +1,4 @@
-import { LatinName } from '../model/latin-name';
-import { Abundance, ImageMetadata, LocalizedText, MovementPattern, SpeciesName } from '../model/species';
+import { Abundance, ImageMetadata, LocalizedText, MovementPattern, Similars, SpeciesName } from '../model/species';
 
 /** DB STORAGE OBJECTS
  * Stored in hierarchical structure
@@ -9,8 +8,8 @@ interface Species {
   name: SpeciesName;
   imageAssets: { assetId: string; metadata: ImageMetadata }[];
   skAbundance: Abundance;
-  movementPattern: MovementPattern;
-  similarSpecies?: LatinName[];
+  movementPattern?: MovementPattern;
+  similarSpecies?: Similars; // List of visually similar species
   // Range in cm
   // length: {
   //   from: number;

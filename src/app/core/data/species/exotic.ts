@@ -22,15 +22,13 @@ const data: GroupData = {
         { assetId: '109736151', metadata: 'male and female' },
         { assetId: '61654861', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
     },
     {
       name: {
         latin: 'Psittacula krameri',
         localized: {
-          en: 'Ring-necked Parakeet',
+          en: 'Rose-ringed Parakeet',
           sk: 'Alexander malý',
         },
       },
@@ -41,9 +39,7 @@ const data: GroupData = {
         { assetId: '51691951', metadata: 'female' },
         { assetId: '52579281', metadata: 'adult male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
     },
     {
       name: {
@@ -60,9 +56,7 @@ const data: GroupData = {
         { assetId: '38358331', metadata: 'male and female' },
         { assetId: '110005541', metadata: 'male and female' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
     },
     {
       name: {
@@ -79,9 +73,7 @@ const data: GroupData = {
         { assetId: '80664111', metadata: 'adult male' },
         { assetId: '74435681', metadata: 'female' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
     },
     {
       name: {
@@ -98,9 +90,7 @@ const data: GroupData = {
         { assetId: '40239241', metadata: 'adult' },
         { assetId: '33571601', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
     },
     {
       name: {
@@ -117,9 +107,8 @@ const data: GroupData = {
         { assetId: '158216011', metadata: 'adult' },
         { assetId: '338031151', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      similarSpecies: { adult: ['Pyrrhocorax graculus', 'Corvus monedula'] },
     },
     {
       name: {
@@ -136,9 +125,7 @@ const data: GroupData = {
         { assetId: '621629556', metadata: 'juvenile' },
         { assetId: '44267321', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
     },
     {
       name: {
@@ -155,9 +142,8 @@ const data: GroupData = {
         { assetId: '90150691', metadata: 'adult' },
         { assetId: '134148511', metadata: 'juvenile' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: { adult: ['Anser indicus', 'Anser anser'] },
     },
     {
       name: {
@@ -174,9 +160,7 @@ const data: GroupData = {
         { assetId: '109479411', metadata: 'adult male' },
         { assetId: '57263911', metadata: 'adult male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
     },
     {
       name: {
@@ -193,9 +177,8 @@ const data: GroupData = {
         { assetId: '208095791', metadata: 'male and female' },
         { assetId: '57269891', metadata: 'female' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: { adultFemale: ['Mergus serrator'] },
     },
     {
       name: {
@@ -212,9 +195,7 @@ const data: GroupData = {
         { assetId: '53208511', metadata: 'adult' },
         { assetId: '25143811', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
     },
     {
       name: {
@@ -231,9 +212,7 @@ const data: GroupData = {
         { assetId: '51301921', metadata: 'male and female' },
         { assetId: '218160591', metadata: 'adult male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
     },
     {
       name: {
@@ -250,9 +229,8 @@ const data: GroupData = {
         { assetId: '30161681', metadata: 'female' },
         { assetId: '192681961', metadata: 'male and female' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      similarSpecies: { adultMale: ['Lophodytes cucullatus'], adultFemale: ['Lophodytes cucullatus'] },
     },
     {
       name: {
@@ -269,9 +247,8 @@ const data: GroupData = {
         { assetId: '24253121', metadata: 'unknown' },
         { assetId: '144866781', metadata: 'unknown' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'rare',
+      similarSpecies: { adult: ['Anser caerulescens'] },
     },
   ],
 };

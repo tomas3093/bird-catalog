@@ -21,7 +21,13 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultMale: [{ metadata: 'female', species: 'Cyanistes caeruleus' }],
+        juvenile: [
+          { metadata: 'juvenile', species: 'Cyanistes caeruleus' },
+          { metadata: 'adult', species: 'Periparus ater' },
+        ],
+      },
     },
     {
       name: {
@@ -38,7 +44,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Poecile palustris', 'Poecile montanus'],
+      },
     },
     {
       name: {
@@ -57,7 +65,17 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adultFemale: [
+          { metadata: 'adult male', species: 'Parus major' },
+          { metadata: 'adult', species: 'Cyanistes cyanus' },
+        ],
+        juvenile: [
+          { metadata: 'juvenile', species: 'Parus major' },
+          { metadata: 'adult', species: 'Periparus ater' },
+          { metadata: 'adult', species: 'Phylloscopus trochilus' },
+        ],
+      },
     },
     {
       name: {
@@ -76,7 +94,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Periparus ater'],
+      },
     },
     {
       name: {
@@ -95,7 +115,13 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult', species: 'Poecile montanus' },
+          { metadata: 'adult male', species: 'Sylvia atricapilla' },
+          { metadata: 'adult', species: 'Periparus ater' },
+        ],
+      },
     },
     {
       name: {
@@ -114,7 +140,12 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [
+          { metadata: 'adult', species: 'Poecile palustris' },
+          { metadata: 'adult male', species: 'Sylvia atricapilla' },
+        ],
+      },
     },
     {
       name: {
@@ -129,9 +160,10 @@ const data: GroupData = {
         { assetId: '118986611', metadata: 'adult' },
         { assetId: '118986641', metadata: 'adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'historical',
+      similarSpecies: {
+        adult: [{ metadata: 'female', species: 'Cyanistes caeruleus' }],
+      },
     },
     {
       name: {
@@ -150,7 +182,13 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [
+          { metadata: 'female', species: 'Panurus biarmicus' },
+          { metadata: 'adult male', species: 'Plectrophenax nivalis' },
+        ],
+        juvenile: [{ metadata: 'female', species: 'Panurus biarmicus' }],
+      },
     },
     {
       name: {
@@ -167,9 +205,12 @@ const data: GroupData = {
         { assetId: '205135801', metadata: 'immature female' },
         { assetId: '204359721', metadata: 'adult male' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: ['Remiz pendulinus'],
+        adultFemale: [{ metadata: 'juvenile', species: 'Remiz pendulinus' }],
+      },
     },
     {
       name: {
@@ -187,8 +228,11 @@ const data: GroupData = {
         { assetId: '44521191', metadata: 'adult' },
       ],
       skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adultMale: ['Lanius collurio'],
+        juvenile: [{ metadata: 'female', species: 'Panurus biarmicus' }],
+      },
     },
   ],
 };

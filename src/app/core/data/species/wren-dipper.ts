@@ -23,7 +23,10 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: [{ metadata: 'adult male', species: 'Turdus torquatus' }],
+        juvenile: [{ metadata: 'female', species: 'Turdus torquatus' }],
+      },
     },
     {
       name: {
@@ -42,7 +45,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Prunella modularis'],
+      },
     },
   ],
 };

@@ -21,7 +21,6 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
     },
     {
       name: {
@@ -38,9 +37,11 @@ const data: GroupData = {
         { assetId: '205835591', metadata: 'nonbreeding adult' },
         { assetId: '45767981', metadata: 'nonbreeding adult' },
       ],
-      skAbundance: 'common',
-      movementPattern: 'resident',
-      similarSpecies: [],
+      skAbundance: 'occasional',
+      movementPattern: 'migratory',
+      similarSpecies: {
+        adult: ['Certhia brachydactyla', 'Certhia familiaris'],
+      },
     },
     {
       name: {
@@ -59,7 +60,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Certhia brachydactyla', 'Troglodytes troglodytes'],
+      },
     },
     {
       name: {
@@ -78,7 +81,9 @@ const data: GroupData = {
       ],
       skAbundance: 'common',
       movementPattern: 'resident',
-      similarSpecies: [],
+      similarSpecies: {
+        adult: ['Certhia familiaris', 'Troglodytes troglodytes'],
+      },
     },
   ],
 };

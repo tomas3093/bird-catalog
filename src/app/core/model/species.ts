@@ -46,12 +46,31 @@ export interface SpeciesName {
   localized: LocalizedText;
 }
 
+interface ComparableSpecies {
+  metadata: ImageMetadata;
+  species: LatinName;
+}
+
+type Comparable = ComparableSpecies | LatinName;
+export interface Similars {
+  adult?: Comparable[];
+  adultWinter?: Comparable[];
+  adultSummer?: Comparable[];
+  adultMale?: Comparable[];
+  adultFemale?: Comparable[];
+  breedingMale?: Comparable[];
+  firstWinter?: Comparable[];
+  secondWinter?: Comparable[];
+  immature?: Comparable[];
+  juvenile?: Comparable[];
+}
+
 export type Abundance =
-  | 'common' // A species that is frequently observed in a particular area. (More than X observations in total)
-  | 'uncommon' // A species that is not frequently observed but is still present in the area. (Less than X observations in total)
-  | 'occasional' // A species that appears in the area infrequently and unpredictably. (Less than X observations in total)
-  | 'rare' // A species that is seldom seen in the area. (No observation in last 10 years and more than 10 observations in total)
-  | 'historical'; // (No observation in last 10 years and less then 10 observations in total)
+  | 'common' // A species that is frequently observed in a particular area.
+  | 'uncommon' // A species that is not frequently observed but is still present in the area.
+  | 'occasional' // A species that appears in the area infrequently and unpredictably. (Less than cca 200 observations in total - higher tens to low hundreds)
+  | 'rare' // A species that is seldom seen in the area. (Less than cca 20 observations in total - low tens)
+  | 'historical'; // (No observation from year 2015)
 
 export type MovementPattern =
   | 'resident' // A species that lives in the area year-round. (Resident or partial migratory)
