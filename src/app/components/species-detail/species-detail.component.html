@@ -60,12 +60,23 @@
             Movement pattern: <strong>{{ d.movementPattern | uppercase }}</strong>
           </p>
         }
-        @if (d.similarSpecies) {
-          <p>
-            Similar species: <strong>{{ d.similarSpecies | json }}</strong>
-          </p>
-        }
       </p-accordionTab>
+      @if (d.similarSpecies) {
+        <p-accordionTab header="Similar species">
+          <ul>
+            <li *ngIf="d.similarSpecies.adult">adult: {{ d.similarSpecies.adult | json }}</li>
+            <li *ngIf="d.similarSpecies.adult">adultFemale: {{ d.similarSpecies.adultFemale | json }}</li>
+            <li *ngIf="d.similarSpecies.adult">adultMale: {{ d.similarSpecies.adultMale | json }}</li>
+            <li *ngIf="d.similarSpecies.adultSummer">adultSummer: {{ d.similarSpecies.adultSummer | json }}</li>
+            <li *ngIf="d.similarSpecies.adultWinter">adultWinter: {{ d.similarSpecies.adultWinter | json }}</li>
+            <li *ngIf="d.similarSpecies.breedingMale">breedingMale: {{ d.similarSpecies.breedingMale | json }}</li>
+            <li *ngIf="d.similarSpecies.firstWinter">firstWinter: {{ d.similarSpecies.firstWinter | json }}</li>
+            <li *ngIf="d.similarSpecies.immature">immature: {{ d.similarSpecies.immature | json }}</li>
+            <li *ngIf="d.similarSpecies.juvenile">juvenile: {{ d.similarSpecies.juvenile | json }}</li>
+            <li *ngIf="d.similarSpecies.secondWinter">secondWinter: {{ d.similarSpecies.secondWinter | json }}</li>
+          </ul>
+        </p-accordionTab>
+      }
       <p-accordionTab header="Sound">
         @if (isRecordingsLoading()) {
           <p-skeleton width="10rem" height="4rem" />
@@ -86,6 +97,12 @@
     </p-accordion>
   }
 } @else {
-  <p-button icon="pi pi-arrow-left" link="true" [pTooltip]="'detail.back' | t" tooltipPosition="right" (onClick)="showDetail()" />
+  <p-button
+    icon="pi pi-arrow-left"
+    link="true"
+    [pTooltip]="'detail.back' | t"
+    tooltipPosition="right"
+    (onClick)="showDetail()"
+  />
   <app-comparator [compareWith]="detail()"></app-comparator>
 }

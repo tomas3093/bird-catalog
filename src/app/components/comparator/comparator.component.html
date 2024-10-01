@@ -1,10 +1,15 @@
-<div class="title">{{ "comparator.title" | t }}</div>
+<div class="title">{{ 'comparator.title' | t }}</div>
 
 <ng-container *ngIf="isSearchShown()">
   <div class="toolbar">
     <span class="p-input-icon-left">
       <i class="pi pi-search"></i>
-      <input #searchFilter pInputText [placeholder]="'catalog.search' | t" (input)="onSearchFilter($any($event.target).value)" />
+      <input
+        #searchFilter
+        pInputText
+        [placeholder]="'catalog.search' | t"
+        (input)="onSearchFilter($any($event.target).value)"
+      />
     </span>
     <p-button
       icon="pi pi-check"
@@ -28,11 +33,11 @@
       *ngFor="let item of displayedData()"
       class="card"
       [ngClass]="{ selected: isSelected(item.id) }"
-      (click)="toggleComparison(item.id)"
+      (click)="toggleComparison(item)"
     >
       <div class="latin">{{ item.name.latin }}</div>
       <div class="title">{{ item.name.localized | localizedName }}</div>
-      <img [src]="item.thumbnailSrc" [alt]="item.name.latin" />
+      <img [src]="item.images[0].imageSrc" [alt]="item.name.latin" />
     </div>
   </div>
 </ng-container>
@@ -45,26 +50,31 @@
     tooltipPosition="left"
     (click)="showSearch()"
   ></p-button>
-  <div *ngFor="let itemDetail of compareList()">
-    <div>{{ itemDetail.name.localized | localizedName }} ({{ itemDetail.name.latin }})</div>
 
-    <p-galleria
-      [value]="itemDetail.images"
-      [responsiveOptions]="responsiveOptions"
-      [containerStyle]="{ 'max-width': '640px' }"
-      [showItemNavigators]="true"
-    >
-      <ng-template pTemplate="item" let-item>
-        <img [src]="item.imageSrc" style="width: 100%; display: block" />
-      </ng-template>
-      <ng-template pTemplate="thumbnail" let-item>
-        <div class="grid grid-nogutter justify-content-center">
-          <img [src]="item.thumbnailSrc" style="display: block; width: 100px" />
-        </div>
-      </ng-template>
-      <ng-template pTemplate="caption" let-item>
-        <div>{{ item.metadata }}</div>
-      </ng-template>
-    </p-galleria>
+  <div class="grid">
+    <div *ngFor="let itemDetail of compareList()" class="col-12 md:col-6 xl:col-3">
+      <div class="text-lg font-semibold mt-3 mb-1">
+        {{ itemDetail.name.localized | localizedName }} ({{ itemDetail.name.latin }})
+      </div>
+
+      <p-galleria
+        [value]="itemDetail.images"
+        [responsiveOptions]="responsiveOptions"
+        [containerStyle]="{ 'max-width': '640px' }"
+        [showItemNavigators]="true"
+      >
+        <ng-template pTemplate="item" let-item>
+          <img [src]="item.imageSrc" style="width: 100%; display: block" />
+        </ng-template>
+        <ng-template pTemplate="thumbnail" let-item>
+          <div class="grid grid-nogutter justify-content-center">
+            <img [src]="item.thumbnailSrc" style="display: block; width: 100px" />
+          </div>
+        </ng-template>
+        <ng-template pTemplate="caption" let-item>
+          <div>{{ item.metadata }}</div>
+        </ng-template>
+      </p-galleria>
+    </div>
   </div>
 </ng-container>

@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject, input, signal } from '@angular/core';
 import { StorageService } from '../../core/services/storage.service';
-import { CatalogItem, SpeciesDetail } from '../../core/model/species';
+import { SpeciesDetail } from '../../core/model/species';
 import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
 
 @Component({
   selector: 'app-comparator',
   templateUrl: './comparator.component.html',
   styleUrl: './comparator.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComparatorComponent implements OnInit {
   #service = inject(StorageService);
@@ -15,8 +15,8 @@ export class ComparatorComponent implements OnInit {
   compareWith = input.required<SpeciesDetail | null>();
   compareList = signal<SpeciesDetail[]>([]);
 
-  species: CatalogItem[] = [];
-  displayedData = signal<CatalogItem[]>([]);
+  allSpecies: SpeciesDetail[] = [];
+  displayedData = signal<SpeciesDetail[]>([]);
   loading = signal(true);
 
   isSearchShown = signal(true);
@@ -25,53 +25,53 @@ export class ComparatorComponent implements OnInit {
   #searchTerm = this.#searchTermSubject.asObservable().pipe(debounceTime(500), distinctUntilChanged(), share());
   filterSubscription = this.#searchTerm
     .pipe(
-      map((searchTerm) => {
+      map(searchTerm => {
         let res = null;
         if (searchTerm.length > 2) {
           const lowered = searchTerm.toLowerCase();
-          res = this.species.filter(
-            (_) =>
+          res = this.allSpecies.filter(
+            _ =>
               _.name.latin.toLowerCase().includes(lowered) ||
               _.name.localized.sk.toLowerCase().includes(lowered) ||
-              _.name.localized.en.toLowerCase().includes(lowered),
+              _.name.localized.en.toLowerCase().includes(lowered)
           );
         }
         return res;
       }),
-      tap((_) => {
+      tap(_ => {
         if (!_) {
-          this.displayedData.set(this.species);
+          this.displayedData.set(this.allSpecies);
         } else {
           this.displayedData.set(_);
         }
-      }),
+      })
     )
     .subscribe();
 
   responsiveOptions: any[] = [
     {
       breakpoint: '1024px',
-      numVisible: 5,
+      numVisible: 5
     },
     {
       breakpoint: '768px',
-      numVisible: 3,
+      numVisible: 3
     },
     {
       breakpoint: '560px',
-      numVisible: 1,
-    },
+      numVisible: 1
+    }
   ];
 
   ngOnInit() {
     this.#service
-      .getAllSpeciesSimple()
+      .getAllSpeciesDetail()
       .pipe(
-        map((x) => x as CatalogItem[]),
-        tap((_) => {
-          this.species = _;
+        map(x => x as SpeciesDetail[]),
+        tap(_ => {
+          this.allSpecies = _;
           this.loading.set(false);
-        }),
+        })
       )
       .subscribe();
 
@@ -83,7 +83,7 @@ export class ComparatorComponent implements OnInit {
 
   showSearch() {
     this.isSearchShown.set(true);
-    this.displayedData.set(this.species);
+    this.displayedData.set(this.allSpecies);
   }
 
   showComparator() {
@@ -94,29 +94,20 @@ export class ComparatorComponent implements OnInit {
     this.#searchTermSubject.next(value);
   }
 
-  toggleComparison(speciesId: string) {
-    if (this.isSelected(speciesId)) {
-      this.removeFromComparison(speciesId);
+  toggleComparison(species: SpeciesDetail) {
+    if (this.isSelected(species.id)) {
+      this.removeFromComparison(species.id);
     } else {
-      this.#service
-        .getSpeciesDetail(speciesId)
-        .pipe(
-          tap((_) => {
-            const array = this.compareList();
-            array.push(_);
-            this.compareList.set(array);
-          }),
-        )
-        .subscribe();
+      this.compareList.update(_ => [..._, species]);
     }
   }
 
   removeFromComparison(speciesId: string) {
-    const array = this.compareList().filter((_) => _.id !== speciesId);
+    const array = this.compareList().filter(_ => _.id !== speciesId);
     this.compareList.set(array);
   }
 
   isSelected(speciesId: string) {
-    return this.compareList().find((_) => _.id === speciesId) !== undefined;
+    return this.compareList().find(_ => _.id === speciesId) !== undefined;
   }
 }

@@ -47,7 +47,7 @@ TODO: fix routing
 - quizzes
   - learn scientific/english names ✓
   - photo ✓
-  - juveniles, females, males
+  - juveniles, females, males - (expert difficulty)
   - species group selection (birds of prey quizzes, waders quizzes, etc.) ✓
   - quiz type
     - write answer ✓
@@ -59,6 +59,8 @@ TODO: fix routing
 - new data for similar species ✓
 - add custom gallery component which can handle image loading
 - show IUCN SK codes - http://www.tichodroma.sk/pdfs/25/Demko_Tichodroma_25_2.pdf from 2014
+- comparator
+  - as default, compare species which are visually similar (similarSpecies field)
 
 ### Phase 4
 
