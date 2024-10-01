@@ -65,7 +65,7 @@ export class ComparatorComponent implements OnInit {
 
   ngOnInit() {
     this.#service
-      .getAllSpecies()
+      .getAllSpeciesSimple()
       .pipe(
         map((x) => x as CatalogItem[]),
         tap((_) => {

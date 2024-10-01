@@ -31,11 +31,13 @@ export interface ITranslation {
   quiz: {
     title: string;
     difficulty: {
+      label: string;
       beginner: string;
       advanced: string;
       expert: string;
     };
     mode: {
+      label: string;
       group: {
         open: string;
         options: string;
@@ -45,6 +47,21 @@ export interface ITranslation {
       skNames: string;
       images: string;
     };
+    groupsFilter: {
+      label: string;
+      allGroups: string;
+      birdsOfPrey: string;
+      waders: string;
+      wildfowl: string;
+      heronsStorksEtAl: string;
+      owls: string;
+      woodpeckers: string;
+      trushesChats: string;
+      warblers: string;
+      finchesCrossbills: string;
+    };
+    includeRare: string;
+    includeHistorical: string;
     start: string;
     stop: string;
     question: string;

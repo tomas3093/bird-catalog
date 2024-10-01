@@ -33,11 +33,13 @@ export class Sk implements ITranslation {
   public quiz = {
     title: 'Kvíz určovania vtákov',
     difficulty: {
+      label: 'Obtiažnosť',
       beginner: 'Začiatočník',
       advanced: 'Pokročilý',
       expert: 'Expert',
     },
     mode: {
+      label: 'Typ',
       group: {
         open: 'Otvorené odpovede',
         options: 'Výber z možností',
@@ -47,6 +49,21 @@ export class Sk implements ITranslation {
       skNames: 'Slovenské názvy',
       images: 'Obrázky',
     },
+    groupsFilter: {
+      label: 'Skupiny',
+      allGroups: 'Zahrnúť všetky skupiny',
+      birdsOfPrey: 'Dravce',
+      waders: 'Bahniaky',
+      wildfowl: 'Husotvaré',
+      heronsStorksEtAl: 'Volavky, bociany, et al.',
+      owls: 'Sovy',
+      woodpeckers: 'Ďatle',
+      trushesChats: 'Trushes',
+      warblers: 'Warblers',
+      finchesCrossbills: 'Stehlíky a krivonosy',
+    },
+    includeRare: 'Zahrnúť vzácne druhy',
+    includeHistorical: 'Zahrnúť historické/vyhynuté druhy',
     start: 'Spustiť',
     stop: 'Ukončiť',
     question: 'Otázka',

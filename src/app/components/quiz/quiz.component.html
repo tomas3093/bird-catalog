@@ -2,35 +2,89 @@
   <p-progressSpinner class="flex" ariaLabel="loading" />
 } @else {
   <div class="m-1 md:m-2 p-2 flex flex-column align-items-center">
-    <div class="text-2xl font-bold">{{ "quiz.title" | t }}</div>
+    <div class="text-2xl font-bold">{{ 'quiz.title' | t }}</div>
 
     <!-- Waiting for quiz start - showing quiz settings -->
     @if (state.isReadyToStart()) {
-      <div class="card flex justify-content-center mt-5">
-        <form [formGroup]="formGroup">
-          <p-selectButton [options]="difficultyOptions" formControlName="difficulty" optionLabel="label" optionValue="value">
-            <ng-template let-item pTemplate="item">
-              <span>{{ item.label | t }}</span>
-            </ng-template>
-          </p-selectButton>
+      <div class="card mt-5">
+        <form [formGroup]="formGroup" class="flex flex-column align-items-center">
+          <div class="text-center">
+            <label for="difficulty">{{ 'quiz.difficulty.label' | t }}</label>
+            <p-selectButton
+              id="difficulty"
+              [options]="difficultyOptions"
+              [allowEmpty]="false"
+              formControlName="difficulty"
+              optionLabel="label"
+              optionValue="value"
+              styleClass="mt-1"
+            >
+              <ng-template let-item pTemplate="item">
+                <span>{{ item.label | t }}</span>
+              </ng-template>
+            </p-selectButton>
+          </div>
 
-          <p-listbox
-            [options]="modeOptions"
-            [group]="true"
-            formControlName="mode"
-            [listStyle]="{ 'max-height': '250px' }"
-            [style]="{ width: '15rem' }"
-            [styleClass]="'mt-4 mx-auto'"
-          >
-            <ng-template let-group pTemplate="group">
-              <span>{{ group.label | t }}</span>
-            </ng-template>
-            <ng-template let-item pTemplate="item">
-              <span>{{ item.label | t }}</span>
-            </ng-template>
-          </p-listbox>
+          <div class="mt-4 text-center">
+            <label for="mode">{{ 'quiz.mode.label' | t }}</label>
+            <p-listbox
+              id="mode"
+              [options]="modeOptions"
+              [group]="true"
+              formControlName="mode"
+              [listStyle]="{ 'max-height': '250px' }"
+              [style]="{ width: '15rem' }"
+              styleClass="mt-1 mx-auto"
+            >
+              <ng-template let-group pTemplate="group">
+                <span>{{ group.label | t }}</span>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <span>{{ item.label | t }}</span>
+              </ng-template>
+            </p-listbox>
+          </div>
 
-          <p-button icon="pi pi-play" [label]="'quiz.start' | t" (click)="startNewQuiz()" [styleClass]="'mt-4'" />
+          <div class="mt-4 text-center">
+            <label for="groupsFilter" class="block">{{ 'quiz.groupsFilter.label' | t }}</label>
+            <p-multiSelect
+              inputId="groupsFilter"
+              [options]="groupOptions"
+              formControlName="groupsFilter"
+              optionLabel="label"
+              optionValue="value"
+              [placeholder]="'quiz.groupsFilter.allGroups' | t"
+              [filter]="false"
+              [showToggleAll]="false"
+              [showHeader]="false"
+              styleClass="mt-1 mx-auto"
+            >
+              <ng-template let-item pTemplate="item">
+                <span>{{ item.label | t }}</span>
+              </ng-template>
+              <ng-template let-value pTemplate="selectedItems">
+                @for (item of value; track $index) {
+                  <p-chip [label]="item.label | t" class="block mb-1" />
+                }
+                @if (!value || value.length === 0) {
+                  <div>{{ 'quiz.groupsFilter.allGroups' | t }}</div>
+                }
+              </ng-template>
+            </p-multiSelect>
+          </div>
+
+          <div class="mt-4">
+            <div>
+              <p-checkbox formControlName="includeRare" [binary]="true" inputId="includeRare" />
+              <label for="includeRare" class="ml-2">{{ 'quiz.includeRare' | t }}</label>
+            </div>
+            <div class="mt-3">
+              <p-checkbox formControlName="includeHistorical" [binary]="true" inputId="includeHistorical" />
+              <label for="includeHistorical" class="ml-2">{{ 'quiz.includeHistorical' | t }}</label>
+            </div>
+          </div>
+
+          <p-button icon="pi pi-play" [label]="'quiz.start' | t" (click)="startNewQuiz()" styleClass="mt-4" />
         </form>
       </div>
     }
@@ -38,12 +92,12 @@
     <!-- Quiz in progress -->
     @if (state.isRunning()) {
       <div class="mt-4 font-italic">
-        {{ "quiz.question" | t }} {{ state.currentQuestion() }}/{{ state.roundQuestionSet().length }}
+        {{ 'quiz.question' | t }} {{ state.currentQuestion() }}/{{ state.roundQuestionSet().length }}
       </div>
       <div [innerHTML]="state.currentQuestionText()" class="text-lg mb-3"></div>
 
       @if (isImageQuestion()) {
-        <img [src]="state.currentQuestionObject().fullsizeImgSrc" height="250" class="mb-3" />
+        <img [src]="state.currentQuestionObject().images[0].imageSrc" height="250" class="mb-3" />
       }
 
       <!-- Question with open text answer -->
@@ -55,13 +109,13 @@
           (keydown.enter)="onEnterPressed()"
           [ngClass]="{ 'ng-invalid ng-dirty': state.isInvalid() }"
         />
-        <div [hidden]="!state.isInvalid()">{{ "quiz.correctAnswerLabel" | t }}: {{ currentCorrectAnswer() }}</div>
-        <div [hidden]="!state.isValid()" class="text-green-500">{{ "quiz.correct" | t }}</div>
+        <div [hidden]="!state.isInvalid()">{{ 'quiz.correctAnswerLabel' | t }}: {{ currentCorrectAnswer() }}</div>
+        <div [hidden]="!state.isValid()" class="text-green-500">{{ 'quiz.correct' | t }}</div>
       } @else {
         <!-- Question with answer options -->
         <div>
           <div *ngFor="let option of state.currentQuestionOptions(); let index = index" class="my-2">
-            @let inputId = "option" + index;
+            @let inputId = 'option' + index;
             <p-radioButton
               [inputId]="inputId"
               name="optionSelector"
@@ -75,7 +129,7 @@
               class="ml-2"
               [ngClass]="{
                 'text-red-500 font-semibold': isOptionMarkedAsIncorrect(option.id),
-                'text-teal-500 font-semibold': isOptionMarkedAsCorrect(option.id),
+                'text-teal-500 font-semibold': isOptionMarkedAsCorrect(option.id)
               }"
             >
               {{ optionLabel(option) }}
@@ -87,12 +141,16 @@
       <div class="mt-5">
         <p-button [label]="'quiz.stop' | t" severity="secondary" (click)="stopQuiz()" class="mr-2" />
         <p-button [label]="'quiz.check' | t" (click)="validateAnswer()" [hidden]="state.isValidated()" />
-        <p-button [label]="'quiz.next' | t" (click)="nextQuestion()" [hidden]="state.isWaitingForAnswer() || isLastQuestion()" />
+        <p-button
+          [label]="'quiz.next' | t"
+          (click)="nextQuestion()"
+          [hidden]="state.isWaitingForAnswer() || isLastQuestion()"
+        />
       </div>
     }
 
     @if (state.isFinished()) {
-      <div class="mt-4">{{ "quiz.score" | t }}: {{ state.score() }}/{{ maxScore }}</div>
+      <div class="mt-4">{{ 'quiz.score' | t }}: {{ state.score() }}/{{ maxScore }}</div>
       <div class="mt-5">
         <p-button
           icon="pi pi-pen-to-square"

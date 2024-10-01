@@ -62,7 +62,7 @@ export class CatalogComponent implements OnInit {
       .subscribe();
 
     this.#service
-      .getAllSpecies()
+      .getAllSpeciesSimple()
       .pipe(
         map((x) => x as CatalogItem[]),
         tap((_) => {

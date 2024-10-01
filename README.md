@@ -48,25 +48,28 @@ TODO: fix routing
   - learn scientific/english names ✓
   - photo ✓
   - juveniles, females, males
-  - species group selection (birds of prey quizzes, waders quizzes, etc.)
+  - species group selection (birds of prey quizzes, waders quizzes, etc.) ✓
   - quiz type
     - write answer ✓
     - choose from options (also image options)
   - various difficulty (beginer/advanced/expert?) ✓
-- switch in settings - "Include rare species"
-- size comparison - silhouetes drawed on canvas
-  - waders
-  - ducks
-  - birds of prey
-- new "db table" for similar species
-- add custom gallery component
-- IUCN SK codes - http://www.tichodroma.sk/pdfs/25/Demko_Tichodroma_25_2.pdf from 2014
+- filter in catalog
+  - "Hide/show rare species"
+  - "Hide/show historical species"
+- new data for similar species ✓
+- add custom gallery component which can handle image loading
+- show IUCN SK codes - http://www.tichodroma.sk/pdfs/25/Demko_Tichodroma_25_2.pdf from 2014
 
 ### Phase 4
 
 - dashboard (home page)
 - nice UI, polished styling
+- size comparison - silhouetes drawed on canvas
+  - waders
+  - ducks
+  - birds of prey
 - switch to standalone components
+- migrate to PrimeNG 18
 - fix routing (also in deployed env)
 
 ### Nice to have

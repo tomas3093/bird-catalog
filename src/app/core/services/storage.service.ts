@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { CatalogGroup, CatalogItem, SpeciesDetail } from '../model/species';
-import { of, switchMap } from 'rxjs';
+import { Observable, of, switchMap } from 'rxjs';
 import { ApiService } from './api.service';
 import { macaulayImgAssetUrl, speciesMainImage, xenoCantoSearchUrl } from '../misc/util';
 import { RecordingSearchResult } from '../model/sound-recording';
@@ -15,7 +15,7 @@ export class StorageService {
 
   private api = inject(ApiService);
 
-  getSpeciesCatalog() {
+  getSpeciesCatalog(): Observable<Readonly<CatalogGroup[]>> {
     let result: CatalogGroup[] = this.groupStorage
       .filter((group) => group.parentGroupId === null)
       .map((_) => {
@@ -80,7 +80,7 @@ export class StorageService {
     return this.api.performCall<CatalogGroup[]>(() => of(result));
   }
 
-  getAllSpecies() {
+  getAllSpeciesSimple(): Observable<Readonly<CatalogItem[]>> {
     const result = this.speciesStorage.map((species) => {
       const group = this.groupStorage.find((_) => _.id === species.groupId);
       if (!group) {
@@ -112,7 +112,7 @@ export class StorageService {
     return this.api.performCall<CatalogItem[]>(() => of(result));
   }
 
-  getSpeciesDetail(id: string) {
+  getSpeciesDetail(id: string): Observable<Readonly<SpeciesDetail>> {
     const item = this.speciesStorage.find((_) => _.id === id);
     if (!item) {
       throw Error('Species not found');
@@ -126,9 +126,28 @@ export class StorageService {
         thumbnailSrc: macaulayImgAssetUrl(_.assetId, false),
         metadata: _.metadata,
       })),
+      skAbundance: item.skAbundance,
+      movementPattern: item.movementPattern,
+      similarSpecies: item.similarSpecies,
     };
 
     return this.api.performCall<SpeciesDetail>(() => of(result));
+  }
+
+  getAllSpeciesDetail(): Observable<Readonly<SpeciesDetail[]>> {
+    const result: SpeciesDetail[] = this.speciesStorage.map((item) => ({
+      id: item.id,
+      name: item.name,
+      images: item.imageAssets.map((asset) => ({
+        imageSrc: macaulayImgAssetUrl(asset.assetId, true),
+        thumbnailSrc: macaulayImgAssetUrl(asset.assetId, false),
+        metadata: asset.metadata,
+      })),
+      skAbundance: item.skAbundance,
+      movementPattern: item.movementPattern,
+      similarSpecies: item.similarSpecies,
+    }));
+    return this.api.performCall<SpeciesDetail[]>(() => of(result));
   }
 
   getSoundRecordings(id: string) {

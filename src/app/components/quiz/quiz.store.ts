@@ -1,10 +1,11 @@
 import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
-import { CatalogItem } from '../../core/model/species';
+import { SpeciesDetail } from '../../core/model/species';
 import { computed, inject } from '@angular/core';
 import { StorageService } from '../../core/services/storage.service';
 import { map, tap } from 'rxjs';
 import { TranslateService } from '../../core/services/translate.service';
-import { getSimilarSpecies, getRandomItems } from '../../core/misc/util';
+import { getSimilarSpecies, getRandomItems, getSpeciesSubset } from '../../core/misc/util';
+import { GroupName } from '../../core/model/group-name';
 
 const QUESTIONS_IN_SINGLE_ROUND = 10;
 export const MAX_SCORE = QUESTIONS_IN_SINGLE_ROUND;
@@ -15,7 +16,7 @@ enum QuizStep {
   WAITING_FOR_ANSWER = 1,
   ANSWER_VALID = 2,
   ANSWER_INVALID = 3,
-  FINISHED = 4,
+  FINISHED = 4
 }
 
 export enum QuizMode {
@@ -28,22 +29,25 @@ export enum QuizMode {
   GUESS_FROM_IMAGE = 6, // free text guess from showed image
   CHOOSE_FROM_IMAGE = 7, // from options
   GUESS_FROM_SOUND = 8, // free text guess from sound
-  CHOOSE_FROM_SOUND = 9, // from options
+  CHOOSE_FROM_SOUND = 9 // from options
 }
 
 export enum QuizDifficulty {
   BEGINNER = 0,
   ADVANCED = 1,
-  EXPERT = 2,
+  EXPERT = 2
 }
 
 type QuizState = {
-  species: CatalogItem[];
+  species: SpeciesDetail[];
   isLoading: boolean;
   mode: QuizMode;
   difficulty: QuizDifficulty;
+  groupsFilter: GroupName[]; // include only selected groups. If nothing selected, include all
+  includeRare: boolean;
+  includeHistorical: boolean;
   step: QuizStep;
-  roundQuestionSet: CatalogItem[];
+  roundQuestionSet: SpeciesDetail[];
   currentQuestion: number; // start from 1
   score: number;
 };
@@ -53,36 +57,42 @@ const initialState: QuizState = {
   isLoading: false,
   mode: QuizMode.GUESS_LATIN_NAME,
   difficulty: QuizDifficulty.BEGINNER,
+  groupsFilter: [],
+  includeRare: false,
+  includeHistorical: false,
   step: QuizStep.READY,
   roundQuestionSet: [],
   currentQuestion: 1,
-  score: 0,
+  score: 0
 };
 
 export const QuizStore = signalStore(
   withState(initialState),
-  withComputed((store, translate = inject(TranslateService)) => ({
+  withComputed(store => ({
     currentQuestionObject: computed(() => store.roundQuestionSet()[store.currentQuestion() - 1]),
+    currentSpeciesSubset: computed(() =>
+      getSpeciesSubset(store.species(), store.groupsFilter(), store.includeRare(), store.includeHistorical())
+    )
+  })),
+  withComputed((store, translate = inject(TranslateService)) => ({
     currentQuestionText: computed(() => {
-      const currentSpeciesToGuess = store.roundQuestionSet()[store.currentQuestion() - 1];
-
       switch (store.mode()) {
         case QuizMode.GUESS_LATIN_NAME:
         case QuizMode.CHOOSE_LATIN_NAME:
           return translate.instant('quiz.latinNameQuestion', {
-            name: currentSpeciesToGuess.name.localized[translate.currentSpeciesLanguage],
+            name: store.currentQuestionObject().name.localized[translate.currentSpeciesLanguage]
           });
 
         case QuizMode.GUESS_EN_NAME:
         case QuizMode.CHOOSE_EN_NAME:
           return translate.instant('quiz.enNameQuestion', {
-            name: currentSpeciesToGuess.name.latin,
+            name: store.currentQuestionObject().name.latin
           });
 
         case QuizMode.GUESS_SK_NAME:
         case QuizMode.CHOOSE_SK_NAME:
           return translate.instant('quiz.skNameQuestion', {
-            name: currentSpeciesToGuess.name.latin,
+            name: store.currentQuestionObject().name.latin
           });
 
         case QuizMode.GUESS_FROM_IMAGE:
@@ -94,7 +104,7 @@ export const QuizStore = signalStore(
           throw Error('Unsupported quiz mode');
       }
     }),
-    currentQuestionOptions: computed((): CatalogItem[] => {
+    currentQuestionOptions: computed((): SpeciesDetail[] => {
       const mode = store.mode();
       if (
         ![
@@ -102,14 +112,19 @@ export const QuizStore = signalStore(
           QuizMode.CHOOSE_SK_NAME,
           QuizMode.CHOOSE_LATIN_NAME,
           QuizMode.CHOOSE_FROM_IMAGE,
-          QuizMode.CHOOSE_FROM_SOUND,
+          QuizMode.CHOOSE_FROM_SOUND
         ].includes(mode)
       ) {
         return [];
       }
 
       const currentSpeciesToGuess = store.roundQuestionSet()[store.currentQuestion() - 1];
-      const similar = getSimilarSpecies(store.species(), currentSpeciesToGuess, store.difficulty(), TOTAL_OPTIONS_COUNT - 1);
+      const similar = getSimilarSpecies(
+        store.currentSpeciesSubset(),
+        currentSpeciesToGuess,
+        store.difficulty(),
+        TOTAL_OPTIONS_COUNT - 1
+      );
 
       const allOptions = [currentSpeciesToGuess, ...similar];
       return getRandomItems(allOptions, allOptions.length); // Shuffle
@@ -120,7 +135,7 @@ export const QuizStore = signalStore(
     isWaitingForAnswer: computed(() => [QuizStep.WAITING_FOR_ANSWER].includes(store.step())),
     isReadyToStart: computed(() => [QuizStep.READY].includes(store.step())),
     isRunning: computed(() =>
-      [QuizStep.WAITING_FOR_ANSWER, QuizStep.ANSWER_VALID, QuizStep.ANSWER_INVALID].includes(store.step()),
+      [QuizStep.WAITING_FOR_ANSWER, QuizStep.ANSWER_VALID, QuizStep.ANSWER_INVALID].includes(store.step())
     ),
     isFinished: computed(() => [QuizStep.FINISHED].includes(store.step())),
     isOpenAnswer: computed(() =>
@@ -129,9 +144,9 @@ export const QuizStore = signalStore(
         QuizMode.GUESS_SK_NAME,
         QuizMode.GUESS_LATIN_NAME,
         QuizMode.GUESS_FROM_IMAGE,
-        QuizMode.GUESS_FROM_SOUND,
-      ].includes(store.mode()),
-    ),
+        QuizMode.GUESS_FROM_SOUND
+      ].includes(store.mode())
+    )
   })),
   withMethods((store, storageService = inject(StorageService)) => ({
     // 👇 Method to load all species
@@ -139,23 +154,36 @@ export const QuizStore = signalStore(
       patchState(store, { isLoading: true });
 
       storageService
-        .getAllSpecies()
+        .getAllSpeciesDetail()
         .pipe(
-          map((x) => x as CatalogItem[]),
-          tap((species) => {
+          map(x => x as SpeciesDetail[]),
+          tap(species => {
             patchState(store, { species, isLoading: false });
-          }),
+          })
         )
         .subscribe();
     },
-    startNewQuiz(mode: QuizMode, difficulty: QuizDifficulty): void {
+    startNewQuiz(
+      mode: QuizMode,
+      difficulty: QuizDifficulty,
+      groupsFilter: GroupName[],
+      includeRare: boolean,
+      includeHistorical: boolean
+    ): void {
+      patchState(store, {
+        groupsFilter,
+        includeRare,
+        includeHistorical
+      });
+
+      // Separate patchState because store.currentSpeciesSubset() depends on groupsFilter, includeRare and includeHistorical
       patchState(store, {
         score: 0,
         mode,
         difficulty,
-        roundQuestionSet: getRandomItems(store.species(), QUESTIONS_IN_SINGLE_ROUND),
+        roundQuestionSet: getRandomItems(store.currentSpeciesSubset(), QUESTIONS_IN_SINGLE_ROUND),
         step: QuizStep.WAITING_FOR_ANSWER,
-        currentQuestion: 1,
+        currentQuestion: 1
       });
     },
     stopQuiz(): void {
@@ -177,8 +205,8 @@ export const QuizStore = signalStore(
     },
     showQuizMenu(): void {
       patchState(store, {
-        step: QuizStep.READY,
+        step: QuizStep.READY
       });
-    },
-  })),
+    }
+  }))
 );

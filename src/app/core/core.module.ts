@@ -31,6 +31,8 @@ import { QuizStore } from '../components/quiz/quiz.store';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ListboxModule } from 'primeng/listbox';
+import { CheckboxModule } from 'primeng/checkbox';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { ListboxModule } from 'primeng/listbox';
     SelectButtonModule,
     ReactiveFormsModule,
     ListboxModule,
+    CheckboxModule,
+    MultiSelectModule,
   ],
   exports: [
     TypedTranslatePipe,

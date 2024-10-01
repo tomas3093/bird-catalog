@@ -1,7 +1,8 @@
 import { generateGroups, generateSpecies } from '../../misc/util';
+import { GroupName } from '../../model/group-name';
 import { GroupData, SpeciesGroupModel, SpeciesModel } from '../model';
 
-const groupId = 'finches-crossbills';
+const groupId: GroupName = 'finchesCrossbills';
 
 const data: GroupData = {
   name: { en: 'Finches & crossbills', sk: 'Stehlíky a krivonosy' },
@@ -14,98 +15,98 @@ const data: GroupData = {
             latin: 'Fringilla coelebs',
             localized: {
               en: 'Common Chaffinch',
-              sk: 'Pinka obyčajná',
-            },
+              sk: 'Pinka obyčajná'
+            }
           },
           imageAssets: [
             { assetId: '433940431', metadata: 'breeding male' },
             { assetId: '489972921', metadata: 'nonbreeding male' },
             { assetId: '396114011', metadata: 'female' },
             { assetId: '391640581', metadata: 'female' },
-            { assetId: '204246301', metadata: 'breeding male' },
+            { assetId: '204246301', metadata: 'breeding male' }
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
           similarSpecies: {
             breedingMale: [{ metadata: 'nonbreeding adult', species: 'Fringilla montifringilla' }],
-            adultFemale: ['Passer domesticus'],
-          },
+            adultFemale: ['Passer domesticus']
+          }
         },
         {
           name: {
             latin: 'Fringilla montifringilla',
             localized: {
               en: 'Brambling',
-              sk: 'Pinka severská (ikavec)',
-            },
+              sk: 'Pinka severská (ikavec)'
+            }
           },
           imageAssets: [
             { assetId: '601188641', metadata: 'breeding male' },
             { assetId: '73818361', metadata: 'female/immature male' },
             { assetId: '64161101', metadata: 'nonbreeding male' },
             { assetId: '204756121', metadata: 'juvenile' },
-            { assetId: '140118421', metadata: 'female/immature male' },
+            { assetId: '140118421', metadata: 'female/immature male' }
           ],
           skAbundance: 'uncommon',
           movementPattern: 'migratory',
           similarSpecies: {
             breedingMale: ['Fringilla coelebs', 'Emberiza melanocephala'],
-            adultWinter: [{ metadata: 'breeding adult', species: 'Fringilla coelebs' }],
-          },
+            adultWinter: [{ metadata: 'breeding adult', species: 'Fringilla coelebs' }]
+          }
         },
         {
           name: {
             latin: 'Linaria cannabina',
             localized: {
               en: 'Common Linnet',
-              sk: 'Stehlík konôpka',
-            },
+              sk: 'Stehlík konôpka'
+            }
           },
           imageAssets: [
             { assetId: '146165661', metadata: 'adult male' },
             { assetId: '44051081', metadata: 'female/immature male' },
             { assetId: '41832381', metadata: 'female/immature male' },
             { assetId: '204396761', metadata: 'juvenile' },
-            { assetId: '38623701', metadata: 'adult male' },
+            { assetId: '38623701', metadata: 'adult male' }
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
           similarSpecies: {
             adultMale: ['Acanthis flammea', 'Linaria flavirostris'],
-            adultFemale: ['Acanthis flammea', 'Linaria flavirostris'],
-          },
+            adultFemale: ['Acanthis flammea', 'Linaria flavirostris']
+          }
         },
         {
           name: {
             latin: 'Linaria flavirostris',
             localized: {
               en: 'Twite',
-              sk: 'Stehlík horský',
-            },
+              sk: 'Stehlík horský'
+            }
           },
           imageAssets: [
             { assetId: '40041141', metadata: 'unknown' },
             { assetId: '38219241', metadata: 'unknown' },
             { assetId: '42638131', metadata: 'unknown' },
             { assetId: '42177341', metadata: 'unknown' },
-            { assetId: '46249831', metadata: 'unknown' },
+            { assetId: '46249831', metadata: 'unknown' }
           ],
           skAbundance: 'rare',
           movementPattern: 'migratory',
           similarSpecies: {
             adult: [
               { metadata: 'female', species: 'Linaria cannabina' },
-              { metadata: 'first winter', species: 'Acanthis flammea' },
-            ],
-          },
+              { metadata: 'first winter', species: 'Acanthis flammea' }
+            ]
+          }
         },
         {
           name: {
             latin: 'Acanthis flammea',
             localized: {
               en: 'Common Redpoll',
-              sk: 'Stehlík čečetka',
-            },
+              sk: 'Stehlík čečetka'
+            }
           },
           imageAssets: [
             { assetId: '301728521', metadata: 'adult male' },
@@ -113,7 +114,7 @@ const data: GroupData = {
             { assetId: '23511481', metadata: 'adult male' },
             { assetId: '300128911', metadata: 'female/immature male' },
             { assetId: '64787461', metadata: 'adult male' },
-            { assetId: '33428111', metadata: 'juvenile' },
+            { assetId: '33428111', metadata: 'juvenile' }
           ],
           skAbundance: 'occasional',
           movementPattern: 'migratory',
@@ -121,9 +122,9 @@ const data: GroupData = {
             breedingMale: ['Linaria cannabina'],
             firstWinter: [
               { metadata: 'female', species: 'Linaria cannabina' },
-              { metadata: 'adult', species: 'Linaria flavirostris' },
-            ],
-          },
+              { metadata: 'adult', species: 'Linaria flavirostris' }
+            ]
+          }
         },
         // {
         //   name: {
@@ -172,35 +173,35 @@ const data: GroupData = {
             latin: 'Carduelis carduelis',
             localized: {
               en: 'European Goldfinch',
-              sk: 'Stehlík obyčajný',
-            },
+              sk: 'Stehlík obyčajný'
+            }
           },
           imageAssets: [
             { assetId: '164628571', metadata: 'adult' },
             { assetId: '242433311', metadata: 'juvenile' },
             { assetId: '123755251', metadata: 'juvenile' },
-            { assetId: '50764891', metadata: 'adult' },
+            { assetId: '50764891', metadata: 'adult' }
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
           similarSpecies: {
-            juvenile: ['Spinus spinus', 'Chloris chloris'],
-          },
+            juvenile: ['Spinus spinus', 'Chloris chloris']
+          }
         },
         {
           name: {
             latin: 'Chloris chloris',
             localized: {
               en: 'European Greenfinch',
-              sk: 'Zelienka obyčajná',
-            },
+              sk: 'Zelienka obyčajná'
+            }
           },
           imageAssets: [
             { assetId: '284939641', metadata: 'adult male' },
             { assetId: '63883631', metadata: 'female' },
             { assetId: '151273101', metadata: 'adult male' },
             { assetId: '461341481', metadata: 'female' },
-            { assetId: '492009681', metadata: 'juvenile' },
+            { assetId: '492009681', metadata: 'juvenile' }
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
@@ -208,93 +209,93 @@ const data: GroupData = {
             breedingMale: [{ metadata: 'adult male', species: 'Spinus spinus' }],
             juvenile: [
               { metadata: 'juvenile', species: 'Spinus spinus' },
-              { metadata: 'adult male', species: 'Serinus serinus' },
-            ],
-          },
+              { metadata: 'adult male', species: 'Serinus serinus' }
+            ]
+          }
         },
         {
           name: {
             latin: 'Spinus spinus',
             localized: {
               en: 'Eurasian Siskin',
-              sk: 'Stehlík čížik',
-            },
+              sk: 'Stehlík čížik'
+            }
           },
           imageAssets: [
             { assetId: '200527861', metadata: 'adult male' },
             { assetId: '43180561', metadata: 'female/immature male' },
             { assetId: '41098181', metadata: 'adult male' },
             { assetId: '42548521', metadata: 'adult male' },
-            { assetId: '43088651', metadata: 'female/immature male' },
+            { assetId: '43088651', metadata: 'female/immature male' }
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
           similarSpecies: {
             adultMale: ['Serinus serinus'],
-            juvenile: [{ metadata: 'adult male', species: 'Serinus serinus' }],
-          },
+            juvenile: [{ metadata: 'adult male', species: 'Serinus serinus' }]
+          }
         },
         {
           name: {
             latin: 'Serinus serinus',
             localized: {
               en: 'European Serin',
-              sk: 'Kanárik poľný',
-            },
+              sk: 'Kanárik poľný'
+            }
           },
           imageAssets: [
             { assetId: '63380841', metadata: 'adult male' },
             { assetId: '178701351', metadata: 'female/immature male' },
             { assetId: '158928991', metadata: 'juvenile' },
             { assetId: '204828961', metadata: 'female/immature male' },
-            { assetId: '26089081', metadata: 'adult male' },
+            { assetId: '26089081', metadata: 'adult male' }
           ],
           skAbundance: 'common',
           movementPattern: 'migratory',
           similarSpecies: {
             adultMale: [
               { metadata: 'juvenile', species: 'Spinus spinus' },
-              { metadata: 'adult male', species: 'Spinus spinus' },
-            ],
-          },
+              { metadata: 'adult male', species: 'Spinus spinus' }
+            ]
+          }
         },
         {
           name: {
             latin: 'Pyrrhula pyrrhula',
             localized: {
               en: 'Eurasian Bullfinch',
-              sk: 'Hýľ obyčajný',
-            },
+              sk: 'Hýľ obyčajný'
+            }
           },
           imageAssets: [
             { assetId: '204247951', metadata: 'adult male' },
             { assetId: '204624701', metadata: 'adult female' },
             { assetId: '36672351', metadata: 'juvenile' },
             { assetId: '205458451', metadata: 'immature' },
-            { assetId: '38587441', metadata: 'adult male' },
+            { assetId: '38587441', metadata: 'adult male' }
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
           similarSpecies: {
             adultMale: ['Carpodacus erythrinus'],
             adultFemale: [{ metadata: 'juvenile', species: 'Carpodacus erythrinus' }],
-            juvenile: ['Carpodacus erythrinus'],
-          },
+            juvenile: ['Carpodacus erythrinus']
+          }
         },
         {
           name: {
             latin: 'Pinicola enucleator',
             localized: {
               en: 'Pine Grosbeak',
-              sk: 'Smrečiar krivonosí',
-            },
+              sk: 'Smrečiar krivonosí'
+            }
           },
           imageAssets: [
             { assetId: '64887111', metadata: 'adult male' },
             { assetId: '83937401', metadata: 'female' },
             { assetId: '64887451', metadata: 'immature male' },
             { assetId: '120277181', metadata: 'adult male' },
-            { assetId: '64884611', metadata: 'female' },
+            { assetId: '64884611', metadata: 'female' }
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
@@ -302,45 +303,45 @@ const data: GroupData = {
             adultMale: ['Carpodacus erythrinus', 'Loxia curvirostra'],
             adultFemale: [
               { metadata: 'juvenile', species: 'Carpodacus erythrinus' },
-              { metadata: 'adult female', species: 'Loxia curvirostra' },
-            ],
-          },
+              { metadata: 'adult female', species: 'Loxia curvirostra' }
+            ]
+          }
         },
         {
           name: {
             latin: 'Coccothraustes coccothraustes',
             localized: {
               en: 'Hawfinch',
-              sk: 'Glezg obyčajný',
-            },
+              sk: 'Glezg obyčajný'
+            }
           },
           imageAssets: [
             { assetId: '222917101', metadata: 'adult' },
             { assetId: '149880181', metadata: 'adult' },
             { assetId: '204972791', metadata: 'juvenile' },
             { assetId: '204590481', metadata: 'adult' },
-            { assetId: '44660081', metadata: 'adult' },
+            { assetId: '44660081', metadata: 'adult' }
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
           similarSpecies: {
-            breedingMale: [{ metadata: 'juvenile', species: 'Pyrrhula pyrrhula' }],
-          },
+            breedingMale: [{ metadata: 'juvenile', species: 'Pyrrhula pyrrhula' }]
+          }
         },
         {
           name: {
             latin: 'Carpodacus erythrinus',
             localized: {
               en: 'Common Rosefinch',
-              sk: 'Červenák karmínový',
-            },
+              sk: 'Červenák karmínový'
+            }
           },
           imageAssets: [
             { assetId: '165879411', metadata: 'adult male' },
             { assetId: '40460061', metadata: 'female/immature male' },
             { assetId: '39576471', metadata: 'adult male' },
             { assetId: '30028971', metadata: 'adult male' },
-            { assetId: '38140911', metadata: 'unknown' },
+            { assetId: '38140911', metadata: 'unknown' }
           ],
           skAbundance: 'uncommon',
           movementPattern: 'migratory',
@@ -348,11 +349,11 @@ const data: GroupData = {
             adultMale: ['Pinicola enucleator'],
             juvenile: [
               { metadata: 'juvenile', species: 'Chloris chloris' },
-              { metadata: 'female', species: 'Pinicola enucleator' },
-            ],
-          },
-        },
-      ],
+              { metadata: 'female', species: 'Pinicola enucleator' }
+            ]
+          }
+        }
+      ]
     },
     {
       name: { en: 'Crossbills', sk: 'Krivonosy' },
@@ -362,15 +363,15 @@ const data: GroupData = {
             latin: 'Loxia curvirostra',
             localized: {
               en: 'Common Crossbill',
-              sk: 'Krivonos smrekový',
-            },
+              sk: 'Krivonos smrekový'
+            }
           },
           imageAssets: [
             { assetId: '290896961', metadata: 'adult male' },
             { assetId: '27801301', metadata: 'female' },
             { assetId: '149620141', metadata: 'adult male' },
             { assetId: '175918801', metadata: 'juvenile' },
-            { assetId: '93233821', metadata: 'immature male' },
+            { assetId: '93233821', metadata: 'immature male' }
           ],
           skAbundance: 'common',
           movementPattern: 'resident',
@@ -378,36 +379,36 @@ const data: GroupData = {
             adultMale: ['Loxia leucoptera', 'Pinicola enucleator'],
             adultFemale: [
               { metadata: 'adult female', species: 'Loxia leucoptera' },
-              { metadata: 'breeding male', species: 'Chloris chloris' },
+              { metadata: 'breeding male', species: 'Chloris chloris' }
             ],
-            juvenile: ['Loxia leucoptera', 'Chloris chloris'],
-          },
+            juvenile: ['Loxia leucoptera', 'Chloris chloris']
+          }
         },
         {
           name: {
             latin: 'Loxia leucoptera',
             localized: {
               en: 'Two-barred Crossbill',
-              sk: 'Krivonos bielokrídly',
-            },
+              sk: 'Krivonos bielokrídly'
+            }
           },
           imageAssets: [
             { assetId: '138938871', metadata: 'adult male' },
             { assetId: '27751531', metadata: 'female' },
             { assetId: '304838941', metadata: 'immature male' },
             { assetId: '42507561', metadata: 'juvenile' },
-            { assetId: '217479941', metadata: 'male and female' },
+            { assetId: '217479941', metadata: 'male and female' }
           ],
           skAbundance: 'historical',
           similarSpecies: {
             adultMale: ['Loxia curvirostra', 'Fringilla coelebs'],
             adultFemale: ['Loxia curvirostra'],
-            juvenile: ['Loxia curvirostra', 'Chloris chloris'],
-          },
-        },
-      ],
-    },
-  ],
+            juvenile: ['Loxia curvirostra', 'Chloris chloris']
+          }
+        }
+      ]
+    }
+  ]
 };
 
 export const finchesCrossbillsGroups = function (): SpeciesGroupModel[] {

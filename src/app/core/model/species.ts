@@ -34,6 +34,9 @@ export interface SpeciesDetail {
     thumbnailSrc: string;
     metadata: ImageMetadata;
   }[];
+  skAbundance: Abundance;
+  movementPattern?: MovementPattern;
+  similarSpecies?: Similars;
 }
 
 export interface LocalizedText {

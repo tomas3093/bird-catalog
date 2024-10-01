@@ -1,8 +1,9 @@
 import { generateGroups, generateSpecies } from '../../misc/util';
+import { GroupName } from '../../model/group-name';
 import { GroupData, SpeciesGroupModel, SpeciesModel } from '../model';
 
 /** Escapee or provisional category in ebird */
-const groupId = 'exotic';
+const groupId: GroupName = 'exotic';
 
 const data: GroupData = {
   name: { en: 'Exotic', sk: 'Exotické' },

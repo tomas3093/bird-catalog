@@ -1,7 +1,8 @@
 import { generateGroups, generateSpecies } from '../../misc/util';
+import { GroupName } from '../../model/group-name';
 import { GroupData, SpeciesGroupModel, SpeciesModel } from '../model';
 
-const groupId = 'grebes';
+const groupId: GroupName = 'grebes';
 
 const data: GroupData = {
   name: { en: 'Grebes', sk: 'Potápky' },

@@ -1,3 +1,4 @@
+import { GroupName } from '../model/group-name';
 import { Abundance, ImageMetadata, LocalizedText, MovementPattern, Similars, SpeciesName } from '../model/species';
 
 /** DB STORAGE OBJECTS
@@ -53,10 +54,11 @@ export function hasSubgroups(obj: GroupData): obj is GroupDataWithSubgroup {
 /** UI OBJECTS
  * Used in UI, fetched by storage service
  */
+
 export interface SpeciesGroupModel {
   id: string;
   name: LocalizedText;
-  parentGroupId: string | null;
+  parentGroupId: GroupName | null;
 }
 
 export interface SpeciesModel extends Species {

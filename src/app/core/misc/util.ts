@@ -1,6 +1,7 @@
 import { QuizDifficulty } from '../../components/quiz/quiz.store';
 import { GroupData, hasSubgroups, SpeciesGroupModel, SpeciesModel } from '../data/model';
-import { CatalogItem } from '../model/species';
+import { GroupName } from '../model/group-name';
+import { SpeciesDetail } from '../model/species';
 
 /**
  * Returns image URL according to specified asset ID from Macaulay library
@@ -60,8 +61,9 @@ export const generateGroups = (data: GroupData, groupId: string): SpeciesGroupMo
   if (hasSubgroups(data)) {
     res.push(
       ...data.subGroups.map(
-        (subGroup, index) => ({ id: `${groupId}-${index}`, name: subGroup.name, parentGroupId: groupId }) as SpeciesGroupModel,
-      ),
+        (subGroup, index) =>
+          ({ id: `${groupId}-${index}`, name: subGroup.name, parentGroupId: groupId }) as SpeciesGroupModel
+      )
     );
   }
   return res;
@@ -84,8 +86,11 @@ export const generateSpecies = (data: GroupData, groupId: string): SpeciesModel[
             name: species.name,
             groupId: groupId,
             imageAssets: species.imageAssets,
-          }) as SpeciesModel,
-      ),
+            skAbundance: species.skAbundance,
+            movementPattern: species.movementPattern,
+            similarSpecies: species.similarSpecies
+          }) as SpeciesModel
+      )
     );
   } else {
     data.subGroups.forEach((subGroup, subGroupIndex) => {
@@ -98,8 +103,11 @@ export const generateSpecies = (data: GroupData, groupId: string): SpeciesModel[
               name: species.name,
               groupId: subGroupId,
               imageAssets: species.imageAssets,
-            }) as SpeciesModel,
-        ),
+              skAbundance: species.skAbundance,
+              movementPattern: species.movementPattern,
+              similarSpecies: species.similarSpecies
+            }) as SpeciesModel
+        )
       );
     });
   }
@@ -127,6 +135,35 @@ export const getRandomItems = <T>(arr: T[], numItems: number): T[] => {
 };
 
 /**
+ * Create subset of species array according to specified filters
+ * @param array array of all species
+ * @param groupsFilter
+ * @param includeRare
+ * @param includeHistorical
+ * @returns
+ */
+export const getSpeciesSubset = (
+  array: SpeciesDetail[],
+  groupsFilter: GroupName[],
+  includeRare: boolean,
+  includeHistorical: boolean
+): SpeciesDetail[] => {
+  let res: SpeciesDetail[] = array;
+
+  if (!includeRare) {
+    res = res.filter(_ => _.skAbundance !== 'rare');
+  }
+  if (!includeHistorical) {
+    res = res.filter(_ => _.skAbundance !== 'historical');
+  }
+  if (groupsFilter.length > 0) {
+    res = res.filter(_ => groupsFilter.includes(_.id.split('-')[0] as GroupName));
+  }
+
+  return res;
+};
+
+/**
  * Return items which are either random or similar to correctAnswer according to difficulty
  * @param allSpecies
  * @param correctAnswer
@@ -134,14 +171,14 @@ export const getRandomItems = <T>(arr: T[], numItems: number): T[] => {
  * @param count number of items to return
  */
 export const getSimilarSpecies = (
-  allSpecies: CatalogItem[],
-  correctAnswer: CatalogItem,
+  allSpecies: SpeciesDetail[],
+  correctAnswer: SpeciesDetail,
   difficulty: QuizDifficulty,
-  count: number,
-): CatalogItem[] => {
-  const array = allSpecies.filter((_) => _.id !== correctAnswer.id);
-  const res: CatalogItem[] = [];
-  let tmp: CatalogItem[] = [];
+  count: number
+): SpeciesDetail[] => {
+  const array = allSpecies.filter(_ => _.id !== correctAnswer.id);
+  const res: SpeciesDetail[] = [];
+  let tmp: SpeciesDetail[] = [];
 
   // Auto generated unique ID, format: <groupId>-<(optional) subGroupId>-<speciesId>
   const groupName = correctAnswer.id.split('-')[0];
@@ -155,10 +192,10 @@ export const getSimilarSpecies = (
       if (subGroupId !== null) {
         // push items from subgroup
         res.push(
-          ...array.filter((_) => {
+          ...array.filter(_ => {
             const s = _.id.split('-');
             _.id.startsWith(groupName) && s.length === 3 && subGroupId === s[1];
-          }),
+          })
         );
 
         if (res.length >= count) {
@@ -168,31 +205,31 @@ export const getSimilarSpecies = (
 
       // push items from group
       if (res.length > 0) {
-        tmp = array.filter((_) => _.id.startsWith(groupName) && !res.map((item) => item.id).includes(_.id));
+        tmp = array.filter(_ => _.id.startsWith(groupName) && !res.map(item => item.id).includes(_.id));
         res.push(...tmp.slice(0, count - res.length));
       } else {
-        res.push(...array.filter((_) => _.id.startsWith(groupName)));
+        res.push(...array.filter(_ => _.id.startsWith(groupName)));
       }
       if (res.length >= count) {
         return getRandomItems(res, count);
       }
 
       // push random items
-      tmp = array.filter((_) => !res.map((item) => item.id).includes(_.id));
+      tmp = array.filter(_ => !res.map(item => item.id).includes(_.id));
       res.push(...tmp.slice(0, count - res.length));
       return getRandomItems(res, count); // shuffle
 
     case QuizDifficulty.EXPERT:
       const latinNameSplit = correctAnswer.name.latin.split(' ');
       // push items with the same latin name (Turdus sp., Curruca sp. ...)
-      res.push(...array.filter((_) => _.name.latin.includes(latinNameSplit[0])));
+      res.push(...array.filter(_ => _.name.latin.includes(latinNameSplit[0])));
       if (res.length >= count) {
         return getRandomItems(res, count);
       }
 
       if (subGroupId !== null) {
         // push items from subgroup
-        tmp = array.filter((_) => {
+        tmp = array.filter(_ => {
           const s = _.id.split('-');
           _.id.startsWith(groupName) && s.length === 3 && subGroupId === s[1];
         });
@@ -205,17 +242,17 @@ export const getSimilarSpecies = (
 
       // push items from group
       if (res.length > 0) {
-        tmp = array.filter((_) => _.id.startsWith(groupName) && !res.map((item) => item.id).includes(_.id));
+        tmp = array.filter(_ => _.id.startsWith(groupName) && !res.map(item => item.id).includes(_.id));
         res.push(...tmp.slice(0, count - res.length));
       } else {
-        res.push(...array.filter((_) => _.id.startsWith(groupName)));
+        res.push(...array.filter(_ => _.id.startsWith(groupName)));
       }
       if (res.length >= count) {
         return getRandomItems(res, count);
       }
 
       // push random items
-      tmp = array.filter((_) => !res.map((item) => item.id).includes(_.id));
+      tmp = array.filter(_ => !res.map(item => item.id).includes(_.id));
       res.push(...tmp.slice(0, count - res.length));
       return getRandomItems(res, count); // shuffle
   }

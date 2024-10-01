@@ -1,14 +1,17 @@
 import { ChangeDetectionStrategy, Component, ElementRef, OnInit, computed, inject, viewChild } from '@angular/core';
 import { MAX_SCORE, QuizDifficulty, QuizMode, QuizStore } from './quiz.store';
-import { CatalogItem } from '../../core/model/species';
+import { SpeciesDetail } from '../../core/model/species';
 import { TranslateService } from '../../core/services/translate.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SelectItemGroup } from 'primeng/api';
+import { GroupName } from '../../core/model/group-name';
+import { PropertyPaths } from '../../core/services/translate/PropertyPath';
+import { ITranslation } from '../../core/services/translate/ITranslation';
 
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuizComponent implements OnInit {
   #translate = inject(TranslateService);
@@ -18,8 +21,20 @@ export class QuizComponent implements OnInit {
     mode: new FormControl<QuizMode>(this.state.mode(), { nonNullable: true, validators: [Validators.required] }),
     difficulty: new FormControl<QuizDifficulty>(this.state.difficulty(), {
       nonNullable: true,
-      validators: [Validators.required],
+      validators: [Validators.required]
     }),
+    groupsFilter: new FormControl<GroupName[]>(this.state.groupsFilter(), {
+      nonNullable: true,
+      validators: [Validators.required]
+    }),
+    includeRare: new FormControl<boolean>(this.state.includeRare(), {
+      nonNullable: true,
+      validators: [Validators.required]
+    }),
+    includeHistorical: new FormControl<boolean>(this.state.includeHistorical(), {
+      nonNullable: true,
+      validators: [Validators.required]
+    })
   });
 
   textAnswerInput = viewChild<ElementRef<HTMLInputElement>>('textAnswerInput');
@@ -45,10 +60,10 @@ export class QuizComponent implements OnInit {
   isImageQuestion = computed(() => [QuizMode.GUESS_FROM_IMAGE, QuizMode.CHOOSE_FROM_IMAGE].includes(this.state.mode()));
   isLastQuestion = computed(() => this.state.currentQuestion() === this.maxScore);
 
-  difficultyOptions: { label: string; value: QuizDifficulty }[] = [
+  difficultyOptions: { label: PropertyPaths<ITranslation>; value: QuizDifficulty }[] = [
     { label: 'quiz.difficulty.beginner', value: QuizDifficulty.BEGINNER },
     { label: 'quiz.difficulty.advanced', value: QuizDifficulty.ADVANCED },
-    { label: 'quiz.difficulty.expert', value: QuizDifficulty.EXPERT },
+    { label: 'quiz.difficulty.expert', value: QuizDifficulty.EXPERT }
   ];
 
   modeOptions: SelectItemGroup[] = [
@@ -58,8 +73,8 @@ export class QuizComponent implements OnInit {
         { label: 'quiz.mode.latinNames', value: QuizMode.GUESS_LATIN_NAME },
         { label: 'quiz.mode.enNames', value: QuizMode.GUESS_EN_NAME },
         { label: 'quiz.mode.skNames', value: QuizMode.GUESS_SK_NAME },
-        { label: 'quiz.mode.images', value: QuizMode.GUESS_FROM_IMAGE },
-      ],
+        { label: 'quiz.mode.images', value: QuizMode.GUESS_FROM_IMAGE }
+      ]
     },
     {
       label: 'quiz.mode.group.options',
@@ -67,9 +82,21 @@ export class QuizComponent implements OnInit {
         { label: 'quiz.mode.latinNames', value: QuizMode.CHOOSE_LATIN_NAME },
         { label: 'quiz.mode.enNames', value: QuizMode.CHOOSE_EN_NAME },
         { label: 'quiz.mode.skNames', value: QuizMode.CHOOSE_SK_NAME },
-        { label: 'quiz.mode.images', value: QuizMode.CHOOSE_FROM_IMAGE },
-      ],
-    },
+        { label: 'quiz.mode.images', value: QuizMode.CHOOSE_FROM_IMAGE }
+      ]
+    }
+  ];
+
+  groupOptions: { label: PropertyPaths<ITranslation>; value: GroupName }[] = [
+    { label: 'quiz.groupsFilter.birdsOfPrey', value: 'birdsOfPrey' },
+    { label: 'quiz.groupsFilter.waders', value: 'waders' },
+    { label: 'quiz.groupsFilter.wildfowl', value: 'wildfowl' },
+    { label: 'quiz.groupsFilter.heronsStorksEtAl', value: 'heronsStorksEtAl' },
+    { label: 'quiz.groupsFilter.owls', value: 'owls' },
+    { label: 'quiz.groupsFilter.woodpeckers', value: 'woodpeckers' },
+    { label: 'quiz.groupsFilter.trushesChats', value: 'trushesChats' },
+    { label: 'quiz.groupsFilter.warblers', value: 'warblers' },
+    { label: 'quiz.groupsFilter.finchesCrossbills', value: 'finchesCrossbills' }
   ];
 
   ngOnInit() {
@@ -78,7 +105,13 @@ export class QuizComponent implements OnInit {
 
   startNewQuiz() {
     const c = this.formGroup.controls;
-    this.state.startNewQuiz(c.mode.value, c.difficulty.value);
+    this.state.startNewQuiz(
+      c.mode.value,
+      c.difficulty.value,
+      c.groupsFilter.value,
+      c.includeRare.value,
+      c.includeHistorical.value
+    );
 
     if (this.state.isOpenAnswer()) {
       setTimeout(() => {
@@ -132,7 +165,7 @@ export class QuizComponent implements OnInit {
     }
   }
 
-  optionLabel(option: CatalogItem): string {
+  optionLabel(option: SpeciesDetail): string {
     switch (this.state.mode()) {
       case QuizMode.CHOOSE_LATIN_NAME:
         return option.name.latin;

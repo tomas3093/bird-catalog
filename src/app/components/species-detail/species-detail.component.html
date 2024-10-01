@@ -20,15 +20,14 @@
     <div class="latin">{{ d.name.latin }}</div>
     <div class="title">{{ d.name.localized | localizedName }}</div>
 
-    <!-- TODO: Create custom gallery component -->
-    <p-skeleton [hidden]="!isImagesLoading()" width="10rem" height="4rem" />
+    <!-- TODO: Create custom gallery component to handle image loading -->
+    <!-- <p-skeleton [hidden]="!isImagesLoading()" width="10rem" height="4rem" />
     <div [hidden]="isImagesLoading()">
       @for (img of d.images; track $index) {
         <img [src]="img.imageSrc" (load)="imageLoaded()" height="150" />
       }
-    </div>
-    <!-- <p-galleria
-      [hidden]="true"
+    </div> -->
+    <p-galleria
       [value]="d.images"
       [responsiveOptions]="responsiveOptions"
       [containerStyle]="{ 'max-width': '1024px' }"
@@ -49,9 +48,24 @@
       <ng-template pTemplate="caption" let-item>
         <div>{{ item.metadata }}</div>
       </ng-template>
-    </p-galleria> -->
+    </p-galleria>
 
-    <p-accordion [multiple]="true">
+    <p-accordion [multiple]="true" [activeIndex]="[0]">
+      <p-accordionTab header="Description">
+        <p>
+          Abundance in Slovakia: <strong>{{ d.skAbundance | uppercase }}</strong>
+        </p>
+        @if (d.movementPattern) {
+          <p>
+            Movement pattern: <strong>{{ d.movementPattern | uppercase }}</strong>
+          </p>
+        }
+        @if (d.similarSpecies) {
+          <p>
+            Similar species: <strong>{{ d.similarSpecies | json }}</strong>
+          </p>
+        }
+      </p-accordionTab>
       <p-accordionTab header="Sound">
         @if (isRecordingsLoading()) {
           <p-skeleton width="10rem" height="4rem" />
@@ -61,15 +75,11 @@
           }
         }
       </p-accordionTab>
-      <p-accordionTab header="Description">
+      <p-accordionTab header="Breeding" [disabled]="true">
         <p>TBD...</p>
         <p>TBD...</p>
       </p-accordionTab>
-      <p-accordionTab header="Breeding">
-        <p>TBD...</p>
-        <p>TBD...</p>
-      </p-accordionTab>
-      <p-accordionTab header="Distribution">
+      <p-accordionTab header="Distribution" [disabled]="true">
         <p>TBD...</p>
         <p>TBD...</p>
       </p-accordionTab>
