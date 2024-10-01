@@ -33,11 +33,13 @@ export class En implements ITranslation {
   public quiz = {
     title: 'Bird ID quiz',
     difficulty: {
+      label: 'Difficulty',
       beginner: 'Beginner',
       advanced: 'Advanced',
       expert: 'Expert',
     },
     mode: {
+      label: 'Mode',
       group: {
         open: 'Open answers',
         options: 'Choose from options',
@@ -47,6 +49,21 @@ export class En implements ITranslation {
       skNames: 'Slovak names',
       images: 'Images',
     },
+    groupsFilter: {
+      label: 'Groups',
+      allGroups: 'Include all groups',
+      birdsOfPrey: 'Birds of prey',
+      waders: 'Waders',
+      wildfowl: 'Wildfowl',
+      heronsStorksEtAl: 'Herons, storks, et al.',
+      owls: 'Owls',
+      woodpeckers: 'Woodpeckers',
+      trushesChats: 'Trushes',
+      warblers: 'Warblers',
+      finchesCrossbills: 'Finches & crossbills',
+    },
+    includeRare: 'Include rare species',
+    includeHistorical: 'Include historical/extinct species',
     start: 'Start',
     stop: 'Stop',
     question: 'Question',
