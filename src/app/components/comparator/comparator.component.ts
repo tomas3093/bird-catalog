@@ -2,12 +2,20 @@ import { ChangeDetectionStrategy, Component, OnInit, inject, input, signal } fro
 import { StorageService } from '../../core/services/storage.service';
 import { SpeciesDetail } from '../../core/model/species';
 import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
+import { ButtonModule } from 'primeng/button';
+import { ChipModule } from 'primeng/chip';
+import { TypedTranslatePipe } from '../../core/pipes/TypedTranslatePipe';
+import { TooltipModule } from 'primeng/tooltip';
+import { LocalizedNamePipe } from '../../core/pipes/LocalizedNamePipe';
+import { GalleriaModule } from 'primeng/galleria';
 
 @Component({
   selector: 'app-comparator',
   templateUrl: './comparator.component.html',
   styleUrl: './comparator.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [ButtonModule, ChipModule, TypedTranslatePipe, TooltipModule, LocalizedNamePipe, GalleriaModule]
 })
 export class ComparatorComponent implements OnInit {
   #service = inject(StorageService);

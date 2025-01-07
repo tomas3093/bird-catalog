@@ -5,12 +5,31 @@ import { map, of, switchMap, tap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecordingSearchResult } from '../../core/model/sound-recording';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ButtonModule } from 'primeng/button';
+import { TooltipModule } from 'primeng/tooltip';
+import { LocalizedNamePipe } from '../../core/pipes/LocalizedNamePipe';
+import { GalleriaModule } from 'primeng/galleria';
+import { TypedTranslatePipe } from '../../core/pipes/TypedTranslatePipe';
+import { AccordionModule } from 'primeng/accordion';
+import { SkeletonModule } from 'primeng/skeleton';
+import { ComparatorComponent } from '../comparator/comparator.component';
 
 @Component({
   selector: 'app-species-detail',
   templateUrl: './species-detail.component.html',
   styleUrl: './species-detail.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    ButtonModule,
+    TooltipModule,
+    LocalizedNamePipe,
+    GalleriaModule,
+    TypedTranslatePipe,
+    AccordionModule,
+    SkeletonModule,
+    ComparatorComponent
+  ]
 })
 export class SpeciesDetailComponent implements OnInit {
   readonly #router = inject(Router);
@@ -31,54 +50,54 @@ export class SpeciesDetailComponent implements OnInit {
   responsiveOptions: any[] = [
     {
       breakpoint: '1024px',
-      numVisible: 5,
+      numVisible: 5
     },
     {
       breakpoint: '768px',
-      numVisible: 3,
+      numVisible: 3
     },
     {
       breakpoint: '480px',
-      numVisible: 2,
+      numVisible: 2
     },
     {
       breakpoint: '320px',
-      numVisible: 1,
-    },
+      numVisible: 1
+    }
   ];
 
   ngOnInit() {
     this.#activatedRoute.paramMap
       .pipe(
-        map((params) => params.get('id') ?? ''),
-        switchMap((paramId) => (paramId ? this.#service.getSpeciesDetail(paramId) : of(null))),
+        map(params => params.get('id') ?? ''),
+        switchMap(paramId => (paramId ? this.#service.getSpeciesDetail(paramId) : of(null)))
       )
       .pipe(
-        tap((detail) => {
+        tap(detail => {
           this.detail.set(detail);
           this.#imageLoadCounter.set(detail?.images.length ?? 0);
           this.isDetailLoading.set(false);
         }),
-        switchMap((detail) => (detail ? this.#service.getSoundRecordings(detail.id) : of(null))),
-        tap((result) => {
+        switchMap(detail => (detail ? this.#service.getSoundRecordings(detail.id) : of(null))),
+        tap(result => {
           if (result) {
             const items: RecordingSearchResult = {
               numRecordings: result.numRecordings,
               numSpecies: result.numSpecies,
               page: result.page,
               numPages: result.numPages,
-              recordings: result.recordings.splice(0, 5), // Show only first 5 records
+              recordings: result.recordings.splice(0, 5) // Show only first 5 records
             };
             this.recordings.set(items);
           }
           this.isRecordingsLoading.set(false);
-        }),
+        })
       )
       .subscribe();
   }
 
   imageLoaded() {
-    this.#imageLoadCounter.update((value) => value - 1);
+    this.#imageLoadCounter.update(value => value - 1);
   }
 
   navigateToSpeciesCatalog() {

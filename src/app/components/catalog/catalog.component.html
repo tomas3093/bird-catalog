@@ -80,12 +80,20 @@
         @for (subgroup of group.subGroups; track $index) {
           <div class="col-12 p-1 md:p-2 font-semibold text-lg">{{ subgroup.name | localizedName }}</div>
           @for (item of subgroup.species; track $index) {
-            <app-catalog-item [item]="item" (viewDetailClick)="viewDetail(item.id)" class="col-12 md:col-6 xl:col-4 p-1 md:p-2" />
+            <app-catalog-item
+              [item]="item"
+              (viewDetailClick)="viewDetail(item.id)"
+              class="col-12 md:col-6 xl:col-4 p-1 md:p-2"
+            />
           }
         }
       } @else {
         @for (item of group.species; track $index) {
-          <app-catalog-item [item]="item" (viewDetailClick)="viewDetail(item.id)" class="col-12 md:col-6 lg:col-4 p-1 md:p-2" />
+          <app-catalog-item
+            [item]="item"
+            (viewDetailClick)="viewDetail(item.id)"
+            class="col-12 md:col-6 lg:col-4 p-1 md:p-2"
+          />
         }
       }
     }
@@ -95,7 +103,11 @@
   @if (isSearchMode()) {
     <div class="grid grid-nogutter">
       @for (item of searchResult(); track $index) {
-        <app-catalog-item [item]="item" (viewDetailClick)="viewDetail(item.id)" class="col-12 md:col-6 lg:col-4 p-1 md:p-2" />
+        <app-catalog-item
+          [item]="item"
+          (viewDetailClick)="viewDetail(item.id)"
+          class="col-12 md:col-6 lg:col-4 p-1 md:p-2"
+        />
       }
     </div>
   }

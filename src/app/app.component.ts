@@ -1,6 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
 import { TranslateService } from './core/services/translate.service';
 import { LANGUAGE_KEYS, LanguageKey } from './core/services/translate/TypedTranslateLoader';
+import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { TypedTranslatePipe } from './core/pipes/TypedTranslatePipe';
 
 const LOCAL_STORAGE_KEY_APP_LANG = 'app_lang';
 const LOCAL_STORAGE_KEY_SPECIES_LANG = 'species_lang';
@@ -10,6 +14,8 @@ const LOCAL_STORAGE_KEY_SPECIES_LANG = 'species_lang';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [RouterModule, ButtonModule, SidebarComponent, TypedTranslatePipe]
 })
 export class AppComponent implements OnInit {
   readonly #translate = inject(TranslateService);

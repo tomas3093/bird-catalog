@@ -2,16 +2,41 @@ import { ChangeDetectionStrategy, Component, ElementRef, OnInit, computed, injec
 import { MAX_SCORE, QuizDifficulty, QuizMode, QuizStore } from './quiz.store';
 import { SpeciesDetail } from '../../core/model/species';
 import { TranslateService } from '../../core/services/translate.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SelectItemGroup } from 'primeng/api';
 import { GroupName } from '../../core/model/group-name';
 import { PropertyPaths } from '../../core/services/translate/PropertyPath';
 import { ITranslation } from '../../core/services/translate/ITranslation';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { CheckboxModule } from 'primeng/checkbox';
+import { ListboxModule } from 'primeng/listbox';
+import { ChipModule } from 'primeng/chip';
+import { ButtonModule } from 'primeng/button';
+import { TypedTranslatePipe } from '../../core/pipes/TypedTranslatePipe';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    ProgressSpinnerModule,
+    ListboxModule,
+    CheckboxModule,
+    MultiSelectModule,
+    ChipModule,
+    ButtonModule,
+    TypedTranslatePipe,
+    SelectButtonModule,
+    RadioButtonModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
+  ]
 })
 export class QuizComponent implements OnInit {
   #translate = inject(TranslateService);

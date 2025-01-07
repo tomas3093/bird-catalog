@@ -1,4 +1,4 @@
-<p-sidebar #sidebarRef [visible]="isOpen()" [blockScroll]="true" [dismissible]="false" position="right">
+<p-drawer #sidebarRef [visible]="isOpen()" [blockScroll]="true" [dismissible]="false" position="right">
   <ng-template pTemplate="headless">
     <div class="flex flex-column h-full">
       <div class="flex align-items-center justify-content-between px-4 pt-3 flex-shrink-0">
@@ -58,13 +58,13 @@
           <li>
             <div class="p-3 flex align-items-center text-600">
               <i class="pi pi-cog mr-2"></i>
-              <span class="font-medium">{{ "layout.menu.settings" | t | uppercase }}</span>
+              <span class="font-medium">{{ 'layout.menu.settings' | t | uppercase }}</span>
             </div>
             <ul class="list-none p-0 m-0">
               <li>
                 <div class="flex align-items-center p-3 text-700">
-                  <span class="font-medium mr-1">{{ "layout.menu.appLanguage" | t }}:</span>
-                  <p-dropdown
+                  <span class="font-medium mr-1">{{ 'layout.menu.appLanguage' | t }}:</span>
+                  <p-select
                     [options]="langs()"
                     [ngModel]="appLang()"
                     (onChange)="appLangChange.emit($event.value)"
@@ -75,8 +75,8 @@
               </li>
               <li>
                 <div class="flex align-items-center p-3 text-700">
-                  <span class="font-medium mr-1">{{ "layout.menu.speciesLanguage" | t }}:</span>
-                  <p-dropdown
+                  <span class="font-medium mr-1">{{ 'layout.menu.speciesLanguage' | t }}:</span>
+                  <p-select
                     [options]="langs()"
                     [ngModel]="speciesLang()"
                     (onChange)="speciesLangChange.emit($event.value)"
@@ -91,4 +91,4 @@
       </div>
     </div>
   </ng-template>
-</p-sidebar>
+</p-drawer>

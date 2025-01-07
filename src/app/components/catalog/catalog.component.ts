@@ -4,12 +4,34 @@ import { CatalogGroup, CatalogItem } from '../../core/model/species';
 import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { normalizeString } from '../../core/misc/util';
-import { ViewportScroller } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ButtonModule } from 'primeng/button';
+import { ScrollTopModule } from 'primeng/scrolltop';
+import { TooltipModule } from 'primeng/tooltip';
+import { TypedTranslatePipe } from '../../core/pipes/TypedTranslatePipe';
+import { LocalizedNamePipe } from '../../core/pipes/LocalizedNamePipe';
+import { GroupWrapperComponent } from '../group-wrapper/group-wrapper.component';
+import { CatalogItemComponent } from '../catalog-item/catalog-item.component';
 
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    FormsModule,
+    ProgressSpinnerModule,
+    ButtonModule,
+    ScrollTopModule,
+    TooltipModule,
+    TypedTranslatePipe,
+    LocalizedNamePipe,
+    GroupWrapperComponent,
+    CatalogItemComponent,
+    CommonModule
+  ]
 })
 export class CatalogComponent implements OnInit {
   #service = inject(StorageService);
@@ -27,26 +49,26 @@ export class CatalogComponent implements OnInit {
   #searchTerm = this.#searchTermSubject.asObservable().pipe(debounceTime(500), distinctUntilChanged(), share());
   filterSubscription = this.#searchTerm
     .pipe(
-      map((searchTerm) => {
+      map(searchTerm => {
         let res = null;
         if (searchTerm.length > 2) {
           const normalized = normalizeString(searchTerm);
           res = this.species.filter(
-            (_) =>
+            _ =>
               _.name.latin.toLowerCase().includes(normalized) ||
               normalizeString(_.name.localized.sk).includes(normalized) ||
-              _.name.localized.en.toLowerCase().includes(normalized),
+              _.name.localized.en.toLowerCase().includes(normalized)
           );
         }
         return res;
       }),
-      tap((_) => {
+      tap(_ => {
         if (!_) {
           this.searchResult.set(this.species);
         } else {
           this.searchResult.set(_);
         }
-      }),
+      })
     )
     .subscribe();
 
@@ -54,22 +76,22 @@ export class CatalogComponent implements OnInit {
     this.#service
       .getSpeciesCatalog()
       .pipe(
-        map((_) => _ as CatalogGroup[]),
-        tap((_) => {
+        map(_ => _ as CatalogGroup[]),
+        tap(_ => {
           this.catalog = _;
-        }),
+        })
       )
       .subscribe();
 
     this.#service
       .getAllSpeciesSimple()
       .pipe(
-        map((x) => x as CatalogItem[]),
-        tap((_) => {
+        map(x => x as CatalogItem[]),
+        tap(_ => {
           this.species = _;
           this.searchResult.set(_);
           this.loading.set(false);
-        }),
+        })
       )
       .subscribe();
   }

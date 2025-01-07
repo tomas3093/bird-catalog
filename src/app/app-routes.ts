@@ -1,15 +1,14 @@
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { SpeciesDetailComponent } from './components/species-detail/species-detail.component';
-import { NgModule } from '@angular/core';
 import { ComparatorComponent } from './components/comparator/comparator.component';
 import { QuizComponent } from './components/quiz/quiz.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     redirectTo: 'species',
-    pathMatch: 'full',
+    pathMatch: 'full'
   },
   {
     path: 'species',
@@ -17,12 +16,12 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component: CatalogComponent,
+        component: CatalogComponent
       },
       {
         path: 'compare',
         pathMatch: 'full',
-        component: ComparatorComponent,
+        component: ComparatorComponent
       },
       //   {
       //     path: 'new',
@@ -37,19 +36,13 @@ const routes: Routes = [
       {
         path: ':id',
         pathMatch: 'full',
-        component: SpeciesDetailComponent,
-      },
-    ],
+        component: SpeciesDetailComponent
+      }
+    ]
   },
   {
     path: 'quiz',
     pathMatch: 'full',
-    component: QuizComponent,
-  },
+    component: QuizComponent
+  }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}

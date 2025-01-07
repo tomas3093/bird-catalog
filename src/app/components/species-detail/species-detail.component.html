@@ -50,50 +50,69 @@
       </ng-template>
     </p-galleria>
 
-    <p-accordion [multiple]="true" [activeIndex]="[0]">
-      <p-accordionTab header="Description">
-        <p>
-          Abundance in Slovakia: <strong>{{ d.skAbundance | uppercase }}</strong>
-        </p>
-        @if (d.movementPattern) {
+    <p-accordion [multiple]="true" [value]="['0']">
+      <p-accordion-panel value="0">
+        <p-accordion-header>Description</p-accordion-header>
+        <p-accordion-content>
           <p>
-            Movement pattern: <strong>{{ d.movementPattern | uppercase }}</strong>
+            Abundance in Slovakia: <strong>{{ d.skAbundance | uppercase }}</strong>
           </p>
-        }
-      </p-accordionTab>
-      @if (d.similarSpecies) {
-        <p-accordionTab header="Similar species">
-          <ul>
-            <li *ngIf="d.similarSpecies.adult">adult: {{ d.similarSpecies.adult | json }}</li>
-            <li *ngIf="d.similarSpecies.adult">adultFemale: {{ d.similarSpecies.adultFemale | json }}</li>
-            <li *ngIf="d.similarSpecies.adult">adultMale: {{ d.similarSpecies.adultMale | json }}</li>
-            <li *ngIf="d.similarSpecies.adultSummer">adultSummer: {{ d.similarSpecies.adultSummer | json }}</li>
-            <li *ngIf="d.similarSpecies.adultWinter">adultWinter: {{ d.similarSpecies.adultWinter | json }}</li>
-            <li *ngIf="d.similarSpecies.breedingMale">breedingMale: {{ d.similarSpecies.breedingMale | json }}</li>
-            <li *ngIf="d.similarSpecies.firstWinter">firstWinter: {{ d.similarSpecies.firstWinter | json }}</li>
-            <li *ngIf="d.similarSpecies.immature">immature: {{ d.similarSpecies.immature | json }}</li>
-            <li *ngIf="d.similarSpecies.juvenile">juvenile: {{ d.similarSpecies.juvenile | json }}</li>
-            <li *ngIf="d.similarSpecies.secondWinter">secondWinter: {{ d.similarSpecies.secondWinter | json }}</li>
-          </ul>
-        </p-accordionTab>
-      }
-      <p-accordionTab header="Sound">
-        @if (isRecordingsLoading()) {
-          <p-skeleton width="10rem" height="4rem" />
-        } @else {
-          @for (item of recordings()?.recordings; track item.id) {
-            <iframe [src]="recordingUrl(item.id)" scrolling="no" frameborder="0" width="340" height="115"></iframe>
+          @if (d.movementPattern) {
+            <p>
+              Movement pattern: <strong>{{ d.movementPattern | uppercase }}</strong>
+            </p>
           }
-        }
-      </p-accordionTab>
-      <p-accordionTab header="Breeding" [disabled]="true">
-        <p>TBD...</p>
-        <p>TBD...</p>
-      </p-accordionTab>
-      <p-accordionTab header="Distribution" [disabled]="true">
-        <p>TBD...</p>
-        <p>TBD...</p>
-      </p-accordionTab>
+        </p-accordion-content>
+      </p-accordion-panel>
+
+      @if (d.similarSpecies) {
+        <p-accordion-panel value="1">
+          <p-accordion-header>Similar species</p-accordion-header>
+          <p-accordion-content>
+            <ul>
+              <li *ngIf="d.similarSpecies.adult">adult: {{ d.similarSpecies.adult | json }}</li>
+              <li *ngIf="d.similarSpecies.adult">adultFemale: {{ d.similarSpecies.adultFemale | json }}</li>
+              <li *ngIf="d.similarSpecies.adult">adultMale: {{ d.similarSpecies.adultMale | json }}</li>
+              <li *ngIf="d.similarSpecies.adultSummer">adultSummer: {{ d.similarSpecies.adultSummer | json }}</li>
+              <li *ngIf="d.similarSpecies.adultWinter">adultWinter: {{ d.similarSpecies.adultWinter | json }}</li>
+              <li *ngIf="d.similarSpecies.breedingMale">breedingMale: {{ d.similarSpecies.breedingMale | json }}</li>
+              <li *ngIf="d.similarSpecies.firstWinter">firstWinter: {{ d.similarSpecies.firstWinter | json }}</li>
+              <li *ngIf="d.similarSpecies.immature">immature: {{ d.similarSpecies.immature | json }}</li>
+              <li *ngIf="d.similarSpecies.juvenile">juvenile: {{ d.similarSpecies.juvenile | json }}</li>
+              <li *ngIf="d.similarSpecies.secondWinter">secondWinter: {{ d.similarSpecies.secondWinter | json }}</li>
+            </ul>
+          </p-accordion-content>
+        </p-accordion-panel>
+      }
+
+      <p-accordion-panel value="2">
+        <p-accordion-header>Sound</p-accordion-header>
+        <p-accordion-content>
+          @if (isRecordingsLoading()) {
+            <p-skeleton width="10rem" height="4rem" />
+          } @else {
+            @for (item of recordings()?.recordings; track item.id) {
+              <iframe [src]="recordingUrl(item.id)" scrolling="no" frameborder="0" width="340" height="115"></iframe>
+            }
+          }
+        </p-accordion-content>
+      </p-accordion-panel>
+
+      <p-accordion-panel value="3" [disabled]="true">
+        <p-accordion-header>Breeding</p-accordion-header>
+        <p-accordion-content>
+          <p>TBD...</p>
+          <p>TBD...</p>
+        </p-accordion-content>
+      </p-accordion-panel>
+
+      <p-accordion-panel value="4" [disabled]="true">
+        <p-accordion-header>Distribution</p-accordion-header>
+        <p-accordion-content>
+          <p>TBD...</p>
+          <p>TBD...</p>
+        </p-accordion-content>
+      </p-accordion-panel>
     </p-accordion>
   }
 } @else {

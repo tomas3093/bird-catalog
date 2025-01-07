@@ -114,6 +114,7 @@
       } @else {
         <!-- Question with answer options -->
         <div>
+          <!-- TODO change old syntax -->
           <div *ngFor="let option of state.currentQuestionOptions(); let index = index" class="my-2">
             @let inputId = 'option' + index;
             <p-radioButton
