@@ -23,7 +23,6 @@ export interface CatalogItem {
   id: string;
   name: SpeciesName;
   thumbnailSrc: string;
-  fullsizeImgSrc: string;
 }
 
 export interface SpeciesDetail {

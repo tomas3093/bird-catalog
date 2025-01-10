@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
-import { CatalogItem } from '../../core/model/species';
+import { CatalogItem, SpeciesName } from '../../core/model/species';
 import { ImageModule } from 'primeng/image';
 import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
@@ -15,6 +15,7 @@ import { TypedTranslatePipe } from '../../core/pipes/TypedTranslatePipe';
   imports: [ImageModule, TagModule, ButtonModule, LocalizedNamePipe, TooltipModule, TypedTranslatePipe]
 })
 export class CatalogItemComponent {
-  item = input.required<CatalogItem>();
+  speciesName = input.required<SpeciesName>();
+  thumbnailSrc = input.required<string>();
   viewDetailClick = output<void>();
 }

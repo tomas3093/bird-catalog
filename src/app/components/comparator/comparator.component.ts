@@ -1,13 +1,14 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject, input, signal } from '@angular/core';
 import { StorageService } from '../../core/services/storage.service';
 import { SpeciesDetail } from '../../core/model/species';
-import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
+import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, Subscription, tap } from 'rxjs';
 import { ButtonModule } from 'primeng/button';
 import { ChipModule } from 'primeng/chip';
 import { TypedTranslatePipe } from '../../core/pipes/TypedTranslatePipe';
 import { TooltipModule } from 'primeng/tooltip';
 import { LocalizedNamePipe } from '../../core/pipes/LocalizedNamePipe';
 import { GalleriaModule } from 'primeng/galleria';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-comparator',
@@ -31,30 +32,7 @@ export class ComparatorComponent implements OnInit {
 
   #searchTermSubject = new BehaviorSubject<string>('');
   #searchTerm = this.#searchTermSubject.asObservable().pipe(debounceTime(500), distinctUntilChanged(), share());
-  filterSubscription = this.#searchTerm
-    .pipe(
-      map(searchTerm => {
-        let res = null;
-        if (searchTerm.length > 2) {
-          const lowered = searchTerm.toLowerCase();
-          res = this.allSpecies.filter(
-            _ =>
-              _.name.latin.toLowerCase().includes(lowered) ||
-              _.name.localized.sk.toLowerCase().includes(lowered) ||
-              _.name.localized.en.toLowerCase().includes(lowered)
-          );
-        }
-        return res;
-      }),
-      tap(_ => {
-        if (!_) {
-          this.displayedData.set(this.allSpecies);
-        } else {
-          this.displayedData.set(_);
-        }
-      })
-    )
-    .subscribe();
+  filterSubscription: Subscription;
 
   responsiveOptions: any[] = [
     {
@@ -70,6 +48,34 @@ export class ComparatorComponent implements OnInit {
       numVisible: 1
     }
   ];
+
+  constructor() {
+    this.filterSubscription = this.#searchTerm
+      .pipe(
+        map(searchTerm => {
+          let res = null;
+          if (searchTerm.length > 2) {
+            const lowered = searchTerm.toLowerCase();
+            res = this.allSpecies.filter(
+              _ =>
+                _.name.latin.toLowerCase().includes(lowered) ||
+                _.name.localized.sk.toLowerCase().includes(lowered) ||
+                _.name.localized.en.toLowerCase().includes(lowered)
+            );
+          }
+          return res;
+        }),
+        tap(_ => {
+          if (!_) {
+            this.displayedData.set(this.allSpecies);
+          } else {
+            this.displayedData.set(_);
+          }
+        }),
+        takeUntilDestroyed()
+      )
+      .subscribe();
+  }
 
   ngOnInit() {
     this.#service

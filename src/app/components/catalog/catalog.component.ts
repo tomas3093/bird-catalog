@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { StorageService } from '../../core/services/storage.service';
-import { CatalogGroup, CatalogItem } from '../../core/model/species';
-import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, tap } from 'rxjs';
+import { CatalogGroup, CatalogItem, SpeciesDetail } from '../../core/model/species';
+import { BehaviorSubject, debounceTime, distinctUntilChanged, map, share, Subscription, tap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { normalizeString } from '../../core/misc/util';
 import { CommonModule, ViewportScroller } from '@angular/common';
@@ -40,37 +41,42 @@ export class CatalogComponent implements OnInit {
   #scroller = inject(ViewportScroller);
 
   loading = signal(true);
-  species: CatalogItem[] = [];
+  allSpecies: CatalogItem[] = [];
   catalog: CatalogGroup[] = [];
   searchResult = signal<CatalogItem[]>([]);
   mode = signal<'explore-groups' | 'explore-species' | 'search'>('explore-groups');
 
   #searchTermSubject = new BehaviorSubject<string>('');
   #searchTerm = this.#searchTermSubject.asObservable().pipe(debounceTime(500), distinctUntilChanged(), share());
-  filterSubscription = this.#searchTerm
-    .pipe(
-      map(searchTerm => {
-        let res = null;
-        if (searchTerm.length > 2) {
-          const normalized = normalizeString(searchTerm);
-          res = this.species.filter(
-            _ =>
-              _.name.latin.toLowerCase().includes(normalized) ||
-              normalizeString(_.name.localized.sk).includes(normalized) ||
-              _.name.localized.en.toLowerCase().includes(normalized)
-          );
-        }
-        return res;
-      }),
-      tap(_ => {
-        if (!_) {
-          this.searchResult.set(this.species);
-        } else {
-          this.searchResult.set(_);
-        }
-      })
-    )
-    .subscribe();
+  filterSubscription: Subscription;
+
+  constructor() {
+    this.filterSubscription = this.#searchTerm
+      .pipe(
+        map(searchTerm => {
+          let res = null;
+          if (searchTerm.length > 2) {
+            const normalized = normalizeString(searchTerm);
+            res = this.allSpecies.filter(
+              _ =>
+                _.name.latin.toLowerCase().includes(normalized) ||
+                normalizeString(_.name.localized.sk).includes(normalized) ||
+                _.name.localized.en.toLowerCase().includes(normalized)
+            );
+          }
+          return res;
+        }),
+        tap(_ => {
+          if (!_) {
+            this.searchResult.set(this.allSpecies);
+          } else {
+            this.searchResult.set(_);
+          }
+        }),
+        takeUntilDestroyed()
+      )
+      .subscribe();
+  }
 
   ngOnInit() {
     this.#service
@@ -84,11 +90,11 @@ export class CatalogComponent implements OnInit {
       .subscribe();
 
     this.#service
-      .getAllSpeciesSimple()
+      .getAllCatalogSpecies()
       .pipe(
         map(x => x as CatalogItem[]),
         tap(_ => {
-          this.species = _;
+          this.allSpecies = _;
           this.searchResult.set(_);
           this.loading.set(false);
         })
