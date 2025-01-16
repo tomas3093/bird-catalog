@@ -76,9 +76,10 @@ TODO: fix routing
 
 ### Nice to have
 
-- species description, info, breeding, diet, interesting fact
+- species description, info, breeding, diet, interesting fact, range distribution (source of maps - birdsoftheworld.org)
 - order > family > genus > species (tree structure?)
 - filtering by habitat, order, family, genus
 - translations or legend for image metadata (adult, breeding male...)
 - sound recordings - for each species display calls, song... (if available)
 - quizzes for sound recordings
+- visible version of taxonomy (which year)

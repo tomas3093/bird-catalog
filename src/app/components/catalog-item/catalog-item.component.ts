@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
-import { CatalogItem, SpeciesName } from '../../core/model/species';
+import { SpeciesName } from '../../core/model/species';
 import { ImageModule } from 'primeng/image';
 import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';

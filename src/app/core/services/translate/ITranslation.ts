@@ -36,6 +36,7 @@ export interface ITranslation {
       advanced: string;
       expert: string;
     };
+    advancedOptions: string;
     mode: {
       label: string;
       group: {

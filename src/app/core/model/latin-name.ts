@@ -190,7 +190,7 @@ type SpeciesName =
   | 'Jynx torquilla'
   | 'Streptopelia turtur'
   | 'Calidris minuta'
-  | 'Bubulcus ibis'
+  | 'Ardea ibis'
   | 'Alopochen aegyptiaca'
   | 'Limosa limosa'
   | 'Sterna hirundo'

@@ -70,7 +70,7 @@ const data: GroupData = {
     },
     {
       name: {
-        latin: 'Bubulcus ibis',
+        latin: 'Ardea ibis',
         localized: {
           en: 'Western Cattle Egret',
           sk: 'Hltavka chochlatá'
@@ -131,7 +131,7 @@ const data: GroupData = {
       skAbundance: 'common',
       movementPattern: 'migratory',
       similarSpecies: {
-        adultSummer: ['Bubulcus ibis', 'Ardea alba']
+        adultSummer: ['Ardea ibis', 'Ardea alba']
       }
     },
     {

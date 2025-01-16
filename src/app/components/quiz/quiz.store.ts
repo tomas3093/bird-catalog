@@ -38,14 +38,18 @@ export enum QuizDifficulty {
   EXPERT = 2
 }
 
-type QuizState = {
-  species: SpeciesDetail[];
-  isLoading: boolean;
-  mode: QuizMode;
+export interface QuizSettings {
   difficulty: QuizDifficulty;
+  mode: QuizMode;
   groupsFilter: GroupName[]; // include only selected groups. If nothing selected, include all
   includeRare: boolean;
   includeHistorical: boolean;
+}
+
+type QuizState = {
+  species: SpeciesDetail[];
+  isLoading: boolean;
+  settings: QuizSettings;
   step: QuizStep;
   roundQuestionSet: SpeciesDetail[];
   currentQuestion: number; // start from 1
@@ -55,11 +59,13 @@ type QuizState = {
 const initialState: QuizState = {
   species: [],
   isLoading: false,
-  mode: QuizMode.GUESS_LATIN_NAME,
-  difficulty: QuizDifficulty.BEGINNER,
-  groupsFilter: [],
-  includeRare: false,
-  includeHistorical: false,
+  settings: {
+    difficulty: QuizDifficulty.BEGINNER,
+    mode: QuizMode.GUESS_LATIN_NAME,
+    groupsFilter: [],
+    includeRare: false,
+    includeHistorical: false
+  },
   step: QuizStep.READY,
   roundQuestionSet: [],
   currentQuestion: 1,
@@ -71,12 +77,17 @@ export const QuizStore = signalStore(
   withComputed(store => ({
     currentQuestionObject: computed(() => store.roundQuestionSet()[store.currentQuestion() - 1]),
     currentSpeciesSubset: computed(() =>
-      getSpeciesSubset(store.species(), store.groupsFilter(), store.includeRare(), store.includeHistorical())
+      getSpeciesSubset(
+        store.species(),
+        store.settings.groupsFilter(),
+        store.settings.includeRare(),
+        store.settings.includeHistorical()
+      )
     )
   })),
   withComputed((store, translate = inject(TranslateService)) => ({
     currentQuestionText: computed(() => {
-      switch (store.mode()) {
+      switch (store.settings.mode()) {
         case QuizMode.GUESS_LATIN_NAME:
         case QuizMode.CHOOSE_LATIN_NAME:
           return translate.instant('quiz.latinNameQuestion', {
@@ -105,7 +116,7 @@ export const QuizStore = signalStore(
       }
     }),
     currentQuestionOptions: computed((): SpeciesDetail[] => {
-      const mode = store.mode();
+      const mode = store.settings.mode();
       if (
         ![
           QuizMode.CHOOSE_EN_NAME,
@@ -122,7 +133,7 @@ export const QuizStore = signalStore(
       const similar = getSimilarSpecies(
         store.currentSpeciesSubset(),
         currentSpeciesToGuess,
-        store.difficulty(),
+        store.settings.difficulty(),
         TOTAL_OPTIONS_COUNT - 1
       );
 
@@ -145,7 +156,7 @@ export const QuizStore = signalStore(
         QuizMode.GUESS_LATIN_NAME,
         QuizMode.GUESS_FROM_IMAGE,
         QuizMode.GUESS_FROM_SOUND
-      ].includes(store.mode())
+      ].includes(store.settings.mode())
     )
   })),
   withMethods((store, storageService = inject(StorageService)) => ({
@@ -163,24 +174,20 @@ export const QuizStore = signalStore(
         )
         .subscribe();
     },
-    startNewQuiz(
-      mode: QuizMode,
-      difficulty: QuizDifficulty,
-      groupsFilter: GroupName[],
-      includeRare: boolean,
-      includeHistorical: boolean
-    ): void {
+    startNewQuiz(newSettings: QuizSettings): void {
       patchState(store, {
-        groupsFilter,
-        includeRare,
-        includeHistorical
+        settings: {
+          ...store.settings(),
+          groupsFilter: newSettings.groupsFilter,
+          includeRare: newSettings.includeRare,
+          includeHistorical: newSettings.includeHistorical
+        }
       });
 
       // Separate patchState because store.currentSpeciesSubset() depends on groupsFilter, includeRare and includeHistorical
       patchState(store, {
         score: 0,
-        mode,
-        difficulty,
+        settings: { ...store.settings(), mode: newSettings.mode, difficulty: newSettings.difficulty },
         roundQuestionSet: getRandomItems(store.currentSpeciesSubset(), QUESTIONS_IN_SINGLE_ROUND),
         step: QuizStep.WAITING_FOR_ANSWER,
         currentQuestion: 1

@@ -1,0 +1,89 @@
+<div class="card mt-5">
+  <form [formGroup]="form" class="flex flex-column align-items-center">
+    <div class="text-center">
+      <label for="difficulty" class="text-xl font-medium block">{{ 'quiz.difficulty.label' | t }}</label>
+      <p-selectButton
+        id="difficulty"
+        [options]="difficultyOptions"
+        [allowEmpty]="false"
+        formControlName="difficulty"
+        optionLabel="label"
+        optionValue="value"
+        styleClass="mt-1"
+      >
+        <ng-template let-item pTemplate="item">
+          <span>{{ item.label | t }}</span>
+        </ng-template>
+      </p-selectButton>
+    </div>
+
+    <p-button
+      [icon]="areAdvancedOptionsEnabled() ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"
+      [label]="'quiz.advancedOptions' | t"
+      severity="secondary"
+      (click)="toggleAdvancedOptions()"
+      styleClass="mt-4"
+    />
+    @if (areAdvancedOptionsEnabled()) {
+      <div class="mt-4 text-center">
+        <label for="mode" class="text-xl font-medium">{{ 'quiz.mode.label' | t }}</label>
+        <p-listbox
+          id="mode"
+          [options]="modeOptions"
+          [group]="true"
+          formControlName="mode"
+          [listStyle]="{ 'max-height': '250px' }"
+          [style]="{ width: '15rem' }"
+          styleClass="mt-1 mx-auto"
+        >
+          <ng-template let-group pTemplate="group">
+            <span>{{ group.label | t }}</span>
+          </ng-template>
+          <ng-template let-item pTemplate="item">
+            <span>{{ item.label | t }}</span>
+          </ng-template>
+        </p-listbox>
+      </div>
+
+      <div class="mt-4 text-center">
+        <label for="groupsFilter" class="text-xl font-medium block">{{ 'quiz.groupsFilter.label' | t }}</label>
+        <p-multiSelect
+          inputId="groupsFilter"
+          [options]="groupOptions"
+          formControlName="groupsFilter"
+          optionLabel="label"
+          optionValue="value"
+          [placeholder]="'quiz.groupsFilter.allGroups' | t"
+          [filter]="false"
+          [showToggleAll]="false"
+          [showHeader]="false"
+          styleClass="mt-1 mx-auto"
+        >
+          <ng-template let-item pTemplate="item">
+            <span>{{ item.label | t }}</span>
+          </ng-template>
+          <ng-template let-value pTemplate="selectedItems">
+            @for (item of value; track $index) {
+              <p-chip [label]="item.label | t" class="block mb-1" />
+            }
+          </ng-template>
+        </p-multiSelect>
+      </div>
+
+      <div class="mt-4">
+        <div>
+          <p-checkbox formControlName="includeRare" [binary]="true" inputId="includeRare" />
+          <label for="includeRare" class="ml-2 text-xl font-medium cursor-pointer">{{ 'quiz.includeRare' | t }}</label>
+        </div>
+        <div class="mt-3">
+          <p-checkbox formControlName="includeHistorical" [binary]="true" inputId="includeHistorical" />
+          <label for="includeHistorical" class="ml-2 text-xl font-medium cursor-pointer">{{
+            'quiz.includeHistorical' | t
+          }}</label>
+        </div>
+      </div>
+    }
+
+    <p-button icon="pi pi-play" [label]="'quiz.start' | t" (click)="save()" styleClass="mt-4" />
+  </form>
+</div>

@@ -9,26 +9,26 @@ export class Sk implements ITranslation {
       speciesLanguage: 'Jazyk názvoslovia',
       languages: {
         en: 'Angličtina',
-        sk: 'Slovenčina',
-      },
+        sk: 'Slovenčina'
+      }
     },
-    footer: 'Vytvoril Tomas Blazy',
+    footer: 'Vytvoril Tomas Blazy'
   };
   public catalog = {
     search: 'Vyhľadať',
     clearFilters: 'Zrušiť filtre',
     groupView: 'Prehľad skupín',
     speciesView: 'Prehľad druhov',
-    view: 'Zobraziť',
+    view: 'Zobraziť'
   };
   public detail = {
     back: 'Späť',
-    compare: 'Porovnať',
+    compare: 'Porovnať'
   };
   public comparator = {
     title: 'Porovnanie druhov',
     save: 'Uložiť',
-    change: 'Zmeniť druhy',
+    change: 'Zmeniť druhy'
   };
   public quiz = {
     title: 'Kvíz určovania vtákov',
@@ -36,22 +36,23 @@ export class Sk implements ITranslation {
       label: 'Obtiažnosť',
       beginner: 'Začiatočník',
       advanced: 'Pokročilý',
-      expert: 'Expert',
+      expert: 'Expert'
     },
+    advancedOptions: 'Pokročilé možnosti',
     mode: {
       label: 'Typ',
       group: {
         open: 'Otvorené odpovede',
-        options: 'Výber z možností',
+        options: 'Výber z možností'
       },
       latinNames: 'Latinské názvy',
       enNames: 'Anglické názvy',
       skNames: 'Slovenské názvy',
-      images: 'Obrázky',
+      images: 'Obrázky'
     },
     groupsFilter: {
-      label: 'Skupiny',
-      allGroups: 'Zahrnúť všetky skupiny',
+      label: 'Výber skupín vtákov',
+      allGroups: 'Zahrnúť všetko',
       birdsOfPrey: 'Dravce',
       waders: 'Bahniaky',
       wildfowl: 'Husotvaré',
@@ -60,7 +61,7 @@ export class Sk implements ITranslation {
       woodpeckers: 'Ďatle',
       trushesChats: 'Trushes',
       warblers: 'Warblers',
-      finchesCrossbills: 'Stehlíky a krivonosy',
+      finchesCrossbills: 'Stehlíky a krivonosy'
     },
     includeRare: 'Zahrnúť vzácne druhy',
     includeHistorical: 'Zahrnúť historické/vyhynuté druhy',
@@ -78,7 +79,7 @@ export class Sk implements ITranslation {
     enNameQuestion: 'Aký je anglický názov pre <strong>{{name}}</strong>?',
     skNameQuestion: 'Aký je slovenský názov pre <strong>{{name}}</strong>?',
     guessImageQuestion: 'Aký druh je na obrázku? (latinský názov)',
-    chooseImageQuestion: 'Aký druh je na obrázku?',
+    chooseImageQuestion: 'Aký druh je na obrázku?'
   };
   public primeNg = {
     accept: 'Áno',
@@ -130,7 +131,7 @@ export class Sk implements ITranslation {
       'September',
       'Október',
       'November',
-      'December',
+      'December'
     ],
     monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'Máj', 'Jún', 'Júl', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
     nextDecade: 'Nasledujúce desaťročie',
@@ -214,7 +215,7 @@ export class Sk implements ITranslation {
       unselectRow: 'Zrušiť výber riadku',
       zoomImage: 'Priblížiť obrázok',
       zoomIn: 'Priblížiť',
-      zoomOut: 'Oddialiť',
-    },
+      zoomOut: 'Oddialiť'
+    }
   };
 }

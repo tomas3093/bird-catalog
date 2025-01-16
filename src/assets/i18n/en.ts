@@ -9,26 +9,26 @@ export class En implements ITranslation {
       speciesLanguage: 'Species language',
       languages: {
         en: 'English',
-        sk: 'Slovak',
-      },
+        sk: 'Slovak'
+      }
     },
-    footer: 'Created by Tomas Blazy',
+    footer: 'Created by Tomas Blazy'
   };
   public catalog = {
     search: 'Search',
     clearFilters: 'Clear filters',
     groupView: 'Group view',
     speciesView: 'Species view',
-    view: 'View',
+    view: 'View'
   };
   public detail = {
     back: 'Back',
-    compare: 'Compare',
+    compare: 'Compare'
   };
   public comparator = {
     title: 'Compare species',
     save: 'Save',
-    change: 'Change species',
+    change: 'Change species'
   };
   public quiz = {
     title: 'Bird ID quiz',
@@ -36,22 +36,23 @@ export class En implements ITranslation {
       label: 'Difficulty',
       beginner: 'Beginner',
       advanced: 'Advanced',
-      expert: 'Expert',
+      expert: 'Expert'
     },
+    advancedOptions: 'Advanced options',
     mode: {
       label: 'Mode',
       group: {
         open: 'Open answers',
-        options: 'Choose from options',
+        options: 'Choose from options'
       },
       latinNames: 'Latin names',
       enNames: 'English names',
       skNames: 'Slovak names',
-      images: 'Images',
+      images: 'Images'
     },
     groupsFilter: {
-      label: 'Groups',
-      allGroups: 'Include all groups',
+      label: 'Choose species groups',
+      allGroups: 'Include all',
       birdsOfPrey: 'Birds of prey',
       waders: 'Waders',
       wildfowl: 'Wildfowl',
@@ -60,7 +61,7 @@ export class En implements ITranslation {
       woodpeckers: 'Woodpeckers',
       trushesChats: 'Trushes',
       warblers: 'Warblers',
-      finchesCrossbills: 'Finches & crossbills',
+      finchesCrossbills: 'Finches & crossbills'
     },
     includeRare: 'Include rare species',
     includeHistorical: 'Include historical/extinct species',
@@ -78,7 +79,7 @@ export class En implements ITranslation {
     enNameQuestion: 'What is the english name of <strong>{{name}}</strong>?',
     skNameQuestion: 'What is the slovak name of <strong>{{name}}</strong>?',
     guessImageQuestion: 'What species is in the picture? (latin name)',
-    chooseImageQuestion: 'What species is in the picture?',
+    chooseImageQuestion: 'What species is in the picture?'
   };
   public primeNg = {
     accept: 'Yes',
@@ -130,7 +131,7 @@ export class En implements ITranslation {
       'September',
       'October',
       'November',
-      'December',
+      'December'
     ],
     monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     nextDecade: 'Next Decade',
@@ -214,7 +215,7 @@ export class En implements ITranslation {
       unselectRow: 'Row Unselected',
       zoomImage: 'Zoom Image',
       zoomIn: 'Zoom In',
-      zoomOut: 'Zoom Out',
-    },
+      zoomOut: 'Zoom Out'
+    }
   };
 }

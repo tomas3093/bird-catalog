@@ -1,12 +1,8 @@
 import { ChangeDetectionStrategy, Component, ElementRef, OnInit, computed, inject, viewChild } from '@angular/core';
-import { MAX_SCORE, QuizDifficulty, QuizMode, QuizStore } from './quiz.store';
+import { MAX_SCORE, QuizMode, QuizSettings, QuizStore } from './quiz.store';
 import { SpeciesDetail } from '../../core/model/species';
 import { TranslateService } from '../../core/services/translate.service';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { SelectItemGroup } from 'primeng/api';
-import { GroupName } from '../../core/model/group-name';
-import { PropertyPaths } from '../../core/services/translate/PropertyPath';
-import { ITranslation } from '../../core/services/translate/ITranslation';
+import { FormsModule } from '@angular/forms';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -17,6 +13,7 @@ import { TypedTranslatePipe } from '../../core/pipes/TypedTranslatePipe';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { CommonModule } from '@angular/common';
+import { QuizSettingsComponent } from './quiz-settings/quiz-settings.component';
 
 @Component({
   selector: 'app-quiz',
@@ -35,32 +32,12 @@ import { CommonModule } from '@angular/common';
     RadioButtonModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    QuizSettingsComponent
   ]
 })
 export class QuizComponent implements OnInit {
   #translate = inject(TranslateService);
   state = inject(QuizStore);
-
-  formGroup = new FormGroup({
-    mode: new FormControl<QuizMode>(this.state.mode(), { nonNullable: true, validators: [Validators.required] }),
-    difficulty: new FormControl<QuizDifficulty>(this.state.difficulty(), {
-      nonNullable: true,
-      validators: [Validators.required]
-    }),
-    groupsFilter: new FormControl<GroupName[]>(this.state.groupsFilter(), {
-      nonNullable: true,
-      validators: [Validators.required]
-    }),
-    includeRare: new FormControl<boolean>(this.state.includeRare(), {
-      nonNullable: true,
-      validators: [Validators.required]
-    }),
-    includeHistorical: new FormControl<boolean>(this.state.includeHistorical(), {
-      nonNullable: true,
-      validators: [Validators.required]
-    })
-  });
 
   textAnswerInput = viewChild<ElementRef<HTMLInputElement>>('textAnswerInput');
   selectedOptionId: string | null = null;
@@ -68,7 +45,7 @@ export class QuizComponent implements OnInit {
   currentCorrectAnswer = computed((): string => {
     const c = this.state.currentQuestionObject();
 
-    switch (this.state.mode()) {
+    switch (this.state.settings.mode()) {
       case QuizMode.GUESS_LATIN_NAME:
         return c.name.latin.toLowerCase();
       case QuizMode.GUESS_EN_NAME:
@@ -82,62 +59,17 @@ export class QuizComponent implements OnInit {
     }
   });
 
-  isImageQuestion = computed(() => [QuizMode.GUESS_FROM_IMAGE, QuizMode.CHOOSE_FROM_IMAGE].includes(this.state.mode()));
+  isImageQuestion = computed(() =>
+    [QuizMode.GUESS_FROM_IMAGE, QuizMode.CHOOSE_FROM_IMAGE].includes(this.state.settings.mode())
+  );
   isLastQuestion = computed(() => this.state.currentQuestion() === this.maxScore);
-
-  difficultyOptions: { label: PropertyPaths<ITranslation>; value: QuizDifficulty }[] = [
-    { label: 'quiz.difficulty.beginner', value: QuizDifficulty.BEGINNER },
-    { label: 'quiz.difficulty.advanced', value: QuizDifficulty.ADVANCED },
-    { label: 'quiz.difficulty.expert', value: QuizDifficulty.EXPERT }
-  ];
-
-  modeOptions: SelectItemGroup[] = [
-    {
-      label: 'quiz.mode.group.open',
-      items: [
-        { label: 'quiz.mode.latinNames', value: QuizMode.GUESS_LATIN_NAME },
-        { label: 'quiz.mode.enNames', value: QuizMode.GUESS_EN_NAME },
-        { label: 'quiz.mode.skNames', value: QuizMode.GUESS_SK_NAME },
-        { label: 'quiz.mode.images', value: QuizMode.GUESS_FROM_IMAGE }
-      ]
-    },
-    {
-      label: 'quiz.mode.group.options',
-      items: [
-        { label: 'quiz.mode.latinNames', value: QuizMode.CHOOSE_LATIN_NAME },
-        { label: 'quiz.mode.enNames', value: QuizMode.CHOOSE_EN_NAME },
-        { label: 'quiz.mode.skNames', value: QuizMode.CHOOSE_SK_NAME },
-        { label: 'quiz.mode.images', value: QuizMode.CHOOSE_FROM_IMAGE }
-      ]
-    }
-  ];
-
-  groupOptions: { label: PropertyPaths<ITranslation>; value: GroupName }[] = [
-    { label: 'quiz.groupsFilter.birdsOfPrey', value: 'birdsOfPrey' },
-    { label: 'quiz.groupsFilter.waders', value: 'waders' },
-    { label: 'quiz.groupsFilter.wildfowl', value: 'wildfowl' },
-    { label: 'quiz.groupsFilter.heronsStorksEtAl', value: 'heronsStorksEtAl' },
-    { label: 'quiz.groupsFilter.owls', value: 'owls' },
-    { label: 'quiz.groupsFilter.woodpeckers', value: 'woodpeckers' },
-    { label: 'quiz.groupsFilter.trushesChats', value: 'trushesChats' },
-    { label: 'quiz.groupsFilter.warblers', value: 'warblers' },
-    { label: 'quiz.groupsFilter.finchesCrossbills', value: 'finchesCrossbills' }
-  ];
 
   ngOnInit() {
     this.state.loadAllSpecies();
   }
 
-  startNewQuiz() {
-    const c = this.formGroup.controls;
-    this.state.startNewQuiz(
-      c.mode.value,
-      c.difficulty.value,
-      c.groupsFilter.value,
-      c.includeRare.value,
-      c.includeHistorical.value
-    );
-
+  startNewQuiz(settings: QuizSettings) {
+    this.state.startNewQuiz(settings);
     if (this.state.isOpenAnswer()) {
       setTimeout(() => {
         this.textAnswerInput()?.nativeElement.focus();
@@ -191,7 +123,7 @@ export class QuizComponent implements OnInit {
   }
 
   optionLabel(option: SpeciesDetail): string {
-    switch (this.state.mode()) {
+    switch (this.state.settings.mode()) {
       case QuizMode.CHOOSE_LATIN_NAME:
         return option.name.latin;
       case QuizMode.CHOOSE_EN_NAME:
@@ -218,30 +150,5 @@ export class QuizComponent implements OnInit {
 
   get maxScore(): number {
     return MAX_SCORE;
-  }
-
-  get guessLatinName(): QuizMode {
-    return QuizMode.GUESS_LATIN_NAME;
-  }
-  get guessEnName(): QuizMode {
-    return QuizMode.GUESS_EN_NAME;
-  }
-  get guessSkName(): QuizMode {
-    return QuizMode.GUESS_SK_NAME;
-  }
-  get chooseLatinName(): QuizMode {
-    return QuizMode.CHOOSE_LATIN_NAME;
-  }
-  get chooseEnName(): QuizMode {
-    return QuizMode.CHOOSE_EN_NAME;
-  }
-  get chooseSkName(): QuizMode {
-    return QuizMode.CHOOSE_SK_NAME;
-  }
-  get guessFromImage(): QuizMode {
-    return QuizMode.GUESS_FROM_IMAGE;
-  }
-  get chooseFromImage(): QuizMode {
-    return QuizMode.CHOOSE_FROM_IMAGE;
   }
 }
