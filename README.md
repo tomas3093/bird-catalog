@@ -59,6 +59,7 @@ TODO: fix routing
 - new data for similar species ✓
 - add custom gallery component which can handle image loading
 - show IUCN SK codes - http://www.tichodroma.sk/pdfs/25/Demko_Tichodroma_25_2.pdf from 2014
+- group species in more accurate maner and include recommended SK/EN names of groups (https://vtaky.sk/stranka/52-Nazvoslovie.html) 
 - comparator
   - as default, compare species which are visually similar (similarSpecies field)
 
